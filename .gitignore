@@ -1,0 +1,9 @@
+cache/
+cache_smoke/
+data/
+results_smoke/
+results/runs/
+logs/
+__pycache__/
+*.pyc
+.pytest_cache/

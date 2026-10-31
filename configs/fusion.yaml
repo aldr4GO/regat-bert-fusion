@@ -1,0 +1,39 @@
+# Stage 5-6: fusion ablation
+eps: 1.0e-8
+normalizers: [none, minmax, zscore, rank]
+dependencies: [fixed, Q, QS, S]
+alpha_grid_step: 0.05
+alpha0_clip: [0.02, 0.98]     # alpha0 clipped before logit() so the init bias is finite
+alpha_eps: 1.0e-6             # alpha = eps + (1-2eps)*sigmoid(z) keeps alpha strictly in (0,1)
+mlp:
+  hidden: 64
+  dropout: 0.1
+  last_init_std: 0.01
+train:
+  lr: 1.0e-3
+  weight_decay: 1.0e-2
+  batch_queries: 64
+  max_epochs: 50
+  patience: 5
+  lambda: 0.01
+  lambda_extra: [0.0]         # extra regulariser values for the adaptive configs
+  init_T: 1.0
+  seeds: [0, 1, 2, 3, 4]
+paper:
+  init_a: 0.5
+  init_b: 0.5
+  bias: true                  # ranking-invariant bias so BCE is well posed (see NOTES.md)
+loss_ablation:
+  deps: [fixed, QS]           # run with BCE as well; normalizer = best QS normalizer on val
+features:
+  top_overlap_k: 10
+eval:
+  cutoff: 10
+  bootstrap_resamples: 10000
+  bootstrap_seed: 0
+  oracle_flag_points: 0.005   # flag if oracle - best fixed < 0.5 NDCG points
+  length_buckets: [4, 7]      # short <= 4, medium 5-7, long >= 8 words
+  test_sets: [test, trec19, trec20]
+run_all:
+  workers: 16
+  threads_per_worker: 1

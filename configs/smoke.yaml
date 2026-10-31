@@ -1,0 +1,17 @@
+# Overrides applied when REGAT_PROFILE=smoke (tiny end-to-end test run, CPU friendly)
+data:
+  paths: {cache_dir: cache_smoke, results_dir: results_smoke, data_dir: data/smoke}
+  protocol_A:
+    train_pool: 900
+    sizes: {gat_train: 200, fusion_train: 120, val: 60}
+  smoke_dev_size: 200
+  smoke_trec_size: 20
+  cross_encoder: {batch_size: 64}
+  bi_encoder: {batch_size: 256}
+  bm25: {threads: 8}
+gat:
+  train: {max_epochs: 3}
+fusion:
+  train: {max_epochs: 4, seeds: [0, 1]}
+  eval: {bootstrap_resamples: 500}
+  run_all: {workers: 4}

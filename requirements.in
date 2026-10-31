@@ -1,0 +1,19 @@
+# Top-level dependencies (pinned versions live in requirements.txt)
+torch
+torch_geometric
+sentence-transformers
+transformers
+ir_datasets
+ir_measures
+pytrec-eval-terrier
+pyserini
+bm25s
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+pyyaml
+tqdm
+pytest
+PyStemmer

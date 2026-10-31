@@ -1,0 +1,51 @@
+# Stage 0-2 configuration (data, candidates, frozen encoders)
+paths:
+  data_dir: data              # splits, queries, qrels (gitignored)
+  cache_dir: cache            # cached tensors (gitignored)
+  results_dir: results
+  ir_datasets_home: data/ir_datasets
+  pyserini_cache: data/pyserini
+
+seed: 42
+K: 100                        # candidates per query (BM25 top-K)
+recall_depth: 1000            # BM25 depth used only for first-stage Recall@1000 on test/TREC
+
+datasets:
+  train: msmarco-passage/train/judged
+  dev: msmarco-passage/dev/small
+  trec19: msmarco-passage/trec-dl-2019/judged
+  trec20: msmarco-passage/trec-dl-2020/judged
+  collection: msmarco-passage
+
+bm25:
+  backend: pyserini           # pyserini | bm25s (fallback)
+  pyserini_index: msmarco-v1-passage
+  k1: 0.9                     # Anserini MS MARCO passage defaults
+  b: 0.4
+  threads: 32
+  batch_size: 2000
+
+protocol_A:
+  train_pool: 75000           # train queries sampled before dropping no-positive queries
+  sizes: {gat_train: 30000, fusion_train: 10000, val: 2000}
+protocol_B:
+  fractions: {gat_train: 0.40, fusion_train: 0.25, val: 0.10, test: 0.25}
+
+# physical query sets that get cached (protocol B splits are subsets of `test`)
+cache_sets: [gat_train, fusion_train, val, test, trec19, trec20]
+
+cross_encoder:
+  model: cross-encoder/ms-marco-MiniLM-L-6-v2
+  max_length: 256
+  batch_size: 128
+  fp16: true
+
+bi_encoder:
+  model: sentence-transformers/msmarco-MiniLM-L6-cos-v5
+  fallback: sentence-transformers/multi-qa-MiniLM-L6-cos-v1
+  batch_size: 1024
+  max_length: 256
+  fp16: true
+  store_fp16: true
+
+trec_binary_threshold: 2      # TREC DL: rel >= 2 counts as relevant for MRR@10 / MAP

@@ -1,0 +1,19 @@
+# Pinned top-level dependencies (generated from requirements.in; install with slurm/setup_env.sh)
+torch==2.15.0
+torch-geometric==2.8.1
+sentence-transformers==6.2.0
+transformers==5.22.1
+ir_datasets==0.6.3
+ir_measures==0.4.3
+pytrec_eval-terrier==0.5.11
+pyserini==1.6.0
+bm25s==0.3.16
+numpy==2.4.6
+pandas==3.1.0
+scipy==1.17.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+PyYAML==6.0.3
+tqdm==4.70.1
+pytest==9.2.0
+PyStemmer==3.1.0
