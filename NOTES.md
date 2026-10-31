@@ -69,7 +69,10 @@ bounded for the BCE; every comparison row is reproduced here under one protocol.
     own checksums) into `data/ir_datasets/`. The Pyserini index is served from Hugging Face.
 20. **pyserini 1.6 + openai SDK**: pyserini builds an OpenAI client at import time with an empty key, which the
     current openai SDK rejects; `set_env` sets `OPENAI_API_KEY=unused-placeholder` (never used, BM25 only).
-21. **Significance** is run on test, TREC DL 2019 and 2020, for NDCG@10 and MRR@10.
+21. **Tie-breaking**: ties in fused scores (frequent with `rank` normalisation at round alphas) are broken by
+    BM25 candidate order everywhere: the fast torch metric uses a stable sort, and runs are passed to
+    ir_measures as rank-based scores so trec_eval's docid tie-breaking never kicks in.
+22. **Significance** is run on test, TREC DL 2019 and 2020, for NDCG@10 and MRR@10.
 
 ## Results
 
