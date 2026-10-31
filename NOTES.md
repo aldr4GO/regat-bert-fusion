@@ -43,9 +43,11 @@ bounded for the BCE; every comparison row is reproduced here under one protocol.
    duplicate them). On GPU, PyG scatter ops are not bit-deterministic; seeds are fixed but GAT training may
    differ in the last digits between reruns. The GAT is trained once per protocol and `train_gat` refuses to
    overwrite an existing checkpoint.
-9. **random_graph control**: each node gets the same number of out-neighbours it had in the kNN graph (before
-   symmetrisation), chosen uniformly among the other candidates, then symmetrised + self-loops. This matches
-   degrees approximately (exactly before symmetrisation). Optional `knn_bm25` control not implemented.
+9. **random_graph control**: the symmetric kNN graph of each query with its node labels randomly permuted
+   (A'[i, j] = A[pi(i), pi(j)]). The degree sequence and the number of edges are preserved exactly; which
+   passages are neighbours becomes random w.r.t. content. (A first version drew `deg_i` random out-neighbours
+   per node and symmetrised; that inflated the mean degree by ~25% because random edges are rarely mutual.)
+   Optional `knn_bm25` control not implemented.
 10. **alpha0** (best fixed alpha on val, ties -> smallest alpha) is clipped to [0.02, 0.98] before `logit()` for
     the MLP bias init / regulariser target, so the init is finite when the grid picks 0 or 1. Alpha is computed as
     `1e-6 + (1 - 2e-6) * sigmoid(z)` so it is strictly inside (0, 1) even when the sigmoid saturates.
