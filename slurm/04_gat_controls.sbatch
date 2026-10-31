@@ -1,17 +1,18 @@
 #!/bin/bash
-# Sec. 6.6 graph controls (no_graph, random_graph, k_nn x min-cos sweep), evaluated on val.
-# One array task per control (11 total, see configs/gat.yaml). Independent of Stage 5.
+# Sec. 6.6 graph controls (no_graph, random_graph, k_nn x min-cos sweep) evaluated on val, one after another.
+# Already-finished controls are skipped. Run a subset with: sbatch slurm/04_gat_controls.sbatch random_graph no_graph
 #SBATCH --job-name=regat_gat_controls
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=64G
-#SBATCH --time=08:00:00
-#SBATCH --array=0-10%2
-#SBATCH --output=logs/%x_%A_%a.out
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=96G
+#SBATCH --time=1-00:00:00
+#SBATCH --output=logs/%x_%j.out
 set -euo pipefail
 source slurm/env.sh
-NAME=$($PY -c "import yaml;print(yaml.safe_load(open('configs/gat.yaml'))['controls'][${SLURM_ARRAY_TASK_ID:-0}]['name'])")
-echo "control: $NAME"
-$PY -m src.train_gat --protocol A --control "$NAME"
-$PY -m src.train_gat --protocol A --summarize
+if [ $# -gt 0 ]; then
+  for c in "$@"; do $PY -m src.train_gat --protocol A --control "$c"; done
+  $PY -m src.train_gat --protocol A --summarize
+else
+  $PY -m src.pipeline --only gat_controls
+fi

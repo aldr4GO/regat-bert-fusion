@@ -10,5 +10,5 @@
 set -euo pipefail
 source slurm/env.sh
 nvidia-smi --query-gpu=name,memory.used,memory.total --format=csv
-$PY -m src.cache_semantic --num_workers 8
+$PY -m src.cache_semantic --num_workers 8 --skip_existing
 $PY -m src.cache_embeddings          # ends with the Stage 1-2 acceptance check on val

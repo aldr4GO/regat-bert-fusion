@@ -7,13 +7,21 @@ bounded for the BCE; every comparison row is reproduced here under one protocol.
 
 ## VERIFY outcomes
 
-(filled in during implementation / testing — see bottom of each item)
+All checked on 2026-10-31 with the pinned `requirements.txt` (torch 2.15, PyG 2.8.1, sentence-transformers 6.2,
+pyserini 1.6, ir_datasets 0.6.3, ir_measures 0.4.3).
 
-- **ir_datasets ids**: `msmarco-passage/train/judged`, `msmarco-passage/dev/small`,
-  `msmarco-passage/trec-dl-2019/judged`, `msmarco-passage/trec-dl-2020/judged`, collection `msmarco-passage`.
-- **BM25**: Pyserini prebuilt `msmarco-v1-passage` (Lucene), k1=0.9, b=0.4 (Anserini defaults) for *all* query sets.
-- **Cross-encoder** `cross-encoder/ms-marco-MiniLM-L-6-v2`.
-- **Bi-encoder** `sentence-transformers/msmarco-MiniLM-L6-cos-v5`.
+- **ir_datasets ids** resolve: `msmarco-passage/train/judged` (502,939 queries), `msmarco-passage/dev/small`
+  (6,980), `msmarco-passage/trec-dl-2019/judged` (43), `msmarco-passage/trec-dl-2020/judged` (54), collection
+  `msmarco-passage` (8,841,823 passages). Downloaded files match ir_datasets' md5 checksums.
+- **BM25**: Pyserini prebuilt `msmarco-v1-passage` (Lucene, 8,841,823 docs) with k1=0.9, b=0.4 (Anserini
+  defaults), used for *all* query sets. Smoke sample (200 dev/small queries): R@100 0.665, R@1000 0.895
+  (published BM25 R@1000 on full dev/small: 0.857).
+- **Cross-encoder** `cross-encoder/ms-marco-MiniLM-L-6-v2` resolves; our raw logits equal
+  `CrossEncoder.predict(activation_fn=Identity)` to 2.3e-6.
+- **Bi-encoder** `sentence-transformers/msmarco-MiniLM-L6-cos-v5` resolves (fallback not needed), dim 384.
+- **Stage 1-2 acceptance** (smoke val, 60 queries): NDCG@10 CE 0.416 > s_bi 0.361 > BM25 0.223.
+- **Stage 4 gates** (smoke): GAT-only val NDCG@10 0.373 vs s_bi 0.361 (A), 0.252 vs 0.244 (B); caches aligned.
+- **Fast metrics** (`src/metrics.py`) match ir_measures exactly (unit test + BM25 val 0.22290 both ways).
 
 ## Deviations / implementation decisions
 
@@ -72,7 +80,11 @@ bounded for the BCE; every comparison row is reproduced here under one protocol.
 21. **Tie-breaking**: ties in fused scores (frequent with `rank` normalisation at round alphas) are broken by
     BM25 candidate order everywhere: the fast torch metric uses a stable sort, and runs are passed to
     ir_measures as rank-based scores so trec_eval's docid tie-breaking never kicks in.
-22. **Significance** is run on test, TREC DL 2019 and 2020, for NDCG@10 and MRR@10.
+22. **SLURM**: QOS `normal` allows 1 running / 3 submitted jobs per user (1 GPU, 32 CPU, 160 GB, 24 h), so
+    the study runs as one resumable job (`slurm/run_pipeline.sbatch` -> `src/pipeline.py`) instead of a chain
+    of per-stage jobs / a job array. Stages 0 and 5-6 therefore run inside a GPU allocation (CPU-only work);
+    the GAT controls run last so the main results come first.
+23. **Significance** is run on test, TREC DL 2019 and 2020, for NDCG@10 and MRR@10.
 
 ## Results
 

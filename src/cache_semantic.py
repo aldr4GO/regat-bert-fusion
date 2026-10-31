@@ -74,11 +74,17 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--sets", nargs="*", default=None)
     ap.add_argument("--num_workers", type=int, default=4)
+    ap.add_argument("--skip_existing", action="store_true", help="resume: skip sets whose sem_ file exists")
     args = ap.parse_args()
     cfg = load_config()
     set_env(cfg)
     dev = device()
     sets = args.sets or cfg["data"]["cache_sets"]
+    if args.skip_existing:
+        sets = [s for s in sets if not cache_path(cfg, f"sem_{s}.pt").exists()]
+        if not sets:
+            log.info("all sem_ caches exist; nothing to do")
+            return
     queries = load_queries(cfg)
     cands = {s: load_cands(cfg, s) for s in sets}
     all_pids = {p for c in cands.values() for pl in c.values() for p in pl}
