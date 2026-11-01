@@ -177,6 +177,7 @@ CPU only, about 2 minutes, after the multi-hop job has finished:
 ```bash
 source slurm/env.sh
 CUDA_VISIBLE_DEVICES="" $PY -m src.report_analysis      # alpha curves, bucket optima -> results/report/
+CUDA_VISIBLE_DEVICES="" $PY -m src.report_hops          # hop / question-type analyses -> results/report/hops_*
 CUDA_VISIBLE_DEVICES="" $PY -m src.report_paper         # tables + figures -> paper/tables, paper/figures
 cd paper && ~/.conda/envs/tex/bin/tectonic main.tex     # -> paper/main.pdf (ACL format)
 ```

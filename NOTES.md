@@ -235,3 +235,9 @@ Built from the finished results only (no training, nothing selected on test):
   (`regatbert`) to be completed by the authors.
 - **LaTeX toolchain:** tectonic in a separate env `~/.conda/envs/tex` (not part of `requirements.txt`, which stays the
   experiment env); ACL style files from github.com/acl-org/acl-style-files (master).
+- **Revision (framing towards the hypothesis, 2026-11-01):** the paper now leads with the evidence for the hypothesis
+  (MuSiQue hop trend, 2Wiki question types, CE-vs-GAT reliability, type-aware alpha, gate gains on multi-hop data).
+  New gate-independent analyses in `src/report_hops.py` (`results/report/hops_*.csv`): per-hop / per-type optima under
+  every normaliser and every graph variant, a tie-robust Spearman(preferred alpha, hops) with bootstrap CI, and per-bucket
+  gate gains. Contrary results are kept: HotpotQA/BEIR, min-max gate collapse and the val/test shift are in Sec. 4.7
+  ("Boundary conditions") and Limitations; the pre-registered H1-H4 table moved to Appendix C, unchanged.

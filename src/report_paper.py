@@ -708,6 +708,174 @@ def fig_graph():
     save_fig(fig, "graph_types")
 
 
+# ------------------------------------------------------------------ complexity-focused (report_hops.py outputs)
+HOPC = {"2": "#2a78d6", "3": "#eb6834", "4": "#1baf7a"}
+CE_C, GAT_C = "#2a78d6", "#eb6834"
+
+
+def _hop_optima():
+    return pd.read_csv(RES / "report" / "hops_optima.csv")
+
+
+def fig_hops():
+    o = _hop_optima()
+    fig, axes = plt.subplots(1, 2, figsize=(6.3, 2.1))
+    for ax, split in zip(axes, ("val", "test")):
+        for h in ("2", "3", "4"):
+            r = o[(o.key == "musique") & (o.split == split) & (o.norm == "minmax") & (o.field == "hops") &
+                  (o.bucket.astype(str) == h)].iloc[0]
+            c = np.array(json.loads(r.curve))
+            g = np.linspace(0, 1, len(c))
+            ax.plot(g, 100 * (c - c.max()), color=HOPC[h], label=f"{h}-hop")
+            ax.plot(g[c.argmax()], 0, "o", ms=6, color=HOPC[h], mec="white", mew=1, zorder=3)
+        ax.axvline(0.5, color=INK2, lw=0.8, ls=":")
+        ax.set_ylim(-8, 0.8)
+        ax.set_xlabel("fixed $\\alpha$ (weight on CE)")
+        ax.set_title(f"MuSiQue {split}", loc="left", color=INK)
+    axes[0].set_ylabel("nDCG@10 $-$ max (pts)")
+    axes[0].legend(frameon=False, loc="lower center")
+    fig.tight_layout()
+    save_fig(fig, "hops_curves")
+    fig, ax = plt.subplots(figsize=(3.15, 2.7))
+    ax.axhspan(0, 0.5, color="#f1efe8", zorder=0)
+    styles = [("knn_emb", "minmax", "min--max", "o", "-"), ("knn_emb", "zscore", "z-score", "s", "-"),
+              ("knn_emb", "rank", "rank", "^", "-"), ("none", "minmax", "no graph", "o", ":"),
+              ("random", "minmax", "random graph", "s", ":"), ("title_link", "minmax", "title graph", "^", ":"),
+              ("hybrid", "minmax", "kNN+title", "D", ":")]
+    for graph, norm, lab, mk, ls in styles:
+        r = o[(o.dataset == "musique") & (o.graph == graph) & (o.norm == norm) & (o.field == "hops") &
+              (o.split == "test")].sort_values("bucket")
+        col = {"min--max": "#6250d6", "z-score": "#eda100", "rank": "#e87ba4"}.get(lab, "#9a9890")
+        ax.plot(r.bucket.astype(int), r.best_alpha, ls, marker=mk, ms=4.5, color=col, lw=1.2, label=lab)
+    ax.set_xticks([2, 3, 4])
+    ax.set_xlabel("hops")
+    ax.set_ylabel("best fixed $\\alpha$ (test)")
+    ax.set_ylim(-0.03, 1.03)
+    ax.legend(frameon=False, fontsize=6, loc="upper center", bbox_to_anchor=(0.5, -0.25), ncol=3,
+              handlelength=1.8, columnspacing=0.8)
+    fig.tight_layout()
+    save_fig(fig, "hops_robust")
+
+
+def fig_signals():
+    sg = pd.read_csv(RES / "report" / "hops_signals.csv")
+    sg = sg[(sg.dataset == "musique") & (sg.field == "hops")]
+    fig, ax = plt.subplots(figsize=(3.15, 2.1))
+    for split, ls, mfc in (("val", "--", "white"), ("test", "-", None)):
+        d = sg[sg.split == split].sort_values("bucket")
+        for col, c, lab in (("ce", CE_C, "CE ($s_{sem}$)"), ("gat", GAT_C, "GAT ($s_{ctx}$)")):
+            ax.plot(d.bucket.astype(int), 100 * d[col], ls, marker="o", ms=5, color=c,
+                    mfc=mfc or c, mec=c, label=f"{lab}, {split}")
+    ax.set_xticks([2, 3, 4])
+    ax.set_xlabel("hops")
+    ax.set_ylabel("nDCG@10 alone")
+    ax.legend(frameon=False, fontsize=6.3, ncol=2, loc="lower left")
+    fig.tight_layout()
+    save_fig(fig, "hops_signals")
+
+
+def tab_hops():
+    o = _hop_optima()
+    sg = pd.read_csv(RES / "report" / "hops_signals.csv")
+    pf = pd.read_csv(RES / "report" / "hops_pref.csv")
+    lines = []
+    for h in ("2", "3", "4"):
+        cells = [f"{h}-hop"]
+        for split in ("val", "test"):
+            s = sg[(sg.dataset == "musique") & (sg.field == "hops") & (sg.split == split) &
+                   (sg.bucket.astype(str) == h)].iloc[0]
+            cells += [f"{100 * s.ce:.1f}", f"{100 * s.gat:.1f}"]
+        for split in ("val", "test"):
+            for norm in ("minmax", "zscore", "rank"):
+                r = o[(o.key == "musique") & (o.split == split) & (o.norm == norm) & (o.field == "hops") &
+                      (o.bucket.astype(str) == h)].iloc[0]
+                v = f"{r.best_alpha:.2f}"
+                cells.append(f"\\textbf{{{v}}}" if r.best_alpha < 0.5 else v)
+        for split in ("val", "test"):
+            p = pf[(pf.dataset == "musique") & (pf.field == "hops") & (pf.split == split)].iloc[0]
+            cells.append(f"{100 * p[f'frac_ctx_{h}']:.0f}")
+        n = int(o[(o.key == "musique") & (o.split == "test") & (o.norm == "minmax") & (o.field == "hops") &
+                  (o.bucket.astype(str) == h)].iloc[0].n)
+        lines.append(" & ".join([cells[0], f"{n:,}"] + cells[1:]) + " \\\\")
+    sp = {s: pf[(pf.dataset == "musique") & (pf.field == "hops") & (pf.split == s)].iloc[0] for s in ("val", "test")}
+    NUM["hop_spearman"] = {s: [float(sp[s].spearman), float(sp[s].ci_lo), float(sp[s].ci_hi), float(sp[s].p)]
+                           for s in sp}
+    body = ("\\begin{table*}[t]\n\\centering\\small\\setlength{\\tabcolsep}{4pt}\n"
+            "\\begin{tabular}{lrrrrrrrrrrrrr}\n\\toprule\n"
+            " & & \\multicolumn{4}{c}{nDCG@10 of each signal alone} & \\multicolumn{6}{c}{Best fixed $\\alpha$} & "
+            "\\multicolumn{2}{c}{\\% prefer ctx} \\\\\n"
+            "\\cmidrule(lr){3-6}\\cmidrule(lr){7-12}\\cmidrule(lr){13-14}\n"
+            " & & \\multicolumn{2}{c}{val} & \\multicolumn{2}{c}{test} & \\multicolumn{3}{c}{val} & "
+            "\\multicolumn{3}{c}{test} & & \\\\\n\\cmidrule(lr){3-4}\\cmidrule(lr){5-6}\\cmidrule(lr){7-9}\\cmidrule(lr){10-12}\n"
+            "Hops & $n$ (test) & CE & GAT & CE & GAT & mm & z & rank & mm & z & rank & val & test \\\\\n\\midrule\n"
+            + "\n".join(lines) +
+            "\n\\bottomrule\n\\end{tabular}\n\\caption{MuSiQue by hop count. Left: the cross-encoder loses 10.8 (val) and "
+            "12.5 (test) nDCG@10 points from 2 to 4 hops, the GAT only 5.1 and 4.7, and overtakes it on 4-hop "
+            "questions. Middle: the best fixed $\\alpha$ falls with the hop count under every scale-free normaliser "
+            "(mm = min--max, z = z-score); bold = below 0.5, i.e.\\ the contextual score dominates. Right: share of "
+            "$\\alpha$-sensitive questions whose optimal $\\alpha$-interval is centred below 0.5. Tie-robust "
+            f"per-question test of the trend: Spearman(preferred $\\alpha$, hops) = {sp['val'].spearman:+.3f} "
+            f"[{sp['val'].ci_lo:+.3f}, {sp['val'].ci_hi:+.3f}] on val ($p={sp['val'].p:.4f}$) and "
+            f"{sp['test'].spearman:+.3f} [{sp['test'].ci_lo:+.3f}, {sp['test'].ci_hi:+.3f}] on test ($p={sp['test'].p:.3f}$).}}\n"
+            "\\label{tab:hops}\n\\end{table*}\n")
+    save_tab("hops", body)
+
+
+def tab_graph_hops():
+    o = _hop_optima()
+    lines = []
+    for graph, name in (("none", "none (self-loops)"), ("random", "random"), ("knn_emb", "kNN emb. (default)"),
+                        ("title_link", "title link"), ("hybrid", "kNN $\\cup$ title")):
+        cells = [name]
+        for split in ("val", "test"):
+            r = o[(o.dataset == "musique") & (o.graph == graph) & (o.norm == "minmax") & (o.field == "hops") &
+                  (o.split == split)].sort_values("bucket")
+            cells += [f"\\textbf{{{a:.2f}}}" if a < 0.5 else f"{a:.2f}" for a in r.best_alpha]
+        lines.append(" & ".join(cells) + " \\\\")
+    body = ("\\begin{table}[t]\n\\centering\\small\\setlength{\\tabcolsep}{3pt}\n\\begin{tabular}{lrrrrrr}\n\\toprule\n"
+            " & \\multicolumn{3}{c}{val} & \\multicolumn{3}{c}{test} \\\\\n\\cmidrule(lr){2-4}\\cmidrule(lr){5-7}\n"
+            "Graph & 2 & 3 & 4 & 2 & 3 & 4 \\\\\n\\midrule\n" + "\n".join(lines) +
+            "\n\\bottomrule\n\\end{tabular}\n\\caption{MuSiQue: best fixed $\\alpha$ (min--max) by hop count for a GAT "
+            "retrained on each graph type. The 4-hop optimum is the lowest and below 0.5 (bold) for every graph.}\n"
+            "\\label{tab:graphhops}\n\\end{table}\n")
+    save_tab("graph_hops", body)
+
+
+def tab_2wiki():
+    o = _hop_optima()
+    g = pd.read_csv(RES / "report" / "hops_gains.csv")
+    sg = pd.read_csv(RES / "report" / "hops_signals.csv")
+    pf = pd.read_csv(RES / "report" / "hops_pref.csv")
+    pf = pf[(pf.dataset == "twowiki") & (pf.split == "test")].iloc[0]
+    lines = []
+    for t, name in (("comparison", "comparison"), ("compositional", "compositional"), ("inference", "inference"),
+                    ("bridge_comparison", "bridge-comparison")):
+        s = sg[(sg.dataset == "twowiki") & (sg.split == "test") & (sg.bucket == t)].iloc[0]
+        cells = [name, f"{100 * s.ce:.1f}", f"{100 * s.gat:.1f}"]
+        for split in ("val", "test"):
+            r = o[(o.dataset == "twowiki") & (o.norm == "minmax") & (o.split == split) & (o.bucket == t)].iloc[0]
+            cells.append(f"\\textbf{{{r.best_alpha:.2f}}}" if r.best_alpha < 0.5 else f"{r.best_alpha:.2f}")
+        cells.append(f"{100 * pf[f'frac_ctx_{t}']:.0f}")
+        for norm in ("minmax", "zscore", "rank"):
+            r = g[(g.dataset == "twowiki") & (g.norm == norm) & (g.dep == "Q") & (g.bucket == t)].iloc[0]
+            m = "$^{\\blacktriangle}$" if (r.p < 0.05 and r.ci_lo > 0) else ("$^{\\triangledown}$" if (r.p < 0.05 and r.ci_hi < 0) else "")
+            cells.append(f"{r.alpha_mean:.2f}")
+            cells.append(f"{100 * r.gain:+.2f}{m}")
+        lines.append(" & ".join(cells) + " \\\\")
+    body = ("\\begin{table*}[t]\n\\centering\\small\\setlength{\\tabcolsep}{3.6pt}\n\\begin{tabular}{lrrrrrrrrrrr}\n\\toprule\n"
+            " & \\multicolumn{2}{c}{nDCG@10 (test)} & \\multicolumn{2}{c}{Best fixed $\\alpha$} & \\% prefer & "
+            "\\multicolumn{6}{c}{Learned \\gate{Q} gate: mean $\\alpha$ and $\\Delta$nDCG@10 vs.\\ fixed (test)} \\\\\n"
+            "\\cmidrule(lr){2-3}\\cmidrule(lr){4-5}\\cmidrule(lr){7-12}\n"
+            "Type & CE & GAT & val & test & ctx & \\multicolumn{2}{c}{min--max} & \\multicolumn{2}{c}{z-score} & "
+            "\\multicolumn{2}{c}{rank} \\\\\n\\midrule\n" + "\n".join(lines) +
+            "\n\\bottomrule\n\\end{tabular}\n\\caption{2WikiMultiHopQA by question type, ordered from the simplest "
+            "(comparison: both entities named in the question) to the most compositional (bridge-comparison). "
+            "Bold $\\alpha<0.5$. The query-only gate, which never sees the type label, gives comparison questions the "
+            "highest $\\alpha$ under all three normalisers, and gains significantly on bridge-comparison questions "
+            "($^{\\blacktriangle}$/$^{\\triangledown}$: paired bootstrap $p<0.05$).}\n\\label{tab:twowiki}\n\\end{table*}\n")
+    save_tab("twowiki_types", body)
+
+
 def numbers(st, ga, n_pos):
     NUM["alpha_stats"] = st
     NUM["gate"] = {f"{k}/{d}": {kk: v for kk, v in x.items() if kk != "alpha"} for (k, d), x in ga.items()}
@@ -739,6 +907,12 @@ def main():
     fig_bucket_alpha(ga)
     fig_gap_vs_alpha()
     fig_gate(ga)
+    if (RES / "report" / "hops_optima.csv").exists():
+        fig_hops()
+        fig_signals()
+        tab_hops()
+        tab_graph_hops()
+        tab_2wiki()
     numbers(st, ga, n_pos)
     print("tables:", sorted(p.name for p in TAB.glob("*.tex")))
     print("figures:", sorted(p.name for p in FIG.glob("*.pdf")))

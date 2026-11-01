@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{3.6pt}
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+ & \multicolumn{2}{c}{nDCG@10 (test)} & \multicolumn{2}{c}{Best fixed $\alpha$} & \% prefer & \multicolumn{6}{c}{Learned \gate{Q} gate: mean $\alpha$ and $\Delta$nDCG@10 vs.\ fixed (test)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){7-12}
+Type & CE & GAT & val & test & ctx & \multicolumn{2}{c}{min--max} & \multicolumn{2}{c}{z-score} & \multicolumn{2}{c}{rank} \\
+\midrule
+comparison & 97.3 & 95.5 & 0.90 & 0.65 & 30 & 0.72 & +0.10 & 0.52 & -0.04 & 0.59 & -0.07 \\
+compositional & 88.5 & 88.9 & \textbf{0.45} & 0.50 & 53 & 0.45 & -0.01 & 0.34 & -0.08 & 0.44 & +0.25$^{\blacktriangle}$ \\
+inference & 86.7 & 87.6 & \textbf{0.25} & \textbf{0.45} & 59 & 0.30 & -0.23$^{\triangledown}$ & 0.22 & -0.03 & 0.38 & +0.27 \\
+bridge-comparison & 90.1 & 92.0 & \textbf{0.25} & \textbf{0.20} & 67 & 0.35 & +0.16$^{\blacktriangle}$ & 0.33 & +0.22$^{\blacktriangle}$ & 0.17 & +0.81$^{\blacktriangle}$ \\
+\bottomrule
+\end{tabular}
+\caption{2WikiMultiHopQA by question type, ordered from the simplest (comparison: both entities named in the question) to the most compositional (bridge-comparison). Bold $\alpha<0.5$. The query-only gate, which never sees the type label, gives comparison questions the highest $\alpha$ under all three normalisers, and gains significantly on bridge-comparison questions ($^{\blacktriangle}$/$^{\triangledown}$: paired bootstrap $p<0.05$).}
+\label{tab:twowiki}
+\end{table*}

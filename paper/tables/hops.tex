@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+ & & \multicolumn{4}{c}{nDCG@10 of each signal alone} & \multicolumn{6}{c}{Best fixed $\alpha$} & \multicolumn{2}{c}{\% prefer ctx} \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-12}\cmidrule(lr){13-14}
+ & & \multicolumn{2}{c}{val} & \multicolumn{2}{c}{test} & \multicolumn{3}{c}{val} & \multicolumn{3}{c}{test} & & \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-9}\cmidrule(lr){10-12}
+Hops & $n$ (test) & CE & GAT & CE & GAT & mm & z & rank & mm & z & rank & val & test \\
+\midrule
+2-hop & 1,252 & 76.9 & 76.8 & 73.8 & 68.0 & \textbf{0.40} & 0.50 & \textbf{0.45} & 0.80 & 0.80 & 0.95 & 48 & 40 \\
+3-hop & 760 & 69.2 & 71.0 & 71.8 & 66.7 & \textbf{0.40} & \textbf{0.40} & \textbf{0.30} & 0.55 & 0.65 & 0.85 & 54 & 39 \\
+4-hop & 405 & 66.1 & 71.7 & 61.3 & 63.3 & \textbf{0.25} & \textbf{0.30} & \textbf{0.00} & \textbf{0.40} & \textbf{0.40} & \textbf{0.00} & 60 & 52 \\
+\bottomrule
+\end{tabular}
+\caption{MuSiQue by hop count. Left: the cross-encoder loses 10.8 (val) and 12.5 (test) nDCG@10 points from 2 to 4 hops, the GAT only 5.1 and 4.7, and overtakes it on 4-hop questions. Middle: the best fixed $\alpha$ falls with the hop count under every scale-free normaliser (mm = min--max, z = z-score); bold = below 0.5, i.e.\ the contextual score dominates. Right: share of $\alpha$-sensitive questions whose optimal $\alpha$-interval is centred below 0.5. Tie-robust per-question test of the trend: Spearman(preferred $\alpha$, hops) = -0.072 [-0.110, -0.032] on val ($p=0.0005$) and -0.068 [-0.110, -0.025] on test ($p=0.004$).}
+\label{tab:hops}
+\end{table*}

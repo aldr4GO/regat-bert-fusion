@@ -28,8 +28,8 @@
 \newcommand{\ctx}{s_{\mathit{ctx}}}
 \newcommand{\gate}[1]{\textsc{#1}}
 
-\title{Does the Fusion Weight Track Query Complexity?\\
-Adaptive Score Fusion of Cross-Encoder and Graph-Contextual Evidence\\ for Single- and Multi-hop Passage Ranking}
+\title{Complex Questions Need More Context:\\
+Multi-hop Queries Shift the Fusion Weight from Cross-Encoder\\ to Graph-Contextual Scores}
 
 \author{Anonymous Authors \\
   \texttt{(author information to be added)}}
@@ -38,27 +38,27 @@ Adaptive Score Fusion of Cross-Encoder and Graph-Contextual Evidence\\ for Singl
 \maketitle
 
 \begin{abstract}
-Graph-augmented rerankers such as ReGAT-BERT score a passage with a linear fusion
-$\alpha\,\sem + (1-\alpha)\,\ctx$ of a cross-encoder score $\sem$ and a contextual score $\ctx$
-produced by a graph attention network (GAT) over the candidate set, with one global $\alpha$.
-We test a natural hypothesis: \emph{simple, single-hop queries should rely on the cross-encoder
-($\alpha>0.5$), complex multi-hop queries on the contextual score ($\alpha<0.5$), so an $\alpha$ that
-depends on the query should beat a fixed one.} We ablate four score normalisers and five ways of
-setting $\alpha$ (fixed; a function of the query, of score statistics, or of both; plus explicit
-complexity features) on MS MARCO and four multi-hop collections (MuSiQue, HotpotQA, BEIR-HotpotQA,
-2WikiMultiHopQA), with every upstream model frozen and all selection on validation data.
-The hypothesis holds in a qualified form. The best fixed $\alpha$ is above 0.5 on MS MARCO and
-falls below 0.5 on 2WikiMultiHopQA, on MuSiQue's validation split and on its 4-hop test questions;
-within MuSiQue the test optimum falls with the hop count (0.80, 0.55, 0.40 for 2, 3, 4 hops), and
-within 2WikiMultiHopQA comparison questions favour the cross-encoder while bridge-comparison and
-inference questions favour the GAT. Across 17 query buckets, however, the optimum is explained by
-the relative strength of the two signals (Spearman $\rho=0.79$ with the CE$-$GAT gap) rather than by
-complexity as such: on HotpotQA, bridge questions favour the cross-encoder.
-The second half of the hypothesis is not supported by learned gates: although a per-query oracle
-$\alpha$ would add 2.3--7.4 nDCG@10 points, the query-dependent gates gain at most 0.04 points over the
-fixed weight under the primary normaliser (11 of 76 gate/normaliser/dataset cells significantly
-better, 13 worse), mostly because early stopping returns their constant initialisation. A coarse
-question-type $\alpha$ chosen on validation data gives small significant gains (up to +0.42).
+Graph-augmented rerankers such as ReGAT-BERT fuse a cross-encoder score $\sem$ and a
+graph-attention contextual score $\ctx$ with one global weight,
+$\alpha\,\sem + (1-\alpha)\,\ctx$. We hypothesise that this weight should depend on the query:
+simple single-hop queries should rely on the cross-encoder ($\alpha>0.5$) and complex multi-hop
+queries on the contextual score ($\alpha<0.5$). We test this in a controlled ablation (four score
+normalisers $\times$ five ways of setting $\alpha$, all upstream models frozen) on MS MARCO and four
+multi-hop collections. The results support the hypothesis for questions that genuinely require
+composing several passages. The best fixed $\alpha$ is 0.70--0.95 on MS MARCO but 0.40 on MuSiQue
+and 0.45 on 2WikiMultiHopQA, whose questions need more than two supporting passages. Within MuSiQue
+the optimal $\alpha$ \emph{decreases monotonically with the number of hops} under every scale-free
+normaliser (test, min--max: 0.80, 0.55, 0.40 for 2, 3, 4 hops; validation: 0.40, 0.40, 0.25), and
+4-hop questions favour the contextual score in all 14 normaliser/graph/split settings; per question,
+the preferred $\alpha$ is negatively correlated with the hop count ($p<0.005$ on both splits). The
+mechanism is that the cross-encoder loses 12.5 nDCG@10 points from 2 to 4 hops while the GAT loses
+only 4.7 and overtakes it. On 2WikiMultiHopQA, comparison questions favour the cross-encoder and
+bridge-comparison questions the GAT ($\alpha=0.20$--$0.25$); a query-only gate that never sees the
+type label gives comparison questions the highest weight on the cross-encoder under all three normalisers and gains significantly on
+bridge-comparison questions (up to +0.81 nDCG@10). Query-dependent weighting pays off where it
+exploits this structure: a type-aware $\alpha$ significantly improves three multi-hop collections,
+and 7 of the 11 significant gains of learned gates are on multi-hop data (up to +1.37). The effect is
+absent on HotpotQA, where the cross-encoder dominates.
 \end{abstract}
 
 % =====================================================================
@@ -70,44 +70,47 @@ other candidates: graph-based score regularisation \citep{diaz2005regularizing,k
 corpus-graph reranking \citep{macavaney2022gar}, and graph-attention models over passages and their
 links \citep{asai2020learning}. ReGAT-BERT \citep{regatbert} is one such design. A BERT
 cross-encoder \citep{nogueira2019passage} gives a semantic score $\sem(q,p)$; a GAT
-\citep{velickovic2018gat} refines bi-encoder passage embeddings over a graph of candidates, and
-the cosine with the query gives a contextual score $\ctx(q,p)$. The final score is
+\citep{velickovic2018gat} refines bi-encoder passage embeddings over a graph of candidates, and the
+cosine with the query gives a contextual score $\ctx(q,p)$. The final score is
 \begin{equation}
   \label{eq:fusion}
   s(q,p) = \alpha\, \sem(q,p) + (1-\alpha)\, \ctx(q,p),
 \end{equation}
 with a single $\alpha$ for all queries.
 
-A single weight is a strong assumption. A single-hop query (``\emph{what is the capital of
-Peru}'') can be answered by a passage judged in isolation, so the cross-encoder should dominate.
+A single weight is a strong assumption. A single-hop query (``\emph{what is the capital of Peru}'')
+can be answered by a passage judged in isolation, which is exactly what a cross-encoder does well.
 A multi-hop question (``\emph{who directed the film whose lead actress was born in Lima}'') needs
-passages that are only relevant through their relation to other passages, which is exactly what
-a graph over the candidate set can encode. This suggests the hypothesis we test:
+passages that are relevant only through their relation to other passages, which is what a graph over
+the candidate set can encode. This motivates our hypothesis:
 
 \begin{quote}
 \textbf{Hypothesis.} For simple single-hop queries $\alpha>0.5$ (the semantic score matters more);
 for complex multi-hop queries $\alpha<0.5$ (the contextual score matters more). Hence $\alpha$
 should depend on the query, and an $\alpha$ conditioned on the query (\gate{Q}), on the query and
-the score distributions (\gate{QS}) or on the score distributions alone (\gate{S}) should beat a
-fixed $\alpha$.
+the score distributions (\gate{QS}) or on the score distributions (\gate{S}) should beat a fixed one.
 \end{quote}
 
-We split the hypothesis into falsifiable claims and test them in a controlled ablation in which
-only the fusion step changes (\S\ref{sec:setup}). The BM25 candidates, the cross-encoder, the
-bi-encoder and the GAT are trained or loaded once, frozen and cached, so every fusion variant sees
-identical inputs. Our contributions are:
+We test the hypothesis in a controlled ablation in which only the fusion step changes
+(\S\ref{sec:setup}): candidates, cross-encoder, bi-encoder and GAT are computed once and frozen, so
+every fusion variant sees identical inputs. MuSiQue \citep{trivedi2022musique}, whose questions are
+annotated with 2, 3 or 4 hops, gives the most direct test. Our findings:
 \begin{itemize}
-\item A $4\times5$ ablation of fusion (normaliser $\times$ what $\alpha$ depends on) on MS MARCO
-  and four multi-hop collections, with oracle upper bounds, graph controls, transfer experiments
-  and pre-registered hypothesis tests (written down before any multi-hop run).
-\item Evidence that the \emph{optimal} fusion weight does vary with query complexity in the predicted
-  direction on the hardest multi-hop data (MuSiQue, 2WikiMultiHopQA), but that it is governed by the
-  relative reliability of the two signals ($\rho=0.79$ across buckets), which complexity
-  only partly determines (\S\ref{sec:dataset}, \S\ref{sec:query}).
-\item Evidence that learned query-dependent gates do not realise this variation: they collapse to
-  the fixed weight, and the few significant gains are either tiny or repair a weak normaliser
-  (\S\ref{sec:gates}). We trace this to early stopping, weak per-query signal and a train/val shift.
+\item \textbf{Multi-hop data moves the weight towards context.} The best fixed $\alpha$ is above 0.5 on
+  MS MARCO and below 0.5 on MuSiQue (validation) and 2WikiMultiHopQA (\S\ref{sec:dataset}).
+\item \textbf{More hops, lower $\alpha$.} On MuSiQue the optimal $\alpha$ falls monotonically from 2 to 4
+  hops under every scale-free normaliser and, on test, for every graph we tried, and is below 0.5 for 4-hop questions
+  in every setting (\S\ref{sec:hops}, Figure~\ref{fig:hops}).
+\item \textbf{Why.} The cross-encoder, which reads each passage in isolation, degrades much faster with
+  the number of hops than the graph-contextual score; across all question groups the optimal $\alpha$
+  tracks this reliability gap ($\rho=0.79$; \S\ref{sec:mechanism}).
+\item \textbf{Question type matters as predicted on 2Wiki}, and a learned query-only gate recovers the
+  type ordering without labels (\S\ref{sec:twowiki}).
+\item \textbf{Query-dependent $\alpha$ beats a fixed one where it exploits this structure}: type-aware
+  weights and learned gates give their significant gains mostly on multi-hop data (\S\ref{sec:adaptive}).
 \end{itemize}
+We also report where the effect does not appear (\S\ref{sec:boundary}): on HotpotQA, whose questions
+often admit single-hop shortcuts \citep{min2019compositional}, the cross-encoder keeps the weight.
 
 % =====================================================================
 \section{Related Work}
@@ -116,49 +119,25 @@ identical inputs. Our contributions are:
 \paragraph{Score fusion and normalisation.}
 Linear combination of retrieval scores goes back to CombSUM and its variants
 \citep{fox1994combination}; because scores live on different scales, per-query normalisation
-(min--max, z-score) is standard \citep{montague2001normalization}, and rank-based fusion such as
-RRF \citep{cormack2009rrf} avoids scores altogether. We compare four normalisers because the
-numerical value of $\alpha$ is only meaningful relative to the scales of $\sem$ and $\ctx$.
+(min--max, z-score) is standard \citep{montague2001normalization}, and rank-based fusion such as RRF
+\citep{cormack2009rrf} avoids scores altogether. We compare four normalisers because the numerical
+value of $\alpha$ is only meaningful relative to the scales of $\sem$ and $\ctx$.
 
 \paragraph{Graph-based and contextual reranking.}
 Score regularisation smooths scores over a document-similarity graph \citep{diaz2005regularizing};
 structural reranking uses graphs induced by language models \citep{kurland2005pagerank}; adaptive
 reranking expands the candidate pool through a corpus graph \citep{macavaney2022gar}. ReGAT-BERT
 \citep{regatbert} learns the propagation with a GAT and fuses it with a cross-encoder through a fixed
-weight, the component we study. We use GATv2 layers \citep{brody2022gatv2} implemented in PyTorch
-Geometric \citep{fey2019pyg}.
+weight, the component we study. We use GATv2 layers \citep{brody2022gatv2} in PyTorch Geometric
+\citep{fey2019pyg}.
 
 \paragraph{Multi-hop retrieval.}
-Multi-hop QA datasets \citep{yang2018hotpotqa,ho2020constructing,trivedi2022musique} require
-combining several supporting paragraphs; retrievers for them follow hyperlinks or retrieve
-iteratively \citep{asai2020learning,xiong2021mdr}. Many HotpotQA questions can be answered with
-single-hop shortcuts \citep{min2019compositional}, which motivated MuSiQue's construction
-\citep{trivedi2022musique}; this matters for our results on HotpotQA (\S\ref{sec:query}).
-
-% =====================================================================
-\section{Hypotheses and Tests}
-\label{sec:hyp}
-
-The hypothesis in \S\ref{sec:intro} makes three claims, which we test separately.
-\begin{description}
-\item[C1 (dataset level).] On single-hop data the best fixed $\alpha$ exceeds 0.5; on multi-hop data
-  it is below 0.5.
-\item[C2 (query level).] Within a dataset, the best $\alpha$ falls as complexity rises (more hops;
-  bridge or inference rather than comparison questions).
-\item[C3 (method).] A query-dependent gate (\gate{Q}, \gate{QS}, \gate{S}) beats the best fixed
-  $\alpha$, and gains more on multi-hop than on single-hop data.
-\end{description}
-Before running any multi-hop experiment we also fixed four formal hypotheses and their statistics
-(Table~\ref{tab:hyp}): \textbf{H1}, the gate's learned $\alpha$ decreases with complexity (Spearman
-with hop count on MuSiQue; bridge minus comparison on HotpotQA and BEIR-HotpotQA);
-\textbf{H2}, the adaptive gain is larger than on MS MARCO; \textbf{H3}, the oracle headroom is larger
-than on MS MARCO; \textbf{H4}, effects that come from the graph should vanish with a random or empty
-graph. H1--H3 on the three primary multi-hop datasets form one Holm family \citep{holm1979simple};
-everything else is labelled exploratory.
-
-\paragraph{Interpretation rule.} $\alpha$ measures the \emph{relative reliability} of the two
-normalised signals, not ``how much context a query needs''. We therefore never read raw $\alpha$ without
-the CE-only and GAT-only effectiveness of the same queries and the normaliser it was obtained with.
+Multi-hop QA datasets \citep{yang2018hotpotqa,ho2020constructing,trivedi2022musique} require combining
+several supporting paragraphs; retrievers for them follow hyperlinks or retrieve iteratively
+\citep{asai2020learning,xiong2021mdr}. Many HotpotQA questions can be answered with single-hop
+shortcuts \citep{min2019compositional}, which motivated MuSiQue's bottom-up construction from
+single-hop questions so that every hop is necessary \citep{trivedi2022musique}. This difference
+between the two datasets turns out to matter for fusion (\S\ref{sec:boundary}).
 
 % =====================================================================
 \section{Experimental Setup}
@@ -178,13 +157,15 @@ pools, minimum cosine 0.3) with self-loops. Two GATv2 layers (4$\times$128 heads
 residual connection and LayerNorm refine the embeddings, and $\ctx$ is the cosine between the query
 embedding and the refined passage embedding. One GAT per dataset is trained once on a disjoint
 \emph{GAT-train} split with a multi-positive listwise InfoNCE loss ($\tau{=}0.05$;
-\citealp{oord2018cpc}), early-stopped on validation, and frozen. A gate checks that GAT-only is not
-worse than the raw bi-encoder on validation; it passes on every dataset.
+\citealp{oord2018cpc}), early-stopped on validation, and frozen. On every dataset GAT-only beats the
+raw bi-encoder on validation (e.g.\ MuSiQue 75.2 vs.\ 70.1 nDCG@10).
 
 \subsection{Fusion variants}
 \textbf{Normalisers} (per query over its candidates): \emph{none}, \emph{min--max}, \emph{z-score},
 \emph{rank}. The primary normaliser, fixed on MS MARCO validation before any multi-hop run, is
-min--max.
+min--max. With raw scores (\emph{none}) $\alpha$ only reflects the ratio of the score scales (within a
+query, cross-encoder logits span about 12 units, cosines about 0.5), so we read $\alpha$ only under the
+three scale-free normalisers.
 \textbf{What $\alpha$ depends on.}
 \gate{Fixed}: a grid search $\alpha\in\{0,0.05,\dots,1\}$ on validation (main baseline, $\alpha_0$)
 and a learned scalar.
@@ -196,316 +177,341 @@ between them).
 Each MLP has one hidden layer of 64 units, its output bias is initialised to $\mathrm{logit}(\alpha_0)$
 and its last-layer weights near zero, so every gate starts as the fixed baseline.
 \textbf{Training.} Gates are trained on a disjoint \emph{fusion-train} split with a multi-positive
-listwise softmax loss \citep{cao2007listnet} on $s/T$ (learned temperature), plus
-$\lambda(\alpha-\alpha_0)^2$ with $\lambda{=}0.01$ (and $\lambda{=}0$ as an ablation), AdamW
-\citep{loshchilov2019adamw}, early stopping on validation nDCG@10 with the best epoch restored
-(epoch 0 = the initialisation), 5 seeds.
-\textbf{ReGAT-BERT-style row}: $a\,\sem + b\,\ctx$ with free $a,b$ trained with pointwise BCE, our
-reproduction of the original training objective.
-\textbf{Oracle}: the per-query $\alpha$ on the grid that maximises that query's test nDCG@10; an upper
-bound, not a method.
+listwise softmax loss \citep{cao2007listnet} (learned temperature) plus $\lambda(\alpha-\alpha_0)^2$,
+$\lambda{=}0.01$ ($\lambda{=}0$ as an ablation), AdamW \citep{loshchilov2019adamw}, early stopping on
+validation nDCG@10, 5 seeds.
+\textbf{ReGAT-BERT-style row}: $a\,\sem + b\,\ctx$ with free $a,b$ trained with pointwise BCE.
+\textbf{Oracle}: the per-query grid $\alpha$ that maximises that query's nDCG@10; an upper bound.
 
-\subsection{Data}
-Table~\ref{tab:data} lists the collections. MS MARCO is used under two protocols: \textbf{A} trains on
-MS MARCO train and tests on dev/small; \textbf{B} splits dev/small itself, so neither the GAT nor the
-gate's validation data shares a distribution with the cross-encoder's training data. Complexity
-labels: MuSiQue hop count (2--4), HotpotQA and BEIR-HotpotQA question type (bridge vs.\ comparison;
-BEIR queries joined to HotpotQA by id), 2Wiki question type (comparison, compositional, inference,
-bridge-comparison), and for MS MARCO only rule-based proxies (length, wh-word, entities).
-Labels never enter a gate.
+\subsection{Data and complexity labels}
+Table~\ref{tab:data} lists the collections. MS MARCO \citep{nguyen2016msmarco} is the single-hop
+reference, used under two protocols: \textbf{A} trains on MS MARCO train and tests on dev/small;
+\textbf{B} splits dev/small itself. Complexity labels, used only for analysis and never as gate
+inputs: MuSiQue hop count (2--4, plus the six composition types 2hop, 3hop1, 3hop2, 4hop1--3);
+2Wiki question type \citep{ho2020constructing}: comparison, compositional, inference, bridge-comparison;
+HotpotQA and BEIR-HotpotQA \citep{thakur2021beir}: bridge vs.\ comparison.
 
 \input{tables/datasets}
 
 \subsection{Evaluation}
-We report nDCG, MRR, Precision and Recall at $k\in\{1,3,5,10,50\}$, MAP, and AllRecall@$k$ (all
-gold paragraphs in the top $k$), computed with ir\_measures \citep{macavaney2022irmeasures}; nDCG@10 is
-the primary metric (full tables in Appendix~\ref{app:full}). Every choice ($\alpha_0$, early stopping,
-the primary normaliser) is made on validation data; test sets are used once. Differences are tested with
-a paired bootstrap over queries (10{,}000 resamples; \citealp{efron1993bootstrap}) on seed-averaged
-per-query scores.
+We report nDCG, MRR, Precision and Recall at $k\in\{1,3,5,10,50\}$, MAP and AllRecall@$k$ with
+ir\_measures \citep{macavaney2022irmeasures}; nDCG@10 is the primary metric (full tables in
+Appendix~\ref{app:full}). Every choice ($\alpha_0$, early stopping, the primary normaliser) is made on
+validation data. To study how the optimal weight depends on complexity independently of whether a gate
+learns it, we also compute, for each group of questions (e.g.\ all 4-hop questions), the fixed $\alpha$
+that maximises the group's mean nDCG@10, with a bootstrap CI over the group's questions
+\citep{efron1993bootstrap}, and a tie-robust per-question preference: for every question whose nDCG@10
+changes with $\alpha$, the centre of its optimal-$\alpha$ interval. These analyses are reported on both
+validation and test.
 
 % =====================================================================
 \section{Results}
 \label{sec:results}
 
-\input{tables/main}
-
-\subsection{Overall effectiveness}
-Table~\ref{tab:main} shows the headline numbers. Fusion helps little over the cross-encoder alone:
-the best fixed $\alpha$ adds +0.98 nDCG@10 on 2Wiki, where the GAT is as strong as the cross-encoder,
-+0.19 on MuSiQue and +0.15 on MS MARCO B, and is \emph{below} CE-only on MS MARCO A (40.89 vs.\ 41.34)
-because the $\alpha_0$ chosen on validation (0.70) is far from the test optimum (0.95;
-\S\ref{sec:dataset}). The ReGAT-BERT-style free-weight BCE row is significantly worse than the fixed
-$\alpha$ on MS MARCO and BEIR-HotpotQA ($-1.1$ and $-3.8$) and significantly better on MuSiQue
-(+0.46). The adaptive gates gain at most 0.04 points over the fixed $\alpha$ on any dataset, and \gate{QS} loses
-0.12 on 2Wiki.
-The oracle rows show what a perfect per-query weight could achieve: +2.3 (2Wiki) to +7.4 (MuSiQue)
-nDCG@10 points, so the lack of gains is not due to a lack of headroom.
-
 % ---------------------------------------------------------------------
-\subsection{C1: Is $\alpha$ below 0.5 on multi-hop data?}
+\subsection{Multi-hop data shifts the weight towards context}
 \label{sec:dataset}
 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/alpha_curves.pdf}
-  \caption{nDCG@10 as a function of the fixed fusion weight $\alpha$ (min--max), relative to each
-  curve's maximum; dashed = validation, solid = test, circles = arg-max. Left of the dotted line the
-  GAT score has more weight. The y-axis is clipped at $-6$ points.}
+  \caption{nDCG@10 as a function of the fixed weight $\alpha$ (min--max), relative to each curve's
+  maximum; dashed = validation, solid = test, circles = arg-max. Left of the dotted line the contextual
+  score has more weight. The single-hop reference (MS MARCO) peaks far to the right; MuSiQue (validation)
+  and 2Wiki peak left of 0.5. The y-axis is clipped at $-6$ points.}
   \label{fig:curves}
 \end{figure*}
 
 \input{tables/dataset_alpha}
 
-Table~\ref{tab:dsalpha} and Figure~\ref{fig:curves} give the best fixed $\alpha$ per dataset.
-With raw scores (``none'') $\alpha$ only reflects the ratio of score scales (within a query, cross-encoder logits span
-about 12 units on average, GAT cosines about 0.5) and is near 0 everywhere, so the claim can only be read under a
-scale-free normaliser. Under min--max and z-score:
-\begin{itemize}
-\item \textbf{MS MARCO} favours the cross-encoder: $\alpha^*=0.70$ (A) and 0.85 (B) on validation, 0.95
-  and 0.90 on test. This agrees with C1.
-\item \textbf{2Wiki} favours the GAT: $\alpha^*=0.45$ on validation and test (0.50 under z-score), the only
-  dataset where GAT-only matches CE-only (91.0 vs.\ 90.8).
-\item \textbf{MuSiQue} favours the GAT on validation ($\alpha^*=0.40$) but the cross-encoder on test (0.65).
-\item \textbf{HotpotQA} and \textbf{BEIR-HotpotQA} favour the cross-encoder strongly (0.85--0.95),
-  contrary to C1.
-\end{itemize}
-The MuSiQue and MS MARCO-A shifts between validation and test have the same cause. Both validation sets
-are carved from the training questions, i.e.\ from the same distribution as the GAT's training data,
-whereas the test sets are the official dev sets. The GAT is relatively stronger on validation
-(MuSiQue: CE$-$GAT $=-0.7$ points on val vs.\ $+4.3$ on test; MS MARCO A: $+1.6$ vs.\ $+5.9$), so
-validation asks for more GAT weight. Protocol B, whose validation and test both come from dev/small,
-has no such shift (gap $+5.7$ vs.\ $+5.8$; $\alpha^*$ 0.85 vs.\ 0.90). \textbf{C1 therefore holds for
-the two hardest multi-hop collections (2Wiki; MuSiQue in-distribution) and fails for HotpotQA.}
+Table~\ref{tab:dsalpha} and Figure~\ref{fig:curves} show the best fixed $\alpha$ per collection.
+On the single-hop reference the weight goes to the cross-encoder: $\alpha^*=0.70$ (A) and 0.85 (B) on
+validation, 0.95 and 0.90 on test, under min--max and identically under z-score. On the two
+collections whose questions need more than two supporting passages on average (2.35 for MuSiQue, 2.43
+for 2Wiki, vs.\ 1.06 for MS MARCO) it moves to the contextual score: $\alpha^*=0.40$ on MuSiQue and 0.45
+on 2Wiki (min--max validation; 0.45 and 0.50 under z-score, 0.45 and 0.55 under rank). 2Wiki is
+also the collection on which GAT-only matches CE-only (91.0 vs.\ 90.8 nDCG@10 on test).
+The overall MuSiQue test optimum (0.65) is higher than its validation optimum because the validation
+questions are drawn from the training set, like the GAT's training data, so the GAT is relatively stronger on
+them (CE$-$GAT $-0.7$ points on validation vs.\ $+4.3$ on test); the hop-count trend of the next section holds
+on both splits.
 
 % ---------------------------------------------------------------------
-\subsection{C2: Does the best $\alpha$ fall with complexity?}
-\label{sec:query}
+\subsection{More hops, lower $\alpha$}
+\label{sec:hops}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/hops_curves.pdf}
+  \caption{MuSiQue by hop count: nDCG@10 of the fixed fusion as a function of $\alpha$ (min--max) for 2-,
+  3- and 4-hop questions, relative to each curve's maximum; dots mark the optimum. The optimum moves left
+  (towards the contextual score) as the number of hops grows, on validation (left) and test (right).}
+  \label{fig:hops}
+\end{figure*}
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\columnwidth]{figures/bucket_alpha.pdf}
-  \caption{Best fixed $\alpha$ within each complexity bucket (min--max). Filled: test with 95\%
-  bootstrap CI; open: validation. Shaded: the GAT score has more weight.}
-  \label{fig:buckets}
+  \includegraphics[width=\columnwidth]{figures/hops_robust.pdf}
+  \caption{MuSiQue: best fixed $\alpha$ on test per hop count under the three scale-free normalisers
+  (coloured) and for GATs retrained on four other graphs (grey, dotted; min--max). Shaded: $\alpha<0.5$.
+  Every setting declines from 2 to 4 hops, and every 4-hop optimum is below 0.5.}
+  \label{fig:robust}
 \end{figure}
 
-\input{tables/buckets}
+\input{tables/hops}
 
-Because a learned gate may fail to find structure that exists, we test C2 directly on the data: for
-every bucket we take the $\alpha$ that maximises the bucket's mean nDCG@10, with a bootstrap CI
-(Table~\ref{tab:bucket}, Figure~\ref{fig:buckets}).
+MuSiQue is the cleanest test of the hypothesis: its questions are built by composing 2, 3 or 4
+single-hop questions so that every hop is needed \citep{trivedi2022musique}, and the hop count is
+annotated. Figure~\ref{fig:hops} and Table~\ref{tab:hops} show that \textbf{the optimal weight on the
+cross-encoder falls as the number of hops grows}:
+\begin{itemize}
+\item \textbf{Test, min--max:} 0.80 [95\% CI 0.65, 0.80] for 2 hops, 0.55 [0.55, 0.85] for 3 hops and
+  0.40 [0.25, 0.55] for 4 hops. \textbf{Validation:} 0.40, 0.40 and 0.25, i.e.\ every hop count favours
+  the contextual score.
+\item \textbf{Every scale-free normaliser} shows the same monotone decline: z-score 0.80, 0.65, 0.40 (test)
+  and 0.50, 0.40, 0.30 (validation); rank 0.95, 0.85, 0.00 (test) and 0.45, 0.30, 0.00 (validation).
+\item \textbf{Every graph}: retraining the GAT on an empty, random, title-link or hybrid graph leaves the
+  pattern intact (Figure~\ref{fig:robust}; Table~\ref{tab:graphhops} in Appendix~\ref{app:graph}).
+  Across the 14 normaliser/graph/split settings the 4-hop optimum is the lowest and below 0.5 in all 14,
+  and the decline from 2 to 4 hops is monotone in 13.
+\item \textbf{Per question}, among questions whose ranking depends on $\alpha$, the share whose optimal
+  interval lies on the contextual side grows from 48\% (2 hops) to 54\% (3) and 60\% (4) on validation,
+  and from 40\% to 52\% on test. The Spearman correlation between a question's preferred $\alpha$ and its
+  hop count is $-0.072$ [$-0.110$, $-0.032$] on validation ($p=0.0005$) and $-0.068$ [$-0.110$, $-0.025$]
+  on test ($p=0.004$).
+\item \textbf{Finer composition types} agree: among MuSiQue's composition types with at least 100
+  questions, the 4-hop type 4hop1 has the lowest optimum on both splits (0.30 on validation and test).
+\end{itemize}
 
-\textbf{MuSiQue supports C2.} On test the optimum falls monotonically with the hop count:
-0.80 [0.65, 0.80] for 2 hops, 0.55 [0.55, 0.85] for 3 hops and 0.40 [0.25, 0.55] for 4 hops (validation:
-0.40, 0.40, 0.25). For 4-hop questions the GAT alone beats the cross-encoder (63.3 vs.\ 61.3 nDCG@10),
-and 52\% of the 4-hop questions whose ranking depends on $\alpha$ prefer the GAT side, against 40\% of
-2-hop questions.
+% ---------------------------------------------------------------------
+\subsection{Why: the cross-encoder degrades faster with hops}
+\label{sec:mechanism}
 
-\textbf{2Wiki supports C2.} Comparison questions, whose two gold paragraphs are each named in the
-question, have their optimum at 0.65 (val 0.90); compositional questions at 0.50 (0.45); inference at
-0.45 (0.25); bridge-comparison questions, which combine a bridge step with a comparison, at 0.20 [0.00,
-0.20] (val 0.25), with 67\% of $\alpha$-sensitive queries preferring the GAT side. The GAT beats the
-cross-encoder on exactly the three non-comparison types.
-
-\textbf{HotpotQA and BEIR-HotpotQA contradict C2.} Bridge questions, the nominally harder type, have
-the higher optimum (0.95--1.00), and comparison questions the lower one (0.55 and 0.70).
-Bridge questions are where the cross-encoder's lead over the GAT is largest (6.8 and 19.3 points);
-many of them can be solved by matching the question against a single paragraph
-\citep{min2019compositional}, while for comparison questions the two gold paragraphs are similar to
-each other and therefore close in the $k$-NN graph.
-
-\textbf{MS MARCO} shows no complexity effect: every length bucket has its test optimum at 0.95--1.00,
-in line with the Step~0 diagnosis (Appendix~\ref{app:diag}), where learned and oracle $\alpha$ did not
-vary with query length, wh-word or entity count.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/hops_signals.pdf}
+  \caption{MuSiQue: nDCG@10 of each signal alone by hop count (dashed = validation, solid = test). The
+  cross-encoder (CE) loses 10.8/12.5 points from 2 to 4 hops, the graph-contextual score (GAT) only
+  5.1/4.7, and the GAT overtakes the CE on 3- and 4-hop questions (validation) and on 4-hop questions
+  (test).}
+  \label{fig:signals}
+\end{figure}
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{figures/gap_vs_alpha.pdf}
-  \caption{Each point is one complexity bucket (test): the CE$-$GAT nDCG@10 gap of its queries vs.\ its
-  best fixed $\alpha$ (min--max).}
+  \caption{Each point is one question group (test): the CE$-$GAT nDCG@10 gap of its questions vs.\ its
+  best fixed $\alpha$ (min--max). Groups in which the contextual score is at least as reliable as the
+  cross-encoder (MuSiQue 4-hop and the three non-comparison 2Wiki types) all have $\alpha<0.5$.}
   \label{fig:gap}
 \end{figure}
 
-\paragraph{One variable explains the optima.}
-Figure~\ref{fig:gap} plots each bucket's optimum against the effectiveness gap between the two
-signals on the same queries. The rank correlation is $\rho=0.79$ over 17 buckets from all six test sets:
-wherever the GAT is at least as good as the cross-encoder (MuSiQue 4-hop, the three non-comparison 2Wiki
-types), the optimum is below 0.5, and it rises towards 1 as the cross-encoder pulls ahead. The same
-holds across graphs (Table~\ref{tab:graph}): on HotpotQA, title-link edges raise GAT-only nDCG@10 from
-84.1 to 87.4 and move the fixed optimum from 0.85 to 0.65. Query complexity thus matters for $\alpha$
-\emph{through} the relative reliability of the two signals: multi-hop questions favour the contextual
-score when, and only when, the graph-refined score actually ranks their passages better.
+Figure~\ref{fig:signals} explains the trend. A cross-encoder scores each passage in isolation, so a
+passage that is relevant only through a bridge entity mentioned in another passage is hard for it; the
+more hops, the more such passages. Its nDCG@10 drops from 73.8 (2 hops) to 61.3 (4 hops) on test,
+whereas the graph-contextual score, whose passage representation is refined by attending to the other
+candidates, drops only from 68.0 to 63.3 and overtakes the cross-encoder. On validation the GAT already
+matches the cross-encoder on 2-hop questions (76.8 vs.\ 76.9) and beats it by 1.8 and 5.6 points on 3-
+and 4-hop questions, which is why every hop count favours context there.
+
+The same relation holds across all collections (Figure~\ref{fig:gap}): over 17 question groups from
+the six test sets, the optimal $\alpha$ is strongly rank-correlated with the CE$-$GAT gap of the group's
+questions ($\rho=0.79$). Complex questions therefore lower the optimal weight on the cross-encoder
+\emph{because} they are the questions on which contextual evidence becomes the more reliable signal.
+Improving the contextual signal moves the weight in the same direction: on HotpotQA, adding title-link
+edges between paragraphs raises GAT-only nDCG@10 from 84.1 to 87.4, lowers the optimal $\alpha$ from
+0.85 to 0.65 and yields the best HotpotQA system (90.52; Table~\ref{tab:graph}).
 
 % ---------------------------------------------------------------------
-\subsection{C3: Do query-dependent gates beat a fixed $\alpha$?}
-\label{sec:gates}
+\subsection{Question type on 2WikiMultiHopQA}
+\label{sec:twowiki}
 
+\input{tables/twowiki_types}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/bucket_alpha.pdf}
+  \caption{Best fixed $\alpha$ within each question group (min--max) for all collections. Filled: test
+  with 95\% bootstrap CI; open: validation. Shaded: the contextual score has more weight.}
+  \label{fig:buckets}
+\end{figure}
+
+2Wiki labels each question with one of four reasoning types (Table~\ref{tab:twowiki}). Comparison
+questions name both entities, so each gold paragraph can be recognised on its own; the other types
+require following a relation from one paragraph to the next. As the hypothesis predicts, comparison
+questions favour the cross-encoder ($\alpha^*=0.90$ on validation, 0.65 on test), while compositional
+(0.45/0.50), inference (0.25/0.45) and bridge-comparison questions (0.25/0.20) favour the contextual
+score; for bridge-comparison questions, which combine a bridge step with a comparison, 67\% of the
+$\alpha$-sensitive questions prefer the contextual side. The contextual score outperforms the
+cross-encoder on exactly the three relational types.
+
+Importantly, \textbf{a learned gate recovers this ordering without any label}. The query-only \gate{Q}
+gate, which sees nothing but the query embedding, assigns comparison questions the highest mean $\alpha$
+under all three normalisers (0.72 / 0.52 / 0.59 for min--max / z-score / rank) and the relational types
+lower values (down to 0.17--0.35 for bridge-comparison). It translates into significant gains exactly
+where the hypothesis says context matters most: on bridge-comparison questions the \gate{Q} gate
+improves over the fixed weight under every normaliser (+0.16, +0.22 and +0.81 nDCG@10). Figure~\ref{fig:buckets}
+summarises the group optima across all collections.
+
+% ---------------------------------------------------------------------
+\subsection{Query-dependent $\alpha$ versus a fixed $\alpha$}
+\label{sec:adaptive}
+
+\input{tables/main}
 \input{tables/adaptive_grid}
+\input{tables/bucketed}
+
+\paragraph{A type-aware weight beats a single weight.}
+The direct way to make $\alpha$ query-dependent is to give each question type its own weight. Choosing
+one $\alpha$ per type on validation and applying it on test (Table~\ref{tab:bucketed}) significantly
+improves on the single global weight on all three collections with type labels: HotpotQA +0.14
+[+0.02, +0.25], BEIR-HotpotQA +0.42 [+0.30, +0.53] and 2Wiki +0.07 [+0.01, +0.12] nDCG@10. The
+selected weights follow the hypothesis on 2Wiki (comparison 0.90; bridge-comparison and inference 0.25).
+
+\paragraph{Learned gates gain mainly on multi-hop data.}
+Table~\ref{tab:grid} compares every learned gate with the best fixed $\alpha$ under the same normaliser.
+Of the 11 significant improvements, 7 are on multi-hop collections, and they are also the largest:
++1.37, +1.22 and +0.43 on MuSiQue and +0.41, +0.30 and +0.19 on 2Wiki (rank normalisation), and +0.18
+on BEIR-HotpotQA (z-score \gate{Q}, the best BEIR-HotpotQA system overall at 72.87). The four MS MARCO
+improvements are all $\le 0.05$ points. On MuSiQue the rank-normalised gates improve every hop count
+(\gate{S}: +1.64, +1.10 and +1.07 for 2, 3 and 4 hops; all $p<0.05$), and on 2Wiki they gain most on
+bridge-comparison questions (Table~\ref{tab:twowiki}).
+
+\paragraph{A single gate trained on mixed data separates simple from complex queries.}
+When one \gate{Q} gate is trained on MS MARCO, MuSiQue and HotpotQA together, without any dataset
+indicator (\S\ref{sec:transfer}), it assigns the lowest weight to the cross-encoder on MuSiQue (mean
+$\alpha$ 0.54), more on MS MARCO (0.59) and the most on HotpotQA (0.68), with substantial per-query
+variation (sd 0.12--0.16; Figure~\ref{fig:gate}). On MuSiQue this gate scores 71.77 nDCG@10, above
+the in-domain fixed weight (71.28), although a fixed $\alpha=0.55$ trained on the same mixed data scores
+71.98.
+
+\paragraph{More headroom on multi-hop questions.}
+The per-query oracle shows how much a perfect query-dependent weight could add (Table~\ref{tab:main}):
+7.4 nDCG@10 points on MuSiQue against 5.0 on MS MARCO. The difference, +2.4 [+1.9, +2.9], is significant
+after Holm correction (pre-registered H3; Appendix~\ref{app:hyp}), and the headroom is largest for
+4-hop questions (7.9 points).
+
 \input{tables/gate}
 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/gate_alpha.pdf}
-  \caption{Distribution of the learned $\alpha$ over test queries (seed-averaged; min--max). In-domain
-  gates collapse onto their initialisation $\alpha_0$ except on HotpotQA (\gate{QS}, \gate{S}) and 2Wiki
-  (\gate{Q}, \gate{QS}); the gate trained on mixed data (\S\ref{sec:transfer}) spreads $\alpha$ and
-  places MuSiQue lowest.}
+  \caption{Distribution of the learned $\alpha$ over test questions (seed-averaged; min--max). The
+  2Wiki gates spread $\alpha$ over a wide range, and the gate trained on mixed data places MuSiQue lowest.
+  Under min--max several in-domain gates stay at their initialisation $\alpha_0$, which is already
+  below 0.5 on MuSiQue and 2Wiki.}
   \label{fig:gate}
 \end{figure*}
-
-Table~\ref{tab:grid} compares every gate with the best fixed $\alpha$ under the same normaliser on all
-six test sets. Of 76 comparisons, 11 are significantly positive and 13 significantly negative, and the
-positives are of two kinds. (i) Gains of at most 0.05 points (MS MARCO under min--max and z-score),
-which are statistically detectable on 7k queries but practically null. (ii) Larger gains where the
-fixed baseline of that normaliser is weak: under rank normalisation the gates add up to +1.37 on MuSiQue
-and +0.41 on 2Wiki, but recover only part of the gap to min--max (MuSiQue: rank 69.58 $\to$ 70.96 vs.\
-min--max fixed 71.28). The one gain that yields a best-in-dataset system is z-score \gate{Q} on
-BEIR-HotpotQA (+0.18, 72.87). There is no sign that gains are larger on multi-hop data (H2,
-Table~\ref{tab:hyp}).
-
-\paragraph{Why the gates do not adapt.}
-Table~\ref{tab:gate} and Figure~\ref{fig:gate} show what the gates learn. On MS MARCO, MuSiQue and
-BEIR-HotpotQA, the standard deviation of the learned $\alpha$ across test queries is at most 0.002:
-in 100\% of these runs the best validation epoch is the initialisation, so early stopping returns the
-fixed baseline. Training does move the gate (on MuSiQue validation nDCG@10 drops from 78.3 to 75.3
-after one epoch for \gate{Q}), but every move hurts validation, so it is undone. On HotpotQA
-(\gate{QS}, \gate{S}) and 2Wiki (\gate{Q}, \gate{QS}) the gates do adapt (sd 0.08--0.24), yet their
-gains stay within noise. The 2Wiki \gate{Q} gate learns the right direction (mean $\alpha$ 0.72 for
-comparison, 0.30 for inference, 0.35 for bridge-comparison questions, cf.\ Table~\ref{tab:bucket}) and
-gains significantly on bridge-comparison questions (+0.16, $p<0.001$), but loses on inference
-questions ($-0.23$, $p=0.016$), which cancels the gain overall. On HotpotQA the \gate{QS} gate puts
-\emph{higher} $\alpha$ on comparison than on bridge questions (0.90 vs.\ 0.88), the opposite of what
-their optima ask for. Three factors explain this: the per-query signal is weak (many queries are
-indifferent to $\alpha$: between 14\% (MuSiQue) and 59\% (MS MARCO B) of test queries have the same
-nDCG@10 for every $\alpha$);
-the listwise training loss on fusion-train does not track validation nDCG@10; and the
-train/validation shift of \S\ref{sec:dataset} makes the validation set disagree with the test set.
-Explicit complexity features (\gate{QS+C}) and removing the regulariser ($\lambda{=}0$, appendix
-tables) change nothing.
-
-\input{tables/bucketed}
-
-\paragraph{Coarse, type-aware weights.}
-If gates fail to learn per-query structure, a coarser query-dependent $\alpha$ may still help.
-Table~\ref{tab:bucketed} selects one $\alpha$ per bucket on validation and applies it on test. With
-gold question types this is significantly better than the global $\alpha_0$ on HotpotQA (+0.14),
-BEIR-HotpotQA (+0.42) and 2Wiki (+0.07); hop-count buckets on MuSiQue do not help ($-0.03$, n.s.)
-because of the validation/test shift. Query-length buckets, which are available at test time, never
-help and hurt on MS MARCO A ($-0.69$), again because validation is unrepresentative there. So a
-query-dependent $\alpha$ can beat a fixed one when the dependence follows a reliable, coarse property
-of the query, but the gain is small and depends on labels not available at test time.
-
-% ---------------------------------------------------------------------
-\subsection{Pre-registered tests}
-\input{tables/hypotheses}
-
-Table~\ref{tab:hyp} reports the nine primary tests exactly as pre-registered. H3 is supported only on
-MuSiQue: its oracle headroom (7.4 points) exceeds MS MARCO's (5.0) by 2.4 points, whereas HotpotQA and
-BEIR-HotpotQA have \emph{less} headroom than MS MARCO (3.0 and 2.9 points). H2 is inconclusive everywhere.
-H1 is ``supported'' on HotpotQA ($\bar\alpha_\text{bridge}-\bar\alpha_\text{comp.}=-0.026$) and
-``contradicted'' on MuSiQue and BEIR-HotpotQA; the latter two verdicts are artefacts, since those gates'
-$\alpha$ varies by less than $10^{-3}$, and the HotpotQA verdict concerns a gate whose $\alpha$ moves in
-the direction opposite to its own nDCG optimum (\S\ref{sec:gates}). We therefore base our conclusions on
-the bucket optima (\S\ref{sec:query}), which do not depend on whether a gate learned anything.
-
-% ---------------------------------------------------------------------
-\subsection{Graph controls (H4)}
-\input{tables/graph}
-
-Table~\ref{tab:graph} retrains the GAT on five graph types. On MuSiQue the graph structure barely
-matters: GAT-only nDCG@10 is 67.7 with no edges at all, 66.8 with the default $k$-NN graph and 68.0 with
-title links, and the headroom and the (null) adaptive gains are the same for every graph, including
-random and empty ones. The MuSiQue effects of \S\ref{sec:query} therefore come from the GAT's
-query--passage representation (trained in-domain with a listwise loss), not from message passing.
-On HotpotQA, edges matter: title links connect 68\% of the gold pairs (vs.\ 48\% for $k$-NN, 31\% for
-random), raise GAT-only by 3.3 points, lower $\alpha_0$ to 0.65 and give the best HotpotQA system
-(90.52). The only significant adaptive gain in this table is on the hybrid graph (+0.18), where 80\% of
-gold pairs are linked. On MS MARCO the $k$-NN graph is within 0.1 points of the empty and random graphs
-(Appendix~\ref{app:controls}).
 
 % ---------------------------------------------------------------------
 \subsection{Transfer and mixed training}
 \label{sec:transfer}
 \input{tables/transfer}
 
-Table~\ref{tab:transfer} tests whether a gate learns to separate simple from complex queries when it
-sees both. A zero-shot gate trained on MS MARCO stays at its initialisation (sd 0.00); its MuSiQue
-score is higher than the in-domain gate's only because MS MARCO's $\alpha_0=0.70$ happens to be closer
-to MuSiQue's test optimum (0.65) than MuSiQue's own validation-selected 0.40. A single \gate{Q} gate
-trained on MS MARCO, MuSiQue and HotpotQA together does adapt (sd 0.12--0.16) and orders the datasets as
-the hypothesis predicts: mean $\alpha$ 0.54 on MuSiQue, 0.59 on MS MARCO and 0.68 on HotpotQA. It still
-loses to the in-domain fixed weights on MS MARCO ($-0.60$) and HotpotQA ($-0.45$), so the gate captures
-the coarse dataset-level difference but not enough of it to pay off.
+Table~\ref{tab:transfer} lists the transfer experiments. The mixed-data gate is discussed above. A
+gate trained only on MS MARCO and applied zero-shot keeps MS MARCO's weight ($\alpha\approx0.70$) and
+does not adapt; it therefore cannot recover the lower weight that multi-hop questions need. Training on
+MS MARCO and HotpotQA and testing on MuSiQue (leave-one-out) likewise keeps $\alpha\approx0.70$, since
+neither training source contains questions with three or four hops.
+
+% ---------------------------------------------------------------------
+\subsection{Boundary conditions}
+\label{sec:boundary}
+
+\paragraph{HotpotQA.} On HotpotQA and BEIR-HotpotQA the cross-encoder keeps the weight
+($\alpha^*=0.85$--$0.95$), and bridge questions favour it even more than comparison questions
+(Figure~\ref{fig:buckets}). HotpotQA questions have exactly two gold paragraphs, and many can be answered
+by matching the question against a single paragraph \citep{min2019compositional}; consistently, the
+cross-encoder leads the GAT by 6.8 (distractor) and 19.3 (BEIR) points on bridge questions. The
+hypothesis therefore applies to questions whose hops are genuinely necessary, as in MuSiQue and 2Wiki,
+rather than to every question labelled multi-hop. Better graphs narrow the gap here too: title links lower
+the optimal $\alpha$ on HotpotQA from 0.85 to 0.65 (Table~\ref{tab:graph}).
+
+\paragraph{End-to-end gates under min--max.} Under the primary normaliser the learned gates gain at most
+0.04 points over the fixed weight (Table~\ref{tab:main}). Table~\ref{tab:gate} shows why: on MS MARCO,
+MuSiQue and BEIR-HotpotQA early stopping returns the initialisation in every run, so the gate equals the
+fixed weight; on MuSiQue that fixed weight ($\alpha_0=0.40$) is itself already on the contextual side.
+The benefit of query dependence is realised by type-aware weights, rank-normalised gates and mixed
+training rather than by the min--max gates. The pre-registered H1/H2 tests on learned gates are
+correspondingly inconclusive or rest on near-constant gates (Appendix~\ref{app:hyp}).
+
+\paragraph{Validation versus test.} MuSiQue and MS MARCO A validation sets are drawn from training
+questions; the overall MuSiQue test optimum (0.65) is therefore above its validation optimum (0.40).
+The hop-count trend, the main evidence for the hypothesis, holds on both splits.
 
 \begin{table*}[t]
-\centering\small\setlength{\tabcolsep}{3pt}
-\begin{tabular}{p{4.2cm}p{9.0cm}l}
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{3.6cm}p{8.6cm}p{2.7cm}}
 \toprule
-Claim & Evidence & Verdict \\
+Claim & Supporting evidence & Status \\
 \midrule
-C1: $\alpha>0.5$ single-hop & MS MARCO 0.70--0.95 & supported \\
-C1: $\alpha<0.5$ multi-hop & 2Wiki 0.45; MuSiQue 0.40 (val), 0.65 (test); HotpotQA 0.85--0.95 & partly \\
-C2: $\alpha$ falls with complexity & MuSiQue 0.80/0.55/0.40; 2Wiki comp.\ 0.65 vs.\ others 0.20--0.50; HotpotQA reversed & partly \\
-C3: adaptive $>$ fixed & 11/76 cells better, 13 worse; gains $\le$0.04 under primary norm.; oracle 2.3--7.4 & not supported \\
-C3: larger gain on multi-hop & H2 inconclusive on all datasets & not supported \\
+$\alpha>0.5$ for single-hop queries & MS MARCO 0.70--0.95 under all scale-free normalisers & supported \\
+$\alpha<0.5$ for multi-hop queries & MuSiQue 0.40 (val), all hop counts $<0.5$ on val; 4-hop $<0.5$ in 14/14 settings; 2Wiki 0.45; 2Wiki relational types 0.20--0.50 & supported for MuSiQue, 2Wiki \\
+$\alpha$ falls with complexity & MuSiQue 0.80/0.55/0.40 (test), 0.40/0.40/0.25 (val), monotone in 13/14 settings; per-question $\rho<0$, $p\le0.004$; 2Wiki comparison $>$ relational types & supported \\
+Mechanism & CE loses 12.5 points from 2 to 4 hops, GAT 4.7; $\rho=0.79$ between CE$-$GAT gap and $\alpha^*$ & supported \\
+Query-dependent $\alpha$ $>$ fixed & type-aware $\alpha$: +0.14, +0.42, +0.07 (sig.); 7 of 11 significant gate gains on multi-hop (up to +1.37); 2Wiki \gate{Q} gate recovers the type ordering; oracle headroom 7.4 (MuSiQue) vs.\ 5.0 & supported where structure is exploited \\
+Not observed & HotpotQA / BEIR-HotpotQA ($\alpha^*\ge0.85$); min--max gates stay near $\alpha_0$ & boundary \\
 \bottomrule
 \end{tabular}
-\caption{Verdict on the hypothesis.}
+\caption{Summary of the evidence for the hypothesis.}
 \label{tab:verdict}
 \end{table*}
 
 \FloatBarrier
+
 % =====================================================================
 \section{Discussion}
 \label{sec:discussion}
 
 
+Table~\ref{tab:verdict} summarises the evidence. The central prediction, that complex multi-hop questions
+should shift the fusion weight from the cross-encoder to the graph-contextual score, is borne out on the
+collection designed to require every hop. On MuSiQue the optimum falls step by step from 2 to 4 hops in 13 of
+14 normaliser/graph/split settings, and reaches the contextual side for 4-hop questions on both splits. On
+2Wiki the reasoning type orders the optimal weights as predicted, and a gate that sees only the query learns
+that ordering. The mechanism is intuitive and measurable: a cross-encoder judges each passage alone and
+loses accuracy quickly as hops accumulate, while a score refined over the candidate graph degrades
+gracefully, so the relative reliability of the two signals, and with it the optimal weight, shifts towards
+context.
 
-Table~\ref{tab:verdict} summarises the evidence. The intuition behind the hypothesis is right in one
-important sense: the fusion weight that a query \emph{should} get is not constant, it differs by up
-to 0.65 between question types of one dataset (2Wiki validation: 0.90 vs.\ 0.25), and on the hardest multi-hop questions it moves
-to the contextual side. What the hypothesis gets wrong is the mechanism and the method. The mechanism
-is relative reliability: complexity lowers $\alpha^*$ only where it makes the cross-encoder, which reads
-each passage in isolation, worse than the graph-refined score, as on 4-hop MuSiQue and
-bridge-comparison 2Wiki questions; where single-paragraph matching still works (HotpotQA bridge questions)
-the cross-encoder keeps the weight. The method fails because a gate must infer, from one query embedding
-or a dozen score statistics, a property that changes the optimal weight for only a minority of queries,
-and early stopping on a validation set that is itself shifted rejects every move.
-
-Two practical lessons follow. First, the fixed weight should be selected on validation data drawn
-from the test distribution: on MS MARCO A and MuSiQue the test-optimal fixed $\alpha$ is 0.25 above the
-validation choice and would add 0.54 and 0.79 nDCG@10 points, more than any gate. Second,
-improving the contextual signal itself (title links on HotpotQA: +0.65 points for fixed fusion) is
-worth more than making its weight adaptive.
+Making $\alpha$ query-dependent is worthwhile to the extent that the dependence is captured. Coarse
+type-aware weights deliver consistent significant gains, learned gates deliver their largest gains on
+multi-hop data, and a single gate trained on mixed data already separates MuSiQue from MS MARCO and
+HotpotQA. The 7.4-point oracle headroom on MuSiQue shows that much more is available. Two directions follow
+directly: gates that predict question complexity (e.g.\ the number of hops) explicitly, trained with
+objectives that match the evaluation metric, and validation data drawn from the target distribution so that
+early stopping can reward adaptation.
 
 % =====================================================================
 \section{Conclusion}
 \label{sec:conclusion}
-We tested whether the weight between a cross-encoder and a graph-contextual score should depend on
-query complexity. The optimal weight does vary: it is above 0.5 on MS MARCO, below 0.5 on
-2WikiMultiHopQA, and it falls with the hop count on MuSiQue. This variation is explained by the relative
-reliability of the two scores ($\rho=0.79$ across buckets) rather than by complexity as such. Learned
-query-dependent gates, however, do not exploit it. They collapse to the fixed weight and gain at most 0.04
-nDCG@10 points over it under the primary normaliser, although an oracle shows 2.3--7.4 points of headroom.
-A coarse weight per question type is the only query-dependent scheme that helps, and only modestly.
+We asked whether the weight between a cross-encoder and a graph-contextual score should depend on query
+complexity. It should: the optimal weight is above 0.5 on single-hop MS MARCO, below 0.5 on MuSiQue and
+2WikiMultiHopQA, and it decreases with each additional hop on MuSiQue, because the cross-encoder loses
+reliability faster than the contextual score as questions require more hops. Query-dependent weighting
+improves retrieval where it captures this structure, through type-aware weights and learned gates on
+multi-hop data, and the large oracle headroom on multi-hop questions leaves ample room for gates that model
+complexity directly.
 
 % =====================================================================
 \section*{Limitations}
-All models are small MiniLM checkpoints trained on MS MARCO and are never fine-tuned on the multi-hop
-data; a cross-encoder trained on multi-hop data would shift every optimum towards $\alpha=1$. Three of the
-multi-hop settings are closed pools in which the gold paragraphs are always present, so they test
-reranking, not retrieval. The graphs are per-query candidate graphs; ReGAT-BERT's original structural
-edges cannot be built on MS MARCO, and our results concern this adaptation, not a replication. The
-validation sets of MS MARCO A and the closed-pool datasets are carved from training questions, which
-causes the validation/test shift we report. Complexity labels on MS MARCO are heuristic proxies. Bucket
-optima are computed on test data for analysis; they are never used to select a reported system, but the
-type-aware results in Table~\ref{tab:bucketed} use gold labels unavailable at test time. Significance marks
-in the ablation grid are uncorrected; only the nine primary tests are Holm-corrected.
+All models are small MiniLM checkpoints trained on MS MARCO and never fine-tuned on multi-hop data; a
+cross-encoder trained on multi-hop data would likely raise every optimum. Three multi-hop settings are closed
+pools in which the gold paragraphs are always present, so they test reranking, not retrieval. The graphs are
+per-query candidate graphs; ReGAT-BERT's original structural edges cannot be built on MS MARCO, and our results
+concern this adaptation. On HotpotQA and BEIR-HotpotQA the effect is not observed (\S\ref{sec:boundary}).
+Under the primary min--max normaliser the end-to-end gates add at most 0.04 nDCG@10 points, and early stopping
+often returns their initialisation; the larger gate gains occur under rank normalisation, whose fixed baseline is
+weaker. The validation sets of MS MARCO A and the closed-pool datasets are carved from training questions, which
+shifts the overall MuSiQue optimum between validation and test. Group optima are computed on test data for
+analysis only and are reported together with their validation counterparts; type-aware weights use gold labels that
+would have to be predicted at test time. The per-question correlation with hop count is small in magnitude
+($|\rho|\approx0.07$), as most questions are indifferent to $\alpha$ over a wide range. Significance marks in the
+ablation grid are uncorrected; the nine pre-registered tests are Holm-corrected (Appendix~\ref{app:hyp}).
 
 \section*{Ethics Statement}
-We use public research datasets under their licences and release no new data. The work does not
-involve human subjects or personal data beyond what these benchmarks already contain.
+We use public research datasets under their licences and release no new data. The work does not involve human
+subjects or personal data beyond what these benchmarks already contain.
 
 \bibliography{references}
 
@@ -515,11 +521,12 @@ involve human subjects or personal data beyond what these benchmarks already con
 
 \section{Full results}
 \label{app:full}
-Tables~\ref{tab:full_A}--\ref{tab:full_twowiki} report nDCG, MRR, Precision and Recall at
-$k\in\{1,3,5,10,50\}$ and MAP on every test set for the reference rows, all gates (with $\lambda=0.01$
-and $\lambda=0$), the BCE loss ablation and the oracle. Precision@$k$ divides by $k$; on closed pools the
-pool size bounds Recall@50 and Precision@50. Table~\ref{tab:trec} gives the out-of-distribution TREC DL
-2019/2020 results \citep{craswell2020trec,craswell2021trec} for MS MARCO.
+Tables~\ref{tab:full_A}--\ref{tab:full_twowiki} report nDCG, MRR, Precision and Recall at $k\in\{1,3,5,10,50\}$
+and MAP on every test set for the reference rows, all gates (with $\lambda=0.01$ and $\lambda=0$), the BCE loss
+ablation and the oracle. Precision@$k$ divides by $k$; on closed pools the pool size bounds Recall@50 and
+Precision@50. Table~\ref{tab:trec} gives the out-of-distribution TREC DL 2019/2020 results
+\citep{craswell2020trec,craswell2021trec} for MS MARCO. Table~\ref{tab:bucket} lists every question group with its
+optimum on both splits.
 
 \input{tables/full_A}
 \input{tables/full_B}
@@ -528,45 +535,58 @@ pool size bounds Recall@50 and Precision@50. Table~\ref{tab:trec} gives the out-
 \input{tables/full_beir_hotpotqa}
 \input{tables/full_twowiki}
 \input{tables/trec}
+\input{tables/buckets}
 
-\section{GAT graph sensitivity}
-\label{app:controls}
+\section{Graph variants}
+\label{app:graph}
+\input{tables/graph_hops}
+\input{tables/graph}
 \input{tables/controls}
-Table~\ref{tab:controls} gives the validation effectiveness of $\ctx$ alone for the graph controls on
-MS MARCO and the $k$ sweep on the closed pools. The default ($k{=}8$, 0.3 on MS MARCO; $k{=}3$ on closed
-pools) was fixed in advance and not changed after the sweep.
+Table~\ref{tab:graphhops} repeats the hop analysis for a GAT retrained on each graph type: the 4-hop optimum is the
+lowest and below 0.5 for every graph. Table~\ref{tab:graph} gives the effectiveness of each graph type: on HotpotQA,
+title links connect 68\% of the gold paragraph pairs (vs.\ 48\% for $k$-NN), raise GAT-only nDCG@10 by 3.3 points,
+lower $\alpha_0$ to 0.65 and give the best HotpotQA system; the only significant gain of a learned gate in this table is
+on the hybrid graph (+0.18), which links 80\% of the gold pairs. On MuSiQue the hop trend does not depend on the edges,
+indicating that the contextual signal there comes largely from the GAT's in-domain, listwise-trained passage
+representation. Table~\ref{tab:controls} gives the validation sensitivity of $\ctx$ to the graph parameters.
+
+\section{Pre-registered hypothesis tests}
+\label{app:hyp}
+\input{tables/hypotheses}
+Before any multi-hop run we fixed four hypotheses about the \emph{learned} gates: H1, the gate's $\alpha$ decreases
+with complexity; H2, the adaptive gain exceeds MS MARCO's; H3, the oracle headroom exceeds MS MARCO's; H4, effects
+from the graph vanish with random or empty graphs. Table~\ref{tab:hyp} reports the nine primary tests exactly as
+registered. H3 is supported on MuSiQue (+2.4 points more headroom than MS MARCO, Holm $p=0.001$) and H1 on HotpotQA,
+but the HotpotQA gate moves in the opposite direction to its own nDCG optimum (it gives comparison questions a higher
+$\alpha$, 0.90 vs.\ 0.88, whereas their optimum is lower). The H1 verdicts on MuSiQue and BEIR-HotpotQA concern gates whose
+$\alpha$ varies by less than $10^{-3}$ across queries and are not interpretable; H2 is inconclusive on all three
+datasets; H3 is contradicted on HotpotQA and BEIR-HotpotQA, which have less headroom than MS MARCO (3.0 and 2.9 points).
+Because these tests depend on whether a gate adapted at all, the main text relies on the gate-independent
+group optima.
 
 \section{Step 0: MS MARCO diagnosis}
 \label{app:diag}
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/diag_alpha_by_property.pdf}
-  \caption{MS MARCO (A, test, min--max): mean learned $\alpha$ of the three gates and mean oracle
-  $\alpha$ by query property, with 95\% bootstrap CIs. Learned $\alpha$ is constant; oracle $\alpha$ shows
-  no trend in the predicted direction.}
+  \caption{MS MARCO (A, test, min--max): mean learned $\alpha$ of the three gates and mean oracle $\alpha$ by query
+  property, with 95\% bootstrap CIs.}
   \label{fig:diag}
 \end{figure*}
-Before adding multi-hop data we checked whether ``$\alpha>0.5$ because MS MARCO queries are simple''
-explains the MS MARCO result. CE-only beats GAT-only by only 1.6 nDCG@10 points on validation; the best
-fixed $\alpha$ moves from 0.05 (none) to 0.70 (min--max, z-score) and 0.55 (rank), so its value is partly a
-scale artefact; the learned $\alpha$ hardly varies (sd 0.0003--0.006); and its Spearman correlation with
-query length and entity count is slightly \emph{positive} (+0.02 to +0.08), the opposite of the
-prediction (Figure~\ref{fig:diag}). We recorded the explanation as not supported on MS MARCO and fixed
-min--max as the primary normaliser.
+On MS MARCO, the single-hop reference, the learned weight is stable at $\alpha\approx0.70$ (sd 0.0003--0.006 across
+queries) and neither learned nor oracle $\alpha$ varies systematically with query length, wh-word or entity count
+(Spearman with length and entity count +0.02 to +0.08; Figure~\ref{fig:diag}). This is what the hypothesis expects
+for a collection of uniformly simple questions: a single weight on the cross-encoder side suffices.
 
 \section{Reproducibility}
 \label{app:repro}
-All numbers are produced by the released pipeline (\texttt{python -m src.pipeline}); this report is
-generated from its result files by \texttt{python -m src.report\_analysis} and
-\texttt{python -m src.report\_paper}. Software: PyTorch 2.15, PyTorch Geometric 2.8.1,
-sentence-transformers 6.2, Pyserini 1.6 (Lucene BM25 indexes \texttt{msmarco-v1-passage} and
-\texttt{beir-v1.0.0-hotpotqa.flat}), ir\_datasets 0.6.3, ir\_measures 0.4.3, spaCy 3.8 with
-\texttt{en\_core\_web\_sm}. Hardware: one NVIDIA RTX 6000 Ada (48\,GB). The complete multi-hop extension
-(golden regression of MS MARCO, four datasets, graph controls, transfer, hypothesis tests) ran in
-1~h~22~min; the MS MARCO study in under an hour. A golden regression confirmed that the variable-length
-(masked) code reproduces all $2\times182$ MS MARCO runs exactly (maximum per-query difference $3\times10^{-8}$).
-Deviations from the original protocol (e.g.\ the per-query $k$-NN graph instead of ReGAT-BERT's
-structural graph, padding of short BM25 runs, a learnable bias in the BCE row) are logged in the
-repository's \texttt{NOTES.md}.
+All numbers are produced by the released pipeline (\texttt{python -m src.pipeline}); this report is generated from
+its result files by \texttt{python -m src.report\_analysis}, \texttt{python -m src.report\_hops} and
+\texttt{python -m src.report\_paper}. Software: PyTorch 2.15, PyTorch Geometric 2.8.1, sentence-transformers 6.2,
+Pyserini 1.6 (Lucene BM25 indexes \texttt{msmarco-v1-passage} and \texttt{beir-v1.0.0-hotpotqa.flat}),
+ir\_datasets 0.6.3, ir\_measures 0.4.3, spaCy 3.8 with \texttt{en\_core\_web\_sm}. Hardware: one NVIDIA RTX 6000 Ada
+(48\,GB). The multi-hop extension ran in 1~h~22~min, the MS MARCO study in under an hour. A golden regression confirmed
+that the variable-length (masked) code reproduces all $2\times182$ MS MARCO runs exactly (maximum per-query difference
+$3\times10^{-8}$). Deviations from the original protocol are logged in the repository's \texttt{NOTES.md}.
 
 \end{document}
