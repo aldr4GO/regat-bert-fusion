@@ -414,6 +414,12 @@ does not adapt; it therefore cannot recover the lower weight that multi-hop ques
 MS MARCO and HotpotQA and testing on MuSiQue (leave-one-out) likewise keeps $\alpha\approx0.70$, since
 neither training source contains questions with three or four hops.
 
+On 2WikiMultiHopQA the zero-shot gate (90.99) stays clearly below the in-domain fixed weight (91.75). That
+in-domain weight is context-leaning ($\alpha_0=0.45$) and is chosen consistently on validation and test.
+2Wiki pools are closed and small, so even BM25 reaches 87.77 and the cross-encoder alone 90.77.
+Against that baseline the in-domain fusion adds 0.98 points, while the transferred gate, with
+$\alpha=0.70$ and the MS MARCO GAT, adds only 0.22.
+
 % ---------------------------------------------------------------------
 \subsection{Boundary conditions}
 \label{sec:boundary}
