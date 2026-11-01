@@ -20,5 +20,6 @@ if [ -f requirements.txt ]; then
 else
   $PIP install -r requirements.in
 fi
-"$ENV_PREFIX/bin/python" -c "import torch, torch_geometric, pyserini, ir_datasets, ir_measures; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())"
+"$ENV_PREFIX/bin/python" -c "import spacy; spacy.load('en_core_web_sm')" 2>/dev/null || "$ENV_PREFIX/bin/python" -m spacy download en_core_web_sm
+"$ENV_PREFIX/bin/python" -c "import torch, torch_geometric, pyserini, ir_datasets, ir_measures, spacy; print('torch', torch.__version__, 'cuda', torch.cuda.is_available())"
 "$ENV_PREFIX/bin/java" -version

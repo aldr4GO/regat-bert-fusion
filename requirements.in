@@ -17,3 +17,4 @@ pyyaml
 tqdm
 pytest
 PyStemmer
+spacy
