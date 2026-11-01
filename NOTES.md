@@ -241,3 +241,10 @@ Built from the finished results only (no training, nothing selected on test):
   every normaliser and every graph variant, a tie-robust Spearman(preferred alpha, hops) with bootstrap CI, and per-bucket
   gate gains. Contrary results are kept: HotpotQA/BEIR, min-max gate collapse and the val/test shift are in Sec. 4.7
   ("Boundary conditions") and Limitations; the pre-registered H1-H4 table moved to Appendix C, unchanged.
+
+## Extra E4 run: zero-shot MS MARCO -> 2Wiki (2026-11-01, user request)
+- Deviation: `twowiki` added to `multihop.transfer.zero_shot_datasets` (plan lists MuSiQue/HotpotQA/BEIR only).
+- `src.transfer` got `--settings/--datasets` filters; partial runs replace only their rows in `results/transfer.csv`
+  (pre-run copy: `results/transfer.before_twowiki.csv`). Other rows unchanged.
+- `twowiki@msmarco_gat` s_ctx from the frozen MS MARCO GAT (no training); val GAT-only nDCG@10 90.09 (in-domain GAT 92.58).
+- Result (test nDCG@10, 5 seeds): fixed/Q/QS/S = 90.99/90.99/90.99/90.99, alpha0 0.70; in-domain fixed 91.75 (alpha0 0.45).

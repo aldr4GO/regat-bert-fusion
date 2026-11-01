@@ -69,7 +69,7 @@ hypotheses:
   variants: [Q, QS, S]
 
 transfer:
-  zero_shot_datasets: [musique, hotpotqa, beir_hotpotqa]
+  zero_shot_datasets: [musique, hotpotqa, beir_hotpotqa, twowiki]
   mixed: [A, musique, hotpotqa]
   lodo: {train: [A, hotpotqa], test: musique}
 

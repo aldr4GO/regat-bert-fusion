@@ -92,6 +92,8 @@ def in_domain(cfg, key, norm, dep, lt):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--seeds", nargs="*", type=int, default=None)
+    ap.add_argument("--settings", nargs="*", default=None, help="subset of zero_shot/mixed/lodo (default: all)")
+    ap.add_argument("--datasets", nargs="*", default=None, help="zero-shot test datasets (default: config list)")
     args = ap.parse_args()
     cfg = load_config()
     set_env(cfg)
@@ -108,7 +110,7 @@ def main():
     a_scaler = key_scaler(cfg, "A")
     a_alpha0 = min(max(load_json(results_path(cfg, "A", "alpha0.json"))[pn]["alpha0"], fc["alpha0_clip"][0]),
                    fc["alpha0_clip"][1])
-    zs = [ds for ds in tc["zero_shot_datasets"] if have(f"{ds}@msmarco_gat")]
+    zs = [ds for ds in (args.datasets or tc["zero_shot_datasets"]) if have(f"{ds}@msmarco_gat")]
     if zs:
         settings.append(("zero_shot", ["A"], [(ds, f"{ds}@msmarco_gat") for ds in zs], a_scaler, a_alpha0))
     # 2. mixed and 3. leave-one-dataset-out
@@ -121,6 +123,8 @@ def main():
         else:
             log.warning("skipping %s: missing caches for %s", setting, train_keys)
 
+    if args.settings:
+        settings = [s for s in settings if s[0] in args.settings]
     for setting, train_keys, test_list, scaler, alpha0 in settings:
         tr = concat([make_data(cfg, k, "fusion_train", pn, scaler) for k in train_keys])
         va = concat([make_data(cfg, k, "val", pn, scaler) for k in train_keys])
@@ -146,7 +150,13 @@ def main():
         agg["in_domain_ndcg10"] = [x["ndcg@10"] if x else np.nan for x in indom]
         agg["in_domain_alpha_mean"] = [x["alpha_mean"] if x else np.nan for x in indom]
         agg["ndcg10_minus_in_domain"] = agg.ndcg10_mean - agg.in_domain_ndcg10
-        agg.to_csv(path(cfg, "results_dir", "transfer.csv"), index=False, float_format="%.5f")
+        out = path(cfg, "results_dir", "transfer.csv")
+        if (args.settings or args.datasets) and out.exists():   # partial run: replace only the rows it recomputed
+            old = pd.read_csv(out)
+            keys = ["setting", "train", "test", "variant"]
+            old = old[~old.set_index(keys).index.isin(agg.set_index(keys).index)]
+            agg = pd.concat([old, agg], ignore_index=True)
+        agg.to_csv(out, index=False, float_format="%.5f")
         log.info("transfer:\n%s", agg.to_string(index=False))
 
 
