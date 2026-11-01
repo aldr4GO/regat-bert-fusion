@@ -104,3 +104,66 @@ REGAT_PROFILE=smoke $PY -m src.pipeline --fresh --workers 4               # the 
   json + npz per run (per-query metrics and alphas).
 - `results/stage12_check.json`, `results/{A,B}/stage4_sanity.json`, `results/sem_gap_stats.json`,
   `results/bm25_first_stage.json`: acceptance checks and caveat statistics.
+
+---
+
+# Multi-hop extension (MULTIHOP_EXTENSION_PLAN.md)
+
+Everything is again **one resumable job**. The MS MARCO study must already be finished (it is); the job reuses it.
+All raw data is already downloaded and md5-checked: MuSiQue, HotpotQA, 2Wiki (`data/raw/`), BEIR HotpotQA
+(`data/ir_datasets/beir/`) and its Pyserini index (`data/pyserini/`). The job only re-checks them.
+
+## 1. Optional: smoke test of everything (~30-45 min on a GPU)
+
+```bash
+sbatch slurm/smoke_multihop.sh
+tail -f logs/regat_smoke_multihop_<jobid>.out        # last line: "SMOKE TEST PASSED"
+```
+
+This runs MS MARCO and all four multi-hop datasets on tiny subsets in `data/smoke/`, `cache_smoke/` and
+`results_smoke/`. I ran exactly this script locally on CPU before handing it over.
+
+## 2. Full run
+
+```bash
+sbatch slurm/run_multihop.sh
+tail -f logs/regat_multihop_<jobid>.out
+```
+
+| Order | Stages (`python -m src.pipeline --list` prints all names) | What it does | Device |
+|---|---|---|---|
+| 1 | `golden_A`, `golden_B` | rerun the MS MARCO fusion grid with the refactored (masked) code; it **must** match the old results within 1e-6 (acceptance gate), then the new runs, which carry all the new metrics, replace the old ones (archived in `results/{A,B}/runs_v1/`) | CPU |
+| 2 | `diagnose_msmarco`, `msmarco_edge_stats` | Step 0 diagnostics + primary normaliser (already done once, kept) | CPU |
+| 3 | `musique:*`, `hotpotqa:*` | prep -> cross-encoder -> bi-encoder (+ gate) -> title links / edge stats -> GAT -> s_ctx (+ gate) -> fusion grid (E1, oracle) -> zero-shot s_ctx with the MS MARCO GAT | GPU + CPU |
+| 4 | `<ds>@none|random|title_link|hybrid:*`, `<ds>:knn_sweep` | H4: a GAT per graph type + fusion (primary normaliser), k_nn sweep {2,3,5} on val | GPU + CPU |
+| 5 | `beir_hotpotqa:*` | E2 open retrieval (BM25 top-100 over 5.2M abstracts, ~4M CE pairs) | GPU + CPU |
+| 6 | `tests_multihop`, `transfer` | all unit tests, then E4 (zero-shot, mixed, leave-one-out) | CPU |
+| 7 | `twowiki:*` | optional E6 | GPU + CPU |
+| 8 | `hypotheses` | E3: H1-H4 with Holm, bucket tables, figures, verdicts in NOTES.md | CPU |
+
+Rough total: 3-5 h. Actual times go to `results/pipeline_timing.json`. If one dataset fails a gate, only its later
+stages are skipped; the other datasets continue and the job ends with exit code 1, listing the failure. Fix the cause
+and resubmit: finished stages are skipped.
+
+Useful variants:
+
+```bash
+sbatch slurm/run_multihop.sh --only hypotheses transfer          # recompute named stages
+sbatch slurm/run_pipeline.sh                                     # both parts (finished MS MARCO stages skipped)
+# disable a dataset (e.g. the optional 2Wiki): configs/multihop.yaml -> datasets.twowiki.enabled: false
+```
+
+## 3. Multi-hop outputs
+
+- `results/<dataset>/main_table.csv` (wide) and `main_table_long.csv` (tidy: config, set, metric, mean, std):
+  **nDCG, MRR, P, R @ 1, 3, 5, 10, 50**, MAP, R@2, AllRecall@{2,5,10} for every config and baseline
+  (BM25 / in-pool BM25, SBERT, CE-only, GAT-only, paper row, fixed / Q / QS / S / QSC, oracle). The same columns are
+  produced for MS MARCO (`results/A`, `results/B`) after the golden-regression stage.
+- `results/<dataset>/significance.csv`, `oracle_gap.csv`, `figures/`, `summary.md`; `results/beir_hotpotqa/first_stage.json`
+  (BM25 R@100 / AllR@100 ceiling).
+- `results/<dataset>@<graph>/...`: H4 graph-type variants; `results/<dataset>/gat_controls.csv`: k_nn sweep.
+- `results/hypotheses.csv` (H1-H4: statistic, 95% CI, raw p, Holm p, verdict), `results/bucket_tables/*.csv`,
+  `results/figures_multihop/` (alpha vs hops / type box plots, bucket gains, graph-type comparison).
+- `results/edge_stats.csv` (gold-gold connectivity per graph type), `results/transfer.csv` (E4).
+- `results/diagnostics_msmarco.{csv,json}` (Step 0), `results/primary_norm.json`.
+- `NOTES.md`: hypotheses, Step 0 decision, deviations, and the auto-filled verdicts.
