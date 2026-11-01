@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrrr}
+\toprule
+Dataset & Graph & Degree & Gold pairs & GAT & $\alpha_0$ & Fixed & $\Delta$ adaptive & Headroom \\
+ & & & linked (\%) & nDCG@10 & & nDCG@10 & (best gate) & (oracle) \\
+\midrule
+MuSiQue & none (self-loops) & 0.00 & 0 & 67.7 & 0.35 & 71.75 & -0.03 & 7.7 \\
+ & random (same degrees) & 2.78 & 14 & 67.0 & 0.50 & 71.89 & -0.03 & 6.6 \\
+ & kNN emb. (default) & 2.78 & 27 & 66.8 & 0.40 & 71.28 & +0.00 & 7.4 \\
+ & title link & 0.81 & 19 & 68.0 & 0.35 & 71.97 & +0.00 & 7.6 \\
+ & kNN $\cup$ title & 3.20 & 36 & 67.0 & 0.40 & 71.40 & +0.00 & 7.4 \\
+\midrule
+HotpotQA & none (self-loops) & 0.00 & 0 & 84.6 & 0.85 & 89.98 & +0.02 & 3.0 \\
+ & random (same degrees) & 2.78 & 31 & 83.7 & 0.90 & 89.89 & -0.02 & 2.8 \\
+ & kNN emb. (default) & 2.78 & 48 & 84.1 & 0.85 & 89.87 & +0.02 & 3.0 \\
+ & title link & 0.98 & 68 & 87.4 & 0.65 & 90.52 & +0.05 & 3.5 \\
+ & kNN $\cup$ title & 3.18 & 80 & 85.5 & 0.65 & 89.97 & +0.18$^{\blacktriangle}$ & 3.4 \\
+\bottomrule
+\end{tabular}
+\caption{Graph controls (H4, exploratory): a GAT retrained per graph type, everything else fixed. Degree excludes self-loops; ``gold pairs linked'' = share of supporting-paragraph pairs joined by an edge (test). nDCG@10 and $\Delta$ are $\times$100 on test; $\Delta$ = best gate (on val) $-$ best fixed $\alpha$, $^{\blacktriangle}$ $p<0.05$.}
+\label{tab:graph}
+\end{table*}

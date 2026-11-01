@@ -167,3 +167,20 @@ sbatch slurm/run_pipeline.sh                                     # both parts (f
 - `results/edge_stats.csv` (gold-gold connectivity per graph type), `results/transfer.csv` (E4).
 - `results/diagnostics_msmarco.{csv,json}` (Step 0), `results/primary_norm.json`.
 - `NOTES.md`: hypotheses, Step 0 decision, deviations, and the auto-filled verdicts.
+
+---
+
+# Building the paper (`paper/`)
+
+CPU only, about 2 minutes, after the multi-hop job has finished:
+
+```bash
+source slurm/env.sh
+CUDA_VISIBLE_DEVICES="" $PY -m src.report_analysis      # alpha curves, bucket optima -> results/report/
+CUDA_VISIBLE_DEVICES="" $PY -m src.report_paper         # tables + figures -> paper/tables, paper/figures
+cd paper && ~/.conda/envs/tex/bin/tectonic main.tex     # -> paper/main.pdf (ACL format)
+```
+
+Tectonic lives in its own env (`conda create -p ~/.conda/envs/tex -c conda-forge tectonic`); the first build downloads
+the LaTeX packages it needs. Numbers quoted in the text of `main.tex` are written by hand from `paper/numbers.json`
+and the tables; regenerate and re-check them if the results change.

@@ -1,0 +1,27 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{6pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Norm. & Gate & MSM-A & MSM-B & MuSiQue & HotpotQA & BEIR-HQA & 2Wiki \\
+\midrule
+none & \textsc{Q} & -0.48$^{\triangledown}$ & +0.01 & +0.00 & -0.00 & -0.00 & +0.00 \\
+ & \textsc{QS} & -0.48$^{\triangledown}$ & +0.00 & +0.00 & +0.01 & -0.00$^{\triangledown}$ & +0.00 \\
+ & \textsc{S} & -0.49$^{\triangledown}$ & +0.00 & +0.02 & +0.01 & -0.00 & -0.00 \\
+\midrule
+minmax & \textsc{Q} & \textbf{+0.00$^{\blacktriangle}$} & +0.00 & +0.00 & -0.02 & -0.00 & +0.03 \\
+ & \textsc{QS} & +0.00 & +0.01 & -0.01 & +0.02 & +0.00 & -0.12$^{\triangledown}$ \\
+ & \textsc{S} & +0.00 & \textbf{+0.02$^{\blacktriangle}$} & -0.00 & +0.04 & +0.01 & +0.00 \\
+ & \textsc{QS+C} & -- & -- & +0.00 & +0.03 & -0.00 & -0.11$^{\triangledown}$ \\
+\midrule
+zscore & \textsc{Q} & +0.01 & \textbf{+0.05$^{\blacktriangle}$} & -0.15$^{\triangledown}$ & +0.06 & \textbf{+0.18$^{\blacktriangle}$} & +0.00 \\
+ & \textsc{QS} & \textbf{+0.02$^{\blacktriangle}$} & -0.01 & -0.14$^{\triangledown}$ & +0.00 & -0.01$^{\triangledown}$ & -0.00 \\
+ & \textsc{S} & +0.01 & +0.01 & -0.12$^{\triangledown}$ & +0.01 & -0.01 & -0.01$^{\triangledown}$ \\
+\midrule
+rank & \textsc{Q} & +0.01 & +0.02 & \textbf{+0.43$^{\blacktriangle}$} & -0.01 & -0.01 & \textbf{+0.30$^{\blacktriangle}$} \\
+ & \textsc{QS} & -0.12 & -0.04 & \textbf{+1.22$^{\blacktriangle}$} & -0.04 & -0.04$^{\triangledown}$ & \textbf{+0.41$^{\blacktriangle}$} \\
+ & \textsc{S} & -0.10 & -0.02 & \textbf{+1.37$^{\blacktriangle}$} & -0.00 & -0.02$^{\triangledown}$ & \textbf{+0.19$^{\blacktriangle}$} \\
+\bottomrule
+\end{tabular}
+\caption{Every adaptive gate against the best fixed $\alpha$ under the same normaliser: test $\Delta$nDCG@10 $\times$100 (paired bootstrap; $^{\blacktriangle}$ significantly better, $^{\triangledown}$ worse, $p<0.05$ uncorrected).}
+\label{tab:grid}
+\end{table*}

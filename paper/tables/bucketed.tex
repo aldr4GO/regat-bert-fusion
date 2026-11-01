@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrp{7.2cm}rr}
+\toprule
+Data & Buckets & $\alpha_0$ & Per-bucket $\alpha$ (chosen on val) & $\Delta$ & 95\% CI \\
+\midrule
+MSM-A & length & 0.70 & {\scriptsize long ($\ge$8 w) 0.75; medium (5--7 w) 0.45; short ($\le$4 w) 0.70} & -0.69$^{\triangledown}$ & [-0.87, -0.52] \\
+MSM-A & wh-word & 0.70 & {\scriptsize how 0.85; other 0.55; what 0.45; when 0.85; where 0.85; who 0.85; why 0.85} & -0.79$^{\triangledown}$ & [-1.01, -0.57] \\
+MSM-B & length & 0.85 & {\scriptsize long ($\ge$8 w) 1.00; medium (5--7 w) 0.85; short ($\le$4 w) 0.75} & -0.03 & [-0.30, +0.24] \\
+MuSiQue & length & 0.40 & {\scriptsize long ($\ge$8 w) 0.40; medium (5--7 w) 0.15} & -0.01 & [-0.02, +0.00] \\
+MuSiQue & hops (gold) & 0.40 & {\scriptsize 2-hop 0.40; 3-hop 0.40; 4-hop 0.25} & -0.03 & [-0.14, +0.08] \\
+HotpotQA & length & 0.85 & {\scriptsize long ($\ge$8 w) 0.80; medium (5--7 w) 0.85} & -0.03 & [-0.09, +0.02] \\
+HotpotQA & type (gold) & 0.85 & {\scriptsize bridge 1.00; comparison 0.40} & +0.14$^{\blacktriangle}$ & [+0.02, +0.25] \\
+BEIR-HQA & length & 0.95 & {\scriptsize long ($\ge$8 w) 0.95; medium (5--7 w) 1.00} & -0.00 & [-0.01, +0.00] \\
+BEIR-HQA & type (gold) & 0.95 & {\scriptsize bridge 1.00; comparison 0.65} & +0.42$^{\blacktriangle}$ & [+0.30, +0.53] \\
+2Wiki & length & 0.45 & {\scriptsize long ($\ge$8 w) 0.45; medium (5--7 w) 0.20} & +0.00 & [-0.02, +0.02] \\
+2Wiki & type (gold) & 0.45 & {\scriptsize bridge-comp. 0.25; comparison 0.90; compositional 0.45; inference 0.25} & +0.07$^{\blacktriangle}$ & [+0.01, +0.12] \\
+\bottomrule
+\end{tabular}
+\caption{Bucketed fixed $\alpha$: one $\alpha$ per bucket selected on val and applied on test, against the single global $\alpha_0$ (test $\Delta$nDCG@10 $\times$100, paired bootstrap). Length buckets are available at test time; gold hop/type labels are not, so those rows measure how much a type-aware $\alpha$ \emph{could} give (analysis only).}
+\label{tab:bucketed}
+\end{table*}

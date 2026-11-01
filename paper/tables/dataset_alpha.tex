@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrrrc}
+\toprule
+ & \multicolumn{3}{c}{Test nDCG@10 ($\times$100)} & \multicolumn{4}{c}{Best fixed $\alpha$ on val, by normaliser} & \multicolumn{2}{c}{min--max $\alpha^*$} & \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-8}\cmidrule(lr){9-10}
+Dataset & CE & GAT & CE$-$GAT & none & min--max & z-score & rank & val & test & favours \\
+\midrule
+MS MARCO (A) & 41.3 & 35.4 & +5.9 & 0.05 & 0.70 & 0.70 & 0.55 & \textbf{0.70} & 0.95 & sem/sem \\
+MS MARCO (B) & 41.5 & 35.7 & +5.8 & 0.15 & 0.85 & 0.85 & 1.00 & \textbf{0.85} & 0.90 & sem/sem \\
+MuSiQue & 71.1 & 66.8 & +4.3 & 0.05 & 0.40 & 0.45 & 0.45 & \textbf{0.40} & 0.65 & ctx/sem \\
+HotpotQA & 89.8 & 84.1 & +5.7 & 0.10 & 0.85 & 0.85 & 0.90 & \textbf{0.85} & 0.90 & sem/sem \\
+BEIR-HotpotQA & 72.6 & 55.5 & +17.1 & 0.35 & 0.95 & 0.95 & 1.00 & \textbf{0.95} & 0.90 & sem/sem \\
+2Wiki & 90.8 & 91.0 & -0.2 & 0.05 & 0.45 & 0.50 & 0.55 & \textbf{0.45} & 0.45 & ctx/ctx \\
+\bottomrule
+\end{tabular}
+\caption{Dataset-level test of the hypothesis. $\alpha$ weights the cross-encoder: fused $=\alpha\, s_{sem} + (1-\alpha)\, s_{ctx}$. $\alpha^*$ is the arg-max of mean nDCG@10 over the grid $\{0,0.05,\dots,1\}$; the val value (bold) is the one used by the fixed baseline, the test value is for analysis only. ``favours'': ctx if $\alpha^*<0.5$, sem if $\alpha^*>0.5$ (val/test). With raw scores (none) $\alpha$ mostly reflects the scale ratio of the two scores and is not interpretable.}
+\label{tab:dsalpha}
+\end{table*}

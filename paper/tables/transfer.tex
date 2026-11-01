@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrrrrr}
+\toprule
+ & & & \multicolumn{4}{c}{Transferred gate, test nDCG@10} & In-domain & & \textsc{Q} gate \\
+\cmidrule(lr){4-7}
+Setting & Train & Test & fixed & \textsc{Q} & \textsc{QS} & \textsc{S} & fixed & $\alpha_0$ & $\bar\alpha$ (sd) \\
+\midrule
+leave-one-out & MSM+HQA & MuSiQue & 71.99 & 71.93 & 71.98 & 72.00 & 71.28 & 0.70 & 0.73 (0.02) \\
+mixed & MSM+MuSiQue+HQA & MS MARCO (A) & 40.13 & 40.29 & 40.18 & 40.22 & 40.89 & 0.55 & 0.59 (0.12) \\
+mixed & MSM+MuSiQue+HQA & HotpotQA & 88.88 & 89.44 & 89.32 & 89.34 & 89.89 & 0.55 & 0.68 (0.15) \\
+mixed & MSM+MuSiQue+HQA & MuSiQue & 71.98 & 71.77 & 71.81 & 71.79 & 71.28 & 0.55 & 0.54 (0.16) \\
+zero-shot & MSM & BEIR-HotpotQA & 71.45 & 71.45 & 71.45 & 71.46 & 72.63 & 0.70 & 0.70 (0.00) \\
+zero-shot & MSM & HotpotQA & 89.24 & 89.24 & 89.25 & 89.20 & 89.89 & 0.70 & 0.70 (0.00) \\
+zero-shot & MSM & MuSiQue & 71.78 & 71.78 & 71.80 & 71.79 & 71.28 & 0.70 & 0.70 (0.00) \\
+\bottomrule
+\end{tabular}}
+\caption{Transfer and mixed training of the gate (E4, min--max, $\times$100, 5 seeds). Zero-shot uses the frozen MS MARCO GAT for $s_{ctx}$; mixed and leave-one-out use each dataset's own GAT. $\alpha_0$ is the fixed $\alpha$ the gate starts from (selected on the training sources' val).}
+\label{tab:transfer}
+\end{table*}

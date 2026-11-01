@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llllrlrcl}
+\toprule
+Hyp. & Dataset & Gate & Statistic & Value & 95\% CI & $p_{\text{Holm}}$ & Pred. & Verdict \\
+\midrule
+H1 & MuSiQue & best=Q & Spearman($\alpha$, hops) & +0.107 & [+0.067, +0.147] & 0.001 & <0 & contradicted \\
+H2 & MuSiQue & best=Q & gain $-$ gain$_{\text{MSM}}$ & -0.004 & [-0.025, +0.017] & 1.000 & >0 & inconclusive \\
+H3 & MuSiQue & oracle & headroom $-$ headroom$_{\text{MSM}}$ & +2.435 & [+1.942, +2.932] & 0.001 & >0 & supported \\
+H1 & HotpotQA & best=QS & $\bar\alpha_{\text{bridge}}-\bar\alpha_{\text{comp.}}$ & -0.026 & [-0.037, -0.016] & 0.001 & <0 & supported \\
+H2 & HotpotQA & best=QS & gain $-$ gain$_{\text{MSM}}$ & +0.011 & [-0.095, +0.117] & 1.000 & >0 & inconclusive \\
+H3 & HotpotQA & oracle & headroom $-$ headroom$_{\text{MSM}}$ & -2.036 & [-2.365, -1.710] & 0.001 & >0 & contradicted \\
+H1 & BEIR-HotpotQA & best=Q & $\bar\alpha_{\text{bridge}}-\bar\alpha_{\text{comp.}}$ & +0.000 & [+0.000, +0.000] & 0.001 & <0 & contradicted \\
+H2 & BEIR-HotpotQA & best=Q & gain $-$ gain$_{\text{MSM}}$ & -0.005 & [-0.025, +0.016] & 1.000 & >0 & inconclusive \\
+H3 & BEIR-HotpotQA & oracle & headroom $-$ headroom$_{\text{MSM}}$ & -2.078 & [-2.427, -1.739] & 0.001 & >0 & contradicted \\
+\bottomrule
+\end{tabular}
+\caption{Pre-registered primary tests (written before any multi-hop run; Holm over the nine tests). H1 uses the best (on val) gate; H2/H3 values are nDCG@10 $\times$100. H1 verdicts on MuSiQue and BEIR are computed on gates whose $\alpha$ varies by less than $10^{-3}$ across queries (Table~\ref{tab:gate}), so their sign is not interpretable.}
+\label{tab:hyp}
+\end{table*}

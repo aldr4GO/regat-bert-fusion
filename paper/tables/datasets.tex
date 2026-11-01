@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrl}
+\toprule
+Dataset & Setting & $K$ & GAT train & Fusion train & Val & Test & Gold/pool & Complexity labels \\
+\midrule
+MS MARCO (A) & open (BM25) & 100 & 30,000 & 10,000 & 2,000 & 6,980 & -- & proxies only \\
+MS MARCO (B) & open (BM25) & 100 & 1,870 & 1,150 & 698 & 1,745 & -- & proxies only \\
+MuSiQue & closed pool & 20 & 10,000 & 7,000 & 2,938 & 2,417 & 2.65 & hops 2/3/4 \\
+HotpotQA & closed pool & 10 & 20,000 & 10,000 & 2,000 & 7,405 & 2.00 & bridge/comparison \\
+BEIR-HotpotQA & open (BM25) & 100 & 20,000 & 10,000 & 2,000 & 7,405 & 1.59 & bridge/comparison \\
+2Wiki & closed pool & 10 & 20,000 & 10,000 & 2,000 & 12,576 & 2.44 & 4 types \\
+\bottomrule
+\end{tabular}}
+\caption{Datasets and splits (queries). Val is always carved from the training data; test is the official dev set (MS MARCO A: dev/small; MuSiQue, HotpotQA, 2Wiki: dev; BEIR: test). MS MARCO B splits dev/small itself, so the cross-encoder never saw any of its queries. Gold/pool = mean number of relevant passages among the $K$ test candidates.}
+\label{tab:data}
+\end{table*}

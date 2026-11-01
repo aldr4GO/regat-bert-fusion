@@ -9,3 +9,7 @@ __pycache__/
 .pytest_cache/
 results_regression/
 results_smoke_regression/
+paper/*.log
+paper/*.blg
+paper/*.aux
+paper/*.out

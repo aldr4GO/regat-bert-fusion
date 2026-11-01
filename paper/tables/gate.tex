@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+ & & \multicolumn{4}{c}{In-domain gate: mean (sd over test queries) of learned $\alpha$} & Restored & Mixed gate \\
+\cmidrule(lr){3-6}
+Dataset & $\alpha_0$ & \textsc{Q} & \textsc{QS} & \textsc{S} & \textsc{QS+C} & at init & \textsc{Q} \\
+\midrule
+MS MARCO (A) & 0.70 & 0.700 (0.000) & 0.700 (0.000) & 0.699 (0.002) & -- & 100\% & 0.59 (0.12) \\
+MS MARCO (B) & 0.85 & 0.857 (0.002) & 0.853 (0.001) & 0.850 (0.001) & -- & 80\% & -- \\
+MuSiQue & 0.40 & 0.400 (0.000) & 0.400 (0.001) & 0.400 (0.002) & 0.400 (0.001) & 100\% & 0.54 (0.16) \\
+HotpotQA & 0.85 & 0.850 (0.000) & 0.883 (0.210) & 0.919 (0.081) & 0.909 (0.138) & 30\% & 0.68 (0.15) \\
+BEIR-HotpotQA & 0.95 & 0.950 (0.000) & 0.950 (0.000) & 0.950 (0.000) & 0.950 (0.000) & 100\% & -- \\
+2Wiki & 0.45 & 0.474 (0.237) & 0.511 (0.126) & 0.449 (0.002) & 0.493 (0.157) & 55\% & -- \\
+\bottomrule
+\end{tabular}
+\caption{What the gates learn (min--max, $\lambda=0.01$). The gates are initialised at $\alpha_0$ and early-stopped on val nDCG@10; ``restored at init'' is the share of adaptive runs (all gates, 5 seeds) whose best val epoch was the initialisation, i.e.\ the returned model is the fixed baseline. Mixed gate: one \textsc{Q} gate trained on MS MARCO + MuSiQue + HotpotQA (\S\ref{sec:transfer}), its $\alpha$ on each test set.}
+\label{tab:gate}
+\end{table*}

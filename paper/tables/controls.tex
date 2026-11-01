@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrr}
+\toprule
+Data & Graph & Deg. & GAT & $s_{bi}$ \\
+\midrule
+MS MARCO (A) & no\_graph & 1.0 & 37.88 & 37.71 \\
+MS MARCO (A) & random\_graph & 12.3 & 37.94 & 37.71 \\
+MS MARCO (A) & knn\_k4\_s0.0 & 7.1 & 37.73 & 37.71 \\
+MS MARCO (A) & knn\_k4\_s0.3 & 6.9 & 37.76 & 37.71 \\
+MS MARCO (A) & knn\_k4\_s0.5 & 5.6 & 37.65 & 37.71 \\
+MS MARCO (A) & knn\_k8\_s0.0 & 13.2 & 38.00 & 37.71 \\
+MS MARCO (A) & knn\_k8\_s0.3 & 12.3 & 37.98 & 37.71 \\
+MS MARCO (A) & knn\_k8\_s0.5 & 9.2 & 37.90 & 37.71 \\
+MS MARCO (A) & knn\_k16\_s0.0 & 24.6 & 38.04 & 37.71 \\
+MS MARCO (A) & knn\_k16\_s0.3 & 22.0 & 37.92 & 37.71 \\
+MS MARCO (A) & knn\_k16\_s0.5 & 14.7 & 37.76 & 37.71 \\
+\midrule
+MuSiQue & knn\_k2 & 2.0 & 75.62 & 70.08 \\
+MuSiQue & knn\_k3 & 2.6 & 75.19 & 70.08 \\
+MuSiQue & knn\_k5 & 3.4 & 75.27 & 70.08 \\
+HotpotQA & knn\_k2 & 2.2 & 84.26 & 82.67 \\
+HotpotQA & knn\_k3 & 2.8 & 84.09 & 82.67 \\
+HotpotQA & knn\_k5 & 3.5 & 83.93 & 82.67 \\
+\bottomrule
+\end{tabular}
+\caption{GAT graph sensitivity on val (nDCG@10 $\times$100 of $s_{ctx}$ alone). knn\_k$k$\_s$m$: $k$ neighbours, min cosine $m$. MS MARCO degrees include the self-loop.}
+\label{tab:controls}
+\end{table}
