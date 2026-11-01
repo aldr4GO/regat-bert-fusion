@@ -7,3 +7,5 @@ logs/
 __pycache__/
 *.pyc
 .pytest_cache/
+results_regression/
+results_smoke_regression/

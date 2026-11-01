@@ -1,0 +1,80 @@
+# Multi-hop extension (MULTIHOP_EXTENSION_PLAN.md). Everything not listed here comes from data/gat/fusion.yaml.
+primary_norm: auto            # auto = normaliser whose val-best config wins on MS MARCO protocol A val
+                              # (written once to results/primary_norm.json by src/diagnose_msmarco.py)
+metrics:
+  k: [1, 3, 5, 10, 50]        # nDCG / MRR / P / R @k reported for every dataset
+  allrecall_k: [2, 5, 10]     # AllRecall@k: all supporting paragraphs inside the top k
+  extra_recall_k: [2]         # R@2 (plan Sec. 3.5)
+use_title: true               # "{title}. {text}" for the CE and bi-encoder (MS MARCO has no titles)
+edge_min_sim: 0.3             # same kNN threshold as MS MARCO
+title_link:
+  min_title_chars: 3
+bootstrap_resamples: 10000
+spacy_model: en_core_web_sm
+
+datasets:
+  musique:
+    enabled: true
+    kind: closed
+    hf_repo: dgslibisey/MuSiQue
+    files: {train: [musique_ans_v1.0_train.jsonl], test: [musique_ans_v1.0_dev.jsonl]}
+    sizes: {gat_train: 10000, fusion_train: 7000, val: -1}     # -1 = the rest of train
+    k_nn: 3
+    overlap_m: 3
+    labels: [hops]
+  hotpotqa:
+    enabled: true
+    kind: closed
+    hf_repo: hotpotqa/hotpot_qa
+    files:
+      train: [distractor/train-00000-of-00002.parquet, distractor/train-00001-of-00002.parquet]
+      test: [distractor/validation-00000-of-00001.parquet]
+    sizes: {gat_train: 20000, fusion_train: 10000, val: 2000}
+    k_nn: 3
+    overlap_m: 3
+    labels: [type, level]
+  beir_hotpotqa:
+    enabled: true
+    kind: open
+    ird: {train: beir/hotpotqa/train, test: beir/hotpotqa/test, corpus: beir/hotpotqa}
+    pyserini_index: beir-v1.0.0-hotpotqa.flat
+    bm25: {k1: 0.9, b: 0.4, threads: 32, batch_size: 2000}
+    K: 100
+    train_pool: 40000         # train queries retrieved before dropping no-positive ones
+    sizes: {gat_train: 20000, fusion_train: 10000, val: 2000}
+    k_nn: 8
+    overlap_m: 10
+    labels: [type, level]     # joined from HotpotQA distractor by question id
+  twowiki:
+    enabled: true             # optional (plan E6); runs last in the pipeline
+    kind: closed
+    hf_repo: framolfese/2WikiMultihopQA
+    files:
+      train: [data/train-00000-of-00002.parquet, data/train-00001-of-00002.parquet]
+      test: [data/validation-00000-of-00001.parquet]
+    sizes: {gat_train: 20000, fusion_train: 10000, val: 2000}
+    k_nn: 3
+    overlap_m: 3
+    labels: [type]
+
+# graph controls / H4 (closed pools; the knn_emb GAT is the main one)
+graph_types: [none, random, knn_emb, title_link, hybrid]
+h4_datasets: [musique, hotpotqa]
+knn_sweep: [2, 3, 5]          # reported on val, the default k_nn stays 3 (DECISION)
+
+hypotheses:
+  datasets: [musique, hotpotqa, beir_hotpotqa, twowiki]
+  primary_datasets: [musique, hotpotqa, beir_hotpotqa]   # Holm family (2Wiki is optional -> exploratory)
+  reference: A                # MS MARCO protocol A
+  variants: [Q, QS, S]
+
+transfer:
+  zero_shot_datasets: [musique, hotpotqa, beir_hotpotqa]
+  mixed: [A, musique, hotpotqa]
+  lodo: {train: [A, hotpotqa], test: musique}
+
+qsc: {enabled: true}          # E5: QS + [query length, entity count]
+
+diagnose:                     # Step 0 decision rule (MS MARCO)
+  ce_dominance_gap: 0.05      # CE-only counts as "much stronger" if val NDCG@10 exceeds GAT-only by more
+  min_alpha_std: 0.05         # learned alpha must vary at least this much over test queries

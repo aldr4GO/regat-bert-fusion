@@ -29,15 +29,20 @@ def profile():
 
 
 def load_config():
-    """Returns {'data':..., 'gat':..., 'fusion':...}; REGAT_PROFILE=smoke applies configs/smoke.yaml."""
+    """Returns {'data', 'gat', 'fusion', 'multihop'} configs; REGAT_PROFILE=smoke applies configs/smoke.yaml."""
     cfg = {}
-    for name in ("data", "gat", "fusion"):
+    for name in ("data", "gat", "fusion", "multihop"):
         with open(CONFIG_DIR / f"{name}.yaml") as f:
             cfg[name] = yaml.safe_load(f)
     if profile() == "smoke":
         with open(CONFIG_DIR / "smoke.yaml") as f:
             _deep_update(cfg, yaml.safe_load(f))
     cfg["profile"] = profile()
+    # REGAT_RESULTS_DIR redirects all result files (golden regression reruns); results_dir_main keeps the
+    # canonical location for files that must be shared (e.g. the fixed primary normaliser)
+    cfg["data"]["paths"]["results_dir_main"] = cfg["data"]["paths"]["results_dir"]
+    if os.environ.get("REGAT_RESULTS_DIR"):
+        cfg["data"]["paths"]["results_dir"] = os.environ["REGAT_RESULTS_DIR"]
     return cfg
 
 
@@ -48,11 +53,52 @@ def path(cfg, key, *parts):
     return p
 
 
+# ---------- experiment keys ----------
+# "A" / "B": MS MARCO protocols (B only owns GAT-dependent files, everything else is shared with A).
+# "<dataset>": a multi-hop dataset (cache/<dataset>/), "<dataset>@<variant>": same data, another GAT/graph
+# (H4 graph types, zero-shot MS MARCO GAT); only GAT-dependent files live in cache/<dataset>/graphs/<variant>/.
+MSMARCO_KEYS = ("A", "B")
+GAT_DEPENDENT = ("ctx_", "gat_best", "feat_stats", "cfeat_stats", "stage4", "gat_train_summary")
+
+
+def split_key(key):
+    """'musique@random' -> ('musique', 'random'); 'A' -> ('A', None); 'B' -> ('A', 'B')."""
+    if key == "B":
+        return "A", "B"
+    ds, _, variant = key.partition("@")
+    return ds, (variant or None)
+
+
+def base_key(key):
+    return split_key(key)[0]
+
+
+def is_msmarco(key):
+    return base_key(key) == "A"
+
+
 def cache_path(cfg, name, protocol="A"):
-    """Protocol A caches live in cache/, protocol B (GAT-dependent files only) in cache/B/."""
-    if protocol == "B":
-        return path(cfg, "cache_dir", "B", name)
-    return path(cfg, "cache_dir", name)
+    """Path of a cache file for an experiment key (see above)."""
+    ds, variant = split_key(protocol)
+    if ds == "A":
+        return path(cfg, "cache_dir", "B", name) if variant == "B" else path(cfg, "cache_dir", name)
+    if variant is not None:
+        return path(cfg, "cache_dir", ds, "graphs", variant, name)
+    return path(cfg, "cache_dir", ds, name)
+
+
+def data_cache_path(cfg, name, key):
+    """Files shared by all variants of a dataset (cands, sem, bi, bm25, embeddings, splits, ...)."""
+    return cache_path(cfg, name, base_key(key))
+
+
+def test_sets(cfg, key):
+    return cfg["fusion"]["eval"]["test_sets"] if is_msmarco(key) else ["test"]
+
+
+def dataset_cfg(cfg, key):
+    ds = base_key(key)
+    return None if ds == "A" else {**cfg["multihop"]["datasets"][ds], "name": ds}
 
 
 def results_path(cfg, protocol, *parts):

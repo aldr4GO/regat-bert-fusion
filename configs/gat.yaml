@@ -19,6 +19,7 @@ train:
   eval_batch_queries: 256
 sanity:
   max_drop_vs_bi: 0.005       # GAT-only val NDCG@10 may not be below s_bi by more than this
+  enforce: true               # stop when the gate fails (smoke profile: report only)
 controls:                     # Sec. 6.6, all evaluated on val
   - {name: no_graph,     mode: no_graph,     k_nn: 8,  edge_min_sim: 0.3}
   - {name: random_graph, mode: random_graph, k_nn: 8,  edge_min_sim: 0.3}

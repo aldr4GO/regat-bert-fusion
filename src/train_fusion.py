@@ -2,7 +2,8 @@
 
 Usage:  python -m src.train_fusion --protocol A --norm zscore --dep QS --seed 0 [--loss listwise|bce] [--lam 0.01]
         python -m src.train_fusion --protocol A --norm none --dep paper --seed 0      (paper row, BCE)
-Writes: results/runs/{name}.json (+ .npz with per-query metrics and alphas)
+        python -m src.train_fusion --protocol musique --norm minmax --dep QSC --seed 0  (E5 complexity features)
+Writes: results/{key}/runs/{name}.json (+ .npz with per-query metrics and alphas)
 """
 import argparse
 import time
@@ -12,7 +13,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from src.common import cache_path, get_logger, load_config, load_json, results_path, seed_everything, set_env
+from src.common import (cache_path, dataset_cfg, get_logger, load_config, load_json, results_path,
+                        seed_everything, set_env, test_sets)
 from src.features import FeatureScaler, score_features
 from src.fusion import FusionModel, PaperFusion
 from src.metrics import ndcg_at_k
@@ -31,6 +33,8 @@ class FusionData:
     labels: torch.Tensor    # [N, K] binary (training only)
     gains: torch.Tensor     # [N, K]
     ideal: torch.Tensor     # [N, cutoff]
+    mask: torch.Tensor = None    # [N, K] bool valid candidates (variable pool sizes)
+    cfeats: torch.Tensor = None  # [N, 2] standardised query length / entity count (QSC only)
 
 
 # ------------------------------------------------------------------ data preparation
@@ -45,12 +49,18 @@ def raw_split(cfg, protocol, split):
     return _SPLIT_MEMO[key]
 
 
+def overlap_m(cfg, protocol):
+    """Top-m overlap feature: m = 10 for K >= 50 (MS MARCO, BEIR), m = 3 for closed pools (multihop.yaml)."""
+    dc = dataset_cfg(cfg, protocol)
+    return cfg["fusion"]["features"]["top_overlap_k"] if dc is None else dc["overlap_m"]
+
+
 def raw_features(cfg, protocol, split):
     key = (cfg["profile"], protocol, split)
     if key not in _FEAT_MEMO:
         d = raw_split(cfg, protocol, split)
         _FEAT_MEMO[key] = score_features(d.scores["sem"], d.scores["ctx"], cfg["fusion"]["eps"],
-                                         cfg["fusion"]["features"]["top_overlap_k"])
+                                         overlap_m(cfg, protocol), mask=d.mask)
     return _FEAT_MEMO[key]
 
 
@@ -64,12 +74,31 @@ def feature_scaler(cfg, protocol):
     return sc
 
 
-def fusion_data(cfg, protocol, split, norm):
+def raw_cfeats(cfg, protocol, split):
+    """E5 complexity features from the query text: [n_words, n_entities] (never from gold labels)."""
+    from src.query_meta import query_meta
+    qm = query_meta(cfg, protocol)
+    d = raw_split(cfg, protocol, split)
+    return torch.tensor([[qm[q]["n_words"], qm[q]["n_entities"]] for q in d.qids], dtype=torch.float)
+
+
+def cfeat_scaler(cfg, protocol):
+    p = cache_path(cfg, "cfeat_stats.pt", protocol)
+    if p.exists():
+        st = torch.load(p, weights_only=False)
+        return FeatureScaler(st["mean"], st["std"], cfg["fusion"]["eps"])
+    sc = FeatureScaler(eps=cfg["fusion"]["eps"]).fit(raw_cfeats(cfg, protocol, "fusion_train"))
+    torch.save({"mean": sc.mean, "std": sc.std, "names": ["n_words", "n_entities"]}, p)
+    return sc
+
+
+def fusion_data(cfg, protocol, split, norm, with_cfeats=False):
     d = raw_split(cfg, protocol, split)
     eps = cfg["fusion"]["eps"]
+    cf = cfeat_scaler(cfg, protocol)(raw_cfeats(cfg, protocol, split)) if with_cfeats else None
     return FusionData(d.q_emb, feature_scaler(cfg, protocol)(raw_features(cfg, protocol, split)),
-                      normalize(norm, d.scores["sem"], eps), normalize(norm, d.scores["ctx"], eps),
-                      d.labels, d.gains, d.ideal)
+                      normalize(norm, d.scores["sem"], eps, d.mask), normalize(norm, d.scores["ctx"], eps, d.mask),
+                      d.labels, d.gains, d.ideal, d.mask, cf)
 
 
 def load_alpha0(cfg, protocol, norm):
@@ -79,18 +108,27 @@ def load_alpha0(cfg, protocol, norm):
 
 
 # ------------------------------------------------------------------ training
-def listwise_loss(scores, labels):
-    """-log sum_{pos} softmax(scores)_p, averaged over queries with >= 1 positive."""
+def listwise_loss(scores, labels, mask=None):
+    """-log sum_{pos} softmax(scores)_p, averaged over queries with >= 1 positive (masked softmax)."""
     has = labels.sum(-1) > 0
+    if mask is not None:
+        scores = scores.masked_fill(~mask, float("-inf"))
     pos = scores.masked_fill(labels <= 0, float("-inf"))
     l = torch.logsumexp(scores, -1) - torch.logsumexp(pos, -1)
     return l[has].mean()
 
 
-def build_model(dep, d, n_feat, alpha0, fcfg, loss):
+def bce_loss(logits, y, mask=None):
+    if mask is None or bool(mask.all()):
+        return F.binary_cross_entropy_with_logits(logits, y)
+    l = F.binary_cross_entropy_with_logits(logits, y, reduction="none")
+    return (l * mask).sum() / mask.sum()
+
+
+def build_model(dep, d, n_feat, alpha0, fcfg, loss, n_cfeat=0):
     if dep == "paper":
         return PaperFusion(fcfg)
-    m = FusionModel(dep, d, n_feat, alpha0, fcfg)
+    m = FusionModel(dep, d, n_feat, alpha0, fcfg, n_cfeat)
     if loss == "bce":
         m.bias = nn.Parameter(torch.tensor(0.0))
     return m
@@ -99,7 +137,8 @@ def build_model(dep, d, n_feat, alpha0, fcfg, loss):
 def model_scores(model, data, idx=None):
     """Returns (scores used by the loss, fused ranking scores, alpha)."""
     sl = (lambda t: t) if idx is None else (lambda t: t[idx])
-    fused, alpha = model(sl(data.q_emb), sl(data.feats), sl(data.sem_n), sl(data.ctx_n))
+    cf = None if data.cfeats is None else sl(data.cfeats)
+    fused, alpha = model(sl(data.q_emb), sl(data.feats), sl(data.sem_n), sl(data.ctx_n), cf)
     return fused, alpha
 
 
@@ -115,14 +154,15 @@ def train_fusion(fcfg, dep, alpha0, seed, train_data, val_data, loss="listwise",
     tc = fcfg["train"]
     lam = tc["lambda"] if lam is None else lam
     seed_everything(seed)
-    model = build_model(dep, train_data.q_emb.shape[1], train_data.feats.shape[1], alpha0, fcfg, loss)
+    n_cf = 0 if train_data.cfeats is None else train_data.cfeats.shape[1]
+    model = build_model(dep, train_data.q_emb.shape[1], train_data.feats.shape[1], alpha0, fcfg, loss, n_cf)
     opt = torch.optim.AdamW(model.parameters(), lr=tc["lr"], weight_decay=tc["weight_decay"])
     gen = torch.Generator().manual_seed(seed)
     N = train_data.q_emb.shape[0]
 
     def val_ndcg():
         f, _ = predict(model, val_data)
-        return float(ndcg_at_k(f, val_data.gains, val_data.ideal).mean())
+        return float(ndcg_at_k(f, val_data.gains, val_data.ideal, mask=val_data.mask).mean())
 
     best = val_ndcg()
     best_state, best_ep, bad, hist = {k: v.clone() for k, v in model.state_dict().items()}, 0, 0, []
@@ -134,14 +174,15 @@ def train_fusion(fcfg, dep, alpha0, seed, train_data, val_data, loss="listwise",
             b = perm[i:i + tc["batch_queries"]]
             fused, alpha = model_scores(model, train_data, b)
             y = train_data.labels[b]
+            m = None if train_data.mask is None else train_data.mask[b]
             if dep == "paper":
-                L = F.binary_cross_entropy_with_logits(fused + model.bias if model.bias is not None else fused, y)
+                L = bce_loss(fused + model.bias if model.bias is not None else fused, y, m)
             else:
                 z = fused / model.log_T.exp()
                 if loss == "listwise":
-                    L = listwise_loss(z, y)
+                    L = listwise_loss(z, y, m)
                 else:
-                    L = F.binary_cross_entropy_with_logits(z + model.bias, y)
+                    L = bce_loss(z + model.bias, y, m)
                 if lam > 0:
                     L = L + lam * (alpha - alpha0).pow(2).mean()
             opt.zero_grad(set_to_none=True)
@@ -178,12 +219,13 @@ def run_one(cfg, protocol, norm, dep, seed, loss="listwise", lam=None, overwrite
     if out.exists() and not overwrite:
         return name
     alpha0 = load_alpha0(cfg, protocol, norm)
-    tr, va = fusion_data(cfg, protocol, "fusion_train", norm), fusion_data(cfg, protocol, "val", norm)
+    cf = dep == "QSC"
+    tr, va = fusion_data(cfg, protocol, "fusion_train", norm, cf), fusion_data(cfg, protocol, "val", norm, cf)
     t0 = time.time()
     model, info = train_fusion(fc, dep, alpha0, seed, tr, va, loss, lam)
     scores, alphas = {}, {}
-    for s in ["val"] + fc["eval"]["test_sets"]:
-        f, a = predict(model, fusion_data(cfg, protocol, s, norm))
+    for s in ["val"] + test_sets(cfg, protocol):
+        f, a = predict(model, fusion_data(cfg, protocol, s, norm, cf))
         scores[s], alphas[s] = f, a
     extra = {}
     if dep == "paper":
@@ -200,9 +242,9 @@ def run_one(cfg, protocol, norm, dep, seed, loss="listwise", lam=None, overwrite
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--protocol", default="A", choices=["A", "B"])
+    ap.add_argument("--protocol", default="A", help="A | B | <dataset>[@variant]")
     ap.add_argument("--norm", required=True, choices=["none", "minmax", "zscore", "rank"])
-    ap.add_argument("--dep", required=True, choices=["fixed", "Q", "QS", "S", "paper"])
+    ap.add_argument("--dep", required=True, choices=["fixed", "Q", "QS", "S", "QSC", "paper"])
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--loss", default="listwise", choices=["listwise", "bce"])
     ap.add_argument("--lam", type=float, default=None)

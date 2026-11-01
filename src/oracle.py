@@ -9,7 +9,7 @@ import argparse
 import numpy as np
 import torch
 
-from src.common import get_logger, load_config, results_path, save_json, set_env
+from src.common import get_logger, load_config, load_json, results_path, save_json, set_env, test_sets
 from src.fusion import fuse
 from src.metrics import ndcg_at_k
 from src.normalize import normalize
@@ -23,9 +23,9 @@ def alpha_grid(step):
     return torch.tensor([round(i * step, 10) for i in range(n + 1)])
 
 
-def per_alpha_ndcg(sem_n, ctx_n, gains, ideal, grid, cutoff=10):
+def per_alpha_ndcg(sem_n, ctx_n, gains, ideal, grid, cutoff=10, mask=None):
     """-> [len(grid), N] per-query NDCG@cutoff for each alpha."""
-    return torch.stack([ndcg_at_k(fuse(sem_n, ctx_n, float(a)), gains, ideal, cutoff) for a in grid])
+    return torch.stack([ndcg_at_k(fuse(sem_n, ctx_n, float(a)), gains, ideal, cutoff, mask) for a in grid])
 
 
 def oracle_alpha(nd, grid, alpha0):
@@ -37,25 +37,27 @@ def oracle_alpha(nd, grid, alpha0):
     return grid[dist.argmin(0)]
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--protocol", default="A", choices=["A", "B"])
-    args = ap.parse_args()
+    ap.add_argument("--protocol", default="A", help="A | B | <dataset>[@variant]")
+    ap.add_argument("--norms", nargs="*", default=None, help="subset of normalisers (default: all)")
+    args, _ = ap.parse_known_args(argv)
     cfg = load_config()
     set_env(cfg)
     from src.evaluate import save_run
     fc, P = cfg["fusion"], args.protocol
     grid = alpha_grid(fc["alpha_grid_step"])
     cutoff, eps = fc["eval"]["cutoff"], fc["eps"]
-    sets = ["val"] + fc["eval"]["test_sets"]
+    sets = ["val"] + test_sets(cfg, P)
     data = {s: raw_split(cfg, P, s) for s in sets}
 
     alpha0, summary = {}, {}
-    for norm in fc["normalizers"]:
-        nz = {s: (normalize(norm, d.scores["sem"], eps), normalize(norm, d.scores["ctx"], eps)) for s, d in data.items()}
+    for norm in args.norms or fc["normalizers"]:
+        nz = {s: (normalize(norm, d.scores["sem"], eps, d.mask), normalize(norm, d.scores["ctx"], eps, d.mask))
+              for s, d in data.items()}
         # --- (a) grid search on val only; ties -> first (smallest) alpha
         v = data["val"]
-        curve = per_alpha_ndcg(*nz["val"], v.gains, v.ideal, grid, cutoff).mean(1)
+        curve = per_alpha_ndcg(*nz["val"], v.gains, v.ideal, grid, cutoff, v.mask).mean(1)
         a0 = float(grid[int(curve.argmax())])
         alpha0[norm] = {"alpha0": a0, "val_ndcg@10": float(curve.max()),
                         "val_curve": {f"{float(a):.2f}": float(c) for a, c in zip(grid, curve)}}
@@ -65,7 +67,7 @@ def main():
         o_scores, o_alpha = {}, {}
         for s in sets:
             d = data[s]
-            nd = per_alpha_ndcg(*nz[s], d.gains, d.ideal, grid, cutoff)
+            nd = per_alpha_ndcg(*nz[s], d.gains, d.ideal, grid, cutoff, d.mask)
             a = oracle_alpha(nd, grid, a0)
             o_scores[s], o_alpha[s] = fuse(*nz[s], a), a
         m = save_run(cfg, P, f"{P}_{norm}_oracle", {"protocol": P, "norm": norm, "dep": "oracle", "alpha0": a0,
@@ -77,8 +79,9 @@ def main():
                          "small_headroom_flag": bool(gap < fc["eval"]["oracle_flag_points"])}
         log.info("[%s] %-6s alpha0=%.2f val fixed %.4f oracle %.4f (headroom %.4f)%s", P, norm, a0, fixed_val,
                  m["val"]["ndcg@10"], gap, "  <-- SMALL HEADROOM" if gap < fc["eval"]["oracle_flag_points"] else "")
-    save_json(alpha0, results_path(cfg, P, "alpha0.json"))
-    save_json(summary, results_path(cfg, P, "oracle_summary.json"))
+    for name, obj in (("alpha0.json", alpha0), ("oracle_summary.json", summary)):
+        p = results_path(cfg, P, name)
+        save_json({**(load_json(p) if p.exists() else {}), **obj}, p)   # keep other normalisers
 
 
 if __name__ == "__main__":

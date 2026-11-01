@@ -115,8 +115,9 @@ def _scatter_trend(ax, x, y, color):
 
 def alpha_scatter(cfg, P, groups, lam_tag, norm, test):
     qlen = test.qlen.numpy()
-    sem = test.scores["sem"]
-    top2 = sem.topk(2, dim=1).values
+    sem = test.scores["sem"].masked_fill(~test.mask, float("-inf"))
+    top2 = sem.topk(min(2, sem.shape[1]), dim=1).values
+    top2 = top2 if top2.shape[1] == 2 else top2.repeat(1, 2)
     gap = (top2[:, 0] - top2[:, 1]).numpy()
     rng = np.random.default_rng(0)
     for name, x, xlabel in (("alpha_vs_query_length", qlen + rng.uniform(-0.2, 0.2, len(qlen)), "query length (words, jittered)"),
@@ -224,10 +225,10 @@ def summary(cfg, P, groups, lam_tag, hm):
     return text
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--protocol", default="A", choices=["A", "B"])
-    args, _ = ap.parse_known_args()
+    ap.add_argument("--protocol", default="A")
+    args, _ = ap.parse_known_args(argv)
     cfg = load_config()
     set_env(cfg)
     P = args.protocol

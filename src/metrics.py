@@ -4,6 +4,8 @@ Used for early stopping / grid search / oracle. Final reported numbers come from
 (src/evaluate.py); tests/test_metrics.py checks the two agree. Ties are broken by candidate order.
 IDCG is computed from the full qrels (relevant passages outside the top-K still count), which is what
 trec_eval does, so queries without a relevant candidate score 0.
+`mask` [..., K] (variable candidate counts): padded candidates get score -inf, so they rank last and add nothing;
+with fewer than k valid candidates the metric uses all of them.
 """
 import torch
 
@@ -22,8 +24,13 @@ def _discount(k, device):
     return 1.0 / torch.log2(torch.arange(2, k + 2, device=device, dtype=torch.float))
 
 
-def ndcg_at_k(scores, gains, ideal, k=10):
+def _masked(scores, mask):
+    return scores if mask is None else scores.masked_fill(~mask, float("-inf"))
+
+
+def ndcg_at_k(scores, gains, ideal, k=10, mask=None):
     """scores, gains: [..., K]; ideal: [..., k]. Returns [...] NDCG@k (linear gain, like trec_eval)."""
+    scores = _masked(scores, mask)
     order = torch.sort(scores, dim=-1, descending=True, stable=True).indices[..., :k]
     g = torch.gather(gains.expand_as(scores), -1, order)
     disc = _discount(order.shape[-1], scores.device)
@@ -32,9 +39,17 @@ def ndcg_at_k(scores, gains, ideal, k=10):
     return torch.where(idcg > 0, dcg / idcg.clamp_min(1e-12), torch.zeros_like(dcg))
 
 
-def rr_at_k(scores, binary, k=10):
+def rr_at_k(scores, binary, k=10, mask=None):
+    scores = _masked(scores, mask)
     order = torch.sort(scores, dim=-1, descending=True, stable=True).indices[..., :k]
     b = torch.gather(binary.expand_as(scores).float(), -1, order)
     ranks = torch.arange(1, order.shape[-1] + 1, device=scores.device, dtype=torch.float)
     rr = b / ranks
     return rr.max(-1).values
+
+
+def all_recall_at_k(scores, binary, n_rel, k, mask=None):
+    """1 if every relevant passage of the query (n_rel, from the full qrels) is in the top k, else 0."""
+    order = torch.sort(_masked(scores, mask), dim=-1, descending=True, stable=True).indices[..., :k]
+    found = torch.gather(binary.expand_as(scores).float(), -1, order).sum(-1)
+    return ((found >= n_rel) & (n_rel > 0)).float()

@@ -33,7 +33,8 @@ eval:
   bootstrap_seed: 0
   oracle_flag_points: 0.005   # flag if oracle - best fixed < 0.5 NDCG points
   length_buckets: [4, 7]      # short <= 4, medium 5-7, long >= 8 words
-  test_sets: [test, trec19, trec20]
+  test_sets: [test, trec19, trec20]      # MS MARCO; multi-hop datasets use [test]
+  per_query_metrics: [ndcg@10, mrr@10, map, r@10, allr@5]   # stored per query in runs/*.npz
 run_all:
   workers: 16
   threads_per_worker: 1

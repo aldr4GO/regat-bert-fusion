@@ -44,14 +44,15 @@ class AlphaFixed(nn.Module):
 
 
 class FusionModel(nn.Module):
-    """dep in {fixed, Q, QS, S}. Inputs: q_emb [N, d], feats [N, 12] (standardised raw-score stats)."""
+    """dep in {fixed, Q, QS, S, QSC}. Inputs: q_emb [N, d], feats [N, 12] (standardised raw-score stats),
+    cfeats [N, 2] (QSC only, E5: standardised query length and entity count, computed from the query text)."""
 
-    def __init__(self, dep, d, n_feat, alpha0, fcfg):
+    def __init__(self, dep, d, n_feat, alpha0, fcfg, n_cfeat=0):
         super().__init__()
         self.dep = dep
         mc = fcfg["mlp"]
         self.alpha_eps = fcfg["alpha_eps"]
-        in_dim = {"Q": d, "S": n_feat, "QS": d + n_feat}.get(dep)
+        in_dim = {"Q": d, "S": n_feat, "QS": d + n_feat, "QSC": d + n_feat + n_cfeat}.get(dep)
         if dep == "fixed":
             self.alpha_net = AlphaFixed(alpha0)
         else:
@@ -59,21 +60,23 @@ class FusionModel(nn.Module):
         self.log_T = nn.Parameter(torch.tensor(math.log(fcfg["train"]["init_T"])))
         self.bias = None   # only used with the BCE loss (ranking invariant)
 
-    def inputs(self, q_emb, feats):
+    def inputs(self, q_emb, feats, cfeats=None):
         if self.dep == "Q":
             return q_emb
         if self.dep == "S":
             return feats
         if self.dep == "QS":
             return torch.cat([q_emb, feats], -1)
+        if self.dep == "QSC":
+            return torch.cat([q_emb, feats, cfeats], -1)
         return q_emb   # fixed: only the batch size is used
 
-    def alpha(self, q_emb, feats):
-        z = self.alpha_net(self.inputs(q_emb, feats))
+    def alpha(self, q_emb, feats, cfeats=None):
+        z = self.alpha_net(self.inputs(q_emb, feats, cfeats))
         return self.alpha_eps + (1 - 2 * self.alpha_eps) * torch.sigmoid(z)
 
-    def forward(self, q_emb, feats, sem_n, ctx_n):
-        a = self.alpha(q_emb, feats)
+    def forward(self, q_emb, feats, sem_n, ctx_n, cfeats=None):
+        a = self.alpha(q_emb, feats, cfeats)
         return fuse(sem_n, ctx_n, a), a
 
 
@@ -88,7 +91,7 @@ class PaperFusion(nn.Module):
         self.bias = nn.Parameter(torch.tensor(0.0)) if pc["bias"] else None
         self.dep = "paper"
 
-    def forward(self, q_emb, feats, sem_n, ctx_n):
+    def forward(self, q_emb, feats, sem_n, ctx_n, cfeats=None):
         fused = self.a * sem_n + self.b * ctx_n
         # report the implied mixing weight a / (a + b) for analysis
         alpha = (self.a / (self.a + self.b)).expand(sem_n.shape[0])
