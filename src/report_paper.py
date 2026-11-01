@@ -458,11 +458,17 @@ def tab_graph():
     save_tab("graph", body)
 
 
+# rows left out of the paper table at the authors' request (still in results/transfer.csv)
+TRANSFER_HIDE = {("zero_shot", "musique")}
+
+
 def tab_transfer():
     tr = pd.read_csv(RES / "transfer.csv")
     lines = []
     sname = {"zero_shot": "zero-shot", "mixed": "mixed", "lodo": "leave-one-out"}
     for (s, train, test), d in tr.groupby(["setting", "train", "test"], sort=False):
+        if (s, test) in TRANSFER_HIDE:
+            continue
         d = d.set_index("variant")
         cells = [sname[s], tex(train.replace("A", "MSM").replace("hotpotqa", "HQA").replace("musique", "MuSiQue")),
                  NAME[test]]
