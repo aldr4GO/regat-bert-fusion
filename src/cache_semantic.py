@@ -1,6 +1,7 @@
 """Stage 1: frozen cross-encoder raw logits s_sem for every (query, candidate) pair.
 
 Usage:  python -m src.cache_semantic [--sets gat_train val ...]
+        python -m src.cache_semantic --protocol musique      # multi-hop dataset ("{title}. {text}" passages)
 Writes: cache/sem_{set}.pt  ({'qids', 'scores' [N, K]}, aligned with cache/cands_{set}.json)
         results/sem_gap_stats.json  (train vs dev over-confidence check, Sec. 3.1)
 """
@@ -70,15 +71,61 @@ def verify_against_sentence_transformers(cfg, pairs, ours, dev):
     return diff
 
 
+DATASET_SETS = ["gat_train", "fusion_train", "val", "test"]
+
+
+def run_dataset(cfg, key, sets, num_workers, skip_existing, dev):
+    """Multi-hop datasets: variable-size pools, scores saved padded with a mask."""
+    from src.common import data_cache_path, results_path
+    from src.datasets.common import save_padded
+    from src.datasets.texts import cands as load_c, passage_texts, queries as load_q
+    sets = sets or DATASET_SETS
+    if skip_existing:
+        sets = [s for s in sets if not data_cache_path(cfg, f"sem_{s}.pt", key).exists()]
+        if not sets:
+            log.info("all sem_ caches exist for %s; nothing to do", key)
+            return
+    queries = load_q(cfg, key)
+    cands = {s: load_c(cfg, key, s) for s in sets}
+    passages = passage_texts(cfg, key, {p for c in cands.values() for pl in c.values() for p in pl})
+    tok, model = load_cross_encoder(cfg, dev)
+    log.info("cross-encoder %s on %s (%s)", cfg["data"]["cross_encoder"]["model"], dev, key)
+    gaps = {}
+    for s in sets:
+        qids = list(cands[s])
+        pairs = [(queries[q], passages[p]) for q in qids for p in cands[s][q]]
+        flat = score_pairs(tok, model, pairs, cfg, dev, num_workers).tolist()
+        rows, i = [], 0
+        for q in qids:
+            n = len(cands[s][q])
+            rows.append(flat[i:i + n])
+            i += n
+        save_padded(cfg, key, f"sem_{s}.pt", qids, rows)
+        top = [sorted(r, reverse=True)[:2] for r in rows]
+        gaps[s] = {"mean_top1_minus_top2": float(sum(t[0] - t[-1] for t in top) / len(top)),
+                   "mean_logit": float(sum(map(sum, rows)) / max(1, sum(map(len, rows)))),
+                   "mean_max_logit": float(sum(t[0] for t in top) / len(top))}
+        log.info("sem_%s (%s): %d pairs, gap stats %s", s, key, len(pairs), gaps[s])
+    p = results_path(cfg, key, "sem_gap_stats.json")
+    if p.exists():
+        from src.common import load_json
+        gaps = {**load_json(p), **gaps}
+    save_json(gaps, p)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--sets", nargs="*", default=None)
     ap.add_argument("--num_workers", type=int, default=4)
     ap.add_argument("--skip_existing", action="store_true", help="resume: skip sets whose sem_ file exists")
+    ap.add_argument("--protocol", default="A", help="A (MS MARCO) or a multi-hop dataset")
     args = ap.parse_args()
     cfg = load_config()
     set_env(cfg)
     dev = device()
+    if args.protocol != "A":
+        run_dataset(cfg, args.protocol, args.sets, args.num_workers, args.skip_existing, dev)
+        return
     sets = args.sets or cfg["data"]["cache_sets"]
     if args.skip_existing:
         sets = [s for s in sets if not cache_path(cfg, f"sem_{s}.pt").exists()]

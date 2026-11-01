@@ -11,7 +11,16 @@ data:
   bm25: {threads: 8}
 gat:
   train: {max_epochs: 3}
+  sanity: {enforce: false}    # 200 training queries x 3 epochs cannot be expected to beat s_bi
 fusion:
   train: {max_epochs: 4, seeds: [0, 1]}
   eval: {bootstrap_resamples: 500}
   run_all: {workers: 4}
+multihop:
+  bootstrap_resamples: 500
+  datasets:
+    musique: {sizes: {gat_train: 200, fusion_train: 120, val: 60}, smoke_test_size: 150}
+    hotpotqa: {sizes: {gat_train: 200, fusion_train: 120, val: 60}, smoke_test_size: 150}
+    twowiki: {sizes: {gat_train: 200, fusion_train: 120, val: 60}, smoke_test_size: 150}
+    beir_hotpotqa: {sizes: {gat_train: 150, fusion_train: 100, val: 50}, train_pool: 500, smoke_test_size: 100,
+                    bm25: {threads: 8}}
