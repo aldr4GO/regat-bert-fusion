@@ -1,5 +1,5 @@
 \documentclass[aspectratio=169,11pt]{beamer}
-\usepackage{amsmath,amssymb,booktabs,tikz,graphicx}
+\usepackage{amsmath,amssymb,booktabs,tikz,graphicx,array}
 \usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric}
 
 % ---------------------------------------------------------------- look
@@ -30,6 +30,8 @@
   \hfill{\color{muted}\scriptsize\insertframenumber\,/\,\inserttotalframenumber}\hspace*{0.5cm}\vspace*{0.3cm}}
 \setlength{\leftmargini}{1.1em}
 
+\newcommand{\gloss}[1]{\begingroup\footnotesize\renewcommand{\arraystretch}{1.18}\begin{tabular}{@{}>{\color{ctx}}l@{\hspace{0.6em}}>{\raggedright\arraybackslash}p{#1}@{}}}
+\newcommand{\glossend}{\end{tabular}\endgroup}
 \newcommand{\ssem}{s_{\mathrm{sem}}}
 \newcommand{\sctx}{s_{\mathrm{ctx}}}
 \newcommand{\src}[1]{\par\vfill{\color{muted}\scriptsize #1}}
@@ -150,8 +152,8 @@
 \begin{frame}{GAR: Graph-based Adaptive Re-ranking}
 \begin{columns}[T]
 \begin{column}{0.56\textwidth}
-\includegraphics[width=\linewidth]{img/gar_fig1.png}\\[0.1cm]
-{\scriptsize\color{muted}Figure 1 of MacAvaney et al.\ (CIKM 2022).}
+\includegraphics[width=\linewidth]{img/gar_fig1_cap.png}\\[0.05cm]
+{\scriptsize\color{muted}Screenshot from MacAvaney et al.\ (CIKM 2022).}
 \end{column}
 \begin{column}{0.41\textwidth}
 \begin{itemize}\setlength{\itemsep}{6pt}
@@ -232,68 +234,147 @@
 \src{Our diagram of the pipeline as reproduced in this project (models as used in our experiments).}
 \end{frame}
 
-\begin{frame}{Inside the GAT: attention over neighbours}
+\begin{frame}{GAT step 1: build a graph over the pool}
 \begin{columns}[T]
-\begin{column}{0.52\textwidth}
-\textbf{Graph}: node $i$ = passage $p_i$ with feature $x_i=E(p_i)$; edges to its $k$ nearest pool neighbours (cosine $\ge 0.3$) and a self-loop.\\[0.3cm]
-\textbf{Attention} (GATv2, per head):
-\[e_{ij}=\mathbf a^{\!\top}\,\mathrm{LeakyReLU}\big(\mathbf W[x_i\,\|\,x_j]\big)\]
-\[\alpha_{ij}=\frac{\exp(e_{ij})}{\sum_{k\in\mathcal N(i)}\exp(e_{ik})},\qquad
-x_i'=\sum_{j\in\mathcal N(i)}\alpha_{ij}\,\mathbf W x_j\]
-\textbf{Two layers}: 4 heads (concat, hidden 128) $\to$ ELU $\to$ 1 head back to dimension $d$.
+\begin{column}{0.56\textwidth}
+One graph per query, over its $K$ candidate passages.\\[0.25cm]
+\gloss{6.2cm}
+node $i$ & candidate passage $p_i$ ($K=100$ on MS MARCO, 10--20 in closed pools)\\
+$x_i=E(p_i)\in\mathbb R^{d}$ & node feature: the frozen bi-encoder embedding of $p_i$, $d=384$\\
+edge $j\to i$ & $p_j$ is one of the $k$ nearest neighbours of $p_i$ by cosine, and $\cos(x_i,x_j)\ge0.3$; $k=8$ (MS MARCO), 3 (multi-hop)\\
+self-loop & edge $i\to i$, so a passage keeps its own information\\
+$\mathcal N(i)$ & neighbourhood of $i$: its neighbours and itself\\
+$X$, $A$ & all node features $[x_1,\dots,x_K]$ and the adjacency matrix ($A_{ij}=1$ if edge)\\
+\glossend
 \end{column}
-\begin{column}{0.44\textwidth}
+\begin{column}{0.4\textwidth}
 \centering
 \begin{tikzpicture}[font=\small,
   n/.style={circle,draw=white,line width=1.5pt,minimum size=0.75cm,inner sep=0pt}]
   \node[n,fill=ctx,text=white] (i) at (0,0) {$p_i$};
   \foreach \a/\l/\w in {90/p_1/2.4,10/p_2/1.2,-60/p_3/0.6,-150/p_4/1.8,160/p_5/0.9}{
-    \node[n,fill=sem!70,text=white] (\l) at (\a:2.1) {$\l$};
+    \node[n,fill=sem!70,text=white] (\l) at (\a:2.0) {$\l$};
     \draw[ctx!80,line width=\w pt] (i)--(\l);}
-  \node[font=\scriptsize,muted,align=center] at (0,-2.9) {edge width $\propto$ attention $\alpha_{ij}$:\\the GAT learns which neighbours matter};
+  \node[font=\scriptsize,muted,align=center] at (0,-2.8) {edge width $\propto$ attention $\pi_{ij}$ (step 2):\\the GAT learns which neighbours matter};
 \end{tikzpicture}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{The contextual score: maths}
+\begin{frame}{GAT step 2: how much should $p_i$ listen to $p_j$?}
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\textbf{Attention score} (GATv2, one head):
+\[e_{ij}=\mathbf a^{\!\top}\,\mathrm{LeakyReLU}\big(\mathbf W_t\,x_i+\mathbf W_s\,x_j\big)\]
+\textbf{Attention weight}: softmax over the neighbourhood
+\[\pi_{ij}=\frac{\exp(e_{ij})}{\sum_{k\in\mathcal N(i)}\exp(e_{ik})}\]
+{\small $\pi_{ij}\ge0$, $\sum_{j}\pi_{ij}=1$.\\[0.1cm]
+{\color{muted}Called $\alpha_{ij}$ in the GAT papers; renamed to avoid a clash with the fusion weight $\alpha$.}}
+\end{column}
+\begin{column}{0.5\textwidth}
+\gloss{4.9cm}
+$x_i$, $x_j$ & embedding of the passage being updated ($i$) and of a neighbour ($j$)\\
+$\mathbf W_t,\mathbf W_s$ & learned $d'\times d$ projections for the target ($i$) and source ($j$) node\\
+LeakyReLU & $\max(z,0.2z)$ per coordinate (non-linearity)\\
+$\mathbf a\in\mathbb R^{d'}$ & learned attention vector; $\mathbf a^{\!\top}(\cdot)$ is a dot product: vector $\to$ \emph{one number}\\
+$e_{ij}$ & raw importance of neighbour $j$ for $i$\\
+$\pi_{ij}$ & normalised attention weight\\
+\glossend\\[0.15cm]
+{\scriptsize\color{muted}GATv2 applies $\mathbf a$ \emph{after} the non-linearity (``dynamic attention'').}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{GAT step 3: aggregate, multi-head, two layers}
 \begin{columns}[T]
 \begin{column}{0.53\textwidth}
-\textbf{1. Refine} each passage with its neighbourhood (residual, so it starts at the bi-encoder embedding):
-\[h_i=\frac{\mathrm{LN}\big(x_i+\mathrm{GAT}(X,A)_i\big)}{\big\|\mathrm{LN}\big(x_i+\mathrm{GAT}(X,A)_i\big)\big\|}\]
-\textbf{2. Score} against the query vector, which lives in the same space ($h_i\in\mathbb R^d$, $E(q)\in\mathbb R^d$):
-\[\sctx(q,p_i)=E(q)^{\!\top}h_i=\cos\big(E(q),h_i\big)\]
+\textbf{One head}: weighted average of projected neighbours
+\[x_i'=\textstyle\sum_{j\in\mathcal N(i)}\pi_{ij}\,\mathbf W_s\,x_j+\mathbf b\]
+\textbf{Layer 1}: $M=4$ heads, outputs concatenated
+\[h^{(1)}_i=\big\Vert_{m=1}^{4}\Big(\textstyle\sum_{j}\pi^{(m)}_{ij}\mathbf W^{(m)}_s x_j+\mathbf b^{(m)}\Big)\in\mathbb R^{4\cdot128}\]
+\textbf{Layer 2}: one head, back to dimension $d$
+\[h^{(2)}_i=\textstyle\sum_{j}\pi^{(2)}_{ij}\,\mathbf W^{(2)}_s\,\mathrm{ELU}\big(h^{(1)}_j\big)+\mathbf b^{(2)}\in\mathbb R^{384}\]
 \end{column}
 \begin{column}{0.44\textwidth}
-\textbf{3. Train} the GAT once (encoders frozen) with InfoNCE over the pool:
-\[\mathcal L_{\mathrm{GAT}}=-\log\frac{\sum_{p^+}\exp(\sctx(q,p^+)/\tau)}{\sum_{j=1}^{K}\exp(\sctx(q,p_j)/\tau)}\]
-{\small $\tau=0.05$; positives = gold passages.}\\[0.4cm]
-\cardbox[ctxcard]{5.6cm}{\small Same query vector, but a passage's vector now carries information from the passages it is linked to, e.g.\ the bridge entity of a 2-hop chain.}
+\gloss{4.3cm}
+$\mathbf b$ & learned bias vector\\
+$m$ & head index; each head has its own $\mathbf W$, $\mathbf a$, so it can attend to a different kind of relation\\
+$\Vert$ & concatenation of the 4 head outputs ($4\times128=512$ numbers)\\
+$\mathrm{ELU}(z)$ & $z$ if $z>0$, else $e^{z}-1$ (smooth non-linearity between layers)\\
+dropout & 0.1 on the attention weights while training\\
+\glossend\\[0.3cm]
+\cardbox[ctxcard]{5.4cm}{\small\textbf{2 layers = 2 graph hops}: $p_i$ also hears its neighbours' neighbours.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{GAT step 4: refined passage $\to$ contextual score}
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\textbf{Residual}: keep the meaning, add a correction
+\[z_i=x_i+\mathrm{GAT}(X,A)_i\]
+\textbf{LayerNorm}, then unit length
+\[\mathrm{LN}(z)=\boldsymbol\gamma\odot\frac{z-\mu_z}{\sqrt{\sigma_z^2+\epsilon}}+\boldsymbol\eta\]
+\[h_i=\mathrm{LN}(z_i)\,/\,\lVert\mathrm{LN}(z_i)\rVert_2\]
+\textbf{Contextual score}
+\[\sctx(q,p_i)=E(q)^{\!\top}h_i=\cos\big(E(q),h_i\big)\]
+\end{column}
+\begin{column}{0.52\textwidth}
+\gloss{4.7cm}
+$\mathrm{GAT}(X,A)_i$ & 2-layer GAT output $h^{(2)}_i$ for node $i$, given all features $X$ and the graph $A$\\
+LN & Layer Normalisation: re-centres and re-scales one vector over its own $d$ coordinates\\
+$\mu_z$, $\sigma_z$ & mean and std of the $d$ coordinates of $z$\\
+$\boldsymbol\gamma$, $\boldsymbol\eta$ & learned scale and shift ($\in\mathbb R^d$); $\odot$ = element-wise product\\
+$\lVert\cdot\rVert_2$ & Euclidean length: $h_i$ becomes a unit vector\\
+$E(q)$ & unit-length query embedding from the \emph{same} bi-encoder\\
+\glossend\\[0.1cm]
+{\small $h_i$ and $E(q)$ share one $\mathbb R^{384}$ space: the residual starts $h_i$ at the bi-encoder vector $x_i$.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Training the GAT: InfoNCE loss}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\[\mathcal L_{\mathrm{GAT}}=-\log\frac{\sum_{p^+}\exp\big(\sctx(q,p^+)/\tau\big)}{\sum_{j=1}^{K}\exp\big(\sctx(q,p_j)/\tau\big)}\]
+\begin{itemize}\setlength{\itemsep}{5pt}\small
+  \item The fraction is the share of the softmax over the pool that falls on the gold passages.
+  \item Minimising $\mathcal L$ pulls gold $h_i$ towards $E(q)$ and pushes the other pool passages away.
+  \item Trained: $\mathbf W_s,\mathbf W_t,\mathbf a,\mathbf b,\boldsymbol\gamma,\boldsymbol\eta$. Bi-encoder and cross-encoder stay \textbf{frozen}.
+  \item AdamW, lr $10^{-4}$, early stopping on val nDCG@10; trained \textbf{once} per dataset, then frozen for all fusion experiments.
+\end{itemize}
+\end{column}
+\begin{column}{0.46\textwidth}
+\gloss{4.6cm}
+InfoNCE & a contrastive loss: cross-entropy of picking the gold passages out of the pool\\
+$p^+$ & gold (relevant) passages of $q$ in the pool\\
+$p_j$, $K$ & all pool passages, pool size\\
+$\tau=0.05$ & temperature: dividing by a small $\tau$ sharpens the softmax, so small score gaps matter\\
+$\exp$, $\log$ & natural exponential and logarithm\\
+\glossend
 \end{column}
 \end{columns}
 \end{frame}
 
 \begin{frame}{ReGAT-BERT fusion strategy}
-\begin{columns}[c]
-\begin{column}{0.55\textwidth}
 \[\mathrm{score}(q,p)=\alpha\cdot\ssem(q,p)+\beta\cdot\sctx(q,p)\]
-\begin{itemize}\setlength{\itemsep}{8pt}
-  \item $\alpha,\beta$: two free scalars, learned with a pointwise BCE loss on relevance labels.
-  \item Raw scores are fused as they are: the cross-encoder logit and the cosine live on \textbf{different scales}.
-  \item One pair $(\alpha,\beta)$ for \hl{all queries}: an easy keyword query and a 4-hop question get the same mix.
-\end{itemize}
+\vspace{-0.1cm}
+{\small $\alpha,\beta$: two free scalars, learned with a pointwise \textbf{BCE} loss:}
+\[\mathcal L_{\mathrm{BCE}}=-\frac1N\sum_{(q,p)}\Big[\,y\log\sigma(\mathrm{score})+(1-y)\log\big(1-\sigma(\mathrm{score})\big)\Big]\]
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\gloss{5.6cm}
+BCE & Binary Cross-Entropy: penalises a confident wrong relevance probability\\
+$y\in\{0,1\}$ & relevance label of the pair $(q,p)$\\
+$\sigma(z)$ & sigmoid $1/(1+e^{-z})$: score $\to$ probability\\
+$N$ & number of training pairs, each judged on its own\\
+\glossend
 \end{column}
-\begin{column}{0.4\textwidth}
-\centering
-\begin{tikzpicture}
-  \node[font=\small\bfseries,muted] at (1.6,3.3) {same weights for every query};
-  \foreach \y/\l in {2.4/{simple query},1.4/{2-hop question},0.4/{4-hop question}}{
-    \fill[sem,rounded corners=2pt] (0,\y) rectangle (2.8,\y+0.5);
-    \fill[ctx,rounded corners=2pt] (2.85,\y) rectangle (4,\y+0.5);
-    \node[font=\scriptsize,anchor=east,muted] at (-0.1,\y+0.25) {\l};}
-  \node[font=\scriptsize,sem] at (1.4,-0.05) {$\alpha$};
-  \node[font=\scriptsize,ctx] at (3.4,-0.05) {$\beta$};
-\end{tikzpicture}
+\begin{column}{0.41\textwidth}
+\begin{itemize}\setlength{\itemsep}{5pt}\small
+  \item Raw scores are fused as they are: the cross-encoder logit and the cosine live on \textbf{different scales}.
+  \item One pair $(\alpha,\beta)$ for \hl{all queries}: a keyword query and a 4-hop question get the same mix.
+\end{itemize}
 \end{column}
 \end{columns}
 \end{frame}
@@ -324,7 +405,7 @@ x_i'=\sum_{j\in\mathcal N(i)}\alpha_{ij}\,\mathbf W x_j\]
 
 \begin{frame}{Our score and the normalisers}
 \[\mathrm{score}(q,p_i)=\alpha\cdot\tilde s_{\mathrm{sem}}(q,p_i)+(1-\alpha)\cdot\tilde s_{\mathrm{ctx}}(q,p_i),\qquad \alpha\in(0,1)\]
-{\small $\tilde s$ = score normalised \emph{within each query's pool}, so $\alpha$ is a true mixing weight. $\alpha=1$: cross-encoder only; $\alpha=0$: GAT only.}\\[0.25cm]
+{\small $\tilde s$ = score normalised \emph{within each query's pool}, so $\alpha$ is a true mixing weight. $\alpha=1$: cross-encoder only; $\alpha=0$: GAT only.}\\[0.1cm]
 \centering
 \begin{tikzpicture}[every node/.style={align=left,anchor=north west}]
   \foreach \x/\t/\f/\d in {
@@ -336,33 +417,68 @@ x_i'=\sum_{j\in\mathcal N(i)}\alpha_{ij}\,\mathbf W x_j\]
     \node[font=\large\bfseries] at (\x+0.15,-0.2) {\t};
     \node[font=\normalsize,text width=3.2cm] at (\x+0.15,-0.8) {\f};
     \node[font=\small,text width=3.2cm,muted] at (\x+0.15,-1.85) {\d};}
-\end{tikzpicture}
+\end{tikzpicture}\\[0.05cm]
+\raggedright{\footnotesize\color{muted} $s_i$: raw score of the $i$-th passage in the query's pool. $\min s$, $\max s$, $\mu_q$, $\sigma_q$: minimum, maximum, mean and standard deviation over that pool. $\mathrm{rank}_i$: position of $p_i$ when the pool is sorted by $s$ (1 = best). $K$: pool size.}
 \end{frame}
 
-\begin{frame}{Modelling the dependency of $\alpha$}
+\begin{frame}{Modelling $\alpha$: the gate network}
+\[\alpha(x)=\epsilon+(1-2\epsilon)\cdot\sigma\Big(\mathbf w_2^{\!\top}\,\mathrm{ReLU}\big(\mathbf W_1x+\mathbf b_1\big)+b_2\Big)\]
 \begin{columns}[T]
-\begin{column}{0.5\textwidth}
-\textbf{Gate}: a small MLP whose \hl{input} decides what $\alpha$ may depend on:
-\[\alpha(x)=\epsilon+(1-2\epsilon)\,\sigma\big(\mathbf w_2^{\top}\mathrm{ReLU}(\mathbf W_1x+\mathbf b_1)+b_2\big)\]
-\renewcommand{\arraystretch}{1.25}
+\begin{column}{0.47\textwidth}
+\renewcommand{\arraystretch}{1.2}
 {\small
 \begin{tabular}{@{}ll@{}}
 \toprule
-Gate & input $x$\\
+Gate & input $x$ (what $\alpha$ may depend on)\\
 \midrule
-fixed & none: one learned scalar\\
+fixed & none: one learned scalar for all queries\\
 \textbf{Q} & query embedding $E(q)\in\mathbb R^{384}$\\
 \textbf{S} & 12 score statistics $f(\ssem,\sctx)$\\
-\textbf{QS} & $[E(q)\,\|\,f]$\\
-\textbf{QS+C} & $[E(q)\,\|\,f\,\|\,$len, \#entities$]$\\
+\textbf{QS} & $[E(q)\,\Vert\,f]$\\
+\textbf{QS+C} & $[E(q)\,\Vert\,f\,\Vert\,c]$, $c$ = length, \#entities\\
 \bottomrule
-\end{tabular}}
+\end{tabular}}\\[0.3cm]
+{\small Every query gets its \hl{own} $\alpha$, computed from $x$ at test time; no labels are used.}
 \end{column}
-\begin{column}{0.46\textwidth}
-{\small\textbf{S features} (per query, from raw scores, never labels): for each of $\ssem$, $\sctx$: mean, std, top-1, top-1$-$top-2 gap, softmax entropy; plus Spearman$(\ssem,\sctx)$ and top-10 overlap.\\[0.25cm]
-\textbf{Training} (CE and GAT frozen):
-\[\mathcal L=-\log\!\sum_{p^+}\mathrm{softmax}_i\!\Big(\tfrac{\mathrm{score}_i}{T}\Big)+\lambda\,(\alpha-\alpha_0)^2\]
-$b_2$ starts at $\mathrm{logit}(\alpha_0)$ ($\alpha_0$ = best fixed $\alpha$ on val): every gate starts as the fixed baseline. $\lambda=0.01$, 5 seeds.}
+\begin{column}{0.5\textwidth}
+\gloss{4.8cm}
+$x$ & gate input for this query (left)\\
+$\mathbf W_1,\mathbf b_1$ & hidden layer, 64 units (dropout 0.1)\\
+$\mathrm{ReLU}(z)$ & $\max(z,0)$\\
+$\mathbf w_2,b_2$ & output layer: one number (a logit)\\
+$\sigma(z)$ & sigmoid, maps the logit into $(0,1)$\\
+$\epsilon=10^{-6}$ & keeps $\alpha$ strictly inside $(0,1)$\\
+$\Vert$ & concatenation of input vectors\\
+\glossend
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Gate inputs and training}
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\textbf{S features} (12 per query, from raw scores):\\[0.1cm]
+{\small For each of $\ssem$ and $\sctx$ over the pool:\\[0.05cm]
+\gloss{4.2cm}
+mean, std & level and spread of the scores\\
+top-1 & best score\\
+top-1 $-$ top-2 & margin: how confident the scorer is\\
+entropy & of softmax(scores): how peaked\\
+\glossend\\[0.1cm]
+plus Spearman $\rho(\ssem,\sctx)$ (do the two rankings agree?) and the overlap of their top-10.}\\[0.2cm]
+{\small \textbf{C}: query length in words and number of named entities (spaCy).}
+\end{column}
+\begin{column}{0.5\textwidth}
+\textbf{Listwise loss} with a pull towards $\alpha_0$:
+\[\mathcal L=-\log\sum_{p^+}\mathrm{softmax}_i\Big(\frac{\mathrm{score}_i}{T}\Big)+\lambda\,(\alpha-\alpha_0)^2\]
+\gloss{4.4cm}
+$\mathrm{score}_i$ & fused score of pool passage $i$\\
+$\mathrm{softmax}_i$ & over the query's pool; first term = probability mass on gold $p^+$\\
+$T$ & learned temperature\\
+$\alpha_0$ & best single fixed $\alpha$ on the validation grid (step 0.05)\\
+$\lambda=0.01$ & strength of the pull towards $\alpha_0$\\
+\glossend\\[0.15cm]
+{\scriptsize\color{muted}$b_2=\mathrm{logit}(\alpha_0)$, $\mathbf w_2\approx0$ at start: every gate starts as the fixed baseline. AdamW, early stopping on val, 5 seeds. CE and GAT frozen.}
 \end{column}
 \end{columns}
 \end{frame}
@@ -382,43 +498,46 @@ $b_2$ starts at $\mathrm{logit}(\alpha_0)$ ($\alpha_0$ = best fixed $\alpha$ on 
     \node[font=\small,\c] at (\x+0.15,-0.7) {\h};
     \node[font=\scriptsize,text width=2.6cm] at (\x+0.1,-1.15) {\d};}
 \end{tikzpicture}\\[0.3cm]
-\includegraphics[width=0.85\textwidth]{img/table1.png}
-\src{Table 1 of our report. Open: BM25 pool from the full corpus. Closed: the dataset's own paragraphs.}
+\includegraphics[width=0.86\textwidth]{img/table1_cap.png}
 \end{frame}
 
 % ================================================================ results
 \divider{Part 3}{Results}
 
 \begin{frame}{1.\ The best $\alpha$ differs by dataset}
-\centering
-\includegraphics[height=0.66\textheight]{img/alpha_curves.pdf}\\[0.1cm]
-\begin{minipage}{0.92\textwidth}\small
-nDCG@10 vs.\ fixed $\alpha$. MS MARCO peaks at a high $\alpha$ (\textbf{0.70--0.95}); the multi-hop sets MuSiQue (val \textbf{0.40}) and 2Wiki (\textbf{0.45}) peak \hl{below 0.5}.
-\end{minipage}
-\src{Figure 1 of our report (min--max, dashed = val, solid = test).}
+\begin{columns}[c]
+\begin{column}{0.67\textwidth}
+\includegraphics[width=\linewidth]{img/figure1_cap.png}
+\end{column}
+\begin{column}{0.31\textwidth}
+\begin{itemize}\setlength{\itemsep}{8pt}\small
+  \item Each curve: nDCG@10 of the fixed fusion as $\alpha$ goes from 0 (GAT only) to 1 (CE only).
+  \item Single-hop \textbf{MS MARCO} peaks far right: $\alpha=0.70$--$0.95$.
+  \item Multi-hop \textbf{MuSiQue} (val, $\alpha=0.40$) and \textbf{2Wiki} ($\alpha=0.45$) peak \hl{left of 0.5}: the contextual score gets more weight.
+\end{itemize}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{1.\ More hops $\Rightarrow$ lower $\alpha$ (MuSiQue)}
 \centering
-\includegraphics[width=0.94\textwidth]{img/table3.png}\\[0.4cm]
+\includegraphics[width=0.9\textwidth]{img/table3_cap.png}\\[0.25cm]
 \begin{columns}[T]
 \begin{column}{0.46\textwidth}
-\cardbox[ctxcard]{6.1cm}{\small\textbf{Best $\alpha$ falls with each hop} under every normaliser. Test, min--max: \textbf{0.80 $\to$ 0.55 $\to$ 0.40}; val: 0.40 $\to$ 0.40 $\to$ 0.25.}
+\cardbox[ctxcard]{6.1cm}{\small\textbf{Best $\alpha$ falls with each hop}. Test, min--max: \textbf{0.80 $\to$ 0.55 $\to$ 0.40}; val: 0.40 $\to$ 0.40 $\to$ 0.25.}
 \end{column}
 \begin{column}{0.46\textwidth}
-\cardbox[semcard]{6.1cm}{\small\textbf{Why:} from 2 to 4 hops the cross-encoder drops 12.5 nDCG points (test), the GAT only 4.7. At 4 hops the GAT is ahead.}
+\cardbox[semcard]{6.1cm}{\small\textbf{Why}: 2 $\to$ 4 hops, the cross-encoder drops 12.5 points (test), the GAT only 4.7.}
 \end{column}
 \end{columns}
-\src{Table 3 of our report. mm = min--max, z = z-score.}
 \end{frame}
 
 \begin{frame}{1.\ The trend holds under every normaliser}
 \begin{columns}[c]
-\begin{column}{0.5\textwidth}
-\centering\includegraphics[width=\linewidth]{img/hops_robust.pdf}
-\src{Figure 3 of our report (MuSiQue test).}
+\begin{column}{0.45\textwidth}
+\centering\includegraphics[height=0.84\textheight]{img/figure3_cap.png}
 \end{column}
-\begin{column}{0.46\textwidth}
+\begin{column}{0.5\textwidth}
 \begin{itemize}\setlength{\itemsep}{8pt}
   \item Min--max, z-score and rank all give a \hl{monotone decline} of the best $\alpha$ from 2 to 4 hops.
   \item 4-hop questions sit \textbf{below 0.5} in all 14 normaliser / graph / split settings.
@@ -430,7 +549,7 @@ nDCG@10 vs.\ fixed $\alpha$. MS MARCO peaks at a high $\alpha$ (\textbf{0.70--0.
 
 \begin{frame}{1.\ Same pattern by question type (2Wiki)}
 \centering
-\includegraphics[width=0.96\textwidth]{img/table4.png}\\[0.4cm]
+\includegraphics[width=0.95\textwidth]{img/table4_cap.png}\\[0.3cm]
 \begin{columns}[T]
 \begin{column}{0.3\textwidth}
 \cardbox[semcard]{3.9cm}{\small\textbf{Comparison}:\\$\alpha=0.65$--$0.90$,\\cross-encoder wins.}
@@ -442,38 +561,32 @@ nDCG@10 vs.\ fixed $\alpha$. MS MARCO peaks at a high $\alpha$ (\textbf{0.70--0.
 \cardbox[card]{4.3cm}{\small\textbf{Q gate}, blind to the type: highest $\alpha$ on comparison, gains on bridge-comp.}
 \end{column}
 \end{columns}
-\src{Table 4 of our report. Bold: $\alpha<0.5$. $\blacktriangle$: significantly better than fixed $\alpha$ ($p<0.05$).}
 \end{frame}
 
 \begin{frame}{2.\ Adaptive $\alpha$ gains on complex queries}
-\begin{columns}[c]
-\begin{column}{0.58\textwidth}
-\centering\includegraphics[width=\linewidth]{img/table6.png}
-\src{Table 6 of our report: $\Delta$nDCG@10 vs.\ best fixed $\alpha$ (test).}
+\centering
+\includegraphics[width=0.68\textwidth]{img/table6_cap.png}\\[0.15cm]
+\begin{columns}[T]
+\begin{column}{0.46\textwidth}
+\cardbox[ctxcard]{6.1cm}{\small\textbf{7 of the 11} significant gains are on \textbf{multi-hop} sets; largest on MuSiQue (rank): +0.43 / +1.22 / +1.37.}
 \end{column}
-\begin{column}{0.39\textwidth}
-\begin{itemize}\setlength{\itemsep}{6pt}\small
-  \item \textbf{7 of the 11} significant gains are on the \hl{multi-hop} sets.
-  \item Largest: MuSiQue, rank norm., \textbf{+0.43 / +1.22 / +1.37} (Q / QS / S).
-  \item MS MARCO gains $\le 0.05$: one fixed $\alpha$ serves simple queries.
-  \item Oracle per-query $\alpha$ headroom: 7.4 (MuSiQue) vs.\ 5.0 (MS MARCO).
-\end{itemize}
+\begin{column}{0.46\textwidth}
+\cardbox[semcard]{6.1cm}{\small\textbf{MS MARCO} gains $\le0.05$. Oracle per-query $\alpha$ headroom: 7.4 (MuSiQue) vs.\ 5.0 (MS MARCO).}
 \end{column}
 \end{columns}
 \end{frame}
 
 \begin{frame}{2.\ Transfer: $\alpha$ follows the target data}
 \centering
-\includegraphics[width=0.94\textwidth]{img/table9.png}\\[0.35cm]
+\includegraphics[width=0.88\textwidth]{img/table9_cap.png}\\[0.25cm]
 \begin{columns}[T]
 \begin{column}{0.46\textwidth}
-\cardbox[ctxcard]{6.1cm}{\small\textbf{One gate on mixed data} (MS MARCO + MuSiQue + HotpotQA) gives MuSiQue the \textbf{lowest} mean $\alpha$ (0.54) vs.\ MS MARCO 0.59 and HotpotQA 0.68.}
+\cardbox[ctxcard]{6.1cm}{\small\textbf{One gate on mixed data} gives MuSiQue the \textbf{lowest} mean $\alpha$ (0.54) vs.\ MS MARCO 0.59 and HotpotQA 0.68.}
 \end{column}
 \begin{column}{0.46\textwidth}
-\cardbox[semcard]{6.1cm}{\small\textbf{Zero-shot} MS MARCO gates keep $\alpha=0.70$ and lose to the target's own setting, e.g.\ 2Wiki 90.99 vs.\ 91.75 (in-domain $\alpha_0=0.45$).}
+\cardbox[semcard]{6.1cm}{\small\textbf{Zero-shot} MS MARCO gates keep $\alpha=0.70$ and lose to the target's own setting, e.g.\ 2Wiki 90.99 vs.\ 91.75.}
 \end{column}
 \end{columns}
-\src{Table 9 of our report (min--max, test nDCG@10 $\times100$, 5 seeds).}
 \end{frame}
 
 \begin{frame}{Conclusion}

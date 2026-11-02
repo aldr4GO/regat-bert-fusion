@@ -744,14 +744,14 @@ def fig_hops():
     save_fig(fig, "hops_curves")
     fig, ax = plt.subplots(figsize=(3.15, 2.7))
     ax.axhspan(0, 0.5, color="#f1efe8", zorder=0)
-    styles = [("knn_emb", "minmax", "min--max", "o", "-"), ("knn_emb", "zscore", "z-score", "s", "-"),
+    styles = [("knn_emb", "minmax", "min–max", "o", "-"), ("knn_emb", "zscore", "z-score", "s", "-"),
               ("knn_emb", "rank", "rank", "^", "-"), ("none", "minmax", "no graph", "o", ":"),
               ("random", "minmax", "random graph", "s", ":"), ("title_link", "minmax", "title graph", "^", ":"),
               ("hybrid", "minmax", "kNN+title", "D", ":")]
     for graph, norm, lab, mk, ls in styles:
         r = o[(o.dataset == "musique") & (o.graph == graph) & (o.norm == norm) & (o.field == "hops") &
               (o.split == "test")].sort_values("bucket")
-        col = {"min--max": "#6250d6", "z-score": "#eda100", "rank": "#e87ba4"}.get(lab, "#9a9890")
+        col = {"min–max": "#6250d6", "z-score": "#eda100", "rank": "#e87ba4"}.get(lab, "#9a9890")
         ax.plot(r.bucket.astype(int), r.best_alpha, ls, marker=mk, ms=4.5, color=col, lw=1.2, label=lab)
     ax.set_xticks([2, 3, 4])
     ax.set_xlabel("hops")
