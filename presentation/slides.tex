@@ -581,7 +581,7 @@ $\lambda=0.01$ & strength of the pull towards $\alpha_0$\\
 \includegraphics[width=0.88\textwidth]{img/table9_cap.png}\\[0.25cm]
 \begin{columns}[T]
 \begin{column}{0.46\textwidth}
-\cardbox[ctxcard]{6.1cm}{\small\textbf{One gate on mixed data} gives MuSiQue the \textbf{lowest} mean $\alpha$ (0.54) vs.\ MS MARCO 0.59 and HotpotQA 0.68.}
+\cardbox[ctxcard]{6.1cm}{\small\textbf{One gate on mixed data} (MS MARCO + MuSiQue + HotpotQA) gives MuSiQue a mean $\alpha$ of 0.54, well below the 0.70 of an MS MARCO-only gate, and varies it per query (sd 0.16).}
 \end{column}
 \begin{column}{0.46\textwidth}
 \cardbox[semcard]{6.1cm}{\small\textbf{Zero-shot} MS MARCO gates keep $\alpha=0.70$ and lose to the target's own setting, e.g.\ 2Wiki 90.99 vs.\ 91.75.}
@@ -591,15 +591,16 @@ $\lambda=0.01$ & strength of the pull towards $\alpha_0$\\
 
 \begin{frame}{Conclusion}
 \begin{columns}[T]
-\begin{column}{0.56\textwidth}
-\begin{itemize}\setlength{\itemsep}{7pt}\small
+\begin{column}{0.58\textwidth}
+\begin{itemize}\setlength{\itemsep}{5pt}\small
   \item \textbf{Alpha follows the hops}: the more reasoning steps a query needs, the more weight belongs on the graph-contextual score.
-  \item MuSiQue: best $\alpha$ 0.80 $\to$ 0.55 $\to$ 0.40 for 2 $\to$ 3 $\to$ 4 hops; 4-hop below 0.5 in every setting.
+  \item \textbf{MuSiQue} (hops): best $\alpha$ 0.80 $\to$ 0.55 $\to$ 0.40 for 2 $\to$ 3 $\to$ 4 hops (test); 4-hop below 0.5 in every setting.
+  \item \textbf{2Wiki} (types): best $\alpha$ 0.65 $\to$ 0.50 $\to$ 0.45 $\to$ 0.20 for comparison $\to$ compositional $\to$ inference $\to$ bridge-comparison (test; val 0.90 $\to$ 0.45 $\to$ 0.25 $\to$ 0.25).
   \item Mechanism: the cross-encoder degrades with hops much faster than the GAT.
   \item One fixed weight is a compromise; query-dependent gates gain mostly on multi-hop data.
 \end{itemize}
 \end{column}
-\begin{column}{0.4\textwidth}
+\begin{column}{0.38\textwidth}
 \cardbox[card]{5.3cm}{\textbf{Limits}\\[0.1cm]\small
 HotpotQA keeps a high $\alpha$ (single-hop shortcuts). Min--max gates mostly stay at their start value.}
 \vspace{0.3cm}

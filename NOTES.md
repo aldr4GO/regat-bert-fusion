@@ -249,3 +249,4 @@ Built from the finished results only (no training, nothing selected on test):
 - `twowiki@msmarco_gat` s_ctx from the frozen MS MARCO GAT (no training); val GAT-only nDCG@10 90.09 (in-domain GAT 92.58).
 - Result (test nDCG@10, 5 seeds): fixed/Q/QS/S = 90.99/90.99/90.99/90.99, alpha0 0.70; in-domain fixed 91.75 (alpha0 0.45).
 - Paper Table 9 (transfer) omits the zero-shot MSM -> MuSiQue row at the user's request (`TRANSFER_HIDE` in src/report_paper.py); the numbers stay in results/transfer.csv.
+- Table 9 also omits the mixed -> MS MARCO (A) and mixed -> HotpotQA rows at the user's request (TRANSFER_HIDE); their mean alphas stay in Figure 7 and results/transfer.csv.

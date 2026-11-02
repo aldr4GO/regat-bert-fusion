@@ -495,7 +495,9 @@ early stopping can reward adaptation.
 \label{sec:conclusion}
 We asked whether the weight between a cross-encoder and a graph-contextual score should depend on query
 complexity. It should: the optimal weight is above 0.5 on single-hop MS MARCO, below 0.5 on MuSiQue and
-2WikiMultiHopQA, and it decreases with each additional hop on MuSiQue, because the cross-encoder loses
+2WikiMultiHopQA, it decreases with each additional hop on MuSiQue (0.80, 0.55, 0.40 on test), and it falls from
+comparison to compositional, inference and bridge-comparison questions on 2WikiMultiHopQA (0.65, 0.50, 0.45,
+0.20 on test), because the cross-encoder loses
 reliability faster than the contextual score as questions require more hops. Query-dependent weighting
 improves retrieval where it captures this structure, through type-aware weights and learned gates on
 multi-hop data, and the large oracle headroom on multi-hop questions leaves ample room for gates that model

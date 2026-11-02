@@ -459,7 +459,7 @@ def tab_graph():
 
 
 # rows left out of the paper table at the authors' request (still in results/transfer.csv)
-TRANSFER_HIDE = {("zero_shot", "musique")}
+TRANSFER_HIDE = {("zero_shot", "musique"), ("mixed", "A"), ("mixed", "hotpotqa")}
 
 
 def tab_transfer():
