@@ -1,0 +1,13 @@
+{
+ "val_ndcg@10_gat_only": 0.7519310116767883,
+ "val_ndcg@10_s_bi": 0.7008090019226074,
+ "alignment_ok": true,
+ "gate_passed": true,
+ "gate_enforced": true,
+ "graph": {
+  "mode": "knn_emb",
+  "k_nn": 3,
+  "edge_min_sim": 0.3,
+  "random_seed": 1234
+ }
+}

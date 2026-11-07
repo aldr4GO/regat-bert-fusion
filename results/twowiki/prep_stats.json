@@ -1,0 +1,40 @@
+{
+ "split_sizes": {
+  "gat_train": 20000,
+  "fusion_train": 10000,
+  "val": 2000,
+  "test": 12576
+ },
+ "gat_train": {
+  "n": 20000,
+  "mean_K": 10.0,
+  "min_K": 10,
+  "max_K": 10,
+  "mean_gold_in_pool": 2.4138,
+  "frac_with_gold": 1.0
+ },
+ "fusion_train": {
+  "n": 10000,
+  "mean_K": 10.0,
+  "min_K": 10,
+  "max_K": 10,
+  "mean_gold_in_pool": 2.4136,
+  "frac_with_gold": 1.0
+ },
+ "val": {
+  "n": 2000,
+  "mean_K": 10.0,
+  "min_K": 10,
+  "max_K": 10,
+  "mean_gold_in_pool": 2.432,
+  "frac_with_gold": 1.0
+ },
+ "test": {
+  "n": 12576,
+  "mean_K": 10.0,
+  "min_K": 10,
+  "max_K": 10,
+  "mean_gold_in_pool": 2.4375,
+  "frac_with_gold": 1.0
+ }
+}

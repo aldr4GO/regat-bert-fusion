@@ -1,0 +1,2 @@
+dataset,label,bucket,n,alpha_Q,alpha_QS,alpha_S,best_adaptive,alpha_best_minus_alpha0,oracle_alpha,ce_ndcg@10,gat_ndcg@10,best_fixed_ndcg@10,adaptive_ndcg@10,oracle_ndcg@10,gain,gain_ci95_lo,gain_ci95_hi,gain_p
+beir_hotpotqa,level,hard,7405,0.94999,0.95009,0.94990,Q,-0.00001,0.90237,0.72611,0.55469,0.72630,0.72630,0.75558,-0.00000,-0.00001,0.00000,0.75120

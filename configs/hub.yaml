@@ -1,0 +1,12 @@
+# Hugging Face Hub storage (src/hub.py). Only the frozen GATs are stored: everything else is either public
+# (MS MARCO, BEIR, MuSiQue, HotpotQA, 2Wiki, Pyserini indexes, the HF encoders) or rebuilt by the pipeline
+# (splits, candidates, s_sem / s_bi / s_ctx caches, embeddings). The GATs are trained once and frozen
+# (never retrained after Stage 3), and retraining is not bit-exact, so they are the one thing to keep.
+repo_id: null                 # e.g. <hf-user>/regat-bert-gat; or pass --repo / set REGAT_HF_REPO
+repo_type: model
+
+# experiment keys (src/common.py) whose cache/<...>/gat_best.pt is uploaded as <key>/gat_best.pt
+models: [A, B, musique, hotpotqa, beir_hotpotqa, twowiki]
+# H4 graph-type GATs (ablation only); add them to `models` to store them too:
+# musique@none, musique@random, musique@title_link, musique@hybrid,
+# hotpotqa@none, hotpotqa@random, hotpotqa@title_link, hotpotqa@hybrid

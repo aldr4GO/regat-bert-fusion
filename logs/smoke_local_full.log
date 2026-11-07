@@ -1,0 +1,448 @@
+[Sat Oct 31 08:14:34 PM UTC 2026] job=local host=ub gpus=none profile=smoke
+name, memory.used [MiB], memory.total [MiB]
+NVIDIA RTX 6000 Ada Generation, 2 MiB, 49140 MiB
+NVIDIA RTX 6000 Ada Generation, 600 MiB, 49140 MiB
+NVIDIA RTX 6000 Ada Generation, 8526 MiB, 49140 MiB
+NVIDIA RTX 6000 Ada Generation, 5828 MiB, 49140 MiB
+NVIDIA RTX 6000 Ada Generation, 34433 MiB, 49140 MiB
+NVIDIA RTX 6000 Ada Generation, 37252 MiB, 49140 MiB
+2026-10-31 20:14:35,725 pipeline INFO == download: starting
+2026-10-31 20:14:35,725 pipeline INFO $ -m src.download
+2026-10-31 20:14:38,435 download INFO /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/collectionandqueries.tar.gz already present
+2026-10-31 20:14:38,468 download INFO /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/queries.tar.gz already present
+2026-10-31 20:14:38,487 download INFO /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/train/qrels already present
+WARNING: Using incubator modules: jdk.incubator.vector
+Oct 31, 2026 8:14:42 PM org.apache.lucene.store.MemorySegmentIndexInputProvider <init>
+INFO: Using MemorySegmentIndexInput with Java 21; to disable start with -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false
+2026-10-31 20:14:42,356 download INFO pyserini index ready: 8841823 docs
+2026-10-31 20:14:42,356 download INFO data under /home2/home/tanish_v/Graph_Project/data
+2026-10-31 20:14:43,326 pipeline INFO == download: done in 8s
+2026-10-31 20:14:43,327 pipeline INFO == data: starting
+2026-10-31 20:14:43,327 pipeline INFO $ -m src.data
+2026-10-31 20:14:44,514 data INFO loading queries/qrels
+2026-10-31 20:14:47,428 data INFO train(judged)=502939 dev/small=200 trec19=20 trec20=20
+WARNING: Using incubator modules: jdk.incubator.vector
+Oct 31, 2026 8:14:51 PM org.apache.lucene.store.MemorySegmentIndexInputProvider <init>
+INFO: Using MemorySegmentIndexInput with Java 21; to disable start with -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false
+2026-10-31 20:14:51,996 data INFO BM25 backend: pyserini prebuilt msmarco-v1-passage (k1=0.9 b=0.4)
+bm25 k=100:   0%|          | 0/1 [00:00<?, ?it/s]bm25 k=100: 100%|██████████| 1/1 [00:01<00:00,  1.89s/it]
+bm25 k=1000:   0%|          | 0/1 [00:00<?, ?it/s]bm25 k=1000: 100%|██████████| 1/1 [00:01<00:00,  1.37s/it]
+bm25 k=1000:   0%|          | 0/1 [00:00<?, ?it/s]bm25 k=1000: 100%|██████████| 1/1 [00:00<00:00,  7.73it/s]
+bm25 k=1000:   0%|          | 0/1 [00:00<?, ?it/s]bm25 k=1000: 100%|██████████| 1/1 [00:00<00:00,  5.16it/s]
+2026-10-31 20:14:55,686 data INFO BM25 first-stage recall: {'test': {'R@1000': 0.895, 'R@100': 0.665}, 'trec19': {'R(rel=2)@100': 0.47706099227551474, 'R(rel=2)@1000': 0.7048644009591932}, 'trec20': {'R(rel=2)@100': 0.6315666739367348, 'R(rel=2)@1000': 0.8680439733093614}}
+2026-10-31 20:14:55,727 data INFO Stage 0 done: {'first_stage_bm25': {'test': {'R@1000': 0.895, 'R@100': 0.665}, 'trec19': {'R(rel=2)@100': 0.47706099227551474, 'R(rel=2)@1000': 0.7048644009591932}, 'trec20': {'R(rel=2)@100': 0.6315666739367348, 'R(rel=2)@1000': 0.8680439733093614}}, 'n_padded_runs': 0, 'n_dropped_train_no_positive': 282, 'n_dropped_B': {'gat_train': 19, 'fusion_train': 21}, 'split_sizes_A': {'gat_train': 200, 'fusion_train': 120, 'val': 60, 'test': 200, 'trec19': 20, 'trec20': 20}, 'split_sizes_B': {'gat_train': 61, 'fusion_train': 29, 'val': 20, 'test': 50, 'trec19': 20, 'trec20': 20}, 'cand_recall@100_gat_train': 0.9925, 'frac_with_positive_gat_train': 1.0, 'cand_recall@100_fusion_train': 0.98125, 'frac_with_positive_fusion_train': 1.0, 'cand_recall@100_val': 0.6194444444444446, 'frac_with_positive_val': 0.6333333333333333, 'cand_recall@100_test': 0.665, 'frac_with_positive_test': 0.68, 'cand_recall@100_trec19': 0.47706099227551474, 'frac_with_positive_trec19': 0.95, 'cand_recall@100_trec20': 0.6315666739367348, 'frac_with_positive_trec20': 0.9}
+2026-10-31 20:14:57,311 pipeline INFO == data: done in 14s
+2026-10-31 20:14:57,311 pipeline INFO == cross_encoder: starting
+2026-10-31 20:14:57,311 pipeline INFO $ -m src.cache_semantic --skip_existing --num_workers 8
+2026-10-31 20:14:58,595 cache_semantic INFO loading 60058 passage texts
+collection: 0it [00:00, ?it/s]collection: 8841823it [00:17, 511789.26it/s]
+2026-10-31 20:15:17,076 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:15:17,302 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-31 20:15:17,540 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:15:17,767 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 20:15:17,989 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:15:18,214 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 20:15:18,477 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:15:18,704 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 9587.92it/s]
+2026-10-31 20:15:19,946 cache_semantic INFO cross-encoder cross-encoder/ms-marco-MiniLM-L-6-v2 on cpu
+cross-encoder:   0%|          | 0/313 [00:00<?, ?it/s]cross-encoder:  34%|███▍      | 107/313 [01:00<01:55,  1.78it/s]cross-encoder:  34%|███▍      | 107/313 [01:18<01:55,  1.78it/s]cross-encoder:  92%|█████████▏| 288/313 [02:00<00:09,  2.50it/s]cross-encoder: 100%|██████████| 313/313 [02:05<00:00,  2.50it/s]
+2026-10-31 20:17:26,078 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:17:26,303 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-31 20:17:26,533 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:17:26,757 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/modules.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-31 20:17:26,758 huggingface_hub.utils._http WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-31 20:17:26,758 sentence_transformers.base.model INFO No modules.json found for cross-encoder/ms-marco-MiniLM-L-6-v2, initializing a new CrossEncoder model.
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 6145.54it/s]
+2026-10-31 20:17:27,046 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:17:27,274 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 20:17:27,501 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 20:17:27,727 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+Batches:   0%|          | 0/2 [00:00<?, ?it/s]Batches:  50%|█████     | 1/2 [00:00<00:00,  2.75it/s]Batches: 100%|██████████| 2/2 [00:00<00:00,  4.33it/s]Batches: 100%|██████████| 2/2 [00:00<00:00,  3.99it/s]
+2026-10-31 20:17:28,267 cache_semantic INFO VERIFY cross-encoder logits vs sentence-transformers: max |diff| = 2.325e-06
+2026-10-31 20:17:28,269 cache_semantic INFO sem_gat_train: 20000 pairs, gap stats {'mean_top1_minus_top2': 0.7853594422340393, 'mean_logit': -1.4396188259124756, 'mean_max_logit': 8.615819931030273}
+cross-encoder:   0%|          | 0/188 [00:00<?, ?it/s]cross-encoder:  73%|███████▎  | 138/188 [01:00<00:21,  2.29it/s]cross-encoder:  73%|███████▎  | 138/188 [01:10<00:21,  2.29it/s]cross-encoder: 100%|██████████| 188/188 [01:11<00:00,  2.61it/s]
+2026-10-31 20:18:40,203 cache_semantic INFO sem_fusion_train: 12000 pairs, gap stats {'mean_top1_minus_top2': 0.7328046560287476, 'mean_logit': -1.6610740423202515, 'mean_max_logit': 8.85037612915039}
+cross-encoder:   0%|          | 0/94 [00:00<?, ?it/s]cross-encoder: 100%|██████████| 94/94 [00:37<00:00,  2.54it/s]
+2026-10-31 20:19:17,266 cache_semantic INFO sem_val: 6000 pairs, gap stats {'mean_top1_minus_top2': 0.5938997864723206, 'mean_logit': -0.46024325489997864, 'mean_max_logit': 8.987051010131836}
+cross-encoder:   0%|          | 0/313 [00:00<?, ?it/s]cross-encoder:  34%|███▍      | 107/313 [01:00<01:55,  1.78it/s]cross-encoder:  34%|███▍      | 107/313 [01:11<01:55,  1.78it/s]cross-encoder:  96%|█████████▌| 301/313 [02:00<00:04,  2.63it/s]cross-encoder: 100%|██████████| 313/313 [02:02<00:00,  2.56it/s]
+2026-10-31 20:21:19,635 cache_semantic INFO sem_test: 20000 pairs, gap stats {'mean_top1_minus_top2': 0.8470082879066467, 'mean_logit': -0.978522539138794, 'mean_max_logit': 8.864911079406738}
+cross-encoder:   0%|          | 0/32 [00:00<?, ?it/s]cross-encoder: 100%|██████████| 32/32 [00:12<00:00,  2.54it/s]
+2026-10-31 20:21:32,238 cache_semantic INFO sem_trec19: 2000 pairs, gap stats {'mean_top1_minus_top2': 0.49244046211242676, 'mean_logit': -2.0595221519470215, 'mean_max_logit': 8.514033317565918}
+cross-encoder:   0%|          | 0/32 [00:00<?, ?it/s]cross-encoder: 100%|██████████| 32/32 [00:11<00:00,  2.90it/s]
+2026-10-31 20:21:43,283 cache_semantic INFO sem_trec20: 2000 pairs, gap stats {'mean_top1_minus_top2': 0.6494042277336121, 'mean_logit': -2.0623011589050293, 'mean_max_logit': 8.817718505859375}
+2026-10-31 20:21:44,263 pipeline INFO == cross_encoder: done in 407s
+2026-10-31 20:21:44,263 pipeline INFO == bi_encoder: starting
+2026-10-31 20:21:44,263 pipeline INFO $ -m src.cache_embeddings
+2026-10-31 20:21:48,689 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/msmarco-MiniLM-L6-cos-v5 "HTTP/1.1 200 OK"
+2026-10-31 20:21:48,692 sentence_transformers.base.model INFO Loading SentenceTransformer model from sentence-transformers/msmarco-MiniLM-L6-cos-v5.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9589.85it/s]
+2026-10-31 20:21:49,055 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/msmarco-MiniLM-L6-cos-v5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 20:21:49,329 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/msmarco-MiniLM-L6-cos-v5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 20:21:49,608 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-31 20:21:49,608 huggingface_hub.utils._http WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-31 20:21:49,611 cache_embeddings INFO bi-encoder sentence-transformers/msmarco-MiniLM-L6-cos-v5 on cpu: 620 queries, 60058 passages
+collection: 0it [00:00, ?it/s]collection: 8841823it [00:17, 513455.50it/s]
+2026-10-31 20:22:07,494 cache_embeddings INFO encoded 620 / 620
+2026-10-31 20:30:59,805 cache_embeddings INFO encoded 60058 / 60058
+2026-10-31 20:30:59,954 cache_embeddings INFO Stage 1-2 acceptance on val: {'bm25': {'ndcg@10': 0.22290243208408356, 'mrr@10': 0.1979365050792694}, 'bi': {'ndcg@10': 0.36143749952316284, 'mrr@10': 0.31019842624664307}, 'sem': {'ndcg@10': 0.41552162170410156, 'mrr@10': 0.3700397312641144}, 'accept': True}
+2026-10-31 20:31:00,851 pipeline INFO == bi_encoder: done in 557s
+2026-10-31 20:31:00,851 pipeline INFO == gat_A: starting
+2026-10-31 20:31:00,851 pipeline INFO $ -m src.train_gat --protocol A
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:31:03,933 train_gat INFO [main_A] graph={'k_nn': 8, 'edge_min_sim': 0.3, 'mode': 'knn_emb', 'random_seed': 1234} gat_train=200 val=60 mean degree(train)=12.29
+2026-10-31 20:31:04,283 train_gat INFO [main_A] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3571
+2026-10-31 20:31:06,543 train_gat INFO [main_A] epoch 1 loss 2.4680 val NDCG@10 0.3634 MRR@10 0.3174 (2.3s)
+2026-10-31 20:31:08,650 train_gat INFO [main_A] epoch 2 loss 2.4590 val NDCG@10 0.3722 MRR@10 0.3210 (2.1s)
+2026-10-31 20:31:10,678 train_gat INFO [main_A] epoch 3 loss 2.3474 val NDCG@10 0.3732 MRR@10 0.3224 (2.0s)
+2026-10-31 20:31:10,977 train_gat INFO saved frozen GAT to /home2/home/tanish_v/Graph_Project/cache_smoke/gat_best.pt (val NDCG@10 0.3732, s_bi 0.3614)
+2026-10-31 20:31:11,680 pipeline INFO == gat_A: done in 11s
+2026-10-31 20:31:11,680 pipeline INFO == ctx_A: starting
+2026-10-31 20:31:11,680 pipeline INFO $ -m src.cache_contextual --protocol A
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:31:15,724 cache_contextual INFO ctx_gat_train (A): 200 queries
+2026-10-31 20:31:16,315 cache_contextual INFO ctx_fusion_train (A): 120 queries
+2026-10-31 20:31:16,617 cache_contextual INFO ctx_val (A): 60 queries
+2026-10-31 20:31:17,592 cache_contextual INFO ctx_test (A): 200 queries
+2026-10-31 20:31:17,692 cache_contextual INFO ctx_trec19 (A): 20 queries
+2026-10-31 20:31:17,794 cache_contextual INFO ctx_trec20 (A): 20 queries
+2026-10-31 20:31:17,804 cache_contextual INFO Stage 4 sanity (A): {'val_ndcg@10_gat_only': 0.3732220530509949, 'val_ndcg@10_s_bi': 0.36143749952316284, 'alignment_ok': True, 'gate_passed': True}
+2026-10-31 20:31:18,449 pipeline INFO == ctx_A: done in 7s
+2026-10-31 20:31:18,449 pipeline INFO == gat_B: starting
+2026-10-31 20:31:18,450 pipeline INFO $ -m src.train_gat --protocol B
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:31:21,492 train_gat INFO [main_B] graph={'k_nn': 8, 'edge_min_sim': 0.3, 'mode': 'knn_emb', 'random_seed': 1234} gat_train=61 val=20 mean degree(train)=12.58
+2026-10-31 20:31:21,650 train_gat INFO [main_B] s_bi val NDCG@10=0.2440 | untrained GAT val NDCG@10=0.2516
+2026-10-31 20:31:22,415 train_gat INFO [main_B] epoch 1 loss 2.5521 val NDCG@10 0.2524 MRR@10 0.2343 (0.8s)
+2026-10-31 20:31:23,173 train_gat INFO [main_B] epoch 2 loss 2.4179 val NDCG@10 0.2524 MRR@10 0.2343 (0.8s)
+2026-10-31 20:31:23,926 train_gat INFO [main_B] epoch 3 loss 2.4632 val NDCG@10 0.2524 MRR@10 0.2343 (0.8s)
+2026-10-31 20:31:24,048 train_gat INFO saved frozen GAT to /home2/home/tanish_v/Graph_Project/cache_smoke/B/gat_best.pt (val NDCG@10 0.2524, s_bi 0.2440)
+2026-10-31 20:31:24,703 pipeline INFO == gat_B: done in 6s
+2026-10-31 20:31:24,704 pipeline INFO == ctx_B: starting
+2026-10-31 20:31:24,704 pipeline INFO $ -m src.cache_contextual --protocol B
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:31:28,769 cache_contextual INFO ctx_test (B): 200 queries
+2026-10-31 20:31:28,878 cache_contextual INFO ctx_trec19 (B): 20 queries
+2026-10-31 20:31:28,993 cache_contextual INFO ctx_trec20 (B): 20 queries
+2026-10-31 20:31:29,001 cache_contextual INFO Stage 4 sanity (B): {'val_ndcg@10_gat_only': 0.2523585855960846, 'val_ndcg@10_s_bi': 0.2439568042755127, 'alignment_ok': True, 'gate_passed': True}
+2026-10-31 20:31:29,649 pipeline INFO == ctx_B: done in 5s
+2026-10-31 20:31:29,649 pipeline INFO == tests: starting
+2026-10-31 20:31:29,649 pipeline INFO $ -m pytest -q tests
+.................................................                        [100%]
+=============================== warnings summary ===============================
+../.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491
+  /home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+49 passed, 1 warning in 2.07s
+2026-10-31 20:31:33,834 pipeline INFO == tests: done in 4s
+2026-10-31 20:31:33,834 pipeline INFO == fusion_A: starting
+2026-10-31 20:31:33,834 pipeline INFO $ -m src.run_all --protocol A --workers 4
+2026-10-31 20:31:35,425 oracle INFO [A] none   alpha0=0.35 val fixed 0.4167 oracle 0.4584 (headroom 0.0418)
+2026-10-31 20:31:35,510 oracle INFO [A] minmax alpha0=0.95 val fixed 0.4167 oracle 0.4606 (headroom 0.0440)
+2026-10-31 20:31:35,594 oracle INFO [A] zscore alpha0=0.95 val fixed 0.4155 oracle 0.4606 (headroom 0.0451)
+2026-10-31 20:31:35,691 oracle INFO [A] rank   alpha0=0.80 val fixed 0.4271 oracle 0.4628 (headroom 0.0357)
+2026-10-31 20:31:35,701 run_all INFO [A] 64 grid runs on 4 workers
+2026-10-31 20:31:38,182 train_fusion INFO A_none_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (1.1s)
+2026-10-31 20:31:38,230 train_fusion INFO A_none_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,230 train_fusion INFO A_none_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (1.1s)
+2026-10-31 20:31:38,236 train_fusion INFO A_none_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (1.1s)
+2026-10-31 20:31:38,241 train_fusion INFO A_none_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4167 (1.1s)
+2026-10-31 20:31:38,276 train_fusion INFO A_none_S_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,276 train_fusion INFO A_none_S_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,278 train_fusion INFO A_none_paper_bce_lam0_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,284 train_fusion INFO A_none_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,321 train_fusion INFO A_none_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,321 run_all INFO 10/64 runs done (A_none_Q_listwise_lam0_s1) 3s
+2026-10-31 20:31:38,323 train_fusion INFO A_none_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,325 train_fusion INFO A_none_QS_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,330 train_fusion INFO A_none_QS_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,365 train_fusion INFO A_none_S_listwise_lam0.01_s1: best epoch 1 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,366 train_fusion INFO A_none_paper_bce_lam0_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,369 train_fusion INFO A_none_S_listwise_lam0_s1: best epoch 1 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,372 train_fusion INFO A_minmax_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,412 train_fusion INFO A_minmax_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,413 train_fusion INFO A_minmax_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,417 train_fusion INFO A_minmax_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,417 run_all INFO 20/64 runs done (A_minmax_QS_listwise_lam0.01_s0) 3s
+2026-10-31 20:31:38,418 train_fusion INFO A_minmax_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,457 train_fusion INFO A_minmax_S_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,459 train_fusion INFO A_minmax_paper_bce_lam0_s0: best epoch 0 val NDCG@10 0.4004 (0.0s)
+2026-10-31 20:31:38,460 train_fusion INFO A_minmax_S_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,460 train_fusion INFO A_minmax_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,502 train_fusion INFO A_minmax_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,506 train_fusion INFO A_minmax_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,506 train_fusion INFO A_minmax_QS_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,507 train_fusion INFO A_minmax_QS_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,547 train_fusion INFO A_minmax_paper_bce_lam0_s1: best epoch 0 val NDCG@10 0.4004 (0.0s)
+2026-10-31 20:31:38,547 train_fusion INFO A_minmax_S_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,548 run_all INFO 30/64 runs done (A_minmax_paper_bce_lam0_s1) 3s
+2026-10-31 20:31:38,552 train_fusion INFO A_zscore_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,552 train_fusion INFO A_minmax_S_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4167 (0.0s)
+2026-10-31 20:31:38,593 train_fusion INFO A_zscore_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,594 train_fusion INFO A_zscore_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,600 train_fusion INFO A_zscore_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,600 train_fusion INFO A_zscore_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,638 train_fusion INFO A_zscore_S_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,638 train_fusion INFO A_zscore_S_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,642 train_fusion INFO A_zscore_paper_bce_lam0_s0: best epoch 0 val NDCG@10 0.4001 (0.0s)
+2026-10-31 20:31:38,643 run_all INFO 40/64 runs done (A_zscore_paper_bce_lam0_s0) 3s
+2026-10-31 20:31:38,645 train_fusion INFO A_zscore_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,684 train_fusion INFO A_zscore_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,685 train_fusion INFO A_zscore_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,690 train_fusion INFO A_zscore_QS_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,693 train_fusion INFO A_zscore_QS_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,729 train_fusion INFO A_zscore_S_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,730 train_fusion INFO A_zscore_S_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4155 (0.0s)
+2026-10-31 20:31:38,733 train_fusion INFO A_zscore_paper_bce_lam0_s1: best epoch 0 val NDCG@10 0.4001 (0.0s)
+2026-10-31 20:31:38,777 train_fusion INFO A_rank_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4271 (0.1s)
+2026-10-31 20:31:38,816 train_fusion INFO A_rank_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4271 (0.1s)
+2026-10-31 20:31:38,816 run_all INFO 50/64 runs done (A_rank_Q_listwise_lam0_s0) 3s
+2026-10-31 20:31:38,825 train_fusion INFO A_rank_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4271 (0.1s)
+2026-10-31 20:31:38,838 train_fusion INFO A_rank_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4268 (0.1s)
+2026-10-31 20:31:38,851 train_fusion INFO A_rank_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4268 (0.1s)
+2026-10-31 20:31:38,900 train_fusion INFO A_rank_S_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.4268 (0.1s)
+2026-10-31 20:31:38,909 train_fusion INFO A_rank_S_listwise_lam0_s0: best epoch 0 val NDCG@10 0.4268 (0.1s)
+2026-10-31 20:31:38,920 train_fusion INFO A_rank_paper_bce_lam0_s0: best epoch 4 val NDCG@10 0.4109 (0.1s)
+2026-10-31 20:31:38,924 train_fusion INFO A_rank_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4271 (0.0s)
+2026-10-31 20:31:38,973 train_fusion INFO A_rank_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4268 (0.1s)
+2026-10-31 20:31:39,009 train_fusion INFO A_rank_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4268 (0.1s)
+2026-10-31 20:31:39,021 train_fusion INFO A_rank_QS_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.4271 (0.1s)
+2026-10-31 20:31:39,021 run_all INFO 60/64 runs done (A_rank_QS_listwise_lam0.01_s1) 3s
+2026-10-31 20:31:39,028 train_fusion INFO A_rank_QS_listwise_lam0_s1: best epoch 0 val NDCG@10 0.4271 (0.1s)
+2026-10-31 20:31:39,041 train_fusion INFO A_rank_S_listwise_lam0.01_s1: best epoch 3 val NDCG@10 0.4290 (0.1s)
+2026-10-31 20:31:39,091 train_fusion INFO A_rank_S_listwise_lam0_s1: best epoch 3 val NDCG@10 0.4290 (0.1s)
+2026-10-31 20:31:39,107 train_fusion INFO A_rank_paper_bce_lam0_s1: best epoch 2 val NDCG@10 0.4081 (0.1s)
+2026-10-31 20:31:39,107 run_all INFO 64/64 runs done (A_rank_paper_bce_lam0_s1) 3s
+2026-10-31 20:31:39,654 run_all INFO loss ablation normaliser (best QS on val): rank
+2026-10-31 20:31:42,134 train_fusion INFO A_rank_QS_bce_lam0.01_s1: best epoch 0 val NDCG@10 0.4271 (1.1s)
+2026-10-31 20:31:42,208 train_fusion INFO A_rank_fixed_bce_lam0.01_s1: best epoch 0 val NDCG@10 0.4271 (1.1s)
+2026-10-31 20:31:42,224 train_fusion INFO A_rank_QS_bce_lam0.01_s0: best epoch 0 val NDCG@10 0.4268 (1.1s)
+2026-10-31 20:31:42,228 train_fusion INFO A_rank_fixed_bce_lam0.01_s0: best epoch 0 val NDCG@10 0.4271 (1.2s)
+2026-10-31 20:31:42,229 run_all INFO 4/4 runs done (A_rank_fixed_bce_lam0.01_s0) 3s
+2026-10-31 20:31:43,018 evaluate INFO main_table: 46 rows; significance: 144 rows; oracle_gap: 16 rows
+2026-10-31 20:31:45,202 analysis INFO 
+### Protocol A (auto-generated by `src/analysis.py`; selection on val, numbers on test)
+
+- **Normalisation:** best (by val) is `rank` (its best config `rank_S_listwise_lam0.01`, test NDCG@10 0.3978). Per-normaliser test NDCG@10 of the val-best config: none 0.4036, minmax 0.4038, zscore 0.4041, rank 0.3978.
+- **Alpha dependence:** test NDCG@10 averaged over normalisers: fixed 0.4028, Q 0.4021, QS 0.4023, S 0.4024 -> best `fixed`.
+- **Adaptive vs best fixed (same normaliser, paired bootstrap, test NDCG@10):** 0/12 adaptive configs significantly better, 0 significantly worse. `none_Q_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `none_QS_listwise_lam0.01` -0.0000 [-0.0001, +0.0000] p=0.768; `none_S_listwise_lam0.01` -0.0000 [-0.0001, +0.0000] p=0.768; `minmax_Q_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `minmax_QS_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `minmax_S_listwise_lam0.01` +0.0000 [+0.0000, +0.0002] p=0.704; `zscore_Q_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `zscore_QS_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `zscore_S_listwise_lam0.01` +0.0003 [+0.0000, +0.0010] p=0.812; `rank_Q_listwise_lam0.01` -0.0027 [-0.0073, +0.0001] p=0.304; `rank_QS_listwise_lam0.01` -0.0018 [-0.0046, +0.0001] p=0.304; `rank_S_listwise_lam0.01` -0.0018 [-0.0046, +0.0001] p=0.304
+- **Oracle headroom (test, oracle minus best fixed, UPPER BOUND):** none +0.0585, minmax +0.0602, zscore +0.0596, rank +0.0638
+- **CE over-confidence caveat:** mean top1-top2 logit gap train 0.704 vs dev 0.847.
+
+2026-10-31 20:31:45,202 run_all INFO [A] all done -> /home2/home/tanish_v/Graph_Project/results_smoke/A/main_table.csv
+2026-10-31 20:31:45,659 pipeline INFO == fusion_A: done in 12s
+2026-10-31 20:31:45,659 pipeline INFO == fusion_B: starting
+2026-10-31 20:31:45,659 pipeline INFO $ -m src.run_all --protocol B --workers 4
+2026-10-31 20:31:47,191 oracle INFO [B] none   alpha0=0.45 val fixed 0.3005 oracle 0.3433 (headroom 0.0429)
+2026-10-31 20:31:47,235 oracle INFO [B] minmax alpha0=0.65 val fixed 0.3005 oracle 0.3433 (headroom 0.0429)
+2026-10-31 20:31:47,279 oracle INFO [B] zscore alpha0=0.70 val fixed 0.3005 oracle 0.3433 (headroom 0.0429)
+2026-10-31 20:31:47,327 oracle INFO [B] rank   alpha0=1.00 val fixed 0.2939 oracle 0.3433 (headroom 0.0494)
+2026-10-31 20:31:47,331 run_all INFO [B] 64 grid runs on 4 workers
+2026-10-31 20:31:49,783 train_fusion INFO B_none_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (1.1s)
+2026-10-31 20:31:49,813 train_fusion INFO B_none_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,826 train_fusion INFO B_none_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.3005 (1.1s)
+2026-10-31 20:31:49,840 train_fusion INFO B_none_S_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,848 train_fusion INFO B_none_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (1.1s)
+2026-10-31 20:31:49,855 train_fusion INFO B_none_S_listwise_lam0_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,861 train_fusion INFO B_none_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (1.1s)
+2026-10-31 20:31:49,865 train_fusion INFO B_none_paper_bce_lam0_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,877 train_fusion INFO B_none_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,883 train_fusion INFO B_none_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,883 run_all INFO 10/64 runs done (B_none_Q_listwise_lam0.01_s1) 3s
+2026-10-31 20:31:49,891 train_fusion INFO B_none_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,893 train_fusion INFO B_none_QS_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,906 train_fusion INFO B_none_QS_listwise_lam0_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,910 train_fusion INFO B_none_S_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,918 train_fusion INFO B_none_paper_bce_lam0_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,920 train_fusion INFO B_none_S_listwise_lam0_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,934 train_fusion INFO B_minmax_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,938 train_fusion INFO B_minmax_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,946 train_fusion INFO B_minmax_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,950 train_fusion INFO B_minmax_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,951 run_all INFO 20/64 runs done (B_minmax_QS_listwise_lam0.01_s0) 3s
+2026-10-31 20:31:49,963 train_fusion INFO B_minmax_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,966 train_fusion INFO B_minmax_S_listwise_lam0.01_s0: best epoch 3 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:49,973 train_fusion INFO B_minmax_S_listwise_lam0_s0: best epoch 3 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:49,977 train_fusion INFO B_minmax_paper_bce_lam0_s0: best epoch 0 val NDCG@10 0.2852 (0.0s)
+2026-10-31 20:31:49,991 train_fusion INFO B_minmax_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:49,994 train_fusion INFO B_minmax_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,001 train_fusion INFO B_minmax_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,007 train_fusion INFO B_minmax_QS_listwise_lam0.01_s1: best epoch 4 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:50,021 train_fusion INFO B_minmax_QS_listwise_lam0_s1: best epoch 4 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:50,022 train_fusion INFO B_minmax_S_listwise_lam0.01_s1: best epoch 1 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:50,022 run_all INFO 30/64 runs done (B_minmax_S_listwise_lam0.01_s1) 3s
+2026-10-31 20:31:50,029 train_fusion INFO B_minmax_S_listwise_lam0_s1: best epoch 1 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:50,033 train_fusion INFO B_minmax_paper_bce_lam0_s1: best epoch 0 val NDCG@10 0.2852 (0.0s)
+2026-10-31 20:31:50,048 train_fusion INFO B_zscore_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,050 train_fusion INFO B_zscore_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,057 train_fusion INFO B_zscore_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,063 train_fusion INFO B_zscore_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,078 train_fusion INFO B_zscore_S_listwise_lam0.01_s0: best epoch 2 val NDCG@10 0.3009 (0.0s)
+2026-10-31 20:31:50,078 train_fusion INFO B_zscore_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,084 train_fusion INFO B_zscore_S_listwise_lam0_s0: best epoch 2 val NDCG@10 0.3009 (0.0s)
+2026-10-31 20:31:50,090 train_fusion INFO B_zscore_paper_bce_lam0_s0: best epoch 0 val NDCG@10 0.2954 (0.0s)
+2026-10-31 20:31:50,091 run_all INFO 40/64 runs done (B_zscore_paper_bce_lam0_s0) 3s
+2026-10-31 20:31:50,104 train_fusion INFO B_zscore_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,108 train_fusion INFO B_zscore_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,112 train_fusion INFO B_zscore_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.3005 (0.0s)
+2026-10-31 20:31:50,121 train_fusion INFO B_zscore_QS_listwise_lam0.01_s1: best epoch 1 val NDCG@10 0.3009 (0.0s)
+2026-10-31 20:31:50,132 train_fusion INFO B_zscore_QS_listwise_lam0_s1: best epoch 1 val NDCG@10 0.3009 (0.0s)
+2026-10-31 20:31:50,137 train_fusion INFO B_zscore_S_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:50,140 train_fusion INFO B_zscore_S_listwise_lam0_s1: best epoch 0 val NDCG@10 0.3039 (0.0s)
+2026-10-31 20:31:50,147 train_fusion INFO B_zscore_paper_bce_lam0_s1: best epoch 0 val NDCG@10 0.2954 (0.0s)
+2026-10-31 20:31:50,166 train_fusion INFO B_rank_fixed_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,173 train_fusion INFO B_rank_Q_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,174 run_all INFO 50/64 runs done (B_rank_Q_listwise_lam0.01_s0) 3s
+2026-10-31 20:31:50,175 train_fusion INFO B_rank_Q_listwise_lam0_s0: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,184 train_fusion INFO B_rank_QS_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,208 train_fusion INFO B_rank_QS_listwise_lam0_s0: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,208 train_fusion INFO B_rank_S_listwise_lam0.01_s0: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,208 train_fusion INFO B_rank_S_listwise_lam0_s0: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,216 train_fusion INFO B_rank_paper_bce_lam0_s0: best epoch 2 val NDCG@10 0.2792 (0.0s)
+2026-10-31 20:31:50,240 train_fusion INFO B_rank_fixed_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,242 train_fusion INFO B_rank_Q_listwise_lam0_s1: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,244 train_fusion INFO B_rank_Q_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,252 train_fusion INFO B_rank_QS_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,252 run_all INFO 60/64 runs done (B_rank_QS_listwise_lam0.01_s1) 3s
+2026-10-31 20:31:50,275 train_fusion INFO B_rank_QS_listwise_lam0_s1: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,275 train_fusion INFO B_rank_S_listwise_lam0.01_s1: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,278 train_fusion INFO B_rank_S_listwise_lam0_s1: best epoch 0 val NDCG@10 0.2917 (0.0s)
+2026-10-31 20:31:50,288 train_fusion INFO B_rank_paper_bce_lam0_s1: best epoch 2 val NDCG@10 0.2792 (0.0s)
+2026-10-31 20:31:50,288 run_all INFO 64/64 runs done (B_rank_paper_bce_lam0_s1) 3s
+2026-10-31 20:31:50,831 run_all INFO loss ablation normaliser (best QS on val): minmax
+2026-10-31 20:31:53,314 train_fusion INFO B_minmax_fixed_bce_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (1.1s)
+2026-10-31 20:31:53,348 train_fusion INFO B_minmax_QS_bce_lam0.01_s0: best epoch 0 val NDCG@10 0.3005 (1.1s)
+2026-10-31 20:31:53,349 train_fusion INFO B_minmax_fixed_bce_lam0.01_s1: best epoch 0 val NDCG@10 0.3005 (1.2s)
+2026-10-31 20:31:53,363 train_fusion INFO B_minmax_QS_bce_lam0.01_s1: best epoch 4 val NDCG@10 0.3039 (1.1s)
+2026-10-31 20:31:53,364 run_all INFO 4/4 runs done (B_minmax_QS_bce_lam0.01_s1) 3s
+2026-10-31 20:31:54,058 evaluate INFO main_table: 46 rows; significance: 144 rows; oracle_gap: 16 rows
+2026-10-31 20:31:56,218 analysis INFO 
+### Protocol B (auto-generated by `src/analysis.py`; selection on val, numbers on test)
+
+- **Normalisation:** best (by val) is `minmax` (its best config `minmax_S_listwise_lam0.01`, test NDCG@10 0.4371). Per-normaliser test NDCG@10 of the val-best config: none 0.4353, minmax 0.4371, zscore 0.4371, rank 0.4368.
+- **Alpha dependence:** test NDCG@10 averaged over normalisers: fixed 0.4351, Q 0.4351, QS 0.4351, S 0.4366 -> best `S`.
+- **Adaptive vs best fixed (same normaliser, paired bootstrap, test NDCG@10):** 0/12 adaptive configs significantly better, 0 significantly worse. `none_Q_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `none_QS_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `none_S_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `minmax_Q_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `minmax_QS_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `minmax_S_listwise_lam0.01` +0.0043 [+0.0000, +0.0126] p=0.308; `zscore_Q_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `zscore_QS_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `zscore_S_listwise_lam0.01` +0.0017 [-0.0060, +0.0111] p=0.988; `rank_Q_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `rank_QS_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1; `rank_S_listwise_lam0.01` +0.0000 [+0.0000, +0.0000] p=1
+- **Oracle headroom (test, oracle minus best fixed, UPPER BOUND):** none +0.0489, minmax +0.0513, zscore +0.0487, rank +0.0478
+- **CE over-confidence caveat:** mean top1-top2 logit gap train 0.704 vs dev 0.847.
+
+2026-10-31 20:31:56,219 run_all INFO [B] all done -> /home2/home/tanish_v/Graph_Project/results_smoke/B/main_table.csv
+2026-10-31 20:31:56,663 pipeline INFO == fusion_B: done in 11s
+2026-10-31 20:31:56,664 pipeline INFO == gat_controls: starting
+2026-10-31 20:31:56,664 pipeline INFO $ -m src.train_gat --protocol A --control no_graph
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:31:59,719 train_gat INFO [no_graph] graph={'mode': 'no_graph', 'k_nn': 8, 'edge_min_sim': 0.3} gat_train=200 val=60 mean degree(train)=1.00
+2026-10-31 20:31:59,805 train_gat INFO [no_graph] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3645
+2026-10-31 20:32:00,069 train_gat INFO [no_graph] epoch 1 loss 4.4679 val NDCG@10 0.3608 MRR@10 0.3130 (0.3s)
+2026-10-31 20:32:00,327 train_gat INFO [no_graph] epoch 2 loss 4.0845 val NDCG@10 0.3567 MRR@10 0.3043 (0.3s)
+2026-10-31 20:32:00,600 train_gat INFO [no_graph] epoch 3 loss 3.7834 val NDCG@10 0.3595 MRR@10 0.3037 (0.3s)
+2026-10-31 20:32:00,600 train_gat INFO [no_graph] early stop at epoch 3
+2026-10-31 20:32:01,287 pipeline INFO $ -m src.train_gat --protocol A --control random_graph
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:32:04,392 train_gat INFO [random_graph] graph={'mode': 'random_graph', 'k_nn': 8, 'edge_min_sim': 0.3} gat_train=200 val=60 mean degree(train)=12.29
+2026-10-31 20:32:04,747 train_gat INFO [random_graph] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3728
+2026-10-31 20:32:07,031 train_gat INFO [random_graph] epoch 1 loss 2.6027 val NDCG@10 0.3730 MRR@10 0.3283 (2.3s)
+2026-10-31 20:32:09,118 train_gat INFO [random_graph] epoch 2 loss 2.5359 val NDCG@10 0.3720 MRR@10 0.3282 (2.1s)
+2026-10-31 20:32:11,356 train_gat INFO [random_graph] epoch 3 loss 2.3397 val NDCG@10 0.3712 MRR@10 0.3274 (2.2s)
+2026-10-31 20:32:12,341 pipeline INFO $ -m src.train_gat --protocol A --control knn_k4_s0.0
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:32:15,401 train_gat INFO [knn_k4_s0.0] graph={'mode': 'knn_emb', 'k_nn': 4, 'edge_min_sim': 0.0} gat_train=200 val=60 mean degree(train)=7.14
+2026-10-31 20:32:15,637 train_gat INFO [knn_k4_s0.0] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3625
+2026-10-31 20:32:17,107 train_gat INFO [knn_k4_s0.0] epoch 1 loss 2.6310 val NDCG@10 0.3623 MRR@10 0.3171 (1.5s)
+2026-10-31 20:32:18,361 train_gat INFO [knn_k4_s0.0] epoch 2 loss 2.4734 val NDCG@10 0.3624 MRR@10 0.3173 (1.3s)
+2026-10-31 20:32:19,699 train_gat INFO [knn_k4_s0.0] epoch 3 loss 2.4590 val NDCG@10 0.3685 MRR@10 0.3254 (1.3s)
+2026-10-31 20:32:20,570 pipeline INFO $ -m src.train_gat --protocol A --control knn_k4_s0.3
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:32:23,637 train_gat INFO [knn_k4_s0.3] graph={'mode': 'knn_emb', 'k_nn': 4, 'edge_min_sim': 0.3} gat_train=200 val=60 mean degree(train)=6.85
+2026-10-31 20:32:23,867 train_gat INFO [knn_k4_s0.3] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3610
+2026-10-31 20:32:24,851 train_gat INFO [knn_k4_s0.3] epoch 1 loss 2.6452 val NDCG@10 0.3669 MRR@10 0.3235 (1.0s)
+2026-10-31 20:32:25,620 train_gat INFO [knn_k4_s0.3] epoch 2 loss 2.4944 val NDCG@10 0.3670 MRR@10 0.3237 (0.8s)
+2026-10-31 20:32:26,413 train_gat INFO [knn_k4_s0.3] epoch 3 loss 2.5001 val NDCG@10 0.3670 MRR@10 0.3237 (0.8s)
+2026-10-31 20:32:27,250 pipeline INFO $ -m src.train_gat --protocol A --control knn_k4_s0.5
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:32:30,333 train_gat INFO [knn_k4_s0.5] graph={'mode': 'knn_emb', 'k_nn': 4, 'edge_min_sim': 0.5} gat_train=200 val=60 mean degree(train)=5.48
+2026-10-31 20:32:30,534 train_gat INFO [knn_k4_s0.5] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3577
+2026-10-31 20:32:31,250 train_gat INFO [knn_k4_s0.5] epoch 1 loss 2.5375 val NDCG@10 0.3574 MRR@10 0.3109 (0.7s)
+2026-10-31 20:32:31,969 train_gat INFO [knn_k4_s0.5] epoch 2 loss 2.6123 val NDCG@10 0.3577 MRR@10 0.3112 (0.7s)
+2026-10-31 20:32:32,846 train_gat INFO [knn_k4_s0.5] epoch 3 loss 2.4964 val NDCG@10 0.3518 MRR@10 0.3030 (0.9s)
+2026-10-31 20:32:32,846 train_gat INFO [knn_k4_s0.5] early stop at epoch 3
+2026-10-31 20:32:33,656 pipeline INFO $ -m src.train_gat --protocol A --control knn_k8_s0.0
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:32:36,711 train_gat INFO [knn_k8_s0.0] graph={'mode': 'knn_emb', 'k_nn': 8, 'edge_min_sim': 0.0} gat_train=200 val=60 mean degree(train)=13.18
+2026-10-31 20:32:37,085 train_gat INFO [knn_k8_s0.0] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3562
+2026-10-31 20:32:39,490 train_gat INFO [knn_k8_s0.0] epoch 1 loss 2.4980 val NDCG@10 0.3708 MRR@10 0.3245 (2.4s)
+2026-10-31 20:32:41,870 train_gat INFO [knn_k8_s0.0] epoch 2 loss 2.4412 val NDCG@10 0.3754 MRR@10 0.3259 (2.4s)
+2026-10-31 20:32:44,086 train_gat INFO [knn_k8_s0.0] epoch 3 loss 2.3439 val NDCG@10 0.3780 MRR@10 0.3292 (2.2s)
+2026-10-31 20:32:45,080 pipeline INFO $ -m src.train_gat --protocol A --control knn_k8_s0.3
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:32:48,184 train_gat INFO [knn_k8_s0.3] graph={'mode': 'knn_emb', 'k_nn': 8, 'edge_min_sim': 0.3} gat_train=200 val=60 mean degree(train)=12.29
+2026-10-31 20:32:48,536 train_gat INFO [knn_k8_s0.3] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3571
+2026-10-31 20:32:50,806 train_gat INFO [knn_k8_s0.3] epoch 1 loss 2.4680 val NDCG@10 0.3634 MRR@10 0.3174 (2.3s)
+2026-10-31 20:32:53,064 train_gat INFO [knn_k8_s0.3] epoch 2 loss 2.4590 val NDCG@10 0.3722 MRR@10 0.3210 (2.3s)
+2026-10-31 20:32:55,276 train_gat INFO [knn_k8_s0.3] epoch 3 loss 2.3474 val NDCG@10 0.3732 MRR@10 0.3224 (2.2s)
+2026-10-31 20:32:56,263 pipeline INFO $ -m src.train_gat --protocol A --control knn_k8_s0.5
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:32:59,297 train_gat INFO [knn_k8_s0.5] graph={'mode': 'knn_emb', 'k_nn': 8, 'edge_min_sim': 0.5} gat_train=200 val=60 mean degree(train)=8.96
+2026-10-31 20:32:59,582 train_gat INFO [knn_k8_s0.5] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3510
+2026-10-31 20:33:01,331 train_gat INFO [knn_k8_s0.5] epoch 1 loss 2.5472 val NDCG@10 0.3471 MRR@10 0.2940 (1.7s)
+2026-10-31 20:33:02,999 train_gat INFO [knn_k8_s0.5] epoch 2 loss 2.5519 val NDCG@10 0.3471 MRR@10 0.2940 (1.7s)
+2026-10-31 20:33:04,698 train_gat INFO [knn_k8_s0.5] epoch 3 loss 2.4031 val NDCG@10 0.3473 MRR@10 0.2942 (1.7s)
+2026-10-31 20:33:04,698 train_gat INFO [knn_k8_s0.5] early stop at epoch 3
+2026-10-31 20:33:05,595 pipeline INFO $ -m src.train_gat --protocol A --control knn_k16_s0.0
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:33:08,701 train_gat INFO [knn_k16_s0.0] graph={'mode': 'knn_emb', 'k_nn': 16, 'edge_min_sim': 0.0} gat_train=200 val=60 mean degree(train)=24.72
+2026-10-31 20:33:09,322 train_gat INFO [knn_k16_s0.0] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3563
+2026-10-31 20:33:13,568 train_gat INFO [knn_k16_s0.0] epoch 1 loss 2.4148 val NDCG@10 0.3541 MRR@10 0.3024 (4.2s)
+2026-10-31 20:33:17,763 train_gat INFO [knn_k16_s0.0] epoch 2 loss 2.3935 val NDCG@10 0.3613 MRR@10 0.3070 (4.2s)
+2026-10-31 20:33:21,604 train_gat INFO [knn_k16_s0.0] epoch 3 loss 2.2982 val NDCG@10 0.3619 MRR@10 0.3076 (3.8s)
+2026-10-31 20:33:22,871 pipeline INFO $ -m src.train_gat --protocol A --control knn_k16_s0.3
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:33:25,940 train_gat INFO [knn_k16_s0.3] graph={'mode': 'knn_emb', 'k_nn': 16, 'edge_min_sim': 0.3} gat_train=200 val=60 mean degree(train)=21.97
+2026-10-31 20:33:26,497 train_gat INFO [knn_k16_s0.3] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3556
+2026-10-31 20:33:30,270 train_gat INFO [knn_k16_s0.3] epoch 1 loss 2.4817 val NDCG@10 0.3577 MRR@10 0.3071 (3.8s)
+2026-10-31 20:33:34,018 train_gat INFO [knn_k16_s0.3] epoch 2 loss 2.3919 val NDCG@10 0.3700 MRR@10 0.3186 (3.7s)
+2026-10-31 20:33:37,594 train_gat INFO [knn_k16_s0.3] epoch 3 loss 2.3475 val NDCG@10 0.3678 MRR@10 0.3158 (3.6s)
+2026-10-31 20:33:38,803 pipeline INFO $ -m src.train_gat --protocol A --control knn_k16_s0.5
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:33:41,908 train_gat INFO [knn_k16_s0.5] graph={'mode': 'knn_emb', 'k_nn': 16, 'edge_min_sim': 0.5} gat_train=200 val=60 mean degree(train)=14.13
+2026-10-31 20:33:42,320 train_gat INFO [knn_k16_s0.5] s_bi val NDCG@10=0.3614 | untrained GAT val NDCG@10=0.3449
+2026-10-31 20:33:44,916 train_gat INFO [knn_k16_s0.5] epoch 1 loss 2.5016 val NDCG@10 0.3449 MRR@10 0.2914 (2.6s)
+2026-10-31 20:33:47,510 train_gat INFO [knn_k16_s0.5] epoch 2 loss 2.4121 val NDCG@10 0.3453 MRR@10 0.2919 (2.6s)
+2026-10-31 20:33:50,110 train_gat INFO [knn_k16_s0.5] epoch 3 loss 2.3583 val NDCG@10 0.3516 MRR@10 0.2955 (2.6s)
+2026-10-31 20:33:51,192 pipeline INFO $ -m src.train_gat --protocol A --summarize
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+2026-10-31 20:33:54,207 train_gat INFO GAT controls (val):
+     control         mode  k_nn  edge_min_sim  val_ndcg@10  val_mrr@10  val_ndcg@10_s_bi  best_epoch  mean_degree
+    no_graph     no_graph     8           0.3     0.364544    0.316640          0.361437           0     1.000000
+random_graph random_graph     8           0.3     0.372960    0.328280          0.361437           1    12.293800
+ knn_k4_s0.0      knn_emb     4           0.0     0.368472    0.325437          0.361437           3     7.137600
+ knn_k4_s0.3      knn_emb     4           0.3     0.367029    0.323677          0.361437           2     6.847900
+ knn_k4_s0.5      knn_emb     4           0.5     0.357704    0.311151          0.361437           0     5.480000
+ knn_k8_s0.0      knn_emb     8           0.0     0.378036    0.329160          0.361437           3    13.177600
+ knn_k8_s0.3      knn_emb     8           0.3     0.373222    0.322427          0.361437           3    12.293800
+ knn_k8_s0.5      knn_emb     8           0.5     0.350951    0.302381          0.361437           0     8.963500
+knn_k16_s0.0      knn_emb    16           0.0     0.361854    0.307560          0.361437           3    24.719299
+knn_k16_s0.3      knn_emb    16           0.3     0.370002    0.318605          0.361437           2    21.967400
+knn_k16_s0.5      knn_emb    16           0.5     0.351568    0.295503          0.361437           3    14.131400
+2026-10-31 20:33:54,845 pipeline INFO == gat_controls: done in 118s
+2026-10-31 20:33:54,845 pipeline INFO pipeline finished; timings: {'download': 7.6, 'data': 14.0, 'cross_encoder': 407.0, 'bi_encoder': 556.6, 'gat_A': 10.8, 'ctx_A': 6.8, 'gat_B': 6.2, 'ctx_B': 4.9, 'tests': 4.2, 'fusion_A': 11.8, 'fusion_B': 11.0, 'gat_controls': 118.2}
+SMOKE TEST PASSED

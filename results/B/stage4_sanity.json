@@ -1,0 +1,6 @@
+{
+ "val_ndcg@10_gat_only": 0.34004127979278564,
+ "val_ndcg@10_s_bi": 0.33763739466667175,
+ "alignment_ok": true,
+ "gate_passed": true
+}

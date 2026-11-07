@@ -1,0 +1,251 @@
+config,set,metric,mean,std,n_seeds
+BM25 (in-pool order),test,ndcg@1,0.6690,0.0000,1
+BM25 (in-pool order),test,ndcg@3,0.4858,0.0000,1
+BM25 (in-pool order),test,ndcg@5,0.5092,0.0000,1
+BM25 (in-pool order),test,ndcg@10,0.5511,0.0000,1
+BM25 (in-pool order),test,ndcg@50,0.6863,0.0000,1
+BM25 (in-pool order),test,mrr@1,0.6690,0.0000,1
+BM25 (in-pool order),test,mrr@3,0.7367,0.0000,1
+BM25 (in-pool order),test,mrr@5,0.7484,0.0000,1
+BM25 (in-pool order),test,mrr@10,0.7570,0.0000,1
+BM25 (in-pool order),test,mrr@50,0.7615,0.0000,1
+BM25 (in-pool order),test,p@1,0.6690,0.0000,1
+BM25 (in-pool order),test,p@3,0.3546,0.0000,1
+BM25 (in-pool order),test,p@5,0.2467,0.0000,1
+BM25 (in-pool order),test,p@10,0.1495,0.0000,1
+BM25 (in-pool order),test,p@50,0.0530,0.0000,1
+BM25 (in-pool order),test,r@1,0.2725,0.0000,1
+BM25 (in-pool order),test,r@3,0.4229,0.0000,1
+BM25 (in-pool order),test,r@5,0.4860,0.0000,1
+BM25 (in-pool order),test,r@10,0.5819,0.0000,1
+BM25 (in-pool order),test,r@50,1.0000,0.0000,1
+BM25 (in-pool order),test,map,0.4886,0.0000,1
+BM25 (in-pool order),test,r@2,0.3736,0.0000,1
+BM25 (in-pool order),test,allr@2,0.0484,0.0000,1
+BM25 (in-pool order),test,allr@5,0.1316,0.0000,1
+BM25 (in-pool order),test,allr@10,0.2238,0.0000,1
+SBERT (s_bi),test,ndcg@1,0.7257,0.0000,1
+SBERT (s_bi),test,ndcg@3,0.5432,0.0000,1
+SBERT (s_bi),test,ndcg@5,0.5943,0.0000,1
+SBERT (s_bi),test,ndcg@10,0.6708,0.0000,1
+SBERT (s_bi),test,ndcg@50,0.7481,0.0000,1
+SBERT (s_bi),test,mrr@1,0.7257,0.0000,1
+SBERT (s_bi),test,mrr@3,0.8003,0.0000,1
+SBERT (s_bi),test,mrr@5,0.8137,0.0000,1
+SBERT (s_bi),test,mrr@10,0.8183,0.0000,1
+SBERT (s_bi),test,mrr@50,0.8193,0.0000,1
+SBERT (s_bi),test,p@1,0.7257,0.0000,1
+SBERT (s_bi),test,p@3,0.4066,0.0000,1
+SBERT (s_bi),test,p@5,0.3087,0.0000,1
+SBERT (s_bi),test,p@10,0.2022,0.0000,1
+SBERT (s_bi),test,p@50,0.0530,0.0000,1
+SBERT (s_bi),test,r@1,0.2931,0.0000,1
+SBERT (s_bi),test,r@3,0.4789,0.0000,1
+SBERT (s_bi),test,r@5,0.5986,0.0000,1
+SBERT (s_bi),test,r@10,0.7743,0.0000,1
+SBERT (s_bi),test,r@50,1.0000,0.0000,1
+SBERT (s_bi),test,map,0.5721,0.0000,1
+SBERT (s_bi),test,r@2,0.4060,0.0000,1
+SBERT (s_bi),test,allr@2,0.0637,0.0000,1
+SBERT (s_bi),test,allr@5,0.2296,0.0000,1
+SBERT (s_bi),test,allr@10,0.4952,0.0000,1
+CE-BERT (alpha=1),test,ndcg@1,0.7981,0.0000,1
+CE-BERT (alpha=1),test,ndcg@3,0.6188,0.0000,1
+CE-BERT (alpha=1),test,ndcg@5,0.6538,0.0000,1
+CE-BERT (alpha=1),test,ndcg@10,0.7109,0.0000,1
+CE-BERT (alpha=1),test,ndcg@50,0.7871,0.0000,1
+CE-BERT (alpha=1),test,mrr@1,0.7981,0.0000,1
+CE-BERT (alpha=1),test,mrr@3,0.8630,0.0000,1
+CE-BERT (alpha=1),test,mrr@5,0.8701,0.0000,1
+CE-BERT (alpha=1),test,mrr@10,0.8732,0.0000,1
+CE-BERT (alpha=1),test,mrr@50,0.8737,0.0000,1
+CE-BERT (alpha=1),test,p@1,0.7981,0.0000,1
+CE-BERT (alpha=1),test,p@3,0.4652,0.0000,1
+CE-BERT (alpha=1),test,p@5,0.3292,0.0000,1
+CE-BERT (alpha=1),test,p@10,0.2007,0.0000,1
+CE-BERT (alpha=1),test,p@50,0.0530,0.0000,1
+CE-BERT (alpha=1),test,r@1,0.3244,0.0000,1
+CE-BERT (alpha=1),test,r@3,0.5532,0.0000,1
+CE-BERT (alpha=1),test,r@5,0.6435,0.0000,1
+CE-BERT (alpha=1),test,r@10,0.7737,0.0000,1
+CE-BERT (alpha=1),test,r@50,1.0000,0.0000,1
+CE-BERT (alpha=1),test,map,0.6265,0.0000,1
+CE-BERT (alpha=1),test,r@2,0.4781,0.0000,1
+CE-BERT (alpha=1),test,allr@2,0.1142,0.0000,1
+CE-BERT (alpha=1),test,allr@5,0.2925,0.0000,1
+CE-BERT (alpha=1),test,allr@10,0.4969,0.0000,1
+GAT-only (alpha=0),test,ndcg@1,0.7224,0.0000,1
+GAT-only (alpha=0),test,ndcg@3,0.5462,0.0000,1
+GAT-only (alpha=0),test,ndcg@5,0.5930,0.0000,1
+GAT-only (alpha=0),test,ndcg@10,0.6766,0.0000,1
+GAT-only (alpha=0),test,ndcg@50,0.7499,0.0000,1
+GAT-only (alpha=0),test,mrr@1,0.7224,0.0000,1
+GAT-only (alpha=0),test,mrr@3,0.7993,0.0000,1
+GAT-only (alpha=0),test,mrr@5,0.8110,0.0000,1
+GAT-only (alpha=0),test,mrr@10,0.8168,0.0000,1
+GAT-only (alpha=0),test,mrr@50,0.8179,0.0000,1
+GAT-only (alpha=0),test,p@1,0.7224,0.0000,1
+GAT-only (alpha=0),test,p@3,0.4113,0.0000,1
+GAT-only (alpha=0),test,p@5,0.3086,0.0000,1
+GAT-only (alpha=0),test,p@10,0.2072,0.0000,1
+GAT-only (alpha=0),test,p@50,0.0530,0.0000,1
+GAT-only (alpha=0),test,r@1,0.2906,0.0000,1
+GAT-only (alpha=0),test,r@3,0.4826,0.0000,1
+GAT-only (alpha=0),test,r@5,0.5937,0.0000,1
+GAT-only (alpha=0),test,r@10,0.7845,0.0000,1
+GAT-only (alpha=0),test,r@50,1.0000,0.0000,1
+GAT-only (alpha=0),test,map,0.5767,0.0000,1
+GAT-only (alpha=0),test,r@2,0.4095,0.0000,1
+GAT-only (alpha=0),test,allr@2,0.0612,0.0000,1
+GAT-only (alpha=0),test,allr@5,0.2305,0.0000,1
+GAT-only (alpha=0),test,allr@10,0.5176,0.0000,1
+minmax_fixedgrid,test,ndcg@1,0.7931,0.0000,1
+minmax_fixedgrid,test,ndcg@3,0.6060,0.0000,1
+minmax_fixedgrid,test,ndcg@5,0.6468,0.0000,1
+minmax_fixedgrid,test,ndcg@10,0.7175,0.0000,1
+minmax_fixedgrid,test,ndcg@50,0.7861,0.0000,1
+minmax_fixedgrid,test,mrr@1,0.7931,0.0000,1
+minmax_fixedgrid,test,mrr@3,0.8593,0.0000,1
+minmax_fixedgrid,test,mrr@5,0.8670,0.0000,1
+minmax_fixedgrid,test,mrr@10,0.8705,0.0000,1
+minmax_fixedgrid,test,mrr@50,0.8710,0.0000,1
+minmax_fixedgrid,test,p@1,0.7931,0.0000,1
+minmax_fixedgrid,test,p@3,0.4565,0.0000,1
+minmax_fixedgrid,test,p@5,0.3302,0.0000,1
+minmax_fixedgrid,test,p@10,0.2097,0.0000,1
+minmax_fixedgrid,test,p@50,0.0530,0.0000,1
+minmax_fixedgrid,test,r@1,0.3210,0.0000,1
+minmax_fixedgrid,test,r@3,0.5350,0.0000,1
+minmax_fixedgrid,test,r@5,0.6381,0.0000,1
+minmax_fixedgrid,test,r@10,0.7988,0.0000,1
+minmax_fixedgrid,test,r@50,1.0000,0.0000,1
+minmax_fixedgrid,test,map,0.6248,0.0000,1
+minmax_fixedgrid,test,r@2,0.4634,0.0000,1
+minmax_fixedgrid,test,allr@2,0.0890,0.0000,1
+minmax_fixedgrid,test,allr@5,0.2813,0.0000,1
+minmax_fixedgrid,test,allr@10,0.5453,0.0000,1
+minmax_fixed_listwise_lam0.01,test,ndcg@1,0.7931,0.0000,5
+minmax_fixed_listwise_lam0.01,test,ndcg@3,0.6060,0.0000,5
+minmax_fixed_listwise_lam0.01,test,ndcg@5,0.6468,0.0000,5
+minmax_fixed_listwise_lam0.01,test,ndcg@10,0.7175,0.0000,5
+minmax_fixed_listwise_lam0.01,test,ndcg@50,0.7861,0.0000,5
+minmax_fixed_listwise_lam0.01,test,mrr@1,0.7931,0.0000,5
+minmax_fixed_listwise_lam0.01,test,mrr@3,0.8593,0.0000,5
+minmax_fixed_listwise_lam0.01,test,mrr@5,0.8670,0.0000,5
+minmax_fixed_listwise_lam0.01,test,mrr@10,0.8705,0.0000,5
+minmax_fixed_listwise_lam0.01,test,mrr@50,0.8710,0.0000,5
+minmax_fixed_listwise_lam0.01,test,p@1,0.7931,0.0000,5
+minmax_fixed_listwise_lam0.01,test,p@3,0.4565,0.0000,5
+minmax_fixed_listwise_lam0.01,test,p@5,0.3302,0.0000,5
+minmax_fixed_listwise_lam0.01,test,p@10,0.2097,0.0000,5
+minmax_fixed_listwise_lam0.01,test,p@50,0.0530,0.0000,5
+minmax_fixed_listwise_lam0.01,test,r@1,0.3210,0.0000,5
+minmax_fixed_listwise_lam0.01,test,r@3,0.5350,0.0000,5
+minmax_fixed_listwise_lam0.01,test,r@5,0.6381,0.0000,5
+minmax_fixed_listwise_lam0.01,test,r@10,0.7988,0.0000,5
+minmax_fixed_listwise_lam0.01,test,r@50,1.0000,0.0000,5
+minmax_fixed_listwise_lam0.01,test,map,0.6248,0.0000,5
+minmax_fixed_listwise_lam0.01,test,r@2,0.4634,0.0000,5
+minmax_fixed_listwise_lam0.01,test,allr@2,0.0890,0.0000,5
+minmax_fixed_listwise_lam0.01,test,allr@5,0.2813,0.0000,5
+minmax_fixed_listwise_lam0.01,test,allr@10,0.5453,0.0000,5
+minmax_Q_listwise_lam0.01,test,ndcg@1,0.7931,0.0000,5
+minmax_Q_listwise_lam0.01,test,ndcg@3,0.6060,0.0000,5
+minmax_Q_listwise_lam0.01,test,ndcg@5,0.6468,0.0000,5
+minmax_Q_listwise_lam0.01,test,ndcg@10,0.7175,0.0000,5
+minmax_Q_listwise_lam0.01,test,ndcg@50,0.7861,0.0000,5
+minmax_Q_listwise_lam0.01,test,mrr@1,0.7931,0.0000,5
+minmax_Q_listwise_lam0.01,test,mrr@3,0.8593,0.0001,5
+minmax_Q_listwise_lam0.01,test,mrr@5,0.8670,0.0001,5
+minmax_Q_listwise_lam0.01,test,mrr@10,0.8704,0.0001,5
+minmax_Q_listwise_lam0.01,test,mrr@50,0.8709,0.0001,5
+minmax_Q_listwise_lam0.01,test,p@1,0.7931,0.0000,5
+minmax_Q_listwise_lam0.01,test,p@3,0.4565,0.0000,5
+minmax_Q_listwise_lam0.01,test,p@5,0.3303,0.0000,5
+minmax_Q_listwise_lam0.01,test,p@10,0.2097,0.0000,5
+minmax_Q_listwise_lam0.01,test,p@50,0.0530,0.0000,5
+minmax_Q_listwise_lam0.01,test,r@1,0.3210,0.0000,5
+minmax_Q_listwise_lam0.01,test,r@3,0.5350,0.0000,5
+minmax_Q_listwise_lam0.01,test,r@5,0.6381,0.0000,5
+minmax_Q_listwise_lam0.01,test,r@10,0.7988,0.0001,5
+minmax_Q_listwise_lam0.01,test,r@50,1.0000,0.0000,5
+minmax_Q_listwise_lam0.01,test,map,0.6248,0.0000,5
+minmax_Q_listwise_lam0.01,test,r@2,0.4633,0.0002,5
+minmax_Q_listwise_lam0.01,test,allr@2,0.0890,0.0002,5
+minmax_Q_listwise_lam0.01,test,allr@5,0.2813,0.0002,5
+minmax_Q_listwise_lam0.01,test,allr@10,0.5454,0.0002,5
+minmax_QS_listwise_lam0.01,test,ndcg@1,0.7929,0.0003,5
+minmax_QS_listwise_lam0.01,test,ndcg@3,0.6060,0.0002,5
+minmax_QS_listwise_lam0.01,test,ndcg@5,0.6469,0.0002,5
+minmax_QS_listwise_lam0.01,test,ndcg@10,0.7174,0.0001,5
+minmax_QS_listwise_lam0.01,test,ndcg@50,0.7861,0.0001,5
+minmax_QS_listwise_lam0.01,test,mrr@1,0.7929,0.0003,5
+minmax_QS_listwise_lam0.01,test,mrr@3,0.8591,0.0002,5
+minmax_QS_listwise_lam0.01,test,mrr@5,0.8669,0.0002,5
+minmax_QS_listwise_lam0.01,test,mrr@10,0.8703,0.0002,5
+minmax_QS_listwise_lam0.01,test,mrr@50,0.8708,0.0002,5
+minmax_QS_listwise_lam0.01,test,p@1,0.7929,0.0003,5
+minmax_QS_listwise_lam0.01,test,p@3,0.4566,0.0001,5
+minmax_QS_listwise_lam0.01,test,p@5,0.3303,0.0002,5
+minmax_QS_listwise_lam0.01,test,p@10,0.2097,0.0001,5
+minmax_QS_listwise_lam0.01,test,p@50,0.0530,0.0000,5
+minmax_QS_listwise_lam0.01,test,r@1,0.3209,0.0001,5
+minmax_QS_listwise_lam0.01,test,r@3,0.5350,0.0002,5
+minmax_QS_listwise_lam0.01,test,r@5,0.6382,0.0003,5
+minmax_QS_listwise_lam0.01,test,r@10,0.7988,0.0002,5
+minmax_QS_listwise_lam0.01,test,r@50,1.0000,0.0000,5
+minmax_QS_listwise_lam0.01,test,map,0.6247,0.0001,5
+minmax_QS_listwise_lam0.01,test,r@2,0.4633,0.0002,5
+minmax_QS_listwise_lam0.01,test,allr@2,0.0890,0.0002,5
+minmax_QS_listwise_lam0.01,test,allr@5,0.2813,0.0005,5
+minmax_QS_listwise_lam0.01,test,allr@10,0.5451,0.0004,5
+minmax_S_listwise_lam0.01,test,ndcg@1,0.7926,0.0010,5
+minmax_S_listwise_lam0.01,test,ndcg@3,0.6054,0.0007,5
+minmax_S_listwise_lam0.01,test,ndcg@5,0.6467,0.0007,5
+minmax_S_listwise_lam0.01,test,ndcg@10,0.7172,0.0005,5
+minmax_S_listwise_lam0.01,test,ndcg@50,0.7859,0.0004,5
+minmax_S_listwise_lam0.01,test,mrr@1,0.7926,0.0010,5
+minmax_S_listwise_lam0.01,test,mrr@3,0.8588,0.0008,5
+minmax_S_listwise_lam0.01,test,mrr@5,0.8665,0.0009,5
+minmax_S_listwise_lam0.01,test,mrr@10,0.8699,0.0008,5
+minmax_S_listwise_lam0.01,test,mrr@50,0.8704,0.0008,5
+minmax_S_listwise_lam0.01,test,p@1,0.7926,0.0010,5
+minmax_S_listwise_lam0.01,test,p@3,0.4559,0.0005,5
+minmax_S_listwise_lam0.01,test,p@5,0.3304,0.0002,5
+minmax_S_listwise_lam0.01,test,p@10,0.2097,0.0001,5
+minmax_S_listwise_lam0.01,test,p@50,0.0530,0.0000,5
+minmax_S_listwise_lam0.01,test,r@1,0.3208,0.0004,5
+minmax_S_listwise_lam0.01,test,r@3,0.5342,0.0006,5
+minmax_S_listwise_lam0.01,test,r@5,0.6382,0.0006,5
+minmax_S_listwise_lam0.01,test,r@10,0.7986,0.0003,5
+minmax_S_listwise_lam0.01,test,r@50,1.0000,0.0000,5
+minmax_S_listwise_lam0.01,test,map,0.6245,0.0005,5
+minmax_S_listwise_lam0.01,test,r@2,0.4629,0.0008,5
+minmax_S_listwise_lam0.01,test,allr@2,0.0892,0.0004,5
+minmax_S_listwise_lam0.01,test,allr@5,0.2815,0.0011,5
+minmax_S_listwise_lam0.01,test,allr@10,0.5441,0.0008,5
+minmax_oracle,test,ndcg@1,0.8858,0.0000,1
+minmax_oracle,test,ndcg@3,0.6913,0.0000,1
+minmax_oracle,test,ndcg@5,0.7254,0.0000,1
+minmax_oracle,test,ndcg@10,0.7948,0.0000,1
+minmax_oracle,test,ndcg@50,0.8392,0.0000,1
+minmax_oracle,test,mrr@1,0.8858,0.0000,1
+minmax_oracle,test,mrr@3,0.9248,0.0000,1
+minmax_oracle,test,mrr@5,0.9290,0.0000,1
+minmax_oracle,test,mrr@10,0.9303,0.0000,1
+minmax_oracle,test,mrr@50,0.9305,0.0000,1
+minmax_oracle,test,p@1,0.8858,0.0000,1
+minmax_oracle,test,p@3,0.5231,0.0000,1
+minmax_oracle,test,p@5,0.3663,0.0000,1
+minmax_oracle,test,p@10,0.2279,0.0000,1
+minmax_oracle,test,p@50,0.0530,0.0000,1
+minmax_oracle,test,r@1,0.3586,0.0000,1
+minmax_oracle,test,r@3,0.6162,0.0000,1
+minmax_oracle,test,r@5,0.7101,0.0000,1
+minmax_oracle,test,r@10,0.8668,0.0000,1
+minmax_oracle,test,r@50,1.0000,0.0000,1
+minmax_oracle,test,map,0.7029,0.0000,1
+minmax_oracle,test,r@2,0.5342,0.0000,1
+minmax_oracle,test,allr@2,0.1498,0.0000,1
+minmax_oracle,test,allr@5,0.3893,0.0000,1
+minmax_oracle,test,allr@10,0.6727,0.0000,1

@@ -1,0 +1,4 @@
+dataset,label,bucket,n,alpha_Q,alpha_QS,alpha_S,best_adaptive,alpha_best_minus_alpha0,oracle_alpha,ce_ndcg@10,gat_ndcg@10,best_fixed_ndcg@10,adaptive_ndcg@10,oracle_ndcg@10,gain,gain_ci95_lo,gain_ci95_hi,gain_p
+musique,n_entities,0,212,0.40002,0.40044,0.39963,Q,0.00002,0.44505,0.67625,0.65283,0.68861,0.68863,0.76741,0.00002,0.00000,0.00006,0.72120
+musique,n_entities,1,1026,0.40002,0.40036,0.39950,Q,0.00002,0.44600,0.69244,0.66934,0.69979,0.69975,0.77502,-0.00004,-0.00017,0.00004,0.54740
+musique,n_entities,2+,1179,0.40002,0.40048,0.39974,Q,0.00002,0.50318,0.73316,0.66979,0.72844,0.72848,0.80135,0.00004,-0.00002,0.00011,0.24300

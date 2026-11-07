@@ -1,0 +1,1597 @@
+key,split,label,bucket,alpha,ndcg@10
+A,val,n_words,long (>=8),0.000000,0.341219
+A,val,n_words,long (>=8),0.050000,0.344855
+A,val,n_words,long (>=8),0.100000,0.344645
+A,val,n_words,long (>=8),0.150000,0.350061
+A,val,n_words,long (>=8),0.200000,0.351821
+A,val,n_words,long (>=8),0.250000,0.354299
+A,val,n_words,long (>=8),0.300000,0.356314
+A,val,n_words,long (>=8),0.350000,0.359056
+A,val,n_words,long (>=8),0.400000,0.361757
+A,val,n_words,long (>=8),0.450000,0.361465
+A,val,n_words,long (>=8),0.500000,0.364091
+A,val,n_words,long (>=8),0.550000,0.366003
+A,val,n_words,long (>=8),0.600000,0.366869
+A,val,n_words,long (>=8),0.650000,0.366600
+A,val,n_words,long (>=8),0.700000,0.366910
+A,val,n_words,long (>=8),0.750000,0.367247
+A,val,n_words,long (>=8),0.800000,0.364806
+A,val,n_words,long (>=8),0.850000,0.362667
+A,val,n_words,long (>=8),0.900000,0.355643
+A,val,n_words,long (>=8),0.950000,0.353529
+A,val,n_words,long (>=8),1.000000,0.346126
+A,val,n_words,medium (5-7),0.000000,0.359724
+A,val,n_words,medium (5-7),0.050000,0.363246
+A,val,n_words,medium (5-7),0.100000,0.365507
+A,val,n_words,medium (5-7),0.150000,0.369382
+A,val,n_words,medium (5-7),0.200000,0.373060
+A,val,n_words,medium (5-7),0.250000,0.375172
+A,val,n_words,medium (5-7),0.300000,0.376717
+A,val,n_words,medium (5-7),0.350000,0.381469
+A,val,n_words,medium (5-7),0.400000,0.383472
+A,val,n_words,medium (5-7),0.450000,0.386901
+A,val,n_words,medium (5-7),0.500000,0.384916
+A,val,n_words,medium (5-7),0.550000,0.384830
+A,val,n_words,medium (5-7),0.600000,0.383797
+A,val,n_words,medium (5-7),0.650000,0.383618
+A,val,n_words,medium (5-7),0.700000,0.384218
+A,val,n_words,medium (5-7),0.750000,0.381158
+A,val,n_words,medium (5-7),0.800000,0.380890
+A,val,n_words,medium (5-7),0.850000,0.381773
+A,val,n_words,medium (5-7),0.900000,0.379730
+A,val,n_words,medium (5-7),0.950000,0.377354
+A,val,n_words,medium (5-7),1.000000,0.373478
+A,val,n_words,short (<=4),0.000000,0.438532
+A,val,n_words,short (<=4),0.050000,0.441699
+A,val,n_words,short (<=4),0.100000,0.445396
+A,val,n_words,short (<=4),0.150000,0.448636
+A,val,n_words,short (<=4),0.200000,0.452724
+A,val,n_words,short (<=4),0.250000,0.458081
+A,val,n_words,short (<=4),0.300000,0.459085
+A,val,n_words,short (<=4),0.350000,0.461382
+A,val,n_words,short (<=4),0.400000,0.463718
+A,val,n_words,short (<=4),0.450000,0.467224
+A,val,n_words,short (<=4),0.500000,0.466723
+A,val,n_words,short (<=4),0.550000,0.470487
+A,val,n_words,short (<=4),0.600000,0.469633
+A,val,n_words,short (<=4),0.650000,0.468742
+A,val,n_words,short (<=4),0.700000,0.472648
+A,val,n_words,short (<=4),0.750000,0.470705
+A,val,n_words,short (<=4),0.800000,0.470319
+A,val,n_words,short (<=4),0.850000,0.469050
+A,val,n_words,short (<=4),0.900000,0.467529
+A,val,n_words,short (<=4),0.950000,0.465289
+A,val,n_words,short (<=4),1.000000,0.465063
+A,val,wh,how,0.000000,0.304916
+A,val,wh,how,0.050000,0.306675
+A,val,wh,how,0.100000,0.305128
+A,val,wh,how,0.150000,0.312342
+A,val,wh,how,0.200000,0.312687
+A,val,wh,how,0.250000,0.314540
+A,val,wh,how,0.300000,0.314811
+A,val,wh,how,0.350000,0.316483
+A,val,wh,how,0.400000,0.318477
+A,val,wh,how,0.450000,0.318633
+A,val,wh,how,0.500000,0.318931
+A,val,wh,how,0.550000,0.321148
+A,val,wh,how,0.600000,0.318705
+A,val,wh,how,0.650000,0.317666
+A,val,wh,how,0.700000,0.318217
+A,val,wh,how,0.750000,0.317905
+A,val,wh,how,0.800000,0.321724
+A,val,wh,how,0.850000,0.322238
+A,val,wh,how,0.900000,0.319301
+A,val,wh,how,0.950000,0.316450
+A,val,wh,how,1.000000,0.313581
+A,val,wh,other,0.000000,0.419194
+A,val,wh,other,0.050000,0.423157
+A,val,wh,other,0.100000,0.426146
+A,val,wh,other,0.150000,0.430448
+A,val,wh,other,0.200000,0.434530
+A,val,wh,other,0.250000,0.439402
+A,val,wh,other,0.300000,0.441489
+A,val,wh,other,0.350000,0.444011
+A,val,wh,other,0.400000,0.446133
+A,val,wh,other,0.450000,0.449885
+A,val,wh,other,0.500000,0.450938
+A,val,wh,other,0.550000,0.453400
+A,val,wh,other,0.600000,0.452589
+A,val,wh,other,0.650000,0.450019
+A,val,wh,other,0.700000,0.451109
+A,val,wh,other,0.750000,0.446976
+A,val,wh,other,0.800000,0.444033
+A,val,wh,other,0.850000,0.442978
+A,val,wh,other,0.900000,0.443709
+A,val,wh,other,0.950000,0.440449
+A,val,wh,other,1.000000,0.435834
+A,val,wh,what,0.000000,0.370159
+A,val,wh,what,0.050000,0.374247
+A,val,wh,what,0.100000,0.376802
+A,val,wh,what,0.150000,0.378588
+A,val,wh,what,0.200000,0.381521
+A,val,wh,what,0.250000,0.384961
+A,val,wh,what,0.300000,0.386122
+A,val,wh,what,0.350000,0.390059
+A,val,wh,what,0.400000,0.390801
+A,val,wh,what,0.450000,0.392317
+A,val,wh,what,0.500000,0.390972
+A,val,wh,what,0.550000,0.391601
+A,val,wh,what,0.600000,0.389361
+A,val,wh,what,0.650000,0.389271
+A,val,wh,what,0.700000,0.391651
+A,val,wh,what,0.750000,0.390301
+A,val,wh,what,0.800000,0.388964
+A,val,wh,what,0.850000,0.386771
+A,val,wh,what,0.900000,0.381641
+A,val,wh,what,0.950000,0.380978
+A,val,wh,what,1.000000,0.377229
+A,val,wh,when,0.000000,0.355997
+A,val,wh,when,0.050000,0.353479
+A,val,wh,when,0.100000,0.353479
+A,val,wh,when,0.150000,0.354322
+A,val,wh,when,0.200000,0.355106
+A,val,wh,when,0.250000,0.348008
+A,val,wh,when,0.300000,0.348238
+A,val,wh,when,0.350000,0.349545
+A,val,wh,when,0.400000,0.362456
+A,val,wh,when,0.450000,0.363078
+A,val,wh,when,0.500000,0.349088
+A,val,wh,when,0.550000,0.344918
+A,val,wh,when,0.600000,0.354784
+A,val,wh,when,0.650000,0.360582
+A,val,wh,when,0.700000,0.361947
+A,val,wh,when,0.750000,0.358796
+A,val,wh,when,0.800000,0.366088
+A,val,wh,when,0.850000,0.378344
+A,val,wh,when,0.900000,0.365688
+A,val,wh,when,0.950000,0.368881
+A,val,wh,when,1.000000,0.363966
+A,val,wh,where,0.000000,0.466907
+A,val,wh,where,0.050000,0.468050
+A,val,wh,where,0.100000,0.469980
+A,val,wh,where,0.150000,0.474691
+A,val,wh,where,0.200000,0.480535
+A,val,wh,where,0.250000,0.484394
+A,val,wh,where,0.300000,0.487466
+A,val,wh,where,0.350000,0.498221
+A,val,wh,where,0.400000,0.505382
+A,val,wh,where,0.450000,0.510096
+A,val,wh,where,0.500000,0.513710
+A,val,wh,where,0.550000,0.515128
+A,val,wh,where,0.600000,0.520755
+A,val,wh,where,0.650000,0.526780
+A,val,wh,where,0.700000,0.526780
+A,val,wh,where,0.750000,0.527946
+A,val,wh,where,0.800000,0.526131
+A,val,wh,where,0.850000,0.529510
+A,val,wh,where,0.900000,0.524900
+A,val,wh,where,0.950000,0.520570
+A,val,wh,where,1.000000,0.522332
+A,val,wh,who,0.000000,0.350313
+A,val,wh,who,0.050000,0.355976
+A,val,wh,who,0.100000,0.359491
+A,val,wh,who,0.150000,0.371108
+A,val,wh,who,0.200000,0.381764
+A,val,wh,who,0.250000,0.380174
+A,val,wh,who,0.300000,0.385050
+A,val,wh,who,0.350000,0.393006
+A,val,wh,who,0.400000,0.397313
+A,val,wh,who,0.450000,0.407131
+A,val,wh,who,0.500000,0.405646
+A,val,wh,who,0.550000,0.411680
+A,val,wh,who,0.600000,0.424073
+A,val,wh,who,0.650000,0.429054
+A,val,wh,who,0.700000,0.430286
+A,val,wh,who,0.750000,0.427193
+A,val,wh,who,0.800000,0.429847
+A,val,wh,who,0.850000,0.432601
+A,val,wh,who,0.900000,0.429309
+A,val,wh,who,0.950000,0.424073
+A,val,wh,who,1.000000,0.419884
+A,val,wh,why,0.000000,0.296608
+A,val,wh,why,0.050000,0.298422
+A,val,wh,why,0.100000,0.303370
+A,val,wh,why,0.150000,0.315424
+A,val,wh,why,0.200000,0.318800
+A,val,wh,why,0.250000,0.319417
+A,val,wh,why,0.300000,0.316467
+A,val,wh,why,0.350000,0.317957
+A,val,wh,why,0.400000,0.327000
+A,val,wh,why,0.450000,0.330851
+A,val,wh,why,0.500000,0.328812
+A,val,wh,why,0.550000,0.329562
+A,val,wh,why,0.600000,0.328312
+A,val,wh,why,0.650000,0.328312
+A,val,wh,why,0.700000,0.333451
+A,val,wh,why,0.750000,0.346094
+A,val,wh,why,0.800000,0.344280
+A,val,wh,why,0.850000,0.348357
+A,val,wh,why,0.900000,0.336601
+A,val,wh,why,0.950000,0.324994
+A,val,wh,why,1.000000,0.328948
+A,val,all,all,0.000000,0.379829
+A,val,all,all,0.050000,0.383268
+A,val,all,all,0.100000,0.385387
+A,val,all,all,0.150000,0.389432
+A,val,all,all,0.200000,0.392781
+A,val,all,all,0.250000,0.395989
+A,val,all,all,0.300000,0.397477
+A,val,all,all,0.350000,0.400988
+A,val,all,all,0.400000,0.403261
+A,val,all,all,0.450000,0.405828
+A,val,all,all,0.500000,0.405401
+A,val,all,all,0.550000,0.406989
+A,val,all,all,0.600000,0.406463
+A,val,all,all,0.650000,0.406041
+A,val,all,all,0.700000,0.407601
+A,val,all,all,0.750000,0.405696
+A,val,all,all,0.800000,0.404874
+A,val,all,all,0.850000,0.404369
+A,val,all,all,0.900000,0.401303
+A,val,all,all,0.950000,0.399031
+A,val,all,all,1.000000,0.395451
+A,test,n_words,long (>=8),0.000000,0.287831
+A,test,n_words,long (>=8),0.050000,0.294534
+A,test,n_words,long (>=8),0.100000,0.302240
+A,test,n_words,long (>=8),0.150000,0.309014
+A,test,n_words,long (>=8),0.200000,0.314095
+A,test,n_words,long (>=8),0.250000,0.319291
+A,test,n_words,long (>=8),0.300000,0.324283
+A,test,n_words,long (>=8),0.350000,0.329099
+A,test,n_words,long (>=8),0.400000,0.334104
+A,test,n_words,long (>=8),0.450000,0.337144
+A,test,n_words,long (>=8),0.500000,0.339682
+A,test,n_words,long (>=8),0.550000,0.343975
+A,test,n_words,long (>=8),0.600000,0.348713
+A,test,n_words,long (>=8),0.650000,0.351739
+A,test,n_words,long (>=8),0.700000,0.353384
+A,test,n_words,long (>=8),0.750000,0.354642
+A,test,n_words,long (>=8),0.800000,0.357298
+A,test,n_words,long (>=8),0.850000,0.358424
+A,test,n_words,long (>=8),0.900000,0.358798
+A,test,n_words,long (>=8),0.950000,0.358820
+A,test,n_words,long (>=8),1.000000,0.357683
+A,test,n_words,medium (5-7),0.000000,0.353229
+A,test,n_words,medium (5-7),0.050000,0.359508
+A,test,n_words,medium (5-7),0.100000,0.365172
+A,test,n_words,medium (5-7),0.150000,0.370853
+A,test,n_words,medium (5-7),0.200000,0.374004
+A,test,n_words,medium (5-7),0.250000,0.378620
+A,test,n_words,medium (5-7),0.300000,0.382578
+A,test,n_words,medium (5-7),0.350000,0.387698
+A,test,n_words,medium (5-7),0.400000,0.391191
+A,test,n_words,medium (5-7),0.450000,0.393961
+A,test,n_words,medium (5-7),0.500000,0.397084
+A,test,n_words,medium (5-7),0.550000,0.400970
+A,test,n_words,medium (5-7),0.600000,0.403649
+A,test,n_words,medium (5-7),0.650000,0.406245
+A,test,n_words,medium (5-7),0.700000,0.409217
+A,test,n_words,medium (5-7),0.750000,0.411862
+A,test,n_words,medium (5-7),0.800000,0.413408
+A,test,n_words,medium (5-7),0.850000,0.414928
+A,test,n_words,medium (5-7),0.900000,0.414824
+A,test,n_words,medium (5-7),0.950000,0.415189
+A,test,n_words,medium (5-7),1.000000,0.415721
+A,test,n_words,short (<=4),0.000000,0.403216
+A,test,n_words,short (<=4),0.050000,0.408159
+A,test,n_words,short (<=4),0.100000,0.412854
+A,test,n_words,short (<=4),0.150000,0.416706
+A,test,n_words,short (<=4),0.200000,0.420128
+A,test,n_words,short (<=4),0.250000,0.424360
+A,test,n_words,short (<=4),0.300000,0.428224
+A,test,n_words,short (<=4),0.350000,0.432951
+A,test,n_words,short (<=4),0.400000,0.435300
+A,test,n_words,short (<=4),0.450000,0.438460
+A,test,n_words,short (<=4),0.500000,0.441816
+A,test,n_words,short (<=4),0.550000,0.442886
+A,test,n_words,short (<=4),0.600000,0.445269
+A,test,n_words,short (<=4),0.650000,0.448361
+A,test,n_words,short (<=4),0.700000,0.448279
+A,test,n_words,short (<=4),0.750000,0.449011
+A,test,n_words,short (<=4),0.800000,0.450230
+A,test,n_words,short (<=4),0.850000,0.451774
+A,test,n_words,short (<=4),0.900000,0.451712
+A,test,n_words,short (<=4),0.950000,0.452606
+A,test,n_words,short (<=4),1.000000,0.449663
+A,test,wh,how,0.000000,0.297033
+A,test,wh,how,0.050000,0.302256
+A,test,wh,how,0.100000,0.305396
+A,test,wh,how,0.150000,0.309350
+A,test,wh,how,0.200000,0.313955
+A,test,wh,how,0.250000,0.319794
+A,test,wh,how,0.300000,0.324446
+A,test,wh,how,0.350000,0.329190
+A,test,wh,how,0.400000,0.332159
+A,test,wh,how,0.450000,0.335252
+A,test,wh,how,0.500000,0.335957
+A,test,wh,how,0.550000,0.338823
+A,test,wh,how,0.600000,0.341740
+A,test,wh,how,0.650000,0.342823
+A,test,wh,how,0.700000,0.346256
+A,test,wh,how,0.750000,0.348028
+A,test,wh,how,0.800000,0.349334
+A,test,wh,how,0.850000,0.347146
+A,test,wh,how,0.900000,0.348578
+A,test,wh,how,0.950000,0.346866
+A,test,wh,how,1.000000,0.346624
+A,test,wh,other,0.000000,0.391446
+A,test,wh,other,0.050000,0.397076
+A,test,wh,other,0.100000,0.403432
+A,test,wh,other,0.150000,0.409890
+A,test,wh,other,0.200000,0.414131
+A,test,wh,other,0.250000,0.419512
+A,test,wh,other,0.300000,0.424965
+A,test,wh,other,0.350000,0.429809
+A,test,wh,other,0.400000,0.433756
+A,test,wh,other,0.450000,0.436967
+A,test,wh,other,0.500000,0.440092
+A,test,wh,other,0.550000,0.442658
+A,test,wh,other,0.600000,0.447845
+A,test,wh,other,0.650000,0.451765
+A,test,wh,other,0.700000,0.453237
+A,test,wh,other,0.750000,0.454728
+A,test,wh,other,0.800000,0.456733
+A,test,wh,other,0.850000,0.458859
+A,test,wh,other,0.900000,0.458393
+A,test,wh,other,0.950000,0.458421
+A,test,wh,other,1.000000,0.456868
+A,test,wh,what,0.000000,0.334638
+A,test,wh,what,0.050000,0.340863
+A,test,wh,what,0.100000,0.346216
+A,test,wh,what,0.150000,0.350404
+A,test,wh,what,0.200000,0.352891
+A,test,wh,what,0.250000,0.356427
+A,test,wh,what,0.300000,0.359083
+A,test,wh,what,0.350000,0.363502
+A,test,wh,what,0.400000,0.366405
+A,test,wh,what,0.450000,0.369019
+A,test,wh,what,0.500000,0.372537
+A,test,wh,what,0.550000,0.376099
+A,test,wh,what,0.600000,0.378141
+A,test,wh,what,0.650000,0.381080
+A,test,wh,what,0.700000,0.382214
+A,test,wh,what,0.750000,0.383548
+A,test,wh,what,0.800000,0.385249
+A,test,wh,what,0.850000,0.386706
+A,test,wh,what,0.900000,0.387596
+A,test,wh,what,0.950000,0.388353
+A,test,wh,what,1.000000,0.387453
+A,test,wh,when,0.000000,0.290349
+A,test,wh,when,0.050000,0.293365
+A,test,wh,when,0.100000,0.300456
+A,test,wh,when,0.150000,0.307209
+A,test,wh,when,0.200000,0.313356
+A,test,wh,when,0.250000,0.316186
+A,test,wh,when,0.300000,0.318763
+A,test,wh,when,0.350000,0.328526
+A,test,wh,when,0.400000,0.332619
+A,test,wh,when,0.450000,0.337313
+A,test,wh,when,0.500000,0.342821
+A,test,wh,when,0.550000,0.343246
+A,test,wh,when,0.600000,0.347534
+A,test,wh,when,0.650000,0.348886
+A,test,wh,when,0.700000,0.350017
+A,test,wh,when,0.750000,0.354977
+A,test,wh,when,0.800000,0.360162
+A,test,wh,when,0.850000,0.361261
+A,test,wh,when,0.900000,0.353096
+A,test,wh,when,0.950000,0.351482
+A,test,wh,when,1.000000,0.348911
+A,test,wh,where,0.000000,0.427854
+A,test,wh,where,0.050000,0.438387
+A,test,wh,where,0.100000,0.442983
+A,test,wh,where,0.150000,0.449861
+A,test,wh,where,0.200000,0.455848
+A,test,wh,where,0.250000,0.458506
+A,test,wh,where,0.300000,0.463908
+A,test,wh,where,0.350000,0.469608
+A,test,wh,where,0.400000,0.470159
+A,test,wh,where,0.450000,0.469162
+A,test,wh,where,0.500000,0.474371
+A,test,wh,where,0.550000,0.479397
+A,test,wh,where,0.600000,0.475533
+A,test,wh,where,0.650000,0.475402
+A,test,wh,where,0.700000,0.475188
+A,test,wh,where,0.750000,0.479449
+A,test,wh,where,0.800000,0.481587
+A,test,wh,where,0.850000,0.481601
+A,test,wh,where,0.900000,0.481781
+A,test,wh,where,0.950000,0.486920
+A,test,wh,where,1.000000,0.489729
+A,test,wh,who,0.000000,0.398171
+A,test,wh,who,0.050000,0.401104
+A,test,wh,who,0.100000,0.412048
+A,test,wh,who,0.150000,0.420108
+A,test,wh,who,0.200000,0.423451
+A,test,wh,who,0.250000,0.431568
+A,test,wh,who,0.300000,0.438899
+A,test,wh,who,0.350000,0.443718
+A,test,wh,who,0.400000,0.451124
+A,test,wh,who,0.450000,0.455415
+A,test,wh,who,0.500000,0.456985
+A,test,wh,who,0.550000,0.460572
+A,test,wh,who,0.600000,0.462590
+A,test,wh,who,0.650000,0.465227
+A,test,wh,who,0.700000,0.470983
+A,test,wh,who,0.750000,0.474642
+A,test,wh,who,0.800000,0.473202
+A,test,wh,who,0.850000,0.480499
+A,test,wh,who,0.900000,0.474742
+A,test,wh,who,0.950000,0.477536
+A,test,wh,who,1.000000,0.478579
+A,test,wh,why,0.000000,0.279285
+A,test,wh,why,0.050000,0.296348
+A,test,wh,why,0.100000,0.314963
+A,test,wh,why,0.150000,0.325612
+A,test,wh,why,0.200000,0.329562
+A,test,wh,why,0.250000,0.335846
+A,test,wh,why,0.300000,0.336617
+A,test,wh,why,0.350000,0.350479
+A,test,wh,why,0.400000,0.360617
+A,test,wh,why,0.450000,0.371334
+A,test,wh,why,0.500000,0.373881
+A,test,wh,why,0.550000,0.378174
+A,test,wh,why,0.600000,0.378409
+A,test,wh,why,0.650000,0.379622
+A,test,wh,why,0.700000,0.386710
+A,test,wh,why,0.750000,0.386878
+A,test,wh,why,0.800000,0.383509
+A,test,wh,why,0.850000,0.388406
+A,test,wh,why,0.900000,0.397441
+A,test,wh,why,0.950000,0.403763
+A,test,wh,why,1.000000,0.398605
+A,test,all,all,0.000000,0.354190
+A,test,all,all,0.050000,0.360151
+A,test,all,all,0.100000,0.365968
+A,test,all,all,0.150000,0.371327
+A,test,all,all,0.200000,0.374987
+A,test,all,all,0.250000,0.379612
+A,test,all,all,0.300000,0.383770
+A,test,all,all,0.350000,0.388702
+A,test,all,all,0.400000,0.392176
+A,test,all,all,0.450000,0.395126
+A,test,all,all,0.500000,0.398191
+A,test,all,all,0.550000,0.401300
+A,test,all,all,0.600000,0.404343
+A,test,all,all,0.650000,0.407186
+A,test,all,all,0.700000,0.408925
+A,test,all,all,0.750000,0.410675
+A,test,all,all,0.800000,0.412365
+A,test,all,all,0.850000,0.413806
+A,test,all,all,0.900000,0.413820
+A,test,all,all,0.950000,0.414272
+A,test,all,all,1.000000,0.413366
+B,val,n_words,long (>=8),0.000000,0.241825
+B,val,n_words,long (>=8),0.050000,0.247996
+B,val,n_words,long (>=8),0.100000,0.253989
+B,val,n_words,long (>=8),0.150000,0.259845
+B,val,n_words,long (>=8),0.200000,0.273372
+B,val,n_words,long (>=8),0.250000,0.273989
+B,val,n_words,long (>=8),0.300000,0.273550
+B,val,n_words,long (>=8),0.350000,0.275719
+B,val,n_words,long (>=8),0.400000,0.288013
+B,val,n_words,long (>=8),0.450000,0.288189
+B,val,n_words,long (>=8),0.500000,0.293706
+B,val,n_words,long (>=8),0.550000,0.300579
+B,val,n_words,long (>=8),0.600000,0.303399
+B,val,n_words,long (>=8),0.650000,0.304982
+B,val,n_words,long (>=8),0.700000,0.303221
+B,val,n_words,long (>=8),0.750000,0.304739
+B,val,n_words,long (>=8),0.800000,0.311782
+B,val,n_words,long (>=8),0.850000,0.312228
+B,val,n_words,long (>=8),0.900000,0.313805
+B,val,n_words,long (>=8),0.950000,0.313477
+B,val,n_words,long (>=8),1.000000,0.317293
+B,val,n_words,medium (5-7),0.000000,0.362923
+B,val,n_words,medium (5-7),0.050000,0.369260
+B,val,n_words,medium (5-7),0.100000,0.373847
+B,val,n_words,medium (5-7),0.150000,0.375793
+B,val,n_words,medium (5-7),0.200000,0.382366
+B,val,n_words,medium (5-7),0.250000,0.385762
+B,val,n_words,medium (5-7),0.300000,0.388759
+B,val,n_words,medium (5-7),0.350000,0.390530
+B,val,n_words,medium (5-7),0.400000,0.391304
+B,val,n_words,medium (5-7),0.450000,0.394987
+B,val,n_words,medium (5-7),0.500000,0.400208
+B,val,n_words,medium (5-7),0.550000,0.404900
+B,val,n_words,medium (5-7),0.600000,0.410903
+B,val,n_words,medium (5-7),0.650000,0.415988
+B,val,n_words,medium (5-7),0.700000,0.417337
+B,val,n_words,medium (5-7),0.750000,0.415296
+B,val,n_words,medium (5-7),0.800000,0.417299
+B,val,n_words,medium (5-7),0.850000,0.417805
+B,val,n_words,medium (5-7),0.900000,0.413540
+B,val,n_words,medium (5-7),0.950000,0.409876
+B,val,n_words,medium (5-7),1.000000,0.410330
+B,val,n_words,short (<=4),0.000000,0.372472
+B,val,n_words,short (<=4),0.050000,0.380699
+B,val,n_words,short (<=4),0.100000,0.383603
+B,val,n_words,short (<=4),0.150000,0.390740
+B,val,n_words,short (<=4),0.200000,0.394175
+B,val,n_words,short (<=4),0.250000,0.397657
+B,val,n_words,short (<=4),0.300000,0.404436
+B,val,n_words,short (<=4),0.350000,0.405321
+B,val,n_words,short (<=4),0.400000,0.407302
+B,val,n_words,short (<=4),0.450000,0.409467
+B,val,n_words,short (<=4),0.500000,0.415056
+B,val,n_words,short (<=4),0.550000,0.420128
+B,val,n_words,short (<=4),0.600000,0.431293
+B,val,n_words,short (<=4),0.650000,0.434064
+B,val,n_words,short (<=4),0.700000,0.435994
+B,val,n_words,short (<=4),0.750000,0.436843
+B,val,n_words,short (<=4),0.800000,0.431661
+B,val,n_words,short (<=4),0.850000,0.433511
+B,val,n_words,short (<=4),0.900000,0.429977
+B,val,n_words,short (<=4),0.950000,0.431503
+B,val,n_words,short (<=4),1.000000,0.432490
+B,val,all,all,0.000000,0.340041
+B,val,all,all,0.050000,0.346930
+B,val,all,all,0.100000,0.351294
+B,val,all,all,0.150000,0.355689
+B,val,all,all,0.200000,0.362771
+B,val,all,all,0.250000,0.365600
+B,val,all,all,0.300000,0.369040
+B,val,all,all,0.350000,0.370620
+B,val,all,all,0.400000,0.374228
+B,val,all,all,0.450000,0.376691
+B,val,all,all,0.500000,0.382089
+B,val,all,all,0.550000,0.387365
+B,val,all,all,0.600000,0.394293
+B,val,all,all,0.650000,0.397912
+B,val,all,all,0.700000,0.398777
+B,val,all,all,0.750000,0.398394
+B,val,all,all,0.800000,0.399240
+B,val,all,all,0.850000,0.400150
+B,val,all,all,0.900000,0.397360
+B,val,all,all,0.950000,0.396022
+B,val,all,all,1.000000,0.397359
+B,test,n_words,long (>=8),0.000000,0.300067
+B,test,n_words,long (>=8),0.050000,0.303718
+B,test,n_words,long (>=8),0.100000,0.311993
+B,test,n_words,long (>=8),0.150000,0.317787
+B,test,n_words,long (>=8),0.200000,0.323931
+B,test,n_words,long (>=8),0.250000,0.331016
+B,test,n_words,long (>=8),0.300000,0.334583
+B,test,n_words,long (>=8),0.350000,0.339877
+B,test,n_words,long (>=8),0.400000,0.339676
+B,test,n_words,long (>=8),0.450000,0.346734
+B,test,n_words,long (>=8),0.500000,0.350593
+B,test,n_words,long (>=8),0.550000,0.353721
+B,test,n_words,long (>=8),0.600000,0.356542
+B,test,n_words,long (>=8),0.650000,0.363389
+B,test,n_words,long (>=8),0.700000,0.364817
+B,test,n_words,long (>=8),0.750000,0.370345
+B,test,n_words,long (>=8),0.800000,0.376152
+B,test,n_words,long (>=8),0.850000,0.382263
+B,test,n_words,long (>=8),0.900000,0.382249
+B,test,n_words,long (>=8),0.950000,0.378983
+B,test,n_words,long (>=8),1.000000,0.379978
+B,test,n_words,medium (5-7),0.000000,0.346816
+B,test,n_words,medium (5-7),0.050000,0.350762
+B,test,n_words,medium (5-7),0.100000,0.356416
+B,test,n_words,medium (5-7),0.150000,0.363108
+B,test,n_words,medium (5-7),0.200000,0.368056
+B,test,n_words,medium (5-7),0.250000,0.374694
+B,test,n_words,medium (5-7),0.300000,0.379912
+B,test,n_words,medium (5-7),0.350000,0.385629
+B,test,n_words,medium (5-7),0.400000,0.388886
+B,test,n_words,medium (5-7),0.450000,0.392637
+B,test,n_words,medium (5-7),0.500000,0.396616
+B,test,n_words,medium (5-7),0.550000,0.399257
+B,test,n_words,medium (5-7),0.600000,0.401145
+B,test,n_words,medium (5-7),0.650000,0.400797
+B,test,n_words,medium (5-7),0.700000,0.403191
+B,test,n_words,medium (5-7),0.750000,0.407411
+B,test,n_words,medium (5-7),0.800000,0.409029
+B,test,n_words,medium (5-7),0.850000,0.410456
+B,test,n_words,medium (5-7),0.900000,0.412349
+B,test,n_words,medium (5-7),0.950000,0.413119
+B,test,n_words,medium (5-7),1.000000,0.413436
+B,test,n_words,short (<=4),0.000000,0.413005
+B,test,n_words,short (<=4),0.050000,0.420011
+B,test,n_words,short (<=4),0.100000,0.422866
+B,test,n_words,short (<=4),0.150000,0.425828
+B,test,n_words,short (<=4),0.200000,0.427832
+B,test,n_words,short (<=4),0.250000,0.430902
+B,test,n_words,short (<=4),0.300000,0.434419
+B,test,n_words,short (<=4),0.350000,0.435925
+B,test,n_words,short (<=4),0.400000,0.442674
+B,test,n_words,short (<=4),0.450000,0.447984
+B,test,n_words,short (<=4),0.500000,0.448550
+B,test,n_words,short (<=4),0.550000,0.450843
+B,test,n_words,short (<=4),0.600000,0.451695
+B,test,n_words,short (<=4),0.650000,0.452126
+B,test,n_words,short (<=4),0.700000,0.451019
+B,test,n_words,short (<=4),0.750000,0.452167
+B,test,n_words,short (<=4),0.800000,0.452947
+B,test,n_words,short (<=4),0.850000,0.451516
+B,test,n_words,short (<=4),0.900000,0.451859
+B,test,n_words,short (<=4),0.950000,0.450050
+B,test,n_words,short (<=4),1.000000,0.443611
+B,test,all,all,0.000000,0.356957
+B,test,all,all,0.050000,0.361785
+B,test,all,all,0.100000,0.367153
+B,test,all,all,0.150000,0.372492
+B,test,all,all,0.200000,0.376793
+B,test,all,all,0.250000,0.382426
+B,test,all,all,0.300000,0.386752
+B,test,all,all,0.350000,0.391073
+B,test,all,all,0.400000,0.394646
+B,test,all,all,0.450000,0.399611
+B,test,all,all,0.500000,0.402507
+B,test,all,all,0.550000,0.405148
+B,test,all,all,0.600000,0.406922
+B,test,all,all,0.650000,0.408406
+B,test,all,all,0.700000,0.409503
+B,test,all,all,0.750000,0.413062
+B,test,all,all,0.800000,0.415347
+B,test,all,all,0.850000,0.416926
+B,test,all,all,0.900000,0.417917
+B,test,all,all,0.950000,0.416997
+B,test,all,all,1.000000,0.415373
+musique,val,n_words,long (>=8),0.000000,0.751886
+musique,val,n_words,long (>=8),0.050000,0.759269
+musique,val,n_words,long (>=8),0.100000,0.766086
+musique,val,n_words,long (>=8),0.150000,0.771199
+musique,val,n_words,long (>=8),0.200000,0.775672
+musique,val,n_words,long (>=8),0.250000,0.779091
+musique,val,n_words,long (>=8),0.300000,0.781010
+musique,val,n_words,long (>=8),0.350000,0.782629
+musique,val,n_words,long (>=8),0.400000,0.783436
+musique,val,n_words,long (>=8),0.450000,0.782911
+musique,val,n_words,long (>=8),0.500000,0.781546
+musique,val,n_words,long (>=8),0.550000,0.779667
+musique,val,n_words,long (>=8),0.600000,0.775996
+musique,val,n_words,long (>=8),0.650000,0.772903
+musique,val,n_words,long (>=8),0.700000,0.769959
+musique,val,n_words,long (>=8),0.750000,0.766832
+musique,val,n_words,long (>=8),0.800000,0.763831
+musique,val,n_words,long (>=8),0.850000,0.758176
+musique,val,n_words,long (>=8),0.900000,0.753815
+musique,val,n_words,long (>=8),0.950000,0.750033
+musique,val,n_words,long (>=8),1.000000,0.745390
+musique,val,n_words,medium (5-7),0.000000,0.755129
+musique,val,n_words,medium (5-7),0.050000,0.761577
+musique,val,n_words,medium (5-7),0.100000,0.761889
+musique,val,n_words,medium (5-7),0.150000,0.764414
+musique,val,n_words,medium (5-7),0.200000,0.763758
+musique,val,n_words,medium (5-7),0.250000,0.757462
+musique,val,n_words,medium (5-7),0.300000,0.754585
+musique,val,n_words,medium (5-7),0.350000,0.747078
+musique,val,n_words,medium (5-7),0.400000,0.746186
+musique,val,n_words,medium (5-7),0.450000,0.741521
+musique,val,n_words,medium (5-7),0.500000,0.743949
+musique,val,n_words,medium (5-7),0.550000,0.747588
+musique,val,n_words,medium (5-7),0.600000,0.744239
+musique,val,n_words,medium (5-7),0.650000,0.742384
+musique,val,n_words,medium (5-7),0.700000,0.738808
+musique,val,n_words,medium (5-7),0.750000,0.741081
+musique,val,n_words,medium (5-7),0.800000,0.739738
+musique,val,n_words,medium (5-7),0.850000,0.734400
+musique,val,n_words,medium (5-7),0.900000,0.734121
+musique,val,n_words,medium (5-7),0.950000,0.732102
+musique,val,n_words,medium (5-7),1.000000,0.725737
+musique,val,hops,2,0.000000,0.767888
+musique,val,hops,2,0.050000,0.775794
+musique,val,hops,2,0.100000,0.782931
+musique,val,hops,2,0.150000,0.787922
+musique,val,hops,2,0.200000,0.792988
+musique,val,hops,2,0.250000,0.796325
+musique,val,hops,2,0.300000,0.798716
+musique,val,hops,2,0.350000,0.800836
+musique,val,hops,2,0.400000,0.801860
+musique,val,hops,2,0.450000,0.801108
+musique,val,hops,2,0.500000,0.800739
+musique,val,hops,2,0.550000,0.799781
+musique,val,hops,2,0.600000,0.796901
+musique,val,hops,2,0.650000,0.794256
+musique,val,hops,2,0.700000,0.791911
+musique,val,hops,2,0.750000,0.788734
+musique,val,hops,2,0.800000,0.786559
+musique,val,hops,2,0.850000,0.781790
+musique,val,hops,2,0.900000,0.777381
+musique,val,hops,2,0.950000,0.773799
+musique,val,hops,2,1.000000,0.769100
+musique,val,hops,3,0.000000,0.710007
+musique,val,hops,3,0.050000,0.717159
+musique,val,hops,3,0.100000,0.723882
+musique,val,hops,3,0.150000,0.729685
+musique,val,hops,3,0.200000,0.732941
+musique,val,hops,3,0.250000,0.735006
+musique,val,hops,3,0.300000,0.736642
+musique,val,hops,3,0.350000,0.737057
+musique,val,hops,3,0.400000,0.737323
+musique,val,hops,3,0.450000,0.736730
+musique,val,hops,3,0.500000,0.734068
+musique,val,hops,3,0.550000,0.730728
+musique,val,hops,3,0.600000,0.723777
+musique,val,hops,3,0.650000,0.721502
+musique,val,hops,3,0.700000,0.717797
+musique,val,hops,3,0.750000,0.715121
+musique,val,hops,3,0.800000,0.711133
+musique,val,hops,3,0.850000,0.703727
+musique,val,hops,3,0.900000,0.701404
+musique,val,hops,3,0.950000,0.697450
+musique,val,hops,3,1.000000,0.692007
+musique,val,hops,4,0.000000,0.716898
+musique,val,hops,4,0.050000,0.719373
+musique,val,hops,4,0.100000,0.721826
+musique,val,hops,4,0.150000,0.725526
+musique,val,hops,4,0.200000,0.726589
+musique,val,hops,4,0.250000,0.733128
+musique,val,hops,4,0.300000,0.730045
+musique,val,hops,4,0.350000,0.728346
+musique,val,hops,4,0.400000,0.728257
+musique,val,hops,4,0.450000,0.729460
+musique,val,hops,4,0.500000,0.722546
+musique,val,hops,4,0.550000,0.716759
+musique,val,hops,4,0.600000,0.715190
+musique,val,hops,4,0.650000,0.705115
+musique,val,hops,4,0.700000,0.698194
+musique,val,hops,4,0.750000,0.695255
+musique,val,hops,4,0.800000,0.687095
+musique,val,hops,4,0.850000,0.677747
+musique,val,hops,4,0.900000,0.668338
+musique,val,hops,4,0.950000,0.663361
+musique,val,hops,4,1.000000,0.661455
+musique,val,all,all,0.000000,0.751931
+musique,val,all,all,0.050000,0.759302
+musique,val,all,all,0.100000,0.766028
+musique,val,all,all,0.150000,0.771105
+musique,val,all,all,0.200000,0.775506
+musique,val,all,all,0.250000,0.778789
+musique,val,all,all,0.300000,0.780642
+musique,val,all,all,0.350000,0.782133
+musique,val,all,all,0.400000,0.782916
+musique,val,all,all,0.450000,0.782334
+musique,val,all,all,0.500000,0.781021
+musique,val,all,all,0.550000,0.779219
+musique,val,all,all,0.600000,0.775553
+musique,val,all,all,0.650000,0.772477
+musique,val,all,all,0.700000,0.769524
+musique,val,all,all,0.750000,0.766472
+musique,val,all,all,0.800000,0.763495
+musique,val,all,all,0.850000,0.757844
+musique,val,all,all,0.900000,0.753541
+musique,val,all,all,0.950000,0.749782
+musique,val,all,all,1.000000,0.745116
+musique,test,n_words,long (>=8),0.000000,0.667803
+musique,test,n_words,long (>=8),0.050000,0.675725
+musique,test,n_words,long (>=8),0.100000,0.682224
+musique,test,n_words,long (>=8),0.150000,0.689313
+musique,test,n_words,long (>=8),0.200000,0.696633
+musique,test,n_words,long (>=8),0.250000,0.702175
+musique,test,n_words,long (>=8),0.300000,0.706983
+musique,test,n_words,long (>=8),0.350000,0.710006
+musique,test,n_words,long (>=8),0.400000,0.713072
+musique,test,n_words,long (>=8),0.450000,0.715726
+musique,test,n_words,long (>=8),0.500000,0.717591
+musique,test,n_words,long (>=8),0.550000,0.719977
+musique,test,n_words,long (>=8),0.600000,0.719730
+musique,test,n_words,long (>=8),0.650000,0.720823
+musique,test,n_words,long (>=8),0.700000,0.719972
+musique,test,n_words,long (>=8),0.750000,0.720153
+musique,test,n_words,long (>=8),0.800000,0.719814
+musique,test,n_words,long (>=8),0.850000,0.717766
+musique,test,n_words,long (>=8),0.900000,0.715480
+musique,test,n_words,long (>=8),0.950000,0.712790
+musique,test,n_words,long (>=8),1.000000,0.710786
+musique,test,n_words,medium (5-7),0.000000,0.700717
+musique,test,n_words,medium (5-7),0.050000,0.701094
+musique,test,n_words,medium (5-7),0.100000,0.709767
+musique,test,n_words,medium (5-7),0.150000,0.704900
+musique,test,n_words,medium (5-7),0.200000,0.705508
+musique,test,n_words,medium (5-7),0.250000,0.707375
+musique,test,n_words,medium (5-7),0.300000,0.707169
+musique,test,n_words,medium (5-7),0.350000,0.705713
+musique,test,n_words,medium (5-7),0.400000,0.708895
+musique,test,n_words,medium (5-7),0.450000,0.713394
+musique,test,n_words,medium (5-7),0.500000,0.716535
+musique,test,n_words,medium (5-7),0.550000,0.721479
+musique,test,n_words,medium (5-7),0.600000,0.717528
+musique,test,n_words,medium (5-7),0.650000,0.725316
+musique,test,n_words,medium (5-7),0.700000,0.725323
+musique,test,n_words,medium (5-7),0.750000,0.726364
+musique,test,n_words,medium (5-7),0.800000,0.735178
+musique,test,n_words,medium (5-7),0.850000,0.733565
+musique,test,n_words,medium (5-7),0.900000,0.729647
+musique,test,n_words,medium (5-7),0.950000,0.723598
+musique,test,n_words,medium (5-7),1.000000,0.726563
+musique,test,hops,2,0.000000,0.680219
+musique,test,hops,2,0.050000,0.688103
+musique,test,hops,2,0.100000,0.694447
+musique,test,hops,2,0.150000,0.701380
+musique,test,hops,2,0.200000,0.709553
+musique,test,hops,2,0.250000,0.715280
+musique,test,hops,2,0.300000,0.721533
+musique,test,hops,2,0.350000,0.724692
+musique,test,hops,2,0.400000,0.728288
+musique,test,hops,2,0.450000,0.733046
+musique,test,hops,2,0.500000,0.735150
+musique,test,hops,2,0.550000,0.737619
+musique,test,hops,2,0.600000,0.739087
+musique,test,hops,2,0.650000,0.742531
+musique,test,hops,2,0.700000,0.743207
+musique,test,hops,2,0.750000,0.743999
+musique,test,hops,2,0.800000,0.745248
+musique,test,hops,2,0.850000,0.742899
+musique,test,hops,2,0.900000,0.740727
+musique,test,hops,2,0.950000,0.739012
+musique,test,hops,2,1.000000,0.738211
+musique,test,hops,3,0.000000,0.667087
+musique,test,hops,3,0.050000,0.676372
+musique,test,hops,3,0.100000,0.684926
+musique,test,hops,3,0.150000,0.692324
+musique,test,hops,3,0.200000,0.700427
+musique,test,hops,3,0.250000,0.705844
+musique,test,hops,3,0.300000,0.710878
+musique,test,hops,3,0.350000,0.714384
+musique,test,hops,3,0.400000,0.717702
+musique,test,hops,3,0.450000,0.718987
+musique,test,hops,3,0.500000,0.722740
+musique,test,hops,3,0.550000,0.725612
+musique,test,hops,3,0.600000,0.724627
+musique,test,hops,3,0.650000,0.724572
+musique,test,hops,3,0.700000,0.724454
+musique,test,hops,3,0.750000,0.724807
+musique,test,hops,3,0.800000,0.724898
+musique,test,hops,3,0.850000,0.724054
+musique,test,hops,3,0.900000,0.721494
+musique,test,hops,3,0.950000,0.720674
+musique,test,hops,3,1.000000,0.717955
+musique,test,hops,4,0.000000,0.632610
+musique,test,hops,4,0.050000,0.637274
+musique,test,hops,4,0.100000,0.640606
+musique,test,hops,4,0.150000,0.646314
+musique,test,hops,4,0.200000,0.648793
+musique,test,hops,4,0.250000,0.654033
+musique,test,hops,4,0.300000,0.653448
+musique,test,hops,4,0.350000,0.654661
+musique,test,hops,4,0.400000,0.655619
+musique,test,hops,4,0.450000,0.654555
+musique,test,hops,4,0.500000,0.652264
+musique,test,hops,4,0.550000,0.653750
+musique,test,hops,4,0.600000,0.649197
+musique,test,hops,4,0.650000,0.645883
+musique,test,hops,4,0.700000,0.639064
+musique,test,hops,4,0.750000,0.637124
+musique,test,hops,4,0.800000,0.632086
+musique,test,hops,4,0.850000,0.628761
+musique,test,hops,4,0.900000,0.626534
+musique,test,hops,4,0.950000,0.616974
+musique,test,hops,4,1.000000,0.613127
+musique,test,all,all,0.000000,0.668112
+musique,test,all,all,0.050000,0.675897
+musique,test,all,all,0.100000,0.682431
+musique,test,all,all,0.150000,0.689305
+musique,test,all,all,0.200000,0.696502
+musique,test,all,all,0.250000,0.702050
+musique,test,all,all,0.300000,0.706774
+musique,test,all,all,0.350000,0.709716
+musique,test,all,all,0.400000,0.712782
+musique,test,all,all,0.450000,0.715473
+musique,test,all,all,0.500000,0.717360
+musique,test,all,all,0.550000,0.719790
+musique,test,all,all,0.600000,0.719478
+musique,test,all,all,0.650000,0.720689
+musique,test,all,all,0.700000,0.719860
+musique,test,all,all,0.750000,0.720056
+musique,test,all,all,0.800000,0.719887
+musique,test,all,all,0.850000,0.717848
+musique,test,all,all,0.900000,0.715545
+musique,test,all,all,0.950000,0.712797
+musique,test,all,all,1.000000,0.710882
+hotpotqa,val,n_words,long (>=8),0.000000,0.841280
+hotpotqa,val,n_words,long (>=8),0.050000,0.845148
+hotpotqa,val,n_words,long (>=8),0.100000,0.849264
+hotpotqa,val,n_words,long (>=8),0.150000,0.855339
+hotpotqa,val,n_words,long (>=8),0.200000,0.860543
+hotpotqa,val,n_words,long (>=8),0.250000,0.865195
+hotpotqa,val,n_words,long (>=8),0.300000,0.869109
+hotpotqa,val,n_words,long (>=8),0.350000,0.872649
+hotpotqa,val,n_words,long (>=8),0.400000,0.876461
+hotpotqa,val,n_words,long (>=8),0.450000,0.880615
+hotpotqa,val,n_words,long (>=8),0.500000,0.883692
+hotpotqa,val,n_words,long (>=8),0.550000,0.886080
+hotpotqa,val,n_words,long (>=8),0.600000,0.888302
+hotpotqa,val,n_words,long (>=8),0.650000,0.889971
+hotpotqa,val,n_words,long (>=8),0.700000,0.891629
+hotpotqa,val,n_words,long (>=8),0.750000,0.891492
+hotpotqa,val,n_words,long (>=8),0.800000,0.891754
+hotpotqa,val,n_words,long (>=8),0.850000,0.891747
+hotpotqa,val,n_words,long (>=8),0.900000,0.891299
+hotpotqa,val,n_words,long (>=8),0.950000,0.890775
+hotpotqa,val,n_words,long (>=8),1.000000,0.890352
+hotpotqa,val,n_words,medium (5-7),0.000000,0.830897
+hotpotqa,val,n_words,medium (5-7),0.050000,0.824362
+hotpotqa,val,n_words,medium (5-7),0.100000,0.826223
+hotpotqa,val,n_words,medium (5-7),0.150000,0.830813
+hotpotqa,val,n_words,medium (5-7),0.200000,0.843493
+hotpotqa,val,n_words,medium (5-7),0.250000,0.848060
+hotpotqa,val,n_words,medium (5-7),0.300000,0.870582
+hotpotqa,val,n_words,medium (5-7),0.350000,0.871667
+hotpotqa,val,n_words,medium (5-7),0.400000,0.875628
+hotpotqa,val,n_words,medium (5-7),0.450000,0.886087
+hotpotqa,val,n_words,medium (5-7),0.500000,0.889129
+hotpotqa,val,n_words,medium (5-7),0.550000,0.889444
+hotpotqa,val,n_words,medium (5-7),0.600000,0.889444
+hotpotqa,val,n_words,medium (5-7),0.650000,0.897241
+hotpotqa,val,n_words,medium (5-7),0.700000,0.894298
+hotpotqa,val,n_words,medium (5-7),0.750000,0.895450
+hotpotqa,val,n_words,medium (5-7),0.800000,0.895903
+hotpotqa,val,n_words,medium (5-7),0.850000,0.903609
+hotpotqa,val,n_words,medium (5-7),0.900000,0.903324
+hotpotqa,val,n_words,medium (5-7),0.950000,0.900734
+hotpotqa,val,n_words,medium (5-7),1.000000,0.897631
+hotpotqa,val,type,bridge,0.000000,0.814130
+hotpotqa,val,type,bridge,0.050000,0.818355
+hotpotqa,val,type,bridge,0.100000,0.823198
+hotpotqa,val,type,bridge,0.150000,0.830179
+hotpotqa,val,type,bridge,0.200000,0.836241
+hotpotqa,val,type,bridge,0.250000,0.841806
+hotpotqa,val,type,bridge,0.300000,0.846266
+hotpotqa,val,type,bridge,0.350000,0.850624
+hotpotqa,val,type,bridge,0.400000,0.855220
+hotpotqa,val,type,bridge,0.450000,0.860684
+hotpotqa,val,type,bridge,0.500000,0.864448
+hotpotqa,val,type,bridge,0.550000,0.867403
+hotpotqa,val,type,bridge,0.600000,0.870519
+hotpotqa,val,type,bridge,0.650000,0.872816
+hotpotqa,val,type,bridge,0.700000,0.875165
+hotpotqa,val,type,bridge,0.750000,0.875189
+hotpotqa,val,type,bridge,0.800000,0.875887
+hotpotqa,val,type,bridge,0.850000,0.877003
+hotpotqa,val,type,bridge,0.900000,0.877142
+hotpotqa,val,type,bridge,0.950000,0.876957
+hotpotqa,val,type,bridge,1.000000,0.877203
+hotpotqa,val,type,comparison,0.000000,0.959155
+hotpotqa,val,type,comparison,0.050000,0.960563
+hotpotqa,val,type,comparison,0.100000,0.961264
+hotpotqa,val,type,comparison,0.150000,0.963194
+hotpotqa,val,type,comparison,0.200000,0.965200
+hotpotqa,val,type,comparison,0.250000,0.965771
+hotpotqa,val,type,comparison,0.300000,0.968829
+hotpotqa,val,type,comparison,0.350000,0.968535
+hotpotqa,val,type,comparison,0.400000,0.968882
+hotpotqa,val,type,comparison,0.450000,0.967766
+hotpotqa,val,type,comparison,0.500000,0.967796
+hotpotqa,val,type,comparison,0.550000,0.967494
+hotpotqa,val,type,comparison,0.600000,0.965569
+hotpotqa,val,type,comparison,0.650000,0.964978
+hotpotqa,val,type,comparison,0.700000,0.963188
+hotpotqa,val,type,comparison,0.750000,0.962447
+hotpotqa,val,type,comparison,0.800000,0.960797
+hotpotqa,val,type,comparison,0.850000,0.956479
+hotpotqa,val,type,comparison,0.900000,0.953451
+hotpotqa,val,type,comparison,0.950000,0.951252
+hotpotqa,val,type,comparison,1.000000,0.947654
+hotpotqa,val,all,all,0.000000,0.840887
+hotpotqa,val,all,all,0.050000,0.844592
+hotpotqa,val,all,all,0.100000,0.848671
+hotpotqa,val,all,all,0.150000,0.854720
+hotpotqa,val,all,all,0.200000,0.860034
+hotpotqa,val,all,all,0.250000,0.864678
+hotpotqa,val,all,all,0.300000,0.868879
+hotpotqa,val,all,all,0.350000,0.872379
+hotpotqa,val,all,all,0.400000,0.876190
+hotpotqa,val,all,all,0.450000,0.880441
+hotpotqa,val,all,all,0.500000,0.883515
+hotpotqa,val,all,all,0.550000,0.885870
+hotpotqa,val,all,all,0.600000,0.888056
+hotpotqa,val,all,all,0.650000,0.889820
+hotpotqa,val,all,all,0.700000,0.891405
+hotpotqa,val,all,all,0.750000,0.891288
+hotpotqa,val,all,all,0.800000,0.891553
+hotpotqa,val,all,all,0.850000,0.891666
+hotpotqa,val,all,all,0.900000,0.891221
+hotpotqa,val,all,all,0.950000,0.890665
+hotpotqa,val,all,all,1.000000,0.890201
+hotpotqa,test,n_words,long (>=8),0.000000,0.840709
+hotpotqa,test,n_words,long (>=8),0.050000,0.845636
+hotpotqa,test,n_words,long (>=8),0.100000,0.850631
+hotpotqa,test,n_words,long (>=8),0.150000,0.855593
+hotpotqa,test,n_words,long (>=8),0.200000,0.860953
+hotpotqa,test,n_words,long (>=8),0.250000,0.866156
+hotpotqa,test,n_words,long (>=8),0.300000,0.870493
+hotpotqa,test,n_words,long (>=8),0.350000,0.874700
+hotpotqa,test,n_words,long (>=8),0.400000,0.878943
+hotpotqa,test,n_words,long (>=8),0.450000,0.882899
+hotpotqa,test,n_words,long (>=8),0.500000,0.885713
+hotpotqa,test,n_words,long (>=8),0.550000,0.888720
+hotpotqa,test,n_words,long (>=8),0.600000,0.891574
+hotpotqa,test,n_words,long (>=8),0.650000,0.894503
+hotpotqa,test,n_words,long (>=8),0.700000,0.896309
+hotpotqa,test,n_words,long (>=8),0.750000,0.897484
+hotpotqa,test,n_words,long (>=8),0.800000,0.898506
+hotpotqa,test,n_words,long (>=8),0.850000,0.898852
+hotpotqa,test,n_words,long (>=8),0.900000,0.899259
+hotpotqa,test,n_words,long (>=8),0.950000,0.898980
+hotpotqa,test,n_words,long (>=8),1.000000,0.898585
+hotpotqa,test,n_words,medium (5-7),0.000000,0.883716
+hotpotqa,test,n_words,medium (5-7),0.050000,0.886388
+hotpotqa,test,n_words,medium (5-7),0.100000,0.888429
+hotpotqa,test,n_words,medium (5-7),0.150000,0.891063
+hotpotqa,test,n_words,medium (5-7),0.200000,0.890298
+hotpotqa,test,n_words,medium (5-7),0.250000,0.889924
+hotpotqa,test,n_words,medium (5-7),0.300000,0.889689
+hotpotqa,test,n_words,medium (5-7),0.350000,0.894518
+hotpotqa,test,n_words,medium (5-7),0.400000,0.890473
+hotpotqa,test,n_words,medium (5-7),0.450000,0.892032
+hotpotqa,test,n_words,medium (5-7),0.500000,0.893068
+hotpotqa,test,n_words,medium (5-7),0.550000,0.895136
+hotpotqa,test,n_words,medium (5-7),0.600000,0.892484
+hotpotqa,test,n_words,medium (5-7),0.650000,0.890770
+hotpotqa,test,n_words,medium (5-7),0.700000,0.889765
+hotpotqa,test,n_words,medium (5-7),0.750000,0.890911
+hotpotqa,test,n_words,medium (5-7),0.800000,0.893002
+hotpotqa,test,n_words,medium (5-7),0.850000,0.890364
+hotpotqa,test,n_words,medium (5-7),0.900000,0.889071
+hotpotqa,test,n_words,medium (5-7),0.950000,0.889073
+hotpotqa,test,n_words,medium (5-7),1.000000,0.886932
+hotpotqa,test,type,bridge,0.000000,0.815645
+hotpotqa,test,type,bridge,0.050000,0.821009
+hotpotqa,test,type,bridge,0.100000,0.826117
+hotpotqa,test,type,bridge,0.150000,0.831467
+hotpotqa,test,type,bridge,0.200000,0.837485
+hotpotqa,test,type,bridge,0.250000,0.843345
+hotpotqa,test,type,bridge,0.300000,0.848076
+hotpotqa,test,type,bridge,0.350000,0.852957
+hotpotqa,test,type,bridge,0.400000,0.857712
+hotpotqa,test,type,bridge,0.450000,0.862368
+hotpotqa,test,type,bridge,0.500000,0.865907
+hotpotqa,test,type,bridge,0.550000,0.869406
+hotpotqa,test,type,bridge,0.600000,0.872970
+hotpotqa,test,type,bridge,0.650000,0.876577
+hotpotqa,test,type,bridge,0.700000,0.878924
+hotpotqa,test,type,bridge,0.750000,0.880558
+hotpotqa,test,type,bridge,0.800000,0.882013
+hotpotqa,test,type,bridge,0.850000,0.883121
+hotpotqa,test,type,bridge,0.900000,0.883945
+hotpotqa,test,type,bridge,0.950000,0.884050
+hotpotqa,test,type,bridge,1.000000,0.883965
+hotpotqa,test,type,comparison,0.000000,0.943787
+hotpotqa,test,type,comparison,0.050000,0.946798
+hotpotqa,test,type,comparison,0.100000,0.951114
+hotpotqa,test,type,comparison,0.150000,0.954355
+hotpotqa,test,type,comparison,0.200000,0.956618
+hotpotqa,test,type,comparison,0.250000,0.958777
+hotpotqa,test,type,comparison,0.300000,0.961192
+hotpotqa,test,type,comparison,0.350000,0.962765
+hotpotqa,test,type,comparison,0.400000,0.964328
+hotpotqa,test,type,comparison,0.450000,0.965315
+hotpotqa,test,type,comparison,0.500000,0.965105
+hotpotqa,test,type,comparison,0.550000,0.966084
+hotpotqa,test,type,comparison,0.600000,0.965688
+hotpotqa,test,type,comparison,0.650000,0.965554
+hotpotqa,test,type,comparison,0.700000,0.964995
+hotpotqa,test,type,comparison,0.750000,0.964338
+hotpotqa,test,type,comparison,0.800000,0.963718
+hotpotqa,test,type,comparison,0.850000,0.960800
+hotpotqa,test,type,comparison,0.900000,0.959421
+hotpotqa,test,type,comparison,0.950000,0.957633
+hotpotqa,test,type,comparison,1.000000,0.955869
+hotpotqa,test,all,all,0.000000,0.841377
+hotpotqa,test,all,all,0.050000,0.846269
+hotpotqa,test,all,all,0.100000,0.851218
+hotpotqa,test,all,all,0.150000,0.856144
+hotpotqa,test,all,all,0.200000,0.861408
+hotpotqa,test,all,all,0.250000,0.866525
+hotpotqa,test,all,all,0.300000,0.870791
+hotpotqa,test,all,all,0.350000,0.875008
+hotpotqa,test,all,all,0.400000,0.879122
+hotpotqa,test,all,all,0.450000,0.883041
+hotpotqa,test,all,all,0.500000,0.885827
+hotpotqa,test,all,all,0.550000,0.888820
+hotpotqa,test,all,all,0.600000,0.891589
+hotpotqa,test,all,all,0.650000,0.894445
+hotpotqa,test,all,all,0.700000,0.896208
+hotpotqa,test,all,all,0.750000,0.897382
+hotpotqa,test,all,all,0.800000,0.898420
+hotpotqa,test,all,all,0.850000,0.898720
+hotpotqa,test,all,all,0.900000,0.899101
+hotpotqa,test,all,all,0.950000,0.898826
+hotpotqa,test,all,all,1.000000,0.898404
+beir_hotpotqa,val,n_words,long (>=8),0.000000,0.547566
+beir_hotpotqa,val,n_words,long (>=8),0.050000,0.560815
+beir_hotpotqa,val,n_words,long (>=8),0.100000,0.575736
+beir_hotpotqa,val,n_words,long (>=8),0.150000,0.589068
+beir_hotpotqa,val,n_words,long (>=8),0.200000,0.603343
+beir_hotpotqa,val,n_words,long (>=8),0.250000,0.617156
+beir_hotpotqa,val,n_words,long (>=8),0.300000,0.630873
+beir_hotpotqa,val,n_words,long (>=8),0.350000,0.643982
+beir_hotpotqa,val,n_words,long (>=8),0.400000,0.657448
+beir_hotpotqa,val,n_words,long (>=8),0.450000,0.669028
+beir_hotpotqa,val,n_words,long (>=8),0.500000,0.680019
+beir_hotpotqa,val,n_words,long (>=8),0.550000,0.689961
+beir_hotpotqa,val,n_words,long (>=8),0.600000,0.698273
+beir_hotpotqa,val,n_words,long (>=8),0.650000,0.706195
+beir_hotpotqa,val,n_words,long (>=8),0.700000,0.711606
+beir_hotpotqa,val,n_words,long (>=8),0.750000,0.716651
+beir_hotpotqa,val,n_words,long (>=8),0.800000,0.721021
+beir_hotpotqa,val,n_words,long (>=8),0.850000,0.721213
+beir_hotpotqa,val,n_words,long (>=8),0.900000,0.722306
+beir_hotpotqa,val,n_words,long (>=8),0.950000,0.723551
+beir_hotpotqa,val,n_words,long (>=8),1.000000,0.722754
+beir_hotpotqa,val,n_words,medium (5-7),0.000000,0.598729
+beir_hotpotqa,val,n_words,medium (5-7),0.050000,0.614223
+beir_hotpotqa,val,n_words,medium (5-7),0.100000,0.623487
+beir_hotpotqa,val,n_words,medium (5-7),0.150000,0.656545
+beir_hotpotqa,val,n_words,medium (5-7),0.200000,0.668820
+beir_hotpotqa,val,n_words,medium (5-7),0.250000,0.671768
+beir_hotpotqa,val,n_words,medium (5-7),0.300000,0.687060
+beir_hotpotqa,val,n_words,medium (5-7),0.350000,0.691801
+beir_hotpotqa,val,n_words,medium (5-7),0.400000,0.696488
+beir_hotpotqa,val,n_words,medium (5-7),0.450000,0.705172
+beir_hotpotqa,val,n_words,medium (5-7),0.500000,0.710419
+beir_hotpotqa,val,n_words,medium (5-7),0.550000,0.724634
+beir_hotpotqa,val,n_words,medium (5-7),0.600000,0.724976
+beir_hotpotqa,val,n_words,medium (5-7),0.650000,0.723648
+beir_hotpotqa,val,n_words,medium (5-7),0.700000,0.729854
+beir_hotpotqa,val,n_words,medium (5-7),0.750000,0.734928
+beir_hotpotqa,val,n_words,medium (5-7),0.800000,0.741390
+beir_hotpotqa,val,n_words,medium (5-7),0.850000,0.741619
+beir_hotpotqa,val,n_words,medium (5-7),0.900000,0.741961
+beir_hotpotqa,val,n_words,medium (5-7),0.950000,0.741089
+beir_hotpotqa,val,n_words,medium (5-7),1.000000,0.748094
+beir_hotpotqa,val,type,bridge,0.000000,0.495798
+beir_hotpotqa,val,type,bridge,0.050000,0.509008
+beir_hotpotqa,val,type,bridge,0.100000,0.524028
+beir_hotpotqa,val,type,bridge,0.150000,0.537821
+beir_hotpotqa,val,type,bridge,0.200000,0.552473
+beir_hotpotqa,val,type,bridge,0.250000,0.566645
+beir_hotpotqa,val,type,bridge,0.300000,0.581963
+beir_hotpotqa,val,type,bridge,0.350000,0.596121
+beir_hotpotqa,val,type,bridge,0.400000,0.611193
+beir_hotpotqa,val,type,bridge,0.450000,0.624786
+beir_hotpotqa,val,type,bridge,0.500000,0.637864
+beir_hotpotqa,val,type,bridge,0.550000,0.649802
+beir_hotpotqa,val,type,bridge,0.600000,0.659836
+beir_hotpotqa,val,type,bridge,0.650000,0.669251
+beir_hotpotqa,val,type,bridge,0.700000,0.676581
+beir_hotpotqa,val,type,bridge,0.750000,0.683051
+beir_hotpotqa,val,type,bridge,0.800000,0.688399
+beir_hotpotqa,val,type,bridge,0.850000,0.689347
+beir_hotpotqa,val,type,bridge,0.900000,0.691644
+beir_hotpotqa,val,type,bridge,0.950000,0.693560
+beir_hotpotqa,val,type,bridge,1.000000,0.693930
+beir_hotpotqa,val,type,comparison,0.000000,0.760218
+beir_hotpotqa,val,type,comparison,0.050000,0.773768
+beir_hotpotqa,val,type,comparison,0.100000,0.787800
+beir_hotpotqa,val,type,comparison,0.150000,0.800830
+beir_hotpotqa,val,type,comparison,0.200000,0.813392
+beir_hotpotqa,val,type,comparison,0.250000,0.824849
+beir_hotpotqa,val,type,comparison,0.300000,0.832217
+beir_hotpotqa,val,type,comparison,0.350000,0.840396
+beir_hotpotqa,val,type,comparison,0.400000,0.846658
+beir_hotpotqa,val,type,comparison,0.450000,0.849872
+beir_hotpotqa,val,type,comparison,0.500000,0.851977
+beir_hotpotqa,val,type,comparison,0.550000,0.854200
+beir_hotpotqa,val,type,comparison,0.600000,0.854921
+beir_hotpotqa,val,type,comparison,0.650000,0.856065
+beir_hotpotqa,val,type,comparison,0.700000,0.853807
+beir_hotpotqa,val,type,comparison,0.750000,0.853106
+beir_hotpotqa,val,type,comparison,0.800000,0.853696
+beir_hotpotqa,val,type,comparison,0.850000,0.850845
+beir_hotpotqa,val,type,comparison,0.900000,0.847030
+beir_hotpotqa,val,type,comparison,0.950000,0.845401
+beir_hotpotqa,val,type,comparison,1.000000,0.840537
+beir_hotpotqa,val,all,all,0.000000,0.548417
+beir_hotpotqa,val,all,all,0.050000,0.561695
+beir_hotpotqa,val,all,all,0.100000,0.576518
+beir_hotpotqa,val,all,all,0.150000,0.590160
+beir_hotpotqa,val,all,all,0.200000,0.604396
+beir_hotpotqa,val,all,all,0.250000,0.618028
+beir_hotpotqa,val,all,all,0.300000,0.631763
+beir_hotpotqa,val,all,all,0.350000,0.644732
+beir_hotpotqa,val,all,all,0.400000,0.658050
+beir_hotpotqa,val,all,all,0.450000,0.669578
+beir_hotpotqa,val,all,all,0.500000,0.680472
+beir_hotpotqa,val,all,all,0.550000,0.690477
+beir_hotpotqa,val,all,all,0.600000,0.698658
+beir_hotpotqa,val,all,all,0.650000,0.706427
+beir_hotpotqa,val,all,all,0.700000,0.711849
+beir_hotpotqa,val,all,all,0.750000,0.716892
+beir_hotpotqa,val,all,all,0.800000,0.721293
+beir_hotpotqa,val,all,all,0.850000,0.721485
+beir_hotpotqa,val,all,all,0.900000,0.722566
+beir_hotpotqa,val,all,all,0.950000,0.723776
+beir_hotpotqa,val,all,all,1.000000,0.723105
+beir_hotpotqa,test,n_words,long (>=8),0.000000,0.553624
+beir_hotpotqa,test,n_words,long (>=8),0.050000,0.568073
+beir_hotpotqa,test,n_words,long (>=8),0.100000,0.582258
+beir_hotpotqa,test,n_words,long (>=8),0.150000,0.596452
+beir_hotpotqa,test,n_words,long (>=8),0.200000,0.610700
+beir_hotpotqa,test,n_words,long (>=8),0.250000,0.624716
+beir_hotpotqa,test,n_words,long (>=8),0.300000,0.637535
+beir_hotpotqa,test,n_words,long (>=8),0.350000,0.651382
+beir_hotpotqa,test,n_words,long (>=8),0.400000,0.664332
+beir_hotpotqa,test,n_words,long (>=8),0.450000,0.675966
+beir_hotpotqa,test,n_words,long (>=8),0.500000,0.686771
+beir_hotpotqa,test,n_words,long (>=8),0.550000,0.696715
+beir_hotpotqa,test,n_words,long (>=8),0.600000,0.704533
+beir_hotpotqa,test,n_words,long (>=8),0.650000,0.711056
+beir_hotpotqa,test,n_words,long (>=8),0.700000,0.717129
+beir_hotpotqa,test,n_words,long (>=8),0.750000,0.721784
+beir_hotpotqa,test,n_words,long (>=8),0.800000,0.724892
+beir_hotpotqa,test,n_words,long (>=8),0.850000,0.726471
+beir_hotpotqa,test,n_words,long (>=8),0.900000,0.727432
+beir_hotpotqa,test,n_words,long (>=8),0.950000,0.726792
+beir_hotpotqa,test,n_words,long (>=8),1.000000,0.726627
+beir_hotpotqa,test,n_words,medium (5-7),0.000000,0.622424
+beir_hotpotqa,test,n_words,medium (5-7),0.050000,0.630084
+beir_hotpotqa,test,n_words,medium (5-7),0.100000,0.643230
+beir_hotpotqa,test,n_words,medium (5-7),0.150000,0.651331
+beir_hotpotqa,test,n_words,medium (5-7),0.200000,0.662202
+beir_hotpotqa,test,n_words,medium (5-7),0.250000,0.669488
+beir_hotpotqa,test,n_words,medium (5-7),0.300000,0.673732
+beir_hotpotqa,test,n_words,medium (5-7),0.350000,0.684910
+beir_hotpotqa,test,n_words,medium (5-7),0.400000,0.688721
+beir_hotpotqa,test,n_words,medium (5-7),0.450000,0.689460
+beir_hotpotqa,test,n_words,medium (5-7),0.500000,0.690346
+beir_hotpotqa,test,n_words,medium (5-7),0.550000,0.693638
+beir_hotpotqa,test,n_words,medium (5-7),0.600000,0.694496
+beir_hotpotqa,test,n_words,medium (5-7),0.650000,0.697669
+beir_hotpotqa,test,n_words,medium (5-7),0.700000,0.698184
+beir_hotpotqa,test,n_words,medium (5-7),0.750000,0.702904
+beir_hotpotqa,test,n_words,medium (5-7),0.800000,0.696385
+beir_hotpotqa,test,n_words,medium (5-7),0.850000,0.700645
+beir_hotpotqa,test,n_words,medium (5-7),0.900000,0.698371
+beir_hotpotqa,test,n_words,medium (5-7),0.950000,0.695016
+beir_hotpotqa,test,n_words,medium (5-7),1.000000,0.693407
+beir_hotpotqa,test,type,bridge,0.000000,0.500074
+beir_hotpotqa,test,type,bridge,0.050000,0.514058
+beir_hotpotqa,test,type,bridge,0.100000,0.528366
+beir_hotpotqa,test,type,bridge,0.150000,0.542397
+beir_hotpotqa,test,type,bridge,0.200000,0.556962
+beir_hotpotqa,test,type,bridge,0.250000,0.571446
+beir_hotpotqa,test,type,bridge,0.300000,0.585523
+beir_hotpotqa,test,type,bridge,0.350000,0.600612
+beir_hotpotqa,test,type,bridge,0.400000,0.614990
+beir_hotpotqa,test,type,bridge,0.450000,0.628341
+beir_hotpotqa,test,type,bridge,0.500000,0.640686
+beir_hotpotqa,test,type,bridge,0.550000,0.652115
+beir_hotpotqa,test,type,bridge,0.600000,0.661054
+beir_hotpotqa,test,type,bridge,0.650000,0.668739
+beir_hotpotqa,test,type,bridge,0.700000,0.676229
+beir_hotpotqa,test,type,bridge,0.750000,0.682383
+beir_hotpotqa,test,type,bridge,0.800000,0.686931
+beir_hotpotqa,test,type,bridge,0.850000,0.689641
+beir_hotpotqa,test,type,bridge,0.900000,0.691882
+beir_hotpotqa,test,type,bridge,0.950000,0.692254
+beir_hotpotqa,test,type,bridge,1.000000,0.693275
+beir_hotpotqa,test,type,comparison,0.000000,0.772066
+beir_hotpotqa,test,type,comparison,0.050000,0.787843
+beir_hotpotqa,test,type,comparison,0.100000,0.801453
+beir_hotpotqa,test,type,comparison,0.150000,0.815825
+beir_hotpotqa,test,type,comparison,0.200000,0.828553
+beir_hotpotqa,test,type,comparison,0.250000,0.840184
+beir_hotpotqa,test,type,comparison,0.300000,0.847335
+beir_hotpotqa,test,type,comparison,0.350000,0.856031
+beir_hotpotqa,test,type,comparison,0.400000,0.862589
+beir_hotpotqa,test,type,comparison,0.450000,0.866551
+beir_hotpotqa,test,type,comparison,0.500000,0.870458
+beir_hotpotqa,test,type,comparison,0.550000,0.873980
+beir_hotpotqa,test,type,comparison,0.600000,0.876796
+beir_hotpotqa,test,type,comparison,0.650000,0.878436
+beir_hotpotqa,test,type,comparison,0.700000,0.878440
+beir_hotpotqa,test,type,comparison,0.750000,0.877132
+beir_hotpotqa,test,type,comparison,0.800000,0.873765
+beir_hotpotqa,test,type,comparison,0.850000,0.871049
+beir_hotpotqa,test,type,comparison,0.900000,0.866670
+beir_hotpotqa,test,type,comparison,0.950000,0.861791
+beir_hotpotqa,test,type,comparison,1.000000,0.856793
+beir_hotpotqa,test,all,all,0.000000,0.554693
+beir_hotpotqa,test,all,all,0.050000,0.569037
+beir_hotpotqa,test,all,all,0.100000,0.583205
+beir_hotpotqa,test,all,all,0.150000,0.597304
+beir_hotpotqa,test,all,all,0.200000,0.611500
+beir_hotpotqa,test,all,all,0.250000,0.625411
+beir_hotpotqa,test,all,all,0.300000,0.638097
+beir_hotpotqa,test,all,all,0.350000,0.651902
+beir_hotpotqa,test,all,all,0.400000,0.664711
+beir_hotpotqa,test,all,all,0.450000,0.676176
+beir_hotpotqa,test,all,all,0.500000,0.686827
+beir_hotpotqa,test,all,all,0.550000,0.696668
+beir_hotpotqa,test,all,all,0.600000,0.704377
+beir_hotpotqa,test,all,all,0.650000,0.710848
+beir_hotpotqa,test,all,all,0.700000,0.716835
+beir_hotpotqa,test,all,all,0.750000,0.721491
+beir_hotpotqa,test,all,all,0.800000,0.724449
+beir_hotpotqa,test,all,all,0.850000,0.726070
+beir_hotpotqa,test,all,all,0.900000,0.726981
+beir_hotpotqa,test,all,all,0.950000,0.726299
+beir_hotpotqa,test,all,all,1.000000,0.726111
+twowiki,val,n_words,long (>=8),0.000000,0.925966
+twowiki,val,n_words,long (>=8),0.050000,0.927543
+twowiki,val,n_words,long (>=8),0.100000,0.928504
+twowiki,val,n_words,long (>=8),0.150000,0.930129
+twowiki,val,n_words,long (>=8),0.200000,0.931285
+twowiki,val,n_words,long (>=8),0.250000,0.932326
+twowiki,val,n_words,long (>=8),0.300000,0.933413
+twowiki,val,n_words,long (>=8),0.350000,0.933547
+twowiki,val,n_words,long (>=8),0.400000,0.933939
+twowiki,val,n_words,long (>=8),0.450000,0.934572
+twowiki,val,n_words,long (>=8),0.500000,0.934429
+twowiki,val,n_words,long (>=8),0.550000,0.934560
+twowiki,val,n_words,long (>=8),0.600000,0.933677
+twowiki,val,n_words,long (>=8),0.650000,0.933356
+twowiki,val,n_words,long (>=8),0.700000,0.932362
+twowiki,val,n_words,long (>=8),0.750000,0.930979
+twowiki,val,n_words,long (>=8),0.800000,0.930481
+twowiki,val,n_words,long (>=8),0.850000,0.930132
+twowiki,val,n_words,long (>=8),0.900000,0.929398
+twowiki,val,n_words,long (>=8),0.950000,0.928137
+twowiki,val,n_words,long (>=8),1.000000,0.926666
+twowiki,val,n_words,medium (5-7),0.000000,0.923417
+twowiki,val,n_words,medium (5-7),0.050000,0.923763
+twowiki,val,n_words,medium (5-7),0.100000,0.925184
+twowiki,val,n_words,medium (5-7),0.150000,0.924691
+twowiki,val,n_words,medium (5-7),0.200000,0.927262
+twowiki,val,n_words,medium (5-7),0.250000,0.926267
+twowiki,val,n_words,medium (5-7),0.300000,0.925362
+twowiki,val,n_words,medium (5-7),0.350000,0.925539
+twowiki,val,n_words,medium (5-7),0.400000,0.924046
+twowiki,val,n_words,medium (5-7),0.450000,0.921115
+twowiki,val,n_words,medium (5-7),0.500000,0.920257
+twowiki,val,n_words,medium (5-7),0.550000,0.919847
+twowiki,val,n_words,medium (5-7),0.600000,0.918875
+twowiki,val,n_words,medium (5-7),0.650000,0.917286
+twowiki,val,n_words,medium (5-7),0.700000,0.918515
+twowiki,val,n_words,medium (5-7),0.750000,0.916598
+twowiki,val,n_words,medium (5-7),0.800000,0.912804
+twowiki,val,n_words,medium (5-7),0.850000,0.913181
+twowiki,val,n_words,medium (5-7),0.900000,0.912056
+twowiki,val,n_words,medium (5-7),0.950000,0.911146
+twowiki,val,n_words,medium (5-7),1.000000,0.908735
+twowiki,val,type,bridge_comparison,0.000000,0.923849
+twowiki,val,type,bridge_comparison,0.050000,0.924538
+twowiki,val,type,bridge_comparison,0.100000,0.924555
+twowiki,val,type,bridge_comparison,0.150000,0.924761
+twowiki,val,type,bridge_comparison,0.200000,0.924119
+twowiki,val,type,bridge_comparison,0.250000,0.925083
+twowiki,val,type,bridge_comparison,0.300000,0.924190
+twowiki,val,type,bridge_comparison,0.350000,0.922761
+twowiki,val,type,bridge_comparison,0.400000,0.921706
+twowiki,val,type,bridge_comparison,0.450000,0.921451
+twowiki,val,type,bridge_comparison,0.500000,0.919581
+twowiki,val,type,bridge_comparison,0.550000,0.918562
+twowiki,val,type,bridge_comparison,0.600000,0.916958
+twowiki,val,type,bridge_comparison,0.650000,0.915043
+twowiki,val,type,bridge_comparison,0.700000,0.912275
+twowiki,val,type,bridge_comparison,0.750000,0.910187
+twowiki,val,type,bridge_comparison,0.800000,0.908828
+twowiki,val,type,bridge_comparison,0.850000,0.906789
+twowiki,val,type,bridge_comparison,0.900000,0.904600
+twowiki,val,type,bridge_comparison,0.950000,0.902452
+twowiki,val,type,bridge_comparison,1.000000,0.900337
+twowiki,val,type,comparison,0.000000,0.962087
+twowiki,val,type,comparison,0.050000,0.965072
+twowiki,val,type,comparison,0.100000,0.966371
+twowiki,val,type,comparison,0.150000,0.968930
+twowiki,val,type,comparison,0.200000,0.970850
+twowiki,val,type,comparison,0.250000,0.972235
+twowiki,val,type,comparison,0.300000,0.972911
+twowiki,val,type,comparison,0.350000,0.973600
+twowiki,val,type,comparison,0.400000,0.974860
+twowiki,val,type,comparison,0.450000,0.975493
+twowiki,val,type,comparison,0.500000,0.976923
+twowiki,val,type,comparison,0.550000,0.977722
+twowiki,val,type,comparison,0.600000,0.977636
+twowiki,val,type,comparison,0.650000,0.978114
+twowiki,val,type,comparison,0.700000,0.977885
+twowiki,val,type,comparison,0.750000,0.978039
+twowiki,val,type,comparison,0.800000,0.978153
+twowiki,val,type,comparison,0.850000,0.978336
+twowiki,val,type,comparison,0.900000,0.978904
+twowiki,val,type,comparison,0.950000,0.978402
+twowiki,val,type,comparison,1.000000,0.978260
+twowiki,val,type,compositional,0.000000,0.903680
+twowiki,val,type,compositional,0.050000,0.904719
+twowiki,val,type,compositional,0.100000,0.905994
+twowiki,val,type,compositional,0.150000,0.907537
+twowiki,val,type,compositional,0.200000,0.909124
+twowiki,val,type,compositional,0.250000,0.909784
+twowiki,val,type,compositional,0.300000,0.912101
+twowiki,val,type,compositional,0.350000,0.912669
+twowiki,val,type,compositional,0.400000,0.913289
+twowiki,val,type,compositional,0.450000,0.914192
+twowiki,val,type,compositional,0.500000,0.913844
+twowiki,val,type,compositional,0.550000,0.914016
+twowiki,val,type,compositional,0.600000,0.912907
+twowiki,val,type,compositional,0.650000,0.912737
+twowiki,val,type,compositional,0.700000,0.912050
+twowiki,val,type,compositional,0.750000,0.909858
+twowiki,val,type,compositional,0.800000,0.909000
+twowiki,val,type,compositional,0.850000,0.909123
+twowiki,val,type,compositional,0.900000,0.908320
+twowiki,val,type,compositional,0.950000,0.906980
+twowiki,val,type,compositional,1.000000,0.905064
+twowiki,val,type,inference,0.000000,0.894968
+twowiki,val,type,inference,0.050000,0.894359
+twowiki,val,type,inference,0.100000,0.894572
+twowiki,val,type,inference,0.150000,0.894609
+twowiki,val,type,inference,0.200000,0.896651
+twowiki,val,type,inference,0.250000,0.897250
+twowiki,val,type,inference,0.300000,0.895067
+twowiki,val,type,inference,0.350000,0.894230
+twowiki,val,type,inference,0.400000,0.889271
+twowiki,val,type,inference,0.450000,0.886476
+twowiki,val,type,inference,0.500000,0.884302
+twowiki,val,type,inference,0.550000,0.884390
+twowiki,val,type,inference,0.600000,0.883751
+twowiki,val,type,inference,0.650000,0.882362
+twowiki,val,type,inference,0.700000,0.885508
+twowiki,val,type,inference,0.750000,0.884696
+twowiki,val,type,inference,0.800000,0.884429
+twowiki,val,type,inference,0.850000,0.884903
+twowiki,val,type,inference,0.900000,0.881415
+twowiki,val,type,inference,0.950000,0.880440
+twowiki,val,type,inference,1.000000,0.874705
+twowiki,val,all,all,0.000000,0.925849
+twowiki,val,all,all,0.050000,0.927369
+twowiki,val,all,all,0.100000,0.928351
+twowiki,val,all,all,0.150000,0.929879
+twowiki,val,all,all,0.200000,0.931100
+twowiki,val,all,all,0.250000,0.932048
+twowiki,val,all,all,0.300000,0.933043
+twowiki,val,all,all,0.350000,0.933179
+twowiki,val,all,all,0.400000,0.933484
+twowiki,val,all,all,0.450000,0.933953
+twowiki,val,all,all,0.500000,0.933777
+twowiki,val,all,all,0.550000,0.933883
+twowiki,val,all,all,0.600000,0.932996
+twowiki,val,all,all,0.650000,0.932616
+twowiki,val,all,all,0.700000,0.931725
+twowiki,val,all,all,0.750000,0.930317
+twowiki,val,all,all,0.800000,0.929667
+twowiki,val,all,all,0.850000,0.929352
+twowiki,val,all,all,0.900000,0.928600
+twowiki,val,all,all,0.950000,0.927355
+twowiki,val,all,all,1.000000,0.925841
+twowiki,test,n_words,long (>=8),0.000000,0.909982
+twowiki,test,n_words,long (>=8),0.050000,0.911518
+twowiki,test,n_words,long (>=8),0.100000,0.913217
+twowiki,test,n_words,long (>=8),0.150000,0.914242
+twowiki,test,n_words,long (>=8),0.200000,0.915350
+twowiki,test,n_words,long (>=8),0.250000,0.916169
+twowiki,test,n_words,long (>=8),0.300000,0.916897
+twowiki,test,n_words,long (>=8),0.350000,0.917434
+twowiki,test,n_words,long (>=8),0.400000,0.917659
+twowiki,test,n_words,long (>=8),0.450000,0.918132
+twowiki,test,n_words,long (>=8),0.500000,0.918198
+twowiki,test,n_words,long (>=8),0.550000,0.917813
+twowiki,test,n_words,long (>=8),0.600000,0.917503
+twowiki,test,n_words,long (>=8),0.650000,0.917040
+twowiki,test,n_words,long (>=8),0.700000,0.916342
+twowiki,test,n_words,long (>=8),0.750000,0.915415
+twowiki,test,n_words,long (>=8),0.800000,0.914322
+twowiki,test,n_words,long (>=8),0.850000,0.913176
+twowiki,test,n_words,long (>=8),0.900000,0.911743
+twowiki,test,n_words,long (>=8),0.950000,0.910354
+twowiki,test,n_words,long (>=8),1.000000,0.908540
+twowiki,test,n_words,medium (5-7),0.000000,0.910441
+twowiki,test,n_words,medium (5-7),0.050000,0.910810
+twowiki,test,n_words,medium (5-7),0.100000,0.911004
+twowiki,test,n_words,medium (5-7),0.150000,0.910361
+twowiki,test,n_words,medium (5-7),0.200000,0.910586
+twowiki,test,n_words,medium (5-7),0.250000,0.911030
+twowiki,test,n_words,medium (5-7),0.300000,0.912034
+twowiki,test,n_words,medium (5-7),0.350000,0.911892
+twowiki,test,n_words,medium (5-7),0.400000,0.911009
+twowiki,test,n_words,medium (5-7),0.450000,0.910469
+twowiki,test,n_words,medium (5-7),0.500000,0.909451
+twowiki,test,n_words,medium (5-7),0.550000,0.909151
+twowiki,test,n_words,medium (5-7),0.600000,0.908623
+twowiki,test,n_words,medium (5-7),0.650000,0.908176
+twowiki,test,n_words,medium (5-7),0.700000,0.907408
+twowiki,test,n_words,medium (5-7),0.750000,0.906057
+twowiki,test,n_words,medium (5-7),0.800000,0.904545
+twowiki,test,n_words,medium (5-7),0.850000,0.903237
+twowiki,test,n_words,medium (5-7),0.900000,0.902028
+twowiki,test,n_words,medium (5-7),0.950000,0.901198
+twowiki,test,n_words,medium (5-7),1.000000,0.899449
+twowiki,test,type,bridge_comparison,0.000000,0.919954
+twowiki,test,type,bridge_comparison,0.050000,0.919950
+twowiki,test,type,bridge_comparison,0.100000,0.920179
+twowiki,test,type,bridge_comparison,0.150000,0.920257
+twowiki,test,type,bridge_comparison,0.200000,0.920344
+twowiki,test,type,bridge_comparison,0.250000,0.919899
+twowiki,test,type,bridge_comparison,0.300000,0.919281
+twowiki,test,type,bridge_comparison,0.350000,0.918698
+twowiki,test,type,bridge_comparison,0.400000,0.917812
+twowiki,test,type,bridge_comparison,0.450000,0.917246
+twowiki,test,type,bridge_comparison,0.500000,0.916774
+twowiki,test,type,bridge_comparison,0.550000,0.915605
+twowiki,test,type,bridge_comparison,0.600000,0.913641
+twowiki,test,type,bridge_comparison,0.650000,0.912289
+twowiki,test,type,bridge_comparison,0.700000,0.910783
+twowiki,test,type,bridge_comparison,0.750000,0.909396
+twowiki,test,type,bridge_comparison,0.800000,0.907744
+twowiki,test,type,bridge_comparison,0.850000,0.906330
+twowiki,test,type,bridge_comparison,0.900000,0.904616
+twowiki,test,type,bridge_comparison,0.950000,0.903116
+twowiki,test,type,bridge_comparison,1.000000,0.901401
+twowiki,test,type,comparison,0.000000,0.954722
+twowiki,test,type,comparison,0.050000,0.957783
+twowiki,test,type,comparison,0.100000,0.960645
+twowiki,test,type,comparison,0.150000,0.962786
+twowiki,test,type,comparison,0.200000,0.965363
+twowiki,test,type,comparison,0.250000,0.967819
+twowiki,test,type,comparison,0.300000,0.969369
+twowiki,test,type,comparison,0.350000,0.970693
+twowiki,test,type,comparison,0.400000,0.972298
+twowiki,test,type,comparison,0.450000,0.973551
+twowiki,test,type,comparison,0.500000,0.974037
+twowiki,test,type,comparison,0.550000,0.974802
+twowiki,test,type,comparison,0.600000,0.975391
+twowiki,test,type,comparison,0.650000,0.976316
+twowiki,test,type,comparison,0.700000,0.976217
+twowiki,test,type,comparison,0.750000,0.976273
+twowiki,test,type,comparison,0.800000,0.976242
+twowiki,test,type,comparison,0.850000,0.975372
+twowiki,test,type,comparison,0.900000,0.974776
+twowiki,test,type,comparison,0.950000,0.973853
+twowiki,test,type,comparison,1.000000,0.972752
+twowiki,test,type,compositional,0.000000,0.888934
+twowiki,test,type,compositional,0.050000,0.890116
+twowiki,test,type,compositional,0.100000,0.891896
+twowiki,test,type,compositional,0.150000,0.892788
+twowiki,test,type,compositional,0.200000,0.893414
+twowiki,test,type,compositional,0.250000,0.893951
+twowiki,test,type,compositional,0.300000,0.894967
+twowiki,test,type,compositional,0.350000,0.895671
+twowiki,test,type,compositional,0.400000,0.895520
+twowiki,test,type,compositional,0.450000,0.895725
+twowiki,test,type,compositional,0.500000,0.895847
+twowiki,test,type,compositional,0.550000,0.895123
+twowiki,test,type,compositional,0.600000,0.894907
+twowiki,test,type,compositional,0.650000,0.894456
+twowiki,test,type,compositional,0.700000,0.893843
+twowiki,test,type,compositional,0.750000,0.892844
+twowiki,test,type,compositional,0.800000,0.891530
+twowiki,test,type,compositional,0.850000,0.890390
+twowiki,test,type,compositional,0.900000,0.888788
+twowiki,test,type,compositional,0.950000,0.887343
+twowiki,test,type,compositional,1.000000,0.885459
+twowiki,test,type,inference,0.000000,0.875873
+twowiki,test,type,inference,0.050000,0.877566
+twowiki,test,type,inference,0.100000,0.878269
+twowiki,test,type,inference,0.150000,0.878128
+twowiki,test,type,inference,0.200000,0.879086
+twowiki,test,type,inference,0.250000,0.879624
+twowiki,test,type,inference,0.300000,0.880299
+twowiki,test,type,inference,0.350000,0.880227
+twowiki,test,type,inference,0.400000,0.880244
+twowiki,test,type,inference,0.450000,0.881218
+twowiki,test,type,inference,0.500000,0.880489
+twowiki,test,type,inference,0.550000,0.880447
+twowiki,test,type,inference,0.600000,0.880848
+twowiki,test,type,inference,0.650000,0.879184
+twowiki,test,type,inference,0.700000,0.878389
+twowiki,test,type,inference,0.750000,0.876322
+twowiki,test,type,inference,0.800000,0.874616
+twowiki,test,type,inference,0.850000,0.873215
+twowiki,test,type,inference,0.900000,0.871364
+twowiki,test,type,inference,0.950000,0.869796
+twowiki,test,type,inference,1.000000,0.866687
+twowiki,test,all,all,0.000000,0.910014
+twowiki,test,all,all,0.050000,0.911453
+twowiki,test,all,all,0.100000,0.913023
+twowiki,test,all,all,0.150000,0.913912
+twowiki,test,all,all,0.200000,0.914932
+twowiki,test,all,all,0.250000,0.915719
+twowiki,test,all,all,0.300000,0.916464
+twowiki,test,all,all,0.350000,0.916941
+twowiki,test,all,all,0.400000,0.917074
+twowiki,test,all,all,0.450000,0.917459
+twowiki,test,all,all,0.500000,0.917434
+twowiki,test,all,all,0.550000,0.917057
+twowiki,test,all,all,0.600000,0.916729
+twowiki,test,all,all,0.650000,0.916264
+twowiki,test,all,all,0.700000,0.915557
+twowiki,test,all,all,0.750000,0.914597
+twowiki,test,all,all,0.800000,0.913471
+twowiki,test,all,all,0.850000,0.912304
+twowiki,test,all,all,0.900000,0.910890
+twowiki,test,all,all,0.950000,0.909544
+twowiki,test,all,all,1.000000,0.907736

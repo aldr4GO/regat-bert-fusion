@@ -13,6 +13,7 @@ pandas
 scipy
 scikit-learn
 matplotlib
+huggingface_hub
 pyyaml
 tqdm
 pytest

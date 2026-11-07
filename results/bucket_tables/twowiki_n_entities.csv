@@ -1,0 +1,4 @@
+dataset,label,bucket,n,alpha_Q,alpha_QS,alpha_S,best_adaptive,alpha_best_minus_alpha0,oracle_alpha,ce_ndcg@10,gat_ndcg@10,best_fixed_ndcg@10,adaptive_ndcg@10,oracle_ndcg@10,gain,gain_ci95_lo,gain_ci95_hi,gain_p
+twowiki,n_entities,0,694,0.45085,0.49529,0.44886,Q,0.00085,0.43862,0.89628,0.90501,0.90808,0.90729,0.93219,-0.00079,-0.00334,0.00168,0.54740
+twowiki,n_entities,1,6432,0.45007,0.51843,0.44897,Q,0.00007,0.44239,0.89602,0.90217,0.90733,0.90785,0.93211,0.00052,-0.00025,0.00127,0.17960
+twowiki,n_entities,2+,5450,0.50623,0.50362,0.44900,Q,0.05623,0.44074,0.92302,0.91991,0.93061,0.93070,0.95028,0.00010,-0.00077,0.00096,0.82040

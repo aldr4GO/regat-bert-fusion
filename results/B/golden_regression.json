@@ -1,0 +1,17 @@
+{
+ "n_runs_compared": 182,
+ "max_abs_diff": {
+  "agg:ndcg@10": 0.0,
+  "agg:mrr@10": 0.0,
+  "agg:map": 0.0,
+  "per_query:ndcg@10": 2.9728327466393978e-08,
+  "per_query:mrr@10": 9.934107481068821e-09,
+  "per_query:map": 2.9799523293405628e-08,
+  "alpha": 0.0,
+  "agg:r@100": 0.0
+ },
+ "problems": [],
+ "tolerance": 1e-06,
+ "pass": true,
+ "subset": false
+}

@@ -1,0 +1,106 @@
+hypothesis,dataset,graph,variant,statistic,value,ci95_lo,ci95_hi,p_raw,predicted,primary,ci_verdict,p_holm,verdict
+H1,musique,knn_emb,best=Q,"spearman(alpha, hops)",0.10672,0.06697,0.14682,0.00010,<0,True,opposite direction,0.00090,contradicted
+H1 (exploratory),musique,knn_emb,Q,"spearman(alpha, hops)",0.10672,0.06697,0.14682,0.00010,<0,False,opposite direction,,opposite direction
+H1 (exploratory),musique,knn_emb,QS,"spearman(alpha, hops)",-0.13780,-0.17675,-0.09899,0.00010,<0,False,in predicted direction,,in predicted direction
+H1 (exploratory),musique,knn_emb,S,"spearman(alpha, hops)",0.16314,0.12291,0.20313,0.00010,<0,False,opposite direction,,opposite direction
+H1 (exploratory),musique,knn_emb,oracle_alpha,"spearman(alpha, hops)",-0.00395,-0.04497,0.03873,0.85100,<0,False,inconclusive,,inconclusive
+H2,musique,knn_emb,best=Q,gain(ds) - gain(MS MARCO),-0.00004,-0.00025,0.00017,0.69400,>0,True,inconclusive,1.00000,inconclusive
+H2 (exploratory),musique,knn_emb,best=Q,gain(ds) = adaptive - best fixed,0.00000,-0.00006,0.00006,0.85140,>0,False,inconclusive,,inconclusive
+H3,musique,knn_emb,oracle,headroom(ds) - headroom(MS MARCO),0.02435,0.01942,0.02932,0.00010,>0,True,in predicted direction,0.00090,supported
+H3 (exploratory),musique,knn_emb,oracle,headroom(ds) = oracle - best fixed,0.07441,0.07050,0.07835,0.00010,>0,False,in predicted direction,,in predicted direction
+H1,hotpotqa,knn_emb,best=QS,mean alpha bridge - comparison,-0.02591,-0.03651,-0.01552,0.00010,<0,True,in predicted direction,0.00090,supported
+H1 (exploratory),hotpotqa,knn_emb,Q,mean alpha bridge - comparison,0.00002,0.00002,0.00002,0.00010,<0,False,opposite direction,,opposite direction
+H1 (exploratory),hotpotqa,knn_emb,QS,mean alpha bridge - comparison,-0.02591,-0.03651,-0.01552,0.00010,<0,False,in predicted direction,,in predicted direction
+H1 (exploratory),hotpotqa,knn_emb,S,mean alpha bridge - comparison,-0.02453,-0.02785,-0.02121,0.00010,<0,False,in predicted direction,,in predicted direction
+H1 (exploratory),hotpotqa,knn_emb,oracle_alpha,mean alpha bridge - comparison,-0.05719,-0.06766,-0.04641,0.00010,<0,False,in predicted direction,,in predicted direction
+H2,hotpotqa,knn_emb,best=QS,gain(ds) - gain(MS MARCO),0.00011,-0.00095,0.00117,0.84160,>0,True,inconclusive,1.00000,inconclusive
+H2 (exploratory),hotpotqa,knn_emb,best=QS,gain(ds) = adaptive - best fixed,0.00016,-0.00089,0.00119,0.77080,>0,False,inconclusive,,inconclusive
+H3,hotpotqa,knn_emb,oracle,headroom(ds) - headroom(MS MARCO),-0.02036,-0.02365,-0.01710,0.00010,>0,True,opposite direction,0.00090,contradicted
+H3 (exploratory),hotpotqa,knn_emb,oracle,headroom(ds) = oracle - best fixed,0.02970,0.02829,0.03120,0.00010,>0,False,in predicted direction,,in predicted direction
+H1,beir_hotpotqa,knn_emb,best=Q,mean alpha bridge - comparison,0.00001,0.00001,0.00001,0.00010,<0,True,opposite direction,0.00090,contradicted
+H1 (exploratory),beir_hotpotqa,knn_emb,Q,mean alpha bridge - comparison,0.00001,0.00001,0.00001,0.00010,<0,False,opposite direction,,opposite direction
+H1 (exploratory),beir_hotpotqa,knn_emb,QS,mean alpha bridge - comparison,0.00000,-0.00000,0.00001,0.10980,<0,False,inconclusive,,inconclusive
+H1 (exploratory),beir_hotpotqa,knn_emb,S,mean alpha bridge - comparison,-0.00007,-0.00010,-0.00005,0.00010,<0,False,in predicted direction,,in predicted direction
+H1 (exploratory),beir_hotpotqa,knn_emb,oracle_alpha,mean alpha bridge - comparison,0.04681,0.03646,0.05730,0.00010,<0,False,opposite direction,,opposite direction
+H2,beir_hotpotqa,knn_emb,best=Q,gain(ds) - gain(MS MARCO),-0.00005,-0.00025,0.00016,0.65240,>0,True,inconclusive,1.00000,inconclusive
+H2 (exploratory),beir_hotpotqa,knn_emb,best=Q,gain(ds) = adaptive - best fixed,-0.00000,-0.00001,0.00000,0.75120,>0,False,inconclusive,,inconclusive
+H3,beir_hotpotqa,knn_emb,oracle,headroom(ds) - headroom(MS MARCO),-0.02078,-0.02427,-0.01739,0.00010,>0,True,opposite direction,0.00090,contradicted
+H3 (exploratory),beir_hotpotqa,knn_emb,oracle,headroom(ds) = oracle - best fixed,0.02928,0.02750,0.03115,0.00010,>0,False,in predicted direction,,in predicted direction
+H2 (exploratory),twowiki,knn_emb,best=Q,gain(ds) - gain(MS MARCO),0.00022,-0.00037,0.00082,0.46900,>0,False,inconclusive,,inconclusive
+H2 (exploratory),twowiki,knn_emb,best=Q,gain(ds) = adaptive - best fixed,0.00027,-0.00028,0.00083,0.35480,>0,False,inconclusive,,inconclusive
+H3 (exploratory),twowiki,knn_emb,oracle,headroom(ds) - headroom(MS MARCO),-0.02753,-0.03049,-0.02454,0.00010,>0,False,opposite direction,,opposite direction
+H3 (exploratory),twowiki,knn_emb,oracle,headroom(ds) = oracle - best fixed,0.02253,0.02179,0.02330,0.00010,>0,False,in predicted direction,,in predicted direction
+H2 (exploratory),A,knn_emb,best=S,gain(MS MARCO) = adaptive - best fixed,0.00004,-0.00016,0.00025,0.65700,>0,False,inconclusive,,inconclusive
+H3 (exploratory),A,knn_emb,oracle,headroom(MS MARCO) = oracle - best fixed,0.05006,0.04719,0.05305,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,none,best=S,"spearman(alpha, hops)",0.15639,0.11613,0.19630,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,none,Q,"spearman(alpha, hops)",0.10673,0.06695,0.14684,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,none,QS,"spearman(alpha, hops)",-0.16671,-0.20564,-0.12824,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,none,S,"spearman(alpha, hops)",0.15639,0.11613,0.19630,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,none,oracle_alpha,"spearman(alpha, hops)",-0.07183,-0.11219,-0.02969,0.00040,<0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),musique,none,best=S,gain(ds) - gain(MS MARCO),-0.00029,-0.00071,0.00011,0.15500,>0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),musique,none,best=S,gain(ds) = adaptive - best fixed,-0.00025,-0.00062,0.00010,0.16480,>0,False,inconclusive,,inconclusive
+H4 (H3 (exploratory)),musique,none,oracle,headroom(ds) - headroom(MS MARCO),0.02731,0.02238,0.03223,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H3 (exploratory)),musique,none,oracle,headroom(ds) = oracle - best fixed,0.07737,0.07334,0.08138,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,random,best=S,"spearman(alpha, hops)",0.14372,0.10293,0.18409,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,random,Q,"spearman(alpha, hops)",0.10669,0.06693,0.14679,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,random,QS,"spearman(alpha, hops)",-0.12367,-0.16244,-0.08515,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,random,S,"spearman(alpha, hops)",0.14372,0.10293,0.18409,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,random,oracle_alpha,"spearman(alpha, hops)",-0.06111,-0.10371,-0.01890,0.00520,<0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),musique,random,best=S,gain(ds) - gain(MS MARCO),-0.00034,-0.00080,0.00009,0.12920,>0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),musique,random,best=S,gain(ds) = adaptive - best fixed,-0.00030,-0.00070,0.00010,0.14060,>0,False,inconclusive,,inconclusive
+H4 (H3 (exploratory)),musique,random,oracle,headroom(ds) - headroom(MS MARCO),0.01619,0.01161,0.02076,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H3 (exploratory)),musique,random,oracle,headroom(ds) = oracle - best fixed,0.06625,0.06265,0.06976,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,title_link,best=Q,"spearman(alpha, hops)",0.10673,0.06695,0.14684,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,title_link,Q,"spearman(alpha, hops)",0.10673,0.06695,0.14684,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,title_link,QS,"spearman(alpha, hops)",-0.19150,-0.22959,-0.15336,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,title_link,S,"spearman(alpha, hops)",0.17532,0.13497,0.21483,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,title_link,oracle_alpha,"spearman(alpha, hops)",-0.04613,-0.08755,-0.00402,0.03140,<0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),musique,title_link,best=Q,gain(ds) - gain(MS MARCO),-0.00004,-0.00025,0.00017,0.68540,>0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),musique,title_link,best=Q,gain(ds) = adaptive - best fixed,0.00000,-0.00006,0.00005,0.95880,>0,False,inconclusive,,inconclusive
+H4 (H3 (exploratory)),musique,title_link,oracle,headroom(ds) - headroom(MS MARCO),0.02637,0.02142,0.03137,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H3 (exploratory)),musique,title_link,oracle,headroom(ds) = oracle - best fixed,0.07643,0.07244,0.08035,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,hybrid,best=S,"spearman(alpha, hops)",0.17550,0.13571,0.21548,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,hybrid,Q,"spearman(alpha, hops)",0.10672,0.06697,0.14682,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,hybrid,QS,"spearman(alpha, hops)",-0.11699,-0.15667,-0.07777,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),musique,hybrid,S,"spearman(alpha, hops)",0.17550,0.13571,0.21548,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),musique,hybrid,oracle_alpha,"spearman(alpha, hops)",0.00172,-0.03933,0.04411,0.93320,<0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),musique,hybrid,best=S,gain(ds) - gain(MS MARCO),-0.00000,-0.00040,0.00038,0.97680,>0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),musique,hybrid,best=S,gain(ds) = adaptive - best fixed,0.00004,-0.00029,0.00037,0.80480,>0,False,inconclusive,,inconclusive
+H4 (H3 (exploratory)),musique,hybrid,oracle,headroom(ds) - headroom(MS MARCO),0.02403,0.01911,0.02880,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H3 (exploratory)),musique,hybrid,oracle,headroom(ds) = oracle - best fixed,0.07409,0.07023,0.07798,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,none,best=QS,mean alpha bridge - comparison,-0.01727,-0.02240,-0.01213,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,none,Q,mean alpha bridge - comparison,0.00002,0.00002,0.00002,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),hotpotqa,none,QS,mean alpha bridge - comparison,-0.01727,-0.02240,-0.01213,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,none,S,mean alpha bridge - comparison,0.00000,-0.00006,0.00006,0.99540,<0,False,inconclusive,,inconclusive
+H4 (H1 (exploratory)),hotpotqa,none,oracle_alpha,mean alpha bridge - comparison,-0.06545,-0.07557,-0.05509,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),hotpotqa,none,best=QS,gain(ds) - gain(MS MARCO),0.00014,-0.00061,0.00089,0.69860,>0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),hotpotqa,none,best=QS,gain(ds) = adaptive - best fixed,0.00019,-0.00053,0.00091,0.61020,>0,False,inconclusive,,inconclusive
+H4 (H3 (exploratory)),hotpotqa,none,oracle,headroom(ds) - headroom(MS MARCO),-0.02015,-0.02342,-0.01689,0.00010,>0,False,opposite direction,,opposite direction
+H4 (H3 (exploratory)),hotpotqa,none,oracle,headroom(ds) = oracle - best fixed,0.02991,0.02847,0.03138,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,random,best=QS,mean alpha bridge - comparison,0.00131,-0.01023,0.01315,0.81060,<0,False,inconclusive,,inconclusive
+H4 (H1 (exploratory)),hotpotqa,random,Q,mean alpha bridge - comparison,0.00001,0.00001,0.00002,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),hotpotqa,random,QS,mean alpha bridge - comparison,0.00131,-0.01023,0.01315,0.81060,<0,False,inconclusive,,inconclusive
+H4 (H1 (exploratory)),hotpotqa,random,S,mean alpha bridge - comparison,-0.03815,-0.04375,-0.03255,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,random,oracle_alpha,mean alpha bridge - comparison,-0.06290,-0.07378,-0.05182,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),hotpotqa,random,best=QS,gain(ds) - gain(MS MARCO),-0.00027,-0.00128,0.00074,0.58240,>0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),hotpotqa,random,best=QS,gain(ds) = adaptive - best fixed,-0.00022,-0.00121,0.00076,0.65660,>0,False,inconclusive,,inconclusive
+H4 (H3 (exploratory)),hotpotqa,random,oracle,headroom(ds) - headroom(MS MARCO),-0.02166,-0.02495,-0.01838,0.00010,>0,False,opposite direction,,opposite direction
+H4 (H3 (exploratory)),hotpotqa,random,oracle,headroom(ds) = oracle - best fixed,0.02840,0.02694,0.02992,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,title_link,best=S,mean alpha bridge - comparison,-0.10090,-0.11291,-0.08890,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,title_link,Q,mean alpha bridge - comparison,0.00004,0.00003,0.00004,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),hotpotqa,title_link,QS,mean alpha bridge - comparison,-0.13206,-0.14717,-0.11710,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,title_link,S,mean alpha bridge - comparison,-0.10090,-0.11291,-0.08890,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,title_link,oracle_alpha,mean alpha bridge - comparison,-0.06720,-0.07549,-0.05886,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),hotpotqa,title_link,best=S,gain(ds) - gain(MS MARCO),0.00047,-0.00078,0.00172,0.46200,>0,False,inconclusive,,inconclusive
+H4 (H2 (exploratory)),hotpotqa,title_link,best=S,gain(ds) = adaptive - best fixed,0.00052,-0.00072,0.00176,0.42280,>0,False,inconclusive,,inconclusive
+H4 (H3 (exploratory)),hotpotqa,title_link,oracle,headroom(ds) - headroom(MS MARCO),-0.01506,-0.01844,-0.01178,0.00010,>0,False,opposite direction,,opposite direction
+H4 (H3 (exploratory)),hotpotqa,title_link,oracle,headroom(ds) = oracle - best fixed,0.03500,0.03349,0.03655,0.00010,>0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,hybrid,best=QS,mean alpha bridge - comparison,-0.05740,-0.06856,-0.04602,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,hybrid,Q,mean alpha bridge - comparison,0.00004,0.00003,0.00004,0.00010,<0,False,opposite direction,,opposite direction
+H4 (H1 (exploratory)),hotpotqa,hybrid,QS,mean alpha bridge - comparison,-0.05740,-0.06856,-0.04602,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,hybrid,S,mean alpha bridge - comparison,-0.02295,-0.02638,-0.01942,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H1 (exploratory)),hotpotqa,hybrid,oracle_alpha,mean alpha bridge - comparison,-0.04195,-0.05017,-0.03386,0.00010,<0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),hotpotqa,hybrid,best=QS,gain(ds) - gain(MS MARCO),0.00178,0.00048,0.00307,0.00760,>0,False,in predicted direction,,in predicted direction
+H4 (H2 (exploratory)),hotpotqa,hybrid,best=QS,gain(ds) = adaptive - best fixed,0.00183,0.00055,0.00311,0.00540,>0,False,in predicted direction,,in predicted direction
+H4 (H3 (exploratory)),hotpotqa,hybrid,oracle,headroom(ds) - headroom(MS MARCO),-0.01651,-0.01982,-0.01324,0.00010,>0,False,opposite direction,,opposite direction
+H4 (H3 (exploratory)),hotpotqa,hybrid,oracle,headroom(ds) = oracle - best fixed,0.03355,0.03209,0.03505,0.00010,>0,False,in predicted direction,,in predicted direction

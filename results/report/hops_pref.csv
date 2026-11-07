@@ -1,0 +1,7 @@
+dataset,split,field,n_decisive,pref_mean_2,frac_ctx_2,pref_mean_3,frac_ctx_3,pref_mean_4,frac_ctx_4,spearman,ci_lo,ci_hi,p,pref_mean_2hop,frac_ctx_2hop,pref_mean_3hop1,frac_ctx_3hop1,pref_mean_3hop2,frac_ctx_3hop2,pref_mean_4hop1,frac_ctx_4hop1,pref_mean_4hop2,frac_ctx_4hop2,pref_mean_4hop3,frac_ctx_4hop3,pref_mean_bridge_comparison,frac_ctx_bridge_comparison,pref_mean_comparison,frac_ctx_comparison,pref_mean_compositional,frac_ctx_compositional,pref_mean_inference,frac_ctx_inference
+musique,val,hops,2446,0.49522,0.48479,0.45821,0.54139,0.42235,0.60101,-0.07152,-0.10963,-0.03199,0.00050,,,,,,,,,,,,,,,,,,,,
+musique,val,type,2446,,,,,,,,,,,0.49522,0.48479,0.45464,0.54795,0.47784,0.50538,0.42064,0.61468,0.36957,0.69565,0.44356,0.54545,,,,,,,,
+musique,test,hops,2075,0.55019,0.39729,0.56117,0.38611,0.46258,0.51768,-0.06764,-0.11019,-0.02494,0.00400,,,,,,,,,,,,,,,,,,,,
+musique,test,type,2075,,,,,,,,,,,0.55019,0.39729,0.55491,0.39815,0.57993,0.35000,0.45012,0.55042,0.50185,0.46032,0.46778,0.47368,,,,,,,,
+twowiki,val,type,1251,,,,,,,,,,,,,,,,,,,,,,,0.34190,0.70892,0.59240,0.33889,0.48428,0.48849,0.40287,0.56757
+twowiki,test,type,8616,,,,,,,,,,,,,,,,,,,,,,,0.36999,0.67206,0.58843,0.29990,0.46938,0.53485,0.42336,0.58599

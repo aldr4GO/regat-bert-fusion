@@ -1,0 +1,2 @@
+2026-11-01 07:08:56,338 download INFO downloading https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/hotpotqa.zip (654.0 MB) with 32 connections
+2026-11-01 07:15:04,761 download INFO done data/ir_datasets/beir/hotpotqa/source.zip in 368s

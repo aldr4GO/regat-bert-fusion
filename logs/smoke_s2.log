@@ -1,0 +1,23 @@
+2026-10-31 19:58:11,241 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/msmarco-MiniLM-L6-cos-v5 "HTTP/1.1 200 OK"
+2026-10-31 19:58:11,244 sentence_transformers.base.model INFO Loading SentenceTransformer model from sentence-transformers/msmarco-MiniLM-L6-cos-v5.
+2026-10-31 19:58:11,469 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/adapter_config.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-31 19:58:11,469 huggingface_hub.utils._http WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7884.17it/s]
+2026-10-31 19:58:11,867 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:58:12,087 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:58:12,310 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:58:12,549 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/msmarco-MiniLM-L6-cos-v5/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 19:58:12,805 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/msmarco-MiniLM-L6-cos-v5/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 19:58:13,033 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:58:13,256 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-10-31 19:58:13,529 httpx2 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/msmarco-MiniLM-L6-cos-v5/resolve/14ca9be4bbcf1402eac0f43a2e2ccb6e0f994ba3/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:58:13,532 cache_embeddings INFO bi-encoder sentence-transformers/msmarco-MiniLM-L6-cos-v5 on cpu: 620 queries, 60058 passages
+collection: 0it [00:00, ?it/s]collection: 8841823it [00:17, 517813.73it/s]
+2026-10-31 19:58:31,318 cache_embeddings INFO encoded 620 / 620
+2026-10-31 20:07:56,626 cache_embeddings INFO encoded 60058 / 60058
+2026-10-31 20:07:56,778 cache_embeddings INFO Stage 1-2 acceptance on val: {'bm25': {'ndcg@10': 0.22290243208408356, 'mrr@10': 0.1979365050792694}, 'bi': {'ndcg@10': 0.36143749952316284, 'mrr@10': 0.31019842624664307}, 'sem': {'ndcg@10': 0.41552162170410156, 'mrr@10': 0.3700397312641144}, 'accept': True}
+
+real	9m51.134s
+user	48m50.381s
+sys	15m2.661s

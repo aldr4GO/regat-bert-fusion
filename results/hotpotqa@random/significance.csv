@@ -1,0 +1,7 @@
+norm,config,baseline,set,metric,config_mean,baseline_mean,diff,ci95_lo,ci95_hi,p_value,n_queries
+minmax,minmax_Q_listwise_lam0.01,minmax_fixed_listwise_lam0.01,test,ndcg@10,0.89889,0.89867,0.00022,-0.00018,0.00062,0.28060,7405
+minmax,minmax_Q_listwise_lam0.01,minmax_fixed_listwise_lam0.01,test,mrr@10,0.95393,0.95368,0.00025,-0.00050,0.00102,0.50980,7405
+minmax,minmax_QS_listwise_lam0.01,minmax_fixed_listwise_lam0.01,test,ndcg@10,0.89845,0.89867,-0.00022,-0.00121,0.00076,0.65660,7405
+minmax,minmax_QS_listwise_lam0.01,minmax_fixed_listwise_lam0.01,test,mrr@10,0.95452,0.95368,0.00084,-0.00083,0.00259,0.34080,7405
+minmax,minmax_S_listwise_lam0.01,minmax_fixed_listwise_lam0.01,test,ndcg@10,0.89873,0.89867,0.00006,-0.00063,0.00074,0.86960,7405
+minmax,minmax_S_listwise_lam0.01,minmax_fixed_listwise_lam0.01,test,mrr@10,0.95475,0.95368,0.00107,-0.00018,0.00230,0.08700,7405

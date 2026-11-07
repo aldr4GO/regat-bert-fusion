@@ -1,0 +1,22 @@
+{
+ "gat_train": {
+  "mean_top1_minus_top2": 4.206424477624894,
+  "mean_logit": -4.530530120830238,
+  "mean_max_logit": 5.1707332283020015
+ },
+ "fusion_train": {
+  "mean_top1_minus_top2": 4.1831776478767395,
+  "mean_logit": -4.540093353725672,
+  "mean_max_logit": 5.133354037094116
+ },
+ "val": {
+  "mean_top1_minus_top2": 4.196277668237686,
+  "mean_logit": -4.558473242783546,
+  "mean_max_logit": 5.146953338623047
+ },
+ "test": {
+  "mean_top1_minus_top2": 3.5650609771865622,
+  "mean_logit": -3.5990821590168407,
+  "mean_max_logit": 5.478246452547515
+ }
+}

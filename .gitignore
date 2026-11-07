@@ -1,14 +1,23 @@
+# Large or rebuildable artifacts: never committed.
+#   datasets / indexes -> downloaded from their sources (src.download, src.datasets.sources)
+#   caches             -> rebuilt by src.pipeline
+#   frozen GATs        -> Hugging Face Hub (src.hub, configs/hub.yaml)
+data/
 cache/
 cache_smoke/
-data/
 results_smoke/
+results_regression/
+results_smoke_regression/
 results/runs/
-logs/
+*.pt
+*.safetensors
+
+# logs/ is committed; stray SLURM output in the repo root is not
+slurm-*.out
+
 __pycache__/
 *.pyc
 .pytest_cache/
-results_regression/
-results_smoke_regression/
 paper/*.log
 paper/*.blg
 paper/*.aux

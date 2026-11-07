@@ -1,0 +1,50 @@
+{
+ "first_stage_bm25": {
+  "test": {
+   "R@1000": 0.852614613180516,
+   "R@100": 0.6578438395415472
+  },
+  "trec19": {
+   "R(rel=2)@100": 0.491049573514406,
+   "R(rel=2)@1000": 0.7501450319499805
+  },
+  "trec20": {
+   "R(rel=2)@100": 0.5598679259552604,
+   "R(rel=2)@1000": 0.7863223673615218
+  }
+ },
+ "n_padded_runs": 6,
+ "n_dropped_train_no_positive": 25642,
+ "n_dropped_B": {
+  "gat_train": 922,
+  "fusion_train": 595
+ },
+ "split_sizes_A": {
+  "gat_train": 30000,
+  "fusion_train": 10000,
+  "val": 2000,
+  "test": 6980,
+  "trec19": 43,
+  "trec20": 54
+ },
+ "split_sizes_B": {
+  "gat_train": 1870,
+  "fusion_train": 1150,
+  "val": 698,
+  "test": 1745,
+  "trec19": 43,
+  "trec20": 54
+ },
+ "cand_recall@100_gat_train": 0.9858872222222222,
+ "frac_with_positive_gat_train": 1.0,
+ "cand_recall@100_fusion_train": 0.9867866666666667,
+ "frac_with_positive_fusion_train": 1.0,
+ "cand_recall@100_val": 0.6459583333333333,
+ "frac_with_positive_val": 0.654,
+ "cand_recall@100_test": 0.6578438395415472,
+ "frac_with_positive_test": 0.6666189111747851,
+ "cand_recall@100_trec19": 0.49104957351440587,
+ "frac_with_positive_trec19": 0.9767441860465116,
+ "cand_recall@100_trec20": 0.5598679259552602,
+ "frac_with_positive_trec20": 0.9629629629629629
+}

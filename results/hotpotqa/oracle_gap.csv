@@ -1,0 +1,9 @@
+norm,set,oracle_ndcg@10,best_fixed,best_fixed_ndcg@10,oracle_minus_fixed,Q_ndcg@10,Q_share_of_headroom,QS_ndcg@10,QS_share_of_headroom,S_ndcg@10,S_share_of_headroom,small_headroom_flag
+none,val,0.9226,none_fixed_listwise_lam0.01,0.8936,0.0290,0.8935,-0.0022,0.8935,-0.0022,0.8934,-0.0066,False
+none,test,0.9269,none_fixed_listwise_lam0.01,0.8985,0.0284,0.8985,-0.0000,0.8986,0.0018,0.8986,0.0043,False
+minmax,val,0.9246,minmax_fixed_listwise_lam0.01,0.8922,0.0324,0.8917,-0.0162,0.8925,0.0094,0.8919,-0.0076,False
+minmax,test,0.9286,minmax_fixed_listwise_lam0.01,0.8989,0.0297,0.8987,-0.0069,0.8991,0.0052,0.8993,0.0129,False
+zscore,val,0.9246,zscore_fixedgrid,0.8920,0.0326,0.8924,0.0123,0.8919,-0.0031,0.8919,-0.0040,False
+zscore,test,0.9287,zscore_fixedgrid,0.8989,0.0298,0.8995,0.0217,0.8989,0.0005,0.8990,0.0031,False
+rank,val,0.9228,rank_fixed_listwise_lam0.01,0.8905,0.0323,0.8910,0.0177,0.8925,0.0638,0.8914,0.0291,False
+rank,test,0.9276,rank_fixed_listwise_lam0.01,0.8983,0.0293,0.8981,-0.0050,0.8979,-0.0137,0.8983,-0.0004,False

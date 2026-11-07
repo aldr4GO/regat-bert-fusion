@@ -1,0 +1,2609 @@
+2026-10-31 19:37:43,891 cache_semantic INFO loading 60058 passage texts
+collection: 0it [00:00, ?it/s]                              [INFO] [starting] fixing encoding
+collection: 0it [00:00, ?it/s]
+fixing encoding: 0.00B [00:00, ?B/s][A
+fixing encoding: 864kB [00:00, 8.64MB/s][A
+fixing encoding: 1.77MB [00:00, 8.85MB/s][A
+fixing encoding: 2.68MB [00:00, 8.94MB/s][A
+fixing encoding: 3.59MB [00:00, 8.97MB/s][A
+fixing encoding: 4.51MB [00:00, 9.00MB/s][A
+fixing encoding: 5.43MB [00:00, 9.03MB/s][A
+fixing encoding: 6.35MB [00:00, 9.03MB/s][A
+fixing encoding: 7.27MB [00:00, 9.04MB/s][A
+fixing encoding: 8.19MB [00:00, 9.01MB/s][A
+fixing encoding: 9.11MB [00:01, 9.02MB/s][A
+fixing encoding: 10.0MB [00:01, 9.01MB/s][A
+fixing encoding: 10.9MB [00:01, 9.01MB/s][A
+fixing encoding: 11.9MB [00:01, 9.02MB/s][A
+fixing encoding: 12.8MB [00:01, 9.03MB/s][A
+fixing encoding: 13.7MB [00:01, 9.03MB/s][A
+fixing encoding: 14.6MB [00:01, 9.04MB/s][A
+fixing encoding: 15.6MB [00:01, 9.05MB/s][A
+fixing encoding: 16.5MB [00:01, 9.05MB/s][A
+fixing encoding: 17.4MB [00:01, 9.07MB/s][A
+fixing encoding: 18.3MB [00:02, 9.07MB/s][A
+fixing encoding: 19.3MB [00:02, 9.07MB/s][A
+fixing encoding: 20.2MB [00:02, 9.06MB/s][A
+fixing encoding: 21.1MB [00:02, 8.96MB/s][A
+fixing encoding: 22.1MB [00:02, 8.97MB/s][A
+fixing encoding: 23.0MB [00:02, 8.98MB/s][A
+fixing encoding: 23.9MB [00:02, 8.99MB/s][A
+fixing encoding: 24.9MB [00:02, 9.00MB/s][A
+fixing encoding: 25.8MB [00:02, 9.00MB/s][A
+fixing encoding: 26.7MB [00:02, 9.01MB/s][A
+fixing encoding: 27.6MB [00:03, 9.01MB/s][A
+fixing encoding: 28.6MB [00:03, 9.01MB/s][A
+fixing encoding: 29.5MB [00:03, 9.01MB/s][A
+fixing encoding: 30.4MB [00:03, 9.01MB/s][A
+fixing encoding: 31.4MB [00:03, 9.01MB/s][A
+fixing encoding: 32.3MB [00:03, 9.02MB/s][A
+fixing encoding: 33.2MB [00:03, 9.02MB/s][A
+fixing encoding: 34.2MB [00:03, 9.02MB/s][A
+fixing encoding: 35.1MB [00:03, 9.02MB/s][A
+fixing encoding: 36.0MB [00:03, 9.02MB/s][A
+fixing encoding: 37.0MB [00:04, 9.02MB/s][A
+fixing encoding: 37.9MB [00:04, 9.02MB/s][A
+fixing encoding: 38.8MB [00:04, 9.03MB/s][A
+fixing encoding: 39.8MB [00:04, 9.03MB/s][A
+fixing encoding: 40.7MB [00:04, 9.03MB/s][A
+fixing encoding: 41.7MB [00:04, 9.03MB/s][A
+fixing encoding: 42.6MB [00:04, 9.03MB/s][A
+fixing encoding: 43.5MB [00:04, 9.04MB/s][A
+fixing encoding: 44.5MB [00:04, 9.04MB/s][A
+fixing encoding: 45.4MB [00:05, 9.04MB/s][A
+fixing encoding: 46.3MB [00:05, 9.05MB/s][A
+fixing encoding: 47.3MB [00:05, 9.05MB/s][A
+fixing encoding: 48.2MB [00:05, 9.05MB/s][A
+fixing encoding: 49.1MB [00:05, 9.05MB/s][A
+fixing encoding: 50.1MB [00:05, 9.05MB/s][A
+fixing encoding: 51.0MB [00:05, 9.05MB/s][A
+fixing encoding: 52.0MB [00:05, 9.05MB/s][A
+fixing encoding: 52.9MB [00:05, 9.05MB/s][A
+fixing encoding: 53.8MB [00:05, 9.05MB/s][A
+fixing encoding: 54.8MB [00:06, 9.06MB/s][A
+fixing encoding: 55.7MB [00:06, 9.06MB/s][A
+fixing encoding: 56.7MB [00:06, 9.06MB/s][A
+fixing encoding: 57.6MB [00:06, 9.07MB/s][A
+fixing encoding: 58.5MB [00:06, 9.07MB/s][A
+fixing encoding: 59.5MB [00:06, 9.07MB/s][A
+fixing encoding: 60.4MB [00:06, 9.08MB/s][A
+fixing encoding: 61.4MB [00:06, 9.08MB/s][A
+fixing encoding: 62.3MB [00:06, 9.08MB/s][A
+fixing encoding: 63.3MB [00:06, 9.08MB/s][A
+fixing encoding: 64.2MB [00:07, 9.09MB/s][A
+fixing encoding: 65.2MB [00:07, 9.09MB/s][A
+fixing encoding: 66.1MB [00:07, 9.10MB/s][A
+fixing encoding: 67.1MB [00:07, 9.10MB/s][A
+fixing encoding: 68.1MB [00:07, 9.11MB/s][A
+fixing encoding: 69.0MB [00:07, 9.11MB/s][A
+fixing encoding: 70.0MB [00:07, 9.11MB/s][A
+fixing encoding: 70.9MB [00:07, 9.11MB/s][A
+fixing encoding: 71.9MB [00:07, 9.11MB/s][A
+fixing encoding: 72.9MB [00:07, 9.11MB/s][A
+fixing encoding: 73.8MB [00:08, 9.12MB/s][A
+fixing encoding: 74.8MB [00:08, 9.12MB/s][A
+fixing encoding: 75.7MB [00:08, 9.12MB/s][A
+fixing encoding: 76.7MB [00:08, 9.12MB/s][A
+fixing encoding: 77.7MB [00:08, 9.12MB/s][A
+fixing encoding: 78.6MB [00:08, 9.12MB/s][A
+fixing encoding: 79.6MB [00:08, 9.12MB/s][A
+fixing encoding: 80.6MB [00:08, 9.12MB/s][A
+fixing encoding: 81.5MB [00:08, 9.12MB/s][A
+fixing encoding: 82.5MB [00:09, 9.12MB/s][A
+fixing encoding: 83.4MB [00:09, 9.12MB/s][A
+fixing encoding: 84.4MB [00:09, 9.12MB/s][A
+fixing encoding: 85.4MB [00:09, 9.12MB/s][A
+fixing encoding: 86.3MB [00:09, 9.12MB/s][A
+fixing encoding: 87.3MB [00:09, 9.13MB/s][A
+fixing encoding: 88.3MB [00:09, 9.13MB/s][A
+fixing encoding: 89.2MB [00:09, 9.13MB/s][A
+fixing encoding: 90.2MB [00:09, 9.13MB/s][A
+fixing encoding: 91.2MB [00:09, 9.13MB/s][A
+fixing encoding: 92.1MB [00:10, 9.14MB/s][A
+fixing encoding: 93.1MB [00:10, 9.14MB/s][A
+fixing encoding: 94.1MB [00:10, 9.14MB/s][A
+fixing encoding: 95.0MB [00:10, 9.14MB/s][A
+fixing encoding: 96.0MB [00:10, 9.14MB/s][A
+fixing encoding: 96.9MB [00:10, 9.15MB/s][A
+fixing encoding: 97.9MB [00:10, 9.15MB/s][A
+fixing encoding: 98.9MB [00:10, 9.15MB/s][A
+fixing encoding: 99.8MB [00:10, 9.15MB/s][A
+fixing encoding: 101MB [00:11, 9.15MB/s] [A
+fixing encoding: 102MB [00:11, 9.15MB/s][A
+fixing encoding: 103MB [00:11, 9.15MB/s][A
+fixing encoding: 104MB [00:11, 9.15MB/s][A
+fixing encoding: 105MB [00:11, 9.15MB/s][A
+fixing encoding: 106MB [00:11, 9.14MB/s][A
+fixing encoding: 107MB [00:11, 9.14MB/s][A
+fixing encoding: 108MB [00:11, 9.14MB/s][A
+fixing encoding: 109MB [00:11, 9.14MB/s][A
+fixing encoding: 110MB [00:11, 9.15MB/s][A
+fixing encoding: 110MB [00:12, 9.15MB/s][A
+fixing encoding: 111MB [00:12, 9.15MB/s][A
+fixing encoding: 112MB [00:12, 9.14MB/s][A
+fixing encoding: 113MB [00:12, 9.13MB/s][A
+fixing encoding: 114MB [00:12, 9.13MB/s][A
+fixing encoding: 115MB [00:12, 9.13MB/s][A
+fixing encoding: 116MB [00:12, 9.12MB/s][A
+fixing encoding: 117MB [00:12, 9.12MB/s][A
+fixing encoding: 118MB [00:12, 9.12MB/s][A
+fixing encoding: 119MB [00:13, 9.12MB/s][A
+fixing encoding: 120MB [00:13, 9.13MB/s][A
+fixing encoding: 121MB [00:13, 9.13MB/s][A
+fixing encoding: 122MB [00:13, 9.13MB/s][A
+fixing encoding: 123MB [00:13, 9.13MB/s][A
+fixing encoding: 124MB [00:13, 9.13MB/s][A
+fixing encoding: 125MB [00:13, 9.13MB/s][A
+fixing encoding: 126MB [00:13, 9.13MB/s][A
+fixing encoding: 127MB [00:13, 9.13MB/s][A
+fixing encoding: 128MB [00:14, 9.13MB/s][A
+fixing encoding: 129MB [00:14, 9.13MB/s][A
+fixing encoding: 130MB [00:14, 9.13MB/s][A
+fixing encoding: 131MB [00:14, 9.13MB/s][A
+fixing encoding: 132MB [00:14, 9.13MB/s][A
+fixing encoding: 133MB [00:14, 9.12MB/s][A
+fixing encoding: 134MB [00:14, 9.12MB/s][A
+fixing encoding: 135MB [00:14, 9.12MB/s][A
+fixing encoding: 136MB [00:14, 9.12MB/s][A
+fixing encoding: 137MB [00:14, 9.12MB/s][A
+fixing encoding: 138MB [00:15, 9.12MB/s][A
+fixing encoding: 139MB [00:15, 9.12MB/s][A
+fixing encoding: 140MB [00:15, 9.12MB/s][A
+fixing encoding: 141MB [00:15, 9.12MB/s][A
+fixing encoding: 142MB [00:15, 9.12MB/s][A
+fixing encoding: 143MB [00:15, 9.12MB/s][A
+fixing encoding: 144MB [00:15, 9.12MB/s][A
+fixing encoding: 145MB [00:15, 9.12MB/s][A
+fixing encoding: 145MB [00:15, 9.12MB/s][A
+fixing encoding: 146MB [00:16, 9.12MB/s][A
+fixing encoding: 147MB [00:16, 9.12MB/s][A
+fixing encoding: 148MB [00:16, 9.12MB/s][A
+fixing encoding: 149MB [00:16, 9.12MB/s][A
+fixing encoding: 150MB [00:16, 9.12MB/s][A
+fixing encoding: 151MB [00:16, 9.12MB/s][A
+fixing encoding: 152MB [00:16, 9.12MB/s][A
+fixing encoding: 153MB [00:16, 9.12MB/s][A
+fixing encoding: 154MB [00:16, 9.12MB/s][A
+fixing encoding: 155MB [00:17, 9.12MB/s][A
+fixing encoding: 156MB [00:17, 9.12MB/s][A
+fixing encoding: 157MB [00:17, 9.11MB/s][A
+fixing encoding: 158MB [00:17, 9.11MB/s][A
+fixing encoding: 159MB [00:17, 9.11MB/s][A
+fixing encoding: 160MB [00:17, 9.11MB/s][A
+fixing encoding: 161MB [00:17, 9.12MB/s][A
+fixing encoding: 162MB [00:17, 9.12MB/s][A
+fixing encoding: 163MB [00:17, 9.12MB/s][A
+fixing encoding: 164MB [00:17, 9.12MB/s][A
+fixing encoding: 165MB [00:18, 9.12MB/s][A
+fixing encoding: 166MB [00:18, 9.12MB/s][A
+fixing encoding: 167MB [00:18, 9.12MB/s][A
+fixing encoding: 168MB [00:18, 9.12MB/s][A
+fixing encoding: 169MB [00:18, 9.12MB/s][A
+fixing encoding: 170MB [00:18, 9.12MB/s][A
+fixing encoding: 171MB [00:18, 9.12MB/s][A
+fixing encoding: 172MB [00:18, 9.12MB/s][A
+fixing encoding: 173MB [00:18, 9.12MB/s][A
+fixing encoding: 174MB [00:19, 9.12MB/s][A
+fixing encoding: 175MB [00:19, 9.12MB/s][A
+fixing encoding: 176MB [00:19, 9.12MB/s][A
+fixing encoding: 177MB [00:19, 9.13MB/s][A
+fixing encoding: 178MB [00:19, 9.13MB/s][A
+fixing encoding: 179MB [00:19, 9.13MB/s][A
+fixing encoding: 180MB [00:19, 9.13MB/s][A
+fixing encoding: 181MB [00:19, 9.13MB/s][A
+fixing encoding: 182MB [00:19, 9.14MB/s][A
+fixing encoding: 183MB [00:19, 9.14MB/s][A
+fixing encoding: 184MB [00:20, 9.14MB/s][A
+fixing encoding: 185MB [00:20, 9.14MB/s][A
+fixing encoding: 186MB [00:20, 9.14MB/s][A
+fixing encoding: 187MB [00:20, 9.14MB/s][A
+fixing encoding: 188MB [00:20, 9.15MB/s][A
+fixing encoding: 189MB [00:20, 9.15MB/s][A
+fixing encoding: 190MB [00:20, 9.15MB/s][A
+fixing encoding: 191MB [00:20, 9.15MB/s][A
+fixing encoding: 192MB [00:20, 9.15MB/s][A
+fixing encoding: 193MB [00:21, 9.15MB/s][A
+fixing encoding: 194MB [00:21, 9.15MB/s][A
+fixing encoding: 194MB [00:21, 9.15MB/s][A
+fixing encoding: 195MB [00:21, 9.16MB/s][A
+fixing encoding: 196MB [00:21, 9.16MB/s][A
+fixing encoding: 197MB [00:21, 9.16MB/s][A
+fixing encoding: 198MB [00:21, 9.16MB/s][A
+fixing encoding: 199MB [00:21, 9.16MB/s][A
+fixing encoding: 200MB [00:21, 9.16MB/s][A
+fixing encoding: 201MB [00:21, 9.16MB/s][A
+fixing encoding: 202MB [00:22, 9.16MB/s][A
+fixing encoding: 203MB [00:22, 9.16MB/s][A
+fixing encoding: 204MB [00:22, 9.16MB/s][A
+fixing encoding: 205MB [00:22, 9.16MB/s][A
+fixing encoding: 206MB [00:22, 9.17MB/s][A
+fixing encoding: 207MB [00:22, 9.17MB/s][A
+fixing encoding: 208MB [00:22, 9.17MB/s][A
+fixing encoding: 209MB [00:22, 9.17MB/s][A
+fixing encoding: 210MB [00:22, 9.17MB/s][A
+fixing encoding: 211MB [00:23, 9.17MB/s][A
+fixing encoding: 212MB [00:23, 9.17MB/s][A
+fixing encoding: 213MB [00:23, 9.17MB/s][A
+fixing encoding: 214MB [00:23, 9.17MB/s][A
+fixing encoding: 215MB [00:23, 9.17MB/s][A
+fixing encoding: 216MB [00:23, 9.17MB/s][A
+fixing encoding: 217MB [00:23, 9.17MB/s][A
+fixing encoding: 218MB [00:23, 9.17MB/s][A
+fixing encoding: 219MB [00:23, 9.18MB/s][A
+fixing encoding: 220MB [00:23, 9.17MB/s][A
+fixing encoding: 221MB [00:24, 9.17MB/s][A
+fixing encoding: 222MB [00:24, 9.18MB/s][A
+fixing encoding: 223MB [00:24, 9.18MB/s][A
+fixing encoding: 224MB [00:24, 9.18MB/s][A
+fixing encoding: 225MB [00:24, 9.18MB/s][A
+fixing encoding: 226MB [00:24, 9.18MB/s][A
+fixing encoding: 227MB [00:24, 9.18MB/s][A
+fixing encoding: 228MB [00:24, 9.18MB/s][A
+fixing encoding: 229MB [00:24, 9.17MB/s][A
+fixing encoding: 230MB [00:25, 9.17MB/s][A
+fixing encoding: 231MB [00:25, 9.17MB/s][A
+fixing encoding: 232MB [00:25, 9.17MB/s][A
+fixing encoding: 233MB [00:25, 9.17MB/s][A
+fixing encoding: 234MB [00:25, 9.17MB/s][A
+fixing encoding: 235MB [00:25, 9.17MB/s][A
+fixing encoding: 236MB [00:25, 9.17MB/s][A
+fixing encoding: 237MB [00:25, 9.17MB/s][A
+fixing encoding: 238MB [00:25, 9.17MB/s][A
+fixing encoding: 239MB [00:26, 9.17MB/s][A
+fixing encoding: 240MB [00:26, 9.17MB/s][A
+fixing encoding: 241MB [00:26, 9.17MB/s][A
+fixing encoding: 242MB [00:26, 9.17MB/s][A
+fixing encoding: 243MB [00:26, 9.17MB/s][A
+fixing encoding: 244MB [00:26, 9.17MB/s][A
+fixing encoding: 245MB [00:26, 9.17MB/s][A
+fixing encoding: 246MB [00:26, 9.17MB/s][A
+fixing encoding: 247MB [00:26, 9.17MB/s][A
+fixing encoding: 248MB [00:27, 9.17MB/s][A
+fixing encoding: 249MB [00:27, 9.17MB/s][A
+fixing encoding: 250MB [00:27, 9.17MB/s][A
+fixing encoding: 251MB [00:27, 9.17MB/s][A
+fixing encoding: 252MB [00:27, 9.17MB/s][A
+fixing encoding: 253MB [00:27, 9.17MB/s][A
+fixing encoding: 254MB [00:27, 9.17MB/s][A
+fixing encoding: 255MB [00:27, 9.17MB/s][A
+fixing encoding: 256MB [00:27, 9.17MB/s][A
+fixing encoding: 257MB [00:28, 9.17MB/s][A
+fixing encoding: 258MB [00:28, 9.17MB/s][A
+fixing encoding: 259MB [00:28, 9.17MB/s][A
+fixing encoding: 260MB [00:28, 9.17MB/s][A
+fixing encoding: 261MB [00:28, 9.17MB/s][A
+fixing encoding: 262MB [00:28, 9.17MB/s][A
+fixing encoding: 263MB [00:28, 9.16MB/s][A
+fixing encoding: 264MB [00:28, 9.17MB/s][A
+fixing encoding: 265MB [00:28, 9.17MB/s][A
+fixing encoding: 266MB [00:29, 9.17MB/s][A
+fixing encoding: 267MB [00:29, 9.17MB/s][A
+fixing encoding: 268MB [00:29, 9.17MB/s][A
+fixing encoding: 269MB [00:29, 9.17MB/s][A
+fixing encoding: 270MB [00:29, 9.17MB/s][A
+fixing encoding: 271MB [00:29, 9.17MB/s][A
+fixing encoding: 272MB [00:29, 9.17MB/s][A
+fixing encoding: 273MB [00:29, 9.17MB/s][A
+fixing encoding: 274MB [00:29, 9.17MB/s][A
+fixing encoding: 275MB [00:29, 9.17MB/s][A
+fixing encoding: 276MB [00:30, 9.17MB/s][A
+fixing encoding: 277MB [00:30, 9.17MB/s][A
+fixing encoding: 278MB [00:30, 9.17MB/s][A
+fixing encoding: 279MB [00:30, 9.17MB/s][A
+fixing encoding: 280MB [00:30, 9.17MB/s][A
+fixing encoding: 281MB [00:30, 9.17MB/s][A
+fixing encoding: 282MB [00:30, 9.17MB/s][A
+fixing encoding: 283MB [00:30, 9.18MB/s][A
+fixing encoding: 284MB [00:30, 9.18MB/s][A
+fixing encoding: 285MB [00:31, 9.18MB/s][A
+fixing encoding: 286MB [00:31, 9.18MB/s][A
+fixing encoding: 287MB [00:31, 9.18MB/s][A
+fixing encoding: 288MB [00:31, 9.18MB/s][A
+fixing encoding: 289MB [00:31, 9.18MB/s][A
+fixing encoding: 290MB [00:31, 9.18MB/s][A
+fixing encoding: 291MB [00:31, 9.18MB/s][A
+fixing encoding: 292MB [00:31, 9.19MB/s][A
+fixing encoding: 293MB [00:31, 9.19MB/s][A
+fixing encoding: 294MB [00:31, 9.19MB/s][A
+fixing encoding: 295MB [00:32, 9.19MB/s][A
+fixing encoding: 296MB [00:32, 9.19MB/s][A
+fixing encoding: 297MB [00:32, 9.19MB/s][A
+fixing encoding: 298MB [00:32, 9.19MB/s][A
+fixing encoding: 299MB [00:32, 9.19MB/s][A
+fixing encoding: 300MB [00:32, 9.19MB/s][A
+fixing encoding: 301MB [00:32, 9.19MB/s][A
+fixing encoding: 302MB [00:32, 9.19MB/s][A
+fixing encoding: 303MB [00:33, 9.15MB/s][A
+fixing encoding: 304MB [00:33, 9.15MB/s][A
+fixing encoding: 305MB [00:33, 9.15MB/s][A
+fixing encoding: 306MB [00:33, 9.15MB/s][A
+fixing encoding: 307MB [00:33, 9.15MB/s][A
+fixing encoding: 308MB [00:33, 9.15MB/s][A
+fixing encoding: 309MB [00:33, 9.15MB/s][A
+fixing encoding: 310MB [00:33, 9.15MB/s][A
+fixing encoding: 311MB [00:33, 9.15MB/s][A
+fixing encoding: 312MB [00:34, 9.15MB/s][A
+fixing encoding: 313MB [00:34, 9.15MB/s][A
+fixing encoding: 314MB [00:34, 9.15MB/s][A
+fixing encoding: 315MB [00:34, 9.15MB/s][A
+fixing encoding: 316MB [00:34, 9.15MB/s][A
+fixing encoding: 317MB [00:34, 9.15MB/s][A
+fixing encoding: 318MB [00:34, 9.15MB/s][A
+fixing encoding: 319MB [00:34, 9.15MB/s][A
+fixing encoding: 320MB [00:34, 9.15MB/s][A
+fixing encoding: 321MB [00:35, 9.15MB/s][A
+fixing encoding: 322MB [00:35, 9.15MB/s][A
+fixing encoding: 323MB [00:35, 9.15MB/s][A
+fixing encoding: 324MB [00:35, 9.15MB/s][A
+fixing encoding: 325MB [00:35, 9.15MB/s][A
+fixing encoding: 326MB [00:35, 9.15MB/s][A
+fixing encoding: 327MB [00:35, 9.15MB/s][A
+fixing encoding: 328MB [00:35, 9.16MB/s][A
+fixing encoding: 329MB [00:35, 9.16MB/s][A
+fixing encoding: 330MB [00:36, 9.16MB/s][A
+fixing encoding: 331MB [00:36, 9.16MB/s][A
+fixing encoding: 332MB [00:36, 9.16MB/s][A
+fixing encoding: 333MB [00:36, 9.16MB/s][A
+fixing encoding: 334MB [00:36, 9.16MB/s][A
+fixing encoding: 335MB [00:36, 9.16MB/s][A
+fixing encoding: 336MB [00:36, 9.16MB/s][A
+fixing encoding: 337MB [00:36, 9.16MB/s][A
+fixing encoding: 338MB [00:36, 9.16MB/s][A
+fixing encoding: 339MB [00:37, 9.16MB/s][A
+fixing encoding: 340MB [00:37, 9.16MB/s][A
+fixing encoding: 341MB [00:37, 9.16MB/s][A
+fixing encoding: 342MB [00:37, 9.16MB/s][A
+fixing encoding: 343MB [00:37, 9.16MB/s][A
+fixing encoding: 344MB [00:37, 9.16MB/s][A
+fixing encoding: 345MB [00:37, 9.16MB/s][A
+fixing encoding: 346MB [00:37, 9.16MB/s][A
+fixing encoding: 347MB [00:37, 9.16MB/s][A
+fixing encoding: 349MB [00:38, 9.16MB/s][A
+fixing encoding: 350MB [00:38, 9.16MB/s][A
+fixing encoding: 351MB [00:38, 9.16MB/s][A
+fixing encoding: 352MB [00:38, 9.16MB/s][A
+fixing encoding: 353MB [00:38, 9.16MB/s][A
+fixing encoding: 354MB [00:38, 9.16MB/s][A
+fixing encoding: 355MB [00:38, 9.16MB/s][A
+fixing encoding: 356MB [00:38, 9.17MB/s][A
+fixing encoding: 357MB [00:38, 9.17MB/s][A
+fixing encoding: 358MB [00:39, 9.17MB/s][A
+fixing encoding: 359MB [00:39, 9.16MB/s][A
+fixing encoding: 360MB [00:39, 9.17MB/s][A
+fixing encoding: 361MB [00:39, 9.17MB/s][A
+fixing encoding: 362MB [00:39, 9.17MB/s][A
+fixing encoding: 363MB [00:39, 9.17MB/s][A
+fixing encoding: 364MB [00:39, 9.17MB/s][A
+fixing encoding: 365MB [00:39, 9.17MB/s][A
+fixing encoding: 366MB [00:39, 9.17MB/s][A
+fixing encoding: 367MB [00:40, 9.17MB/s][A
+fixing encoding: 368MB [00:40, 9.17MB/s][A
+fixing encoding: 369MB [00:40, 9.17MB/s][A
+fixing encoding: 370MB [00:40, 9.17MB/s][A
+fixing encoding: 371MB [00:40, 9.17MB/s][A
+fixing encoding: 372MB [00:40, 9.17MB/s][A
+fixing encoding: 373MB [00:40, 9.17MB/s][A
+fixing encoding: 374MB [00:40, 9.17MB/s][A
+fixing encoding: 375MB [00:40, 9.17MB/s][A
+fixing encoding: 376MB [00:41, 9.17MB/s][A
+fixing encoding: 377MB [00:41, 9.17MB/s][A
+fixing encoding: 378MB [00:41, 9.17MB/s][A
+fixing encoding: 379MB [00:41, 9.17MB/s][A
+fixing encoding: 380MB [00:41, 9.17MB/s][A
+fixing encoding: 381MB [00:41, 9.17MB/s][A
+fixing encoding: 382MB [00:41, 9.17MB/s][A
+fixing encoding: 383MB [00:41, 9.17MB/s][A
+fixing encoding: 384MB [00:41, 9.17MB/s][A
+fixing encoding: 385MB [00:42, 9.17MB/s][A
+fixing encoding: 386MB [00:42, 9.17MB/s][A
+fixing encoding: 387MB [00:42, 9.17MB/s][A
+fixing encoding: 388MB [00:42, 9.17MB/s][A
+fixing encoding: 389MB [00:42, 9.17MB/s][A
+fixing encoding: 390MB [00:42, 9.17MB/s][A
+fixing encoding: 391MB [00:42, 9.17MB/s][A
+fixing encoding: 392MB [00:42, 9.17MB/s][A
+fixing encoding: 393MB [00:42, 9.16MB/s][A
+fixing encoding: 394MB [00:43, 9.16MB/s][A
+fixing encoding: 396MB [00:43, 9.17MB/s][A
+fixing encoding: 397MB [00:43, 9.17MB/s][A
+fixing encoding: 398MB [00:43, 9.17MB/s][A
+fixing encoding: 399MB [00:43, 9.17MB/s][A
+fixing encoding: 400MB [00:43, 9.17MB/s][A
+fixing encoding: 401MB [00:43, 9.17MB/s][A
+fixing encoding: 402MB [00:43, 9.17MB/s][A
+fixing encoding: 403MB [00:43, 9.17MB/s][A
+fixing encoding: 404MB [00:44, 9.17MB/s][A
+fixing encoding: 405MB [00:44, 9.17MB/s][A
+fixing encoding: 406MB [00:44, 9.17MB/s][A
+fixing encoding: 407MB [00:44, 9.17MB/s][A
+fixing encoding: 408MB [00:44, 9.17MB/s][A
+fixing encoding: 409MB [00:44, 9.18MB/s][A
+fixing encoding: 410MB [00:44, 9.18MB/s][A
+fixing encoding: 411MB [00:44, 9.18MB/s][A
+fixing encoding: 412MB [00:44, 9.18MB/s][A
+fixing encoding: 413MB [00:44, 9.18MB/s][A
+fixing encoding: 414MB [00:45, 9.18MB/s][A
+fixing encoding: 415MB [00:45, 9.18MB/s][A
+fixing encoding: 416MB [00:45, 9.18MB/s][A
+fixing encoding: 417MB [00:45, 9.18MB/s][A
+fixing encoding: 418MB [00:45, 9.18MB/s][A
+fixing encoding: 419MB [00:45, 9.19MB/s][A
+fixing encoding: 420MB [00:45, 9.19MB/s][A
+fixing encoding: 421MB [00:45, 9.19MB/s][A
+fixing encoding: 422MB [00:45, 9.19MB/s][A
+fixing encoding: 423MB [00:46, 9.19MB/s][A
+fixing encoding: 424MB [00:46, 9.19MB/s][A
+fixing encoding: 425MB [00:46, 9.19MB/s][A
+fixing encoding: 426MB [00:46, 9.19MB/s][A
+fixing encoding: 427MB [00:46, 9.19MB/s][A
+fixing encoding: 429MB [00:46, 9.19MB/s][A
+fixing encoding: 430MB [00:46, 9.19MB/s][A
+fixing encoding: 431MB [00:46, 9.19MB/s][A
+fixing encoding: 432MB [00:46, 9.19MB/s][A
+fixing encoding: 433MB [00:47, 9.19MB/s][A
+fixing encoding: 434MB [00:47, 9.19MB/s][A
+fixing encoding: 435MB [00:47, 9.19MB/s][A
+fixing encoding: 436MB [00:47, 9.19MB/s][A
+fixing encoding: 437MB [00:47, 9.19MB/s][A
+fixing encoding: 438MB [00:47, 9.19MB/s][A
+fixing encoding: 439MB [00:47, 9.19MB/s][A
+fixing encoding: 440MB [00:47, 9.20MB/s][A
+fixing encoding: 441MB [00:47, 9.20MB/s][A
+fixing encoding: 442MB [00:48, 9.20MB/s][A
+fixing encoding: 443MB [00:48, 9.20MB/s][A
+fixing encoding: 444MB [00:48, 9.20MB/s][A
+fixing encoding: 445MB [00:48, 9.20MB/s][A
+fixing encoding: 446MB [00:48, 9.20MB/s][A
+fixing encoding: 447MB [00:48, 9.20MB/s][A
+fixing encoding: 448MB [00:48, 9.20MB/s][A
+fixing encoding: 449MB [00:48, 9.20MB/s][A
+fixing encoding: 450MB [00:48, 9.20MB/s][A
+fixing encoding: 451MB [00:49, 9.20MB/s][A
+fixing encoding: 452MB [00:49, 9.20MB/s][A
+fixing encoding: 453MB [00:49, 9.20MB/s][A
+fixing encoding: 454MB [00:49, 9.21MB/s][A
+fixing encoding: 455MB [00:49, 9.21MB/s][A
+fixing encoding: 457MB [00:49, 9.21MB/s][A
+fixing encoding: 458MB [00:49, 9.21MB/s][A
+fixing encoding: 459MB [00:49, 9.21MB/s][A
+fixing encoding: 460MB [00:49, 9.21MB/s][A
+fixing encoding: 461MB [00:50, 9.21MB/s][A
+fixing encoding: 462MB [00:50, 9.21MB/s][A
+fixing encoding: 463MB [00:50, 9.21MB/s][A
+fixing encoding: 464MB [00:50, 9.21MB/s][A
+fixing encoding: 465MB [00:50, 9.21MB/s][A
+fixing encoding: 466MB [00:50, 9.21MB/s][A
+fixing encoding: 467MB [00:50, 9.21MB/s][A
+fixing encoding: 468MB [00:50, 9.21MB/s][A
+fixing encoding: 469MB [00:50, 9.21MB/s][A
+fixing encoding: 470MB [00:51, 9.21MB/s][A
+fixing encoding: 471MB [00:51, 9.21MB/s][A
+fixing encoding: 472MB [00:51, 9.21MB/s][A
+fixing encoding: 473MB [00:51, 9.21MB/s][A
+fixing encoding: 474MB [00:51, 9.21MB/s][A
+fixing encoding: 475MB [00:51, 9.21MB/s][A
+fixing encoding: 476MB [00:51, 9.21MB/s][A
+fixing encoding: 477MB [00:51, 9.21MB/s][A
+fixing encoding: 478MB [00:51, 9.21MB/s][A
+fixing encoding: 479MB [00:52, 9.22MB/s][A
+fixing encoding: 480MB [00:52, 9.22MB/s][A
+fixing encoding: 482MB [00:52, 9.22MB/s][A
+fixing encoding: 483MB [00:52, 9.22MB/s][A
+fixing encoding: 484MB [00:52, 9.22MB/s][A
+fixing encoding: 485MB [00:52, 9.22MB/s][A
+fixing encoding: 486MB [00:52, 9.22MB/s][A
+fixing encoding: 487MB [00:52, 9.22MB/s][A
+fixing encoding: 488MB [00:52, 9.22MB/s][A
+fixing encoding: 489MB [00:53, 9.22MB/s][A
+fixing encoding: 490MB [00:53, 9.22MB/s][A
+fixing encoding: 491MB [00:53, 9.22MB/s][A
+fixing encoding: 492MB [00:53, 9.22MB/s][A
+fixing encoding: 493MB [00:53, 9.22MB/s][A
+fixing encoding: 494MB [00:53, 9.22MB/s][A
+fixing encoding: 495MB [00:53, 9.22MB/s][A
+fixing encoding: 496MB [00:53, 9.22MB/s][A
+fixing encoding: 497MB [00:53, 9.22MB/s][A
+fixing encoding: 498MB [00:54, 9.22MB/s][A
+fixing encoding: 499MB [00:54, 9.23MB/s][A
+fixing encoding: 500MB [00:54, 9.23MB/s][A
+fixing encoding: 501MB [00:54, 9.23MB/s][A
+fixing encoding: 502MB [00:54, 9.23MB/s][A
+fixing encoding: 504MB [00:54, 9.23MB/s][A
+fixing encoding: 505MB [00:54, 9.23MB/s][A
+fixing encoding: 506MB [00:54, 9.23MB/s][A
+fixing encoding: 507MB [00:54, 9.23MB/s][A
+fixing encoding: 508MB [00:55, 9.23MB/s][A
+fixing encoding: 509MB [00:55, 9.23MB/s][A
+fixing encoding: 510MB [00:55, 9.23MB/s][A
+fixing encoding: 511MB [00:55, 9.23MB/s][A
+fixing encoding: 512MB [00:55, 9.23MB/s][A
+fixing encoding: 513MB [00:55, 9.23MB/s][A
+fixing encoding: 514MB [00:55, 9.23MB/s][A
+fixing encoding: 515MB [00:55, 9.23MB/s][A
+fixing encoding: 516MB [00:55, 9.23MB/s][A
+fixing encoding: 517MB [00:56, 9.23MB/s][A
+fixing encoding: 518MB [00:56, 9.23MB/s][A
+fixing encoding: 519MB [00:56, 9.23MB/s][A
+fixing encoding: 520MB [00:56, 9.23MB/s][A
+fixing encoding: 521MB [00:56, 9.23MB/s][A
+fixing encoding: 522MB [00:56, 9.23MB/s][A
+fixing encoding: 524MB [00:56, 9.23MB/s][A
+fixing encoding: 525MB [00:56, 9.23MB/s][A
+fixing encoding: 526MB [00:56, 9.23MB/s][A
+fixing encoding: 527MB [00:57, 9.23MB/s][A
+fixing encoding: 528MB [00:57, 9.23MB/s][A
+fixing encoding: 529MB [00:57, 9.23MB/s][A
+fixing encoding: 530MB [00:57, 9.23MB/s][A
+fixing encoding: 531MB [00:57, 9.23MB/s][A
+fixing encoding: 532MB [00:57, 9.23MB/s][A
+fixing encoding: 533MB [00:57, 9.23MB/s][A
+fixing encoding: 534MB [00:57, 9.23MB/s][A
+fixing encoding: 535MB [00:57, 9.23MB/s][A
+fixing encoding: 536MB [00:58, 9.23MB/s][A
+fixing encoding: 537MB [00:58, 9.23MB/s][A
+fixing encoding: 538MB [00:58, 9.23MB/s][A
+fixing encoding: 539MB [00:58, 9.23MB/s][A
+fixing encoding: 540MB [00:58, 9.23MB/s][A
+fixing encoding: 541MB [00:58, 9.23MB/s][A
+fixing encoding: 543MB [00:58, 9.23MB/s][A
+fixing encoding: 544MB [00:58, 9.23MB/s][A
+fixing encoding: 545MB [00:59, 9.23MB/s][A
+fixing encoding: 546MB [00:59, 9.23MB/s][A
+fixing encoding: 547MB [00:59, 9.23MB/s][A
+fixing encoding: 548MB [00:59, 9.23MB/s][A
+fixing encoding: 549MB [00:59, 9.23MB/s][A
+fixing encoding: 550MB [00:59, 9.23MB/s][A
+fixing encoding: 551MB [00:59, 9.23MB/s][A
+fixing encoding: 552MB [00:59, 9.23MB/s][A
+fixing encoding: 553MB [00:59, 9.23MB/s][A
+fixing encoding: 554MB [01:00, 9.23MB/s][A
+fixing encoding: 555MB [01:00, 9.23MB/s][A
+fixing encoding: 556MB [01:00, 9.23MB/s][A
+fixing encoding: 557MB [01:00, 9.23MB/s][A
+fixing encoding: 558MB [01:00, 9.23MB/s][A
+fixing encoding: 559MB [01:00, 9.23MB/s][A
+fixing encoding: 561MB [01:00, 9.23MB/s][A
+fixing encoding: 562MB [01:00, 9.23MB/s][A
+fixing encoding: 563MB [01:00, 9.23MB/s][A
+fixing encoding: 564MB [01:01, 9.24MB/s][A
+fixing encoding: 565MB [01:01, 9.24MB/s][A
+fixing encoding: 566MB [01:01, 9.24MB/s][A
+fixing encoding: 567MB [01:01, 9.24MB/s][A
+fixing encoding: 568MB [01:01, 9.24MB/s][A
+fixing encoding: 569MB [01:01, 9.24MB/s][A
+fixing encoding: 570MB [01:01, 9.24MB/s][A
+fixing encoding: 571MB [01:01, 9.24MB/s][A
+fixing encoding: 572MB [01:01, 9.24MB/s][A
+fixing encoding: 573MB [01:02, 9.24MB/s][A
+fixing encoding: 574MB [01:02, 9.24MB/s][A
+fixing encoding: 575MB [01:02, 9.24MB/s][A
+fixing encoding: 576MB [01:02, 9.24MB/s][A
+fixing encoding: 577MB [01:02, 9.24MB/s][A
+fixing encoding: 579MB [01:02, 9.24MB/s][A
+fixing encoding: 580MB [01:02, 9.24MB/s][A
+fixing encoding: 581MB [01:02, 9.24MB/s][A
+fixing encoding: 582MB [01:02, 9.24MB/s][A
+fixing encoding: 583MB [01:03, 9.24MB/s][A
+fixing encoding: 584MB [01:03, 9.24MB/s][A
+fixing encoding: 585MB [01:03, 9.24MB/s][A
+fixing encoding: 586MB [01:03, 9.24MB/s][A
+fixing encoding: 587MB [01:03, 9.24MB/s][A
+fixing encoding: 588MB [01:03, 9.24MB/s][A
+fixing encoding: 589MB [01:03, 9.24MB/s][A
+fixing encoding: 590MB [01:03, 9.24MB/s][A
+fixing encoding: 591MB [01:03, 9.24MB/s][A
+fixing encoding: 592MB [01:04, 9.24MB/s][A
+fixing encoding: 593MB [01:04, 9.24MB/s][A
+fixing encoding: 595MB [01:04, 9.24MB/s][A
+fixing encoding: 596MB [01:04, 9.24MB/s][A
+fixing encoding: 597MB [01:04, 9.24MB/s][A
+fixing encoding: 598MB [01:04, 9.24MB/s][A
+fixing encoding: 599MB [01:04, 9.24MB/s][A
+fixing encoding: 600MB [01:04, 9.24MB/s][A
+fixing encoding: 601MB [01:05, 9.24MB/s][A
+fixing encoding: 602MB [01:05, 9.24MB/s][A
+fixing encoding: 603MB [01:05, 9.24MB/s][A
+fixing encoding: 604MB [01:05, 9.24MB/s][A
+fixing encoding: 605MB [01:05, 9.24MB/s][A
+fixing encoding: 606MB [01:05, 9.24MB/s][A
+fixing encoding: 607MB [01:05, 9.24MB/s][A
+fixing encoding: 608MB [01:05, 9.24MB/s][A
+fixing encoding: 609MB [01:05, 9.24MB/s][A
+fixing encoding: 611MB [01:06, 9.24MB/s][A
+fixing encoding: 612MB [01:06, 9.24MB/s][A
+fixing encoding: 613MB [01:06, 9.24MB/s][A
+fixing encoding: 614MB [01:06, 9.24MB/s][A
+fixing encoding: 615MB [01:06, 9.24MB/s][A
+fixing encoding: 616MB [01:06, 9.24MB/s][A
+fixing encoding: 617MB [01:06, 9.24MB/s][A
+fixing encoding: 618MB [01:06, 9.24MB/s][A
+fixing encoding: 619MB [01:07, 9.24MB/s][A
+fixing encoding: 620MB [01:07, 9.24MB/s][A
+fixing encoding: 621MB [01:07, 9.24MB/s][A
+fixing encoding: 622MB [01:07, 9.24MB/s][A
+fixing encoding: 623MB [01:07, 9.24MB/s][A
+fixing encoding: 624MB [01:07, 9.24MB/s][A
+fixing encoding: 626MB [01:07, 9.24MB/s][A
+fixing encoding: 627MB [01:07, 9.24MB/s][A
+fixing encoding: 628MB [01:07, 9.24MB/s][A
+fixing encoding: 629MB [01:08, 9.24MB/s][A
+fixing encoding: 630MB [01:08, 9.24MB/s][A
+fixing encoding: 631MB [01:08, 9.24MB/s][A
+fixing encoding: 632MB [01:08, 9.24MB/s][A
+fixing encoding: 633MB [01:08, 9.24MB/s][A
+fixing encoding: 634MB [01:08, 9.24MB/s][A
+fixing encoding: 635MB [01:08, 9.24MB/s][A
+fixing encoding: 636MB [01:08, 9.24MB/s][A
+fixing encoding: 637MB [01:08, 9.24MB/s][A
+fixing encoding: 638MB [01:09, 9.24MB/s][A
+fixing encoding: 639MB [01:09, 9.24MB/s][A
+fixing encoding: 641MB [01:09, 9.24MB/s][A
+fixing encoding: 642MB [01:09, 9.24MB/s][A
+fixing encoding: 643MB [01:09, 9.24MB/s][A
+fixing encoding: 644MB [01:09, 9.24MB/s][A
+fixing encoding: 645MB [01:09, 9.24MB/s][A
+fixing encoding: 646MB [01:09, 9.24MB/s][A
+fixing encoding: 647MB [01:10, 9.24MB/s][A
+fixing encoding: 648MB [01:10, 9.24MB/s][A
+fixing encoding: 649MB [01:10, 9.23MB/s][A
+fixing encoding: 650MB [01:10, 9.23MB/s][A
+fixing encoding: 651MB [01:10, 9.24MB/s][A
+fixing encoding: 652MB [01:10, 9.23MB/s][A
+fixing encoding: 653MB [01:10, 9.23MB/s][A
+fixing encoding: 655MB [01:10, 9.23MB/s][A
+fixing encoding: 656MB [01:10, 9.23MB/s][A
+fixing encoding: 657MB [01:11, 9.24MB/s][A
+fixing encoding: 658MB [01:11, 9.24MB/s][A
+fixing encoding: 659MB [01:11, 9.24MB/s][A
+fixing encoding: 660MB [01:11, 9.24MB/s][A
+fixing encoding: 661MB [01:11, 9.24MB/s][A
+fixing encoding: 662MB [01:11, 9.24MB/s][A
+fixing encoding: 663MB [01:11, 9.23MB/s][A
+fixing encoding: 664MB [01:11, 9.23MB/s][A
+fixing encoding: 665MB [01:12, 9.23MB/s][A
+fixing encoding: 666MB [01:12, 9.23MB/s][A
+fixing encoding: 667MB [01:12, 9.23MB/s][A
+fixing encoding: 669MB [01:12, 9.23MB/s][A
+fixing encoding: 670MB [01:12, 9.23MB/s][A
+fixing encoding: 671MB [01:12, 9.23MB/s][A
+fixing encoding: 672MB [01:12, 9.23MB/s][A
+fixing encoding: 673MB [01:12, 9.23MB/s][A
+fixing encoding: 674MB [01:12, 9.23MB/s][A
+fixing encoding: 675MB [01:13, 9.23MB/s][A
+fixing encoding: 676MB [01:13, 9.23MB/s][A
+fixing encoding: 677MB [01:13, 9.23MB/s][A
+fixing encoding: 678MB [01:13, 9.23MB/s][A
+fixing encoding: 679MB [01:13, 9.23MB/s][A
+fixing encoding: 680MB [01:13, 9.23MB/s][A
+fixing encoding: 681MB [01:13, 9.23MB/s][A
+fixing encoding: 683MB [01:13, 9.23MB/s][A
+fixing encoding: 684MB [01:14, 9.23MB/s][A
+fixing encoding: 685MB [01:14, 9.23MB/s][A
+fixing encoding: 686MB [01:14, 9.23MB/s][A
+fixing encoding: 687MB [01:14, 9.23MB/s][A
+fixing encoding: 688MB [01:14, 9.23MB/s][A
+fixing encoding: 689MB [01:14, 9.23MB/s][A
+fixing encoding: 690MB [01:14, 9.23MB/s][A
+fixing encoding: 691MB [01:14, 9.23MB/s][A
+fixing encoding: 692MB [01:14, 9.23MB/s][A
+fixing encoding: 693MB [01:15, 9.23MB/s][A
+fixing encoding: 694MB [01:15, 9.23MB/s][A
+fixing encoding: 696MB [01:15, 9.23MB/s][A
+fixing encoding: 697MB [01:15, 9.23MB/s][A
+fixing encoding: 698MB [01:15, 9.23MB/s][A
+fixing encoding: 699MB [01:15, 9.23MB/s][A
+fixing encoding: 700MB [01:15, 9.23MB/s][A
+fixing encoding: 701MB [01:15, 9.23MB/s][A
+fixing encoding: 702MB [01:16, 9.23MB/s][A
+fixing encoding: 703MB [01:16, 9.23MB/s][A
+fixing encoding: 704MB [01:16, 9.23MB/s][A
+fixing encoding: 705MB [01:16, 9.23MB/s][A
+fixing encoding: 706MB [01:16, 9.23MB/s][A
+fixing encoding: 707MB [01:16, 9.23MB/s][A
+fixing encoding: 709MB [01:16, 9.23MB/s][A
+fixing encoding: 710MB [01:16, 9.23MB/s][A
+fixing encoding: 711MB [01:16, 9.23MB/s][A
+fixing encoding: 712MB [01:17, 9.23MB/s][A
+fixing encoding: 713MB [01:17, 9.23MB/s][A
+fixing encoding: 714MB [01:17, 9.23MB/s][A
+fixing encoding: 715MB [01:17, 9.23MB/s][A
+fixing encoding: 716MB [01:17, 9.23MB/s][A
+fixing encoding: 717MB [01:17, 9.23MB/s][A
+fixing encoding: 718MB [01:17, 9.23MB/s][A
+fixing encoding: 719MB [01:17, 9.23MB/s][A
+fixing encoding: 721MB [01:18, 9.23MB/s][A
+fixing encoding: 722MB [01:18, 9.23MB/s][A
+fixing encoding: 723MB [01:18, 9.23MB/s][A
+fixing encoding: 724MB [01:18, 9.23MB/s][A
+fixing encoding: 725MB [01:18, 9.23MB/s][A
+fixing encoding: 726MB [01:18, 9.23MB/s][A
+fixing encoding: 727MB [01:18, 9.23MB/s][A
+fixing encoding: 728MB [01:18, 9.23MB/s][A
+fixing encoding: 729MB [01:18, 9.23MB/s][A
+fixing encoding: 730MB [01:19, 9.23MB/s][A
+fixing encoding: 731MB [01:19, 9.23MB/s][A
+fixing encoding: 733MB [01:19, 9.23MB/s][A
+fixing encoding: 734MB [01:19, 9.24MB/s][A
+fixing encoding: 735MB [01:19, 9.24MB/s][A
+fixing encoding: 736MB [01:19, 9.24MB/s][A
+fixing encoding: 737MB [01:19, 9.24MB/s][A
+fixing encoding: 738MB [01:19, 9.24MB/s][A
+fixing encoding: 739MB [01:20, 9.24MB/s][A
+fixing encoding: 740MB [01:20, 9.23MB/s][A
+fixing encoding: 741MB [01:20, 9.23MB/s][A
+fixing encoding: 742MB [01:20, 9.23MB/s][A
+fixing encoding: 743MB [01:20, 9.24MB/s][A
+fixing encoding: 745MB [01:20, 9.24MB/s][A
+fixing encoding: 746MB [01:20, 9.24MB/s][A
+fixing encoding: 747MB [01:20, 9.24MB/s][A
+fixing encoding: 748MB [01:20, 9.24MB/s][A
+fixing encoding: 749MB [01:21, 9.24MB/s][A
+fixing encoding: 750MB [01:21, 9.24MB/s][A
+fixing encoding: 751MB [01:21, 9.24MB/s][A
+fixing encoding: 752MB [01:21, 9.24MB/s][A
+fixing encoding: 753MB [01:21, 9.24MB/s][A
+fixing encoding: 754MB [01:21, 9.24MB/s][A
+fixing encoding: 755MB [01:21, 9.24MB/s][A
+fixing encoding: 757MB [01:21, 9.24MB/s][A
+fixing encoding: 758MB [01:22, 9.24MB/s][A
+fixing encoding: 759MB [01:22, 9.24MB/s][A
+fixing encoding: 760MB [01:22, 9.24MB/s][A
+fixing encoding: 761MB [01:22, 9.24MB/s][A
+fixing encoding: 762MB [01:22, 9.24MB/s][A
+fixing encoding: 763MB [01:22, 9.24MB/s][A
+fixing encoding: 764MB [01:22, 9.24MB/s][A
+fixing encoding: 765MB [01:22, 9.24MB/s][A
+fixing encoding: 766MB [01:22, 9.24MB/s][A
+fixing encoding: 768MB [01:23, 9.24MB/s][A
+fixing encoding: 769MB [01:23, 9.24MB/s][A
+fixing encoding: 770MB [01:23, 9.24MB/s][A
+fixing encoding: 771MB [01:23, 9.24MB/s][A
+fixing encoding: 772MB [01:23, 9.24MB/s][A
+fixing encoding: 773MB [01:23, 9.24MB/s][A
+fixing encoding: 774MB [01:23, 9.24MB/s][A
+fixing encoding: 775MB [01:23, 9.24MB/s][A
+fixing encoding: 776MB [01:24, 9.24MB/s][A
+fixing encoding: 777MB [01:24, 9.24MB/s][A
+fixing encoding: 778MB [01:24, 9.24MB/s][A
+fixing encoding: 780MB [01:24, 9.24MB/s][A
+fixing encoding: 781MB [01:24, 9.24MB/s][A
+fixing encoding: 782MB [01:24, 9.24MB/s][A
+fixing encoding: 783MB [01:24, 9.24MB/s][A
+fixing encoding: 784MB [01:24, 9.24MB/s][A
+fixing encoding: 785MB [01:24, 9.24MB/s][A
+fixing encoding: 786MB [01:25, 9.24MB/s][A
+fixing encoding: 787MB [01:25, 9.24MB/s][A
+fixing encoding: 788MB [01:25, 9.24MB/s][A
+fixing encoding: 789MB [01:25, 9.24MB/s][A
+fixing encoding: 791MB [01:25, 9.24MB/s][A
+fixing encoding: 792MB [01:25, 9.24MB/s][A
+fixing encoding: 793MB [01:25, 9.24MB/s][A
+fixing encoding: 794MB [01:25, 9.24MB/s][A
+fixing encoding: 795MB [01:26, 9.24MB/s][A
+fixing encoding: 796MB [01:26, 9.24MB/s][A
+fixing encoding: 797MB [01:26, 9.24MB/s][A
+fixing encoding: 798MB [01:26, 9.24MB/s][A
+fixing encoding: 799MB [01:26, 9.24MB/s][A
+fixing encoding: 801MB [01:26, 9.24MB/s][A
+fixing encoding: 802MB [01:26, 9.24MB/s][A
+fixing encoding: 803MB [01:26, 9.24MB/s][A
+fixing encoding: 804MB [01:26, 9.24MB/s][A
+fixing encoding: 805MB [01:27, 9.24MB/s][A
+fixing encoding: 806MB [01:27, 9.24MB/s][A
+fixing encoding: 807MB [01:27, 9.24MB/s][A
+fixing encoding: 808MB [01:27, 9.24MB/s][A
+fixing encoding: 809MB [01:27, 9.24MB/s][A
+fixing encoding: 810MB [01:27, 9.24MB/s][A
+fixing encoding: 812MB [01:27, 9.24MB/s][A
+fixing encoding: 813MB [01:27, 9.24MB/s][A
+fixing encoding: 814MB [01:28, 9.24MB/s][A
+fixing encoding: 815MB [01:28, 9.24MB/s][A
+fixing encoding: 816MB [01:28, 9.24MB/s][A
+fixing encoding: 817MB [01:28, 9.24MB/s][A
+fixing encoding: 818MB [01:28, 9.24MB/s][A
+fixing encoding: 819MB [01:28, 9.24MB/s][A
+fixing encoding: 820MB [01:28, 9.24MB/s][A
+fixing encoding: 822MB [01:28, 9.24MB/s][A
+fixing encoding: 823MB [01:29, 9.24MB/s][A
+fixing encoding: 824MB [01:29, 9.24MB/s][A
+fixing encoding: 825MB [01:29, 9.24MB/s][A
+fixing encoding: 826MB [01:29, 9.24MB/s][A
+fixing encoding: 827MB [01:29, 9.24MB/s][A
+fixing encoding: 828MB [01:29, 9.24MB/s][A
+fixing encoding: 829MB [01:29, 9.24MB/s][A
+fixing encoding: 830MB [01:29, 9.24MB/s][A
+fixing encoding: 831MB [01:29, 9.24MB/s][A
+fixing encoding: 833MB [01:30, 9.24MB/s][A
+fixing encoding: 834MB [01:30, 9.24MB/s][A
+fixing encoding: 835MB [01:30, 9.24MB/s][A
+fixing encoding: 836MB [01:30, 9.24MB/s][A
+fixing encoding: 837MB [01:30, 9.24MB/s][A
+fixing encoding: 838MB [01:30, 9.24MB/s][A
+fixing encoding: 839MB [01:30, 9.24MB/s][A
+fixing encoding: 840MB [01:30, 9.24MB/s][A
+fixing encoding: 841MB [01:31, 9.24MB/s][A
+fixing encoding: 843MB [01:31, 9.24MB/s][A
+fixing encoding: 844MB [01:31, 9.24MB/s][A
+fixing encoding: 845MB [01:31, 9.24MB/s][A
+fixing encoding: 846MB [01:31, 9.24MB/s][A
+fixing encoding: 847MB [01:31, 9.24MB/s][A
+fixing encoding: 848MB [01:31, 9.24MB/s][A
+fixing encoding: 849MB [01:31, 9.24MB/s][A
+fixing encoding: 850MB [01:32, 9.24MB/s][A
+fixing encoding: 851MB [01:32, 9.24MB/s][A
+fixing encoding: 853MB [01:32, 9.24MB/s][A
+fixing encoding: 854MB [01:32, 9.24MB/s][A
+fixing encoding: 855MB [01:32, 9.24MB/s][A
+fixing encoding: 856MB [01:32, 9.24MB/s][A
+fixing encoding: 857MB [01:32, 9.24MB/s][A
+fixing encoding: 858MB [01:32, 9.24MB/s][A
+fixing encoding: 859MB [01:32, 9.24MB/s][A
+fixing encoding: 860MB [01:33, 9.24MB/s][A
+fixing encoding: 861MB [01:33, 9.24MB/s][A
+fixing encoding: 863MB [01:33, 9.24MB/s][A
+fixing encoding: 864MB [01:33, 9.24MB/s][A
+fixing encoding: 865MB [01:33, 9.24MB/s][A
+fixing encoding: 866MB [01:33, 9.24MB/s][A
+fixing encoding: 867MB [01:33, 9.24MB/s][A
+fixing encoding: 868MB [01:33, 9.24MB/s][A
+fixing encoding: 869MB [01:34, 9.24MB/s][A
+fixing encoding: 870MB [01:34, 9.24MB/s][A
+fixing encoding: 872MB [01:34, 9.24MB/s][A
+fixing encoding: 873MB [01:34, 9.24MB/s][A
+fixing encoding: 874MB [01:34, 9.24MB/s][A
+fixing encoding: 875MB [01:34, 9.24MB/s][A
+fixing encoding: 876MB [01:34, 9.24MB/s][A
+fixing encoding: 877MB [01:34, 9.24MB/s][A
+fixing encoding: 878MB [01:35, 9.24MB/s][A
+fixing encoding: 879MB [01:35, 9.24MB/s][A
+fixing encoding: 880MB [01:35, 9.24MB/s][A
+fixing encoding: 882MB [01:35, 9.24MB/s][A
+fixing encoding: 883MB [01:35, 9.24MB/s][A
+fixing encoding: 884MB [01:35, 9.24MB/s][A
+fixing encoding: 885MB [01:35, 9.24MB/s][A
+fixing encoding: 886MB [01:35, 9.24MB/s][A
+fixing encoding: 887MB [01:36, 9.24MB/s][A
+fixing encoding: 888MB [01:36, 9.24MB/s][A
+fixing encoding: 889MB [01:36, 9.24MB/s][A
+fixing encoding: 891MB [01:36, 9.24MB/s][A
+fixing encoding: 892MB [01:36, 9.24MB/s][A
+fixing encoding: 893MB [01:36, 9.24MB/s][A
+fixing encoding: 894MB [01:36, 9.24MB/s][A
+fixing encoding: 895MB [01:36, 9.24MB/s][A
+fixing encoding: 896MB [01:37, 9.24MB/s][A
+fixing encoding: 897MB [01:37, 9.24MB/s][A
+fixing encoding: 898MB [01:37, 9.23MB/s][A
+fixing encoding: 900MB [01:37, 9.23MB/s][A
+fixing encoding: 901MB [01:37, 9.23MB/s][A
+fixing encoding: 902MB [01:37, 9.23MB/s][A
+fixing encoding: 903MB [01:37, 9.23MB/s][A
+fixing encoding: 904MB [01:37, 9.23MB/s][A
+fixing encoding: 905MB [01:38, 9.23MB/s][A
+fixing encoding: 906MB [01:38, 9.23MB/s][A
+fixing encoding: 907MB [01:38, 9.23MB/s][A
+fixing encoding: 909MB [01:38, 9.23MB/s][A
+fixing encoding: 910MB [01:38, 9.23MB/s][A
+fixing encoding: 911MB [01:38, 9.23MB/s][A
+fixing encoding: 912MB [01:38, 9.23MB/s][A
+fixing encoding: 913MB [01:38, 9.23MB/s][A
+fixing encoding: 914MB [01:39, 9.23MB/s][A
+fixing encoding: 915MB [01:39, 9.23MB/s][A
+fixing encoding: 916MB [01:39, 9.23MB/s][A
+fixing encoding: 917MB [01:39, 9.23MB/s][A
+fixing encoding: 919MB [01:39, 9.23MB/s][A
+fixing encoding: 920MB [01:39, 9.23MB/s][A
+fixing encoding: 921MB [01:39, 9.23MB/s][A
+fixing encoding: 922MB [01:39, 9.23MB/s][A
+fixing encoding: 923MB [01:40, 9.23MB/s][A
+fixing encoding: 924MB [01:40, 9.23MB/s][A
+fixing encoding: 925MB [01:40, 9.23MB/s][A
+fixing encoding: 927MB [01:40, 9.23MB/s][A
+fixing encoding: 928MB [01:40, 9.23MB/s][A
+fixing encoding: 929MB [01:40, 9.23MB/s][A
+fixing encoding: 930MB [01:40, 9.23MB/s][A
+fixing encoding: 931MB [01:40, 9.23MB/s][A
+fixing encoding: 932MB [01:40, 9.23MB/s][A
+fixing encoding: 933MB [01:41, 9.23MB/s][A
+fixing encoding: 934MB [01:41, 9.23MB/s][A
+fixing encoding: 936MB [01:41, 9.23MB/s][A
+fixing encoding: 937MB [01:41, 9.23MB/s][A
+fixing encoding: 938MB [01:41, 9.23MB/s][A
+fixing encoding: 939MB [01:41, 9.23MB/s][A
+fixing encoding: 940MB [01:41, 9.23MB/s][A
+fixing encoding: 941MB [01:41, 9.23MB/s][A
+fixing encoding: 942MB [01:42, 9.23MB/s][A
+fixing encoding: 943MB [01:42, 9.23MB/s][A
+fixing encoding: 945MB [01:42, 9.23MB/s][A
+fixing encoding: 946MB [01:42, 9.23MB/s][A
+fixing encoding: 947MB [01:42, 9.23MB/s][A
+fixing encoding: 948MB [01:42, 9.23MB/s][A
+fixing encoding: 949MB [01:42, 9.23MB/s][A
+fixing encoding: 950MB [01:42, 9.24MB/s][A
+fixing encoding: 951MB [01:43, 9.24MB/s][A
+fixing encoding: 952MB [01:43, 9.23MB/s][A
+fixing encoding: 954MB [01:43, 9.23MB/s][A
+fixing encoding: 955MB [01:43, 9.23MB/s][A
+fixing encoding: 956MB [01:43, 9.23MB/s][A
+fixing encoding: 957MB [01:43, 9.23MB/s][A
+fixing encoding: 958MB [01:43, 9.23MB/s][A
+fixing encoding: 959MB [01:43, 9.23MB/s][A
+fixing encoding: 960MB [01:43, 9.23MB/s][A
+fixing encoding: 962MB [01:44, 9.23MB/s][A
+fixing encoding: 963MB [01:44, 9.24MB/s][A
+fixing encoding: 964MB [01:44, 9.24MB/s][A
+fixing encoding: 965MB [01:44, 9.24MB/s][A
+fixing encoding: 966MB [01:44, 9.24MB/s][A
+fixing encoding: 967MB [01:44, 9.24MB/s][A
+fixing encoding: 968MB [01:44, 9.24MB/s][A
+fixing encoding: 969MB [01:44, 9.24MB/s][A
+fixing encoding: 971MB [01:45, 9.23MB/s][A
+fixing encoding: 972MB [01:45, 9.23MB/s][A
+fixing encoding: 973MB [01:45, 9.23MB/s][A
+fixing encoding: 974MB [01:45, 9.23MB/s][A
+fixing encoding: 975MB [01:45, 9.23MB/s][A
+fixing encoding: 976MB [01:45, 9.23MB/s][A
+fixing encoding: 977MB [01:45, 9.23MB/s][A
+fixing encoding: 979MB [01:45, 9.23MB/s][A
+fixing encoding: 980MB [01:46, 9.23MB/s][A
+fixing encoding: 981MB [01:46, 9.23MB/s][A
+fixing encoding: 982MB [01:46, 9.23MB/s][A
+fixing encoding: 983MB [01:46, 9.23MB/s][A
+fixing encoding: 984MB [01:46, 9.23MB/s][A
+fixing encoding: 985MB [01:46, 9.23MB/s][A
+fixing encoding: 986MB [01:46, 9.23MB/s][A
+fixing encoding: 988MB [01:46, 9.23MB/s][A
+fixing encoding: 989MB [01:47, 9.23MB/s][A
+fixing encoding: 990MB [01:47, 9.23MB/s][A
+fixing encoding: 991MB [01:47, 9.23MB/s][A
+fixing encoding: 992MB [01:47, 9.23MB/s][A
+fixing encoding: 993MB [01:47, 9.23MB/s][A
+fixing encoding: 994MB [01:47, 9.23MB/s][A
+fixing encoding: 996MB [01:47, 9.23MB/s][A
+fixing encoding: 997MB [01:47, 9.23MB/s][A
+fixing encoding: 998MB [01:48, 9.23MB/s][A
+fixing encoding: 999MB [01:48, 9.23MB/s][A
+fixing encoding: 1.00GB [01:48, 9.23MB/s][A
+fixing encoding: 1.00GB [01:48, 9.23MB/s][A
+fixing encoding: 1.00GB [01:48, 9.23MB/s][A
+fixing encoding: 1.00GB [01:48, 9.23MB/s][A
+fixing encoding: 1.00GB [01:48, 9.23MB/s][A
+fixing encoding: 1.01GB [01:48, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.01GB [01:49, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.02GB [01:50, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:51, 9.23MB/s][A
+fixing encoding: 1.03GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:52, 9.23MB/s][A
+fixing encoding: 1.04GB [01:53, 9.23MB/s][A
+fixing encoding: 1.04GB [01:53, 9.23MB/s][A
+fixing encoding: 1.05GB [01:53, 9.23MB/s][A
+fixing encoding: 1.05GB [01:53, 9.23MB/s][A
+fixing encoding: 1.05GB [01:53, 9.23MB/s][A
+fixing encoding: 1.05GB [01:53, 9.23MB/s][A
+fixing encoding: 1.05GB [01:53, 9.23MB/s][A
+fixing encoding: 1.05GB [01:53, 9.23MB/s][A
+fixing encoding: 1.05GB [01:54, 9.23MB/s][A
+fixing encoding: 1.05GB [01:54, 9.23MB/s][A
+fixing encoding: 1.06GB [01:54, 9.23MB/s][A
+fixing encoding: 1.06GB [01:54, 9.23MB/s][A
+fixing encoding: 1.06GB [01:54, 9.23MB/s][A
+fixing encoding: 1.06GB [01:54, 9.23MB/s][A
+fixing encoding: 1.06GB [01:54, 9.23MB/s][A
+fixing encoding: 1.06GB [01:54, 9.23MB/s][A
+fixing encoding: 1.06GB [01:55, 9.23MB/s][A
+fixing encoding: 1.06GB [01:55, 9.23MB/s][A
+fixing encoding: 1.06GB [01:55, 9.23MB/s][A
+fixing encoding: 1.07GB [01:55, 9.23MB/s][A
+fixing encoding: 1.07GB [01:55, 9.23MB/s][A
+fixing encoding: 1.07GB [01:55, 9.23MB/s][A
+fixing encoding: 1.07GB [01:55, 9.23MB/s][A
+fixing encoding: 1.07GB [01:55, 9.23MB/s][A
+fixing encoding: 1.07GB [01:56, 9.23MB/s][A
+fixing encoding: 1.07GB [01:56, 9.23MB/s][A
+fixing encoding: 1.07GB [01:56, 9.23MB/s][A
+fixing encoding: 1.07GB [01:56, 9.23MB/s][A
+fixing encoding: 1.08GB [01:56, 9.23MB/s][A
+fixing encoding: 1.08GB [01:56, 9.23MB/s][A
+fixing encoding: 1.08GB [01:56, 9.23MB/s][A
+fixing encoding: 1.08GB [01:56, 9.23MB/s][A
+fixing encoding: 1.08GB [01:57, 9.23MB/s][A
+fixing encoding: 1.08GB [01:57, 9.23MB/s][A
+fixing encoding: 1.08GB [01:57, 9.23MB/s][A
+fixing encoding: 1.08GB [01:57, 9.23MB/s][A
+fixing encoding: 1.08GB [01:57, 9.23MB/s][A
+fixing encoding: 1.09GB [01:57, 9.23MB/s][A
+fixing encoding: 1.09GB [01:57, 9.23MB/s][A
+fixing encoding: 1.09GB [01:57, 9.23MB/s][A
+fixing encoding: 1.09GB [01:58, 9.23MB/s][A
+fixing encoding: 1.09GB [01:58, 9.23MB/s][A
+fixing encoding: 1.09GB [01:58, 9.23MB/s][A
+fixing encoding: 1.09GB [01:58, 9.23MB/s][A
+fixing encoding: 1.09GB [01:58, 9.23MB/s][A
+fixing encoding: 1.10GB [01:58, 9.23MB/s][A
+fixing encoding: 1.10GB [01:58, 9.23MB/s][A
+fixing encoding: 1.10GB [01:58, 9.23MB/s][A
+fixing encoding: 1.10GB [01:59, 9.23MB/s][A
+fixing encoding: 1.10GB [01:59, 9.23MB/s][A
+fixing encoding: 1.10GB [01:59, 9.23MB/s][A
+fixing encoding: 1.10GB [01:59, 9.23MB/s][A
+fixing encoding: 1.10GB [01:59, 9.23MB/s][A
+fixing encoding: 1.10GB [01:59, 9.23MB/s][A
+fixing encoding: 1.11GB [01:59, 9.23MB/s][A
+fixing encoding: 1.11GB [01:59, 9.23MB/s][A
+fixing encoding: 1.11GB [02:00, 9.23MB/s][A
+fixing encoding: 1.11GB [02:00, 9.23MB/s][A
+fixing encoding: 1.11GB [02:00, 9.23MB/s][A
+fixing encoding: 1.11GB [02:00, 9.23MB/s][A
+fixing encoding: 1.11GB [02:00, 9.23MB/s][A
+fixing encoding: 1.11GB [02:00, 9.23MB/s][A
+fixing encoding: 1.11GB [02:00, 9.23MB/s][A
+fixing encoding: 1.12GB [02:00, 9.23MB/s][A
+fixing encoding: 1.12GB [02:01, 9.23MB/s][A
+fixing encoding: 1.12GB [02:01, 9.23MB/s][A
+fixing encoding: 1.12GB [02:01, 9.23MB/s][A
+fixing encoding: 1.12GB [02:01, 9.23MB/s][A
+fixing encoding: 1.12GB [02:01, 9.23MB/s][A
+fixing encoding: 1.12GB [02:01, 9.23MB/s][A
+fixing encoding: 1.12GB [02:01, 9.23MB/s][A
+fixing encoding: 1.13GB [02:01, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.13GB [02:02, 9.23MB/s][A
+fixing encoding: 1.14GB [02:03, 9.23MB/s][A
+fixing encoding: 1.14GB [02:03, 9.23MB/s][A
+fixing encoding: 1.14GB [02:03, 9.22MB/s][A
+fixing encoding: 1.14GB [02:03, 9.22MB/s][A
+fixing encoding: 1.14GB [02:03, 9.23MB/s][A
+fixing encoding: 1.14GB [02:03, 9.23MB/s][A
+fixing encoding: 1.14GB [02:03, 9.23MB/s][A
+fixing encoding: 1.14GB [02:03, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:04, 9.23MB/s][A
+fixing encoding: 1.15GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:05, 9.23MB/s][A
+fixing encoding: 1.16GB [02:06, 9.23MB/s][A
+fixing encoding: 1.16GB [02:06, 9.23MB/s][A
+fixing encoding: 1.17GB [02:06, 9.23MB/s][A
+fixing encoding: 1.17GB [02:06, 9.23MB/s][A
+fixing encoding: 1.17GB [02:06, 9.23MB/s][A
+fixing encoding: 1.17GB [02:06, 9.23MB/s][A
+fixing encoding: 1.17GB [02:06, 9.23MB/s][A
+fixing encoding: 1.17GB [02:06, 9.23MB/s][A
+fixing encoding: 1.17GB [02:07, 9.23MB/s][A
+fixing encoding: 1.17GB [02:07, 9.23MB/s][A
+fixing encoding: 1.18GB [02:07, 9.23MB/s][A
+fixing encoding: 1.18GB [02:07, 9.23MB/s][A
+fixing encoding: 1.18GB [02:07, 9.23MB/s][A
+fixing encoding: 1.18GB [02:07, 9.23MB/s][A
+fixing encoding: 1.18GB [02:07, 9.23MB/s][A
+fixing encoding: 1.18GB [02:07, 9.23MB/s][A
+fixing encoding: 1.18GB [02:08, 9.23MB/s][A
+fixing encoding: 1.18GB [02:08, 9.23MB/s][A
+fixing encoding: 1.18GB [02:08, 9.23MB/s][A
+fixing encoding: 1.19GB [02:08, 9.23MB/s][A
+fixing encoding: 1.19GB [02:08, 9.23MB/s][A
+fixing encoding: 1.19GB [02:08, 9.23MB/s][A
+fixing encoding: 1.19GB [02:08, 9.23MB/s][A
+fixing encoding: 1.19GB [02:08, 9.23MB/s][A
+fixing encoding: 1.19GB [02:09, 9.23MB/s][A
+fixing encoding: 1.19GB [02:09, 9.23MB/s][A
+fixing encoding: 1.19GB [02:09, 9.23MB/s][A
+fixing encoding: 1.20GB [02:09, 9.23MB/s][A
+fixing encoding: 1.20GB [02:09, 9.23MB/s][A
+fixing encoding: 1.20GB [02:09, 9.23MB/s][A
+fixing encoding: 1.20GB [02:09, 9.23MB/s][A
+fixing encoding: 1.20GB [02:09, 9.24MB/s][A
+fixing encoding: 1.20GB [02:10, 9.24MB/s][A
+fixing encoding: 1.20GB [02:10, 9.24MB/s][A
+fixing encoding: 1.20GB [02:10, 9.24MB/s][A
+fixing encoding: 1.20GB [02:10, 9.24MB/s][A
+fixing encoding: 1.21GB [02:10, 9.24MB/s][A
+fixing encoding: 1.21GB [02:10, 9.24MB/s][A
+fixing encoding: 1.21GB [02:10, 9.24MB/s][A
+fixing encoding: 1.21GB [02:10, 9.24MB/s][A
+fixing encoding: 1.21GB [02:11, 9.24MB/s][A
+fixing encoding: 1.21GB [02:11, 9.24MB/s][A
+fixing encoding: 1.21GB [02:11, 9.23MB/s][A
+fixing encoding: 1.21GB [02:11, 9.23MB/s][A
+fixing encoding: 1.22GB [02:11, 9.23MB/s][A
+fixing encoding: 1.22GB [02:11, 9.23MB/s][A
+fixing encoding: 1.22GB [02:11, 9.23MB/s][A
+fixing encoding: 1.22GB [02:11, 9.23MB/s][A
+fixing encoding: 1.22GB [02:12, 9.23MB/s][A
+fixing encoding: 1.22GB [02:12, 9.23MB/s][A
+fixing encoding: 1.22GB [02:12, 9.24MB/s][A
+fixing encoding: 1.22GB [02:12, 9.24MB/s][A
+fixing encoding: 1.22GB [02:12, 9.24MB/s][A
+fixing encoding: 1.23GB [02:12, 9.24MB/s][A
+fixing encoding: 1.23GB [02:12, 9.24MB/s][A
+fixing encoding: 1.23GB [02:12, 9.24MB/s][A
+fixing encoding: 1.23GB [02:13, 9.24MB/s][A
+fixing encoding: 1.23GB [02:13, 9.24MB/s][A
+fixing encoding: 1.23GB [02:13, 9.24MB/s][A
+fixing encoding: 1.23GB [02:13, 9.24MB/s][A
+fixing encoding: 1.23GB [02:13, 9.24MB/s][A
+fixing encoding: 1.24GB [02:13, 9.24MB/s][A
+fixing encoding: 1.24GB [02:13, 9.24MB/s][A
+fixing encoding: 1.24GB [02:13, 9.24MB/s][A
+fixing encoding: 1.24GB [02:14, 9.24MB/s][A
+fixing encoding: 1.24GB [02:14, 9.24MB/s][A
+fixing encoding: 1.24GB [02:14, 9.24MB/s][A
+fixing encoding: 1.24GB [02:14, 9.24MB/s][A
+fixing encoding: 1.24GB [02:14, 9.24MB/s][A
+fixing encoding: 1.24GB [02:14, 9.24MB/s][A
+fixing encoding: 1.25GB [02:14, 9.24MB/s][A
+fixing encoding: 1.25GB [02:14, 9.24MB/s][A
+fixing encoding: 1.25GB [02:15, 9.24MB/s][A
+fixing encoding: 1.25GB [02:15, 9.24MB/s][A
+fixing encoding: 1.25GB [02:15, 9.24MB/s][A
+fixing encoding: 1.25GB [02:15, 9.24MB/s][A
+fixing encoding: 1.25GB [02:15, 9.24MB/s][A
+fixing encoding: 1.25GB [02:15, 9.24MB/s][A
+fixing encoding: 1.26GB [02:15, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.26GB [02:16, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.27GB [02:17, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.28GB [02:18, 9.24MB/s][A
+fixing encoding: 1.29GB [02:19, 9.24MB/s][A
+fixing encoding: 1.29GB [02:19, 9.24MB/s][A
+fixing encoding: 1.29GB [02:19, 9.24MB/s][A
+fixing encoding: 1.29GB [02:19, 9.24MB/s][A
+fixing encoding: 1.29GB [02:19, 9.24MB/s][A
+fixing encoding: 1.29GB [02:19, 9.24MB/s][A
+fixing encoding: 1.29GB [02:19, 9.24MB/s][A
+fixing encoding: 1.29GB [02:20, 9.24MB/s][A
+fixing encoding: 1.29GB [02:20, 9.24MB/s][A
+fixing encoding: 1.30GB [02:20, 9.24MB/s][A
+fixing encoding: 1.30GB [02:20, 9.24MB/s][A
+fixing encoding: 1.30GB [02:20, 9.24MB/s][A
+fixing encoding: 1.30GB [02:20, 9.24MB/s][A
+fixing encoding: 1.30GB [02:20, 9.24MB/s][A
+fixing encoding: 1.30GB [02:20, 9.24MB/s][A
+fixing encoding: 1.30GB [02:21, 9.24MB/s][A
+fixing encoding: 1.30GB [02:21, 9.24MB/s][A
+fixing encoding: 1.31GB [02:21, 9.24MB/s][A
+fixing encoding: 1.31GB [02:21, 9.24MB/s][A
+fixing encoding: 1.31GB [02:21, 9.24MB/s][A
+fixing encoding: 1.31GB [02:21, 9.24MB/s][A
+fixing encoding: 1.31GB [02:21, 9.24MB/s][A
+fixing encoding: 1.31GB [02:21, 9.24MB/s][A
+fixing encoding: 1.31GB [02:22, 9.24MB/s][A
+fixing encoding: 1.31GB [02:22, 9.24MB/s][A
+fixing encoding: 1.31GB [02:22, 9.24MB/s][A
+fixing encoding: 1.32GB [02:22, 9.24MB/s][A
+fixing encoding: 1.32GB [02:22, 9.24MB/s][A
+fixing encoding: 1.32GB [02:22, 9.24MB/s][A
+fixing encoding: 1.32GB [02:22, 9.24MB/s][A
+fixing encoding: 1.32GB [02:22, 9.24MB/s][A
+fixing encoding: 1.32GB [02:23, 9.24MB/s][A
+fixing encoding: 1.32GB [02:23, 9.24MB/s][A
+fixing encoding: 1.32GB [02:23, 9.23MB/s][A
+fixing encoding: 1.33GB [02:23, 9.23MB/s][A
+fixing encoding: 1.33GB [02:23, 9.23MB/s][A
+fixing encoding: 1.33GB [02:23, 9.23MB/s][A
+fixing encoding: 1.33GB [02:23, 9.23MB/s][A
+fixing encoding: 1.33GB [02:24, 9.23MB/s][A
+fixing encoding: 1.33GB [02:24, 9.23MB/s][A
+fixing encoding: 1.33GB [02:24, 9.23MB/s][A
+fixing encoding: 1.33GB [02:24, 9.23MB/s][A
+fixing encoding: 1.34GB [02:24, 9.23MB/s][A
+fixing encoding: 1.34GB [02:24, 9.23MB/s][A
+fixing encoding: 1.34GB [02:24, 9.23MB/s][A
+fixing encoding: 1.34GB [02:24, 9.23MB/s][A
+fixing encoding: 1.34GB [02:25, 9.23MB/s][A
+fixing encoding: 1.34GB [02:25, 9.23MB/s][A
+fixing encoding: 1.34GB [02:25, 9.23MB/s][A
+fixing encoding: 1.34GB [02:25, 9.23MB/s][A
+fixing encoding: 1.34GB [02:25, 9.23MB/s][A
+fixing encoding: 1.35GB [02:25, 9.23MB/s][A
+fixing encoding: 1.35GB [02:25, 9.23MB/s][A
+fixing encoding: 1.35GB [02:26, 9.23MB/s][A
+fixing encoding: 1.35GB [02:26, 9.23MB/s][A
+fixing encoding: 1.35GB [02:26, 9.23MB/s][A
+fixing encoding: 1.35GB [02:26, 9.23MB/s][A
+fixing encoding: 1.35GB [02:26, 9.24MB/s][A
+fixing encoding: 1.35GB [02:26, 9.24MB/s][A
+fixing encoding: 1.36GB [02:26, 9.24MB/s][A
+fixing encoding: 1.36GB [02:26, 9.24MB/s][A
+fixing encoding: 1.36GB [02:27, 9.24MB/s][A
+fixing encoding: 1.36GB [02:27, 9.24MB/s][A
+fixing encoding: 1.36GB [02:27, 9.24MB/s][A
+fixing encoding: 1.36GB [02:27, 9.24MB/s][A
+fixing encoding: 1.36GB [02:27, 9.24MB/s][A
+fixing encoding: 1.36GB [02:27, 9.24MB/s][A
+fixing encoding: 1.37GB [02:27, 9.24MB/s][A
+fixing encoding: 1.37GB [02:27, 9.24MB/s][A
+fixing encoding: 1.37GB [02:28, 9.24MB/s][A
+fixing encoding: 1.37GB [02:28, 9.24MB/s][A
+fixing encoding: 1.37GB [02:28, 9.24MB/s][A
+fixing encoding: 1.37GB [02:28, 9.24MB/s][A
+fixing encoding: 1.37GB [02:28, 9.24MB/s][A
+fixing encoding: 1.37GB [02:28, 9.24MB/s][A
+fixing encoding: 1.37GB [02:28, 9.24MB/s][A
+fixing encoding: 1.38GB [02:28, 9.24MB/s][A
+fixing encoding: 1.38GB [02:29, 9.24MB/s][A
+fixing encoding: 1.38GB [02:29, 9.24MB/s][A
+fixing encoding: 1.38GB [02:29, 9.24MB/s][A
+fixing encoding: 1.38GB [02:29, 9.24MB/s][A
+fixing encoding: 1.38GB [02:29, 9.24MB/s][A
+fixing encoding: 1.38GB [02:29, 9.24MB/s][A
+fixing encoding: 1.38GB [02:29, 9.24MB/s][A
+fixing encoding: 1.39GB [02:29, 9.24MB/s][A
+fixing encoding: 1.39GB [02:30, 9.24MB/s][A
+fixing encoding: 1.39GB [02:30, 9.24MB/s][A
+fixing encoding: 1.39GB [02:30, 9.24MB/s][A
+fixing encoding: 1.39GB [02:30, 9.24MB/s][A
+fixing encoding: 1.39GB [02:30, 9.24MB/s][A
+fixing encoding: 1.39GB [02:30, 9.24MB/s][A
+fixing encoding: 1.39GB [02:30, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:31, 9.24MB/s][A
+fixing encoding: 1.40GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:32, 9.24MB/s][A
+fixing encoding: 1.41GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:33, 9.24MB/s][A
+fixing encoding: 1.42GB [02:34, 9.24MB/s][A
+fixing encoding: 1.43GB [02:34, 9.24MB/s][A
+fixing encoding: 1.43GB [02:34, 9.24MB/s][A
+fixing encoding: 1.43GB [02:34, 9.24MB/s][A
+fixing encoding: 1.43GB [02:34, 9.24MB/s][A
+fixing encoding: 1.43GB [02:34, 9.24MB/s][A
+fixing encoding: 1.43GB [02:34, 9.24MB/s][A
+fixing encoding: 1.43GB [02:35, 9.24MB/s][A
+fixing encoding: 1.43GB [02:35, 9.24MB/s][A
+fixing encoding: 1.44GB [02:35, 9.23MB/s][A
+fixing encoding: 1.44GB [02:35, 9.23MB/s][A
+fixing encoding: 1.44GB [02:35, 9.23MB/s][A
+fixing encoding: 1.44GB [02:35, 9.23MB/s][A
+fixing encoding: 1.44GB [02:35, 9.23MB/s][A
+fixing encoding: 1.44GB [02:36, 9.24MB/s][A
+fixing encoding: 1.44GB [02:36, 9.24MB/s][A
+fixing encoding: 1.44GB [02:36, 9.24MB/s][A
+fixing encoding: 1.44GB [02:36, 9.24MB/s][A
+fixing encoding: 1.45GB [02:36, 9.24MB/s][A
+fixing encoding: 1.45GB [02:36, 9.24MB/s][A
+fixing encoding: 1.45GB [02:36, 9.24MB/s][A
+fixing encoding: 1.45GB [02:36, 9.24MB/s][A
+fixing encoding: 1.45GB [02:37, 9.24MB/s][A
+fixing encoding: 1.45GB [02:37, 9.24MB/s][A
+fixing encoding: 1.45GB [02:37, 9.24MB/s][A
+fixing encoding: 1.45GB [02:37, 9.24MB/s][A
+fixing encoding: 1.46GB [02:37, 9.24MB/s][A
+fixing encoding: 1.46GB [02:37, 9.24MB/s][A
+fixing encoding: 1.46GB [02:37, 9.24MB/s][A
+fixing encoding: 1.46GB [02:37, 9.24MB/s][A
+fixing encoding: 1.46GB [02:38, 9.24MB/s][A
+fixing encoding: 1.46GB [02:38, 9.24MB/s][A
+fixing encoding: 1.46GB [02:38, 9.24MB/s][A
+fixing encoding: 1.46GB [02:38, 9.24MB/s][A
+fixing encoding: 1.47GB [02:38, 9.24MB/s][A
+fixing encoding: 1.47GB [02:38, 9.24MB/s][A
+fixing encoding: 1.47GB [02:38, 9.24MB/s][A
+fixing encoding: 1.47GB [02:38, 9.24MB/s][A
+fixing encoding: 1.47GB [02:39, 9.24MB/s][A
+fixing encoding: 1.47GB [02:39, 9.24MB/s][A
+fixing encoding: 1.47GB [02:39, 9.24MB/s][A
+fixing encoding: 1.47GB [02:39, 9.24MB/s][A
+fixing encoding: 1.48GB [02:39, 9.24MB/s][A
+fixing encoding: 1.48GB [02:39, 9.24MB/s][A
+fixing encoding: 1.48GB [02:39, 9.24MB/s][A
+fixing encoding: 1.48GB [02:40, 9.24MB/s][A
+fixing encoding: 1.48GB [02:40, 9.24MB/s][A
+fixing encoding: 1.48GB [02:40, 9.24MB/s][A
+fixing encoding: 1.48GB [02:40, 9.24MB/s][A
+fixing encoding: 1.48GB [02:40, 9.24MB/s][A
+fixing encoding: 1.48GB [02:40, 9.24MB/s][A
+fixing encoding: 1.49GB [02:40, 9.24MB/s][A
+fixing encoding: 1.49GB [02:40, 9.24MB/s][A
+fixing encoding: 1.49GB [02:41, 9.24MB/s][A
+fixing encoding: 1.49GB [02:41, 9.24MB/s][A
+fixing encoding: 1.49GB [02:41, 9.24MB/s][A
+fixing encoding: 1.49GB [02:41, 9.24MB/s][A
+fixing encoding: 1.49GB [02:41, 9.24MB/s][A
+fixing encoding: 1.49GB [02:41, 9.24MB/s][A
+fixing encoding: 1.50GB [02:41, 9.24MB/s][A
+fixing encoding: 1.50GB [02:42, 9.24MB/s][A
+fixing encoding: 1.50GB [02:42, 9.24MB/s][A
+fixing encoding: 1.50GB [02:42, 9.24MB/s][A
+fixing encoding: 1.50GB [02:42, 9.24MB/s][A
+fixing encoding: 1.50GB [02:42, 9.24MB/s][A
+fixing encoding: 1.50GB [02:42, 9.24MB/s][A
+fixing encoding: 1.50GB [02:42, 9.24MB/s][A
+fixing encoding: 1.51GB [02:42, 9.24MB/s][A
+fixing encoding: 1.51GB [02:43, 9.24MB/s][A
+fixing encoding: 1.51GB [02:43, 9.24MB/s][A
+fixing encoding: 1.51GB [02:43, 9.24MB/s][A
+fixing encoding: 1.51GB [02:43, 9.24MB/s][A
+fixing encoding: 1.51GB [02:43, 9.24MB/s][A
+fixing encoding: 1.51GB [02:43, 9.24MB/s][A
+fixing encoding: 1.51GB [02:43, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.52GB [02:44, 9.24MB/s][A
+fixing encoding: 1.53GB [02:45, 9.24MB/s][A
+fixing encoding: 1.53GB [02:45, 9.24MB/s][A
+fixing encoding: 1.53GB [02:45, 9.24MB/s][A
+fixing encoding: 1.53GB [02:45, 9.24MB/s][A
+fixing encoding: 1.53GB [02:45, 9.24MB/s][A
+fixing encoding: 1.53GB [02:45, 9.24MB/s][A
+fixing encoding: 1.53GB [02:45, 9.24MB/s][A
+fixing encoding: 1.53GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:46, 9.24MB/s][A
+fixing encoding: 1.54GB [02:47, 9.24MB/s][A
+fixing encoding: 1.54GB [02:47, 9.24MB/s][A
+fixing encoding: 1.55GB [02:47, 9.24MB/s][A
+fixing encoding: 1.55GB [02:47, 9.24MB/s][A
+fixing encoding: 1.55GB [02:47, 9.24MB/s][A
+fixing encoding: 1.55GB [02:47, 9.24MB/s][A
+fixing encoding: 1.55GB [02:47, 9.24MB/s][A
+fixing encoding: 1.55GB [02:48, 9.24MB/s][A
+fixing encoding: 1.55GB [02:48, 9.24MB/s][A
+fixing encoding: 1.55GB [02:48, 9.24MB/s][A
+fixing encoding: 1.56GB [02:48, 9.24MB/s][A
+fixing encoding: 1.56GB [02:48, 9.24MB/s][A
+fixing encoding: 1.56GB [02:48, 9.24MB/s][A
+fixing encoding: 1.56GB [02:48, 9.24MB/s][A
+fixing encoding: 1.56GB [02:48, 9.24MB/s][A
+fixing encoding: 1.56GB [02:49, 9.24MB/s][A
+fixing encoding: 1.56GB [02:49, 9.24MB/s][A
+fixing encoding: 1.56GB [02:49, 9.24MB/s][A
+fixing encoding: 1.57GB [02:49, 9.24MB/s][A
+fixing encoding: 1.57GB [02:49, 9.24MB/s][A
+fixing encoding: 1.57GB [02:49, 9.24MB/s][A
+fixing encoding: 1.57GB [02:49, 9.24MB/s][A
+fixing encoding: 1.57GB [02:50, 9.24MB/s][A
+fixing encoding: 1.57GB [02:50, 9.24MB/s][A
+fixing encoding: 1.57GB [02:50, 9.24MB/s][A
+fixing encoding: 1.57GB [02:50, 9.24MB/s][A
+fixing encoding: 1.58GB [02:50, 9.24MB/s][A
+fixing encoding: 1.58GB [02:50, 9.24MB/s][A
+fixing encoding: 1.58GB [02:50, 9.24MB/s][A
+fixing encoding: 1.58GB [02:50, 9.24MB/s][A
+fixing encoding: 1.58GB [02:51, 9.24MB/s][A
+fixing encoding: 1.58GB [02:51, 9.24MB/s][A
+fixing encoding: 1.58GB [02:51, 9.24MB/s][A
+fixing encoding: 1.58GB [02:51, 9.24MB/s][A
+fixing encoding: 1.59GB [02:51, 9.24MB/s][A
+fixing encoding: 1.59GB [02:51, 9.24MB/s][A
+fixing encoding: 1.59GB [02:51, 9.24MB/s][A
+fixing encoding: 1.59GB [02:52, 9.24MB/s][A
+fixing encoding: 1.59GB [02:52, 9.24MB/s][A
+fixing encoding: 1.59GB [02:52, 9.24MB/s][A
+fixing encoding: 1.59GB [02:52, 9.24MB/s][A
+fixing encoding: 1.59GB [02:52, 9.24MB/s][A
+fixing encoding: 1.60GB [02:52, 9.24MB/s][A
+fixing encoding: 1.60GB [02:52, 9.24MB/s][A
+fixing encoding: 1.60GB [02:52, 9.24MB/s][A
+fixing encoding: 1.60GB [02:53, 9.24MB/s][A
+fixing encoding: 1.60GB [02:53, 9.24MB/s][A
+fixing encoding: 1.60GB [02:53, 9.24MB/s][A
+fixing encoding: 1.60GB [02:53, 9.24MB/s][A
+fixing encoding: 1.60GB [02:53, 9.24MB/s][A
+fixing encoding: 1.61GB [02:53, 9.24MB/s][A
+fixing encoding: 1.61GB [02:53, 9.24MB/s][A
+fixing encoding: 1.61GB [02:53, 9.24MB/s][A
+fixing encoding: 1.61GB [02:54, 9.24MB/s][A
+fixing encoding: 1.61GB [02:54, 9.24MB/s][A
+fixing encoding: 1.61GB [02:54, 9.24MB/s][A
+fixing encoding: 1.61GB [02:54, 9.24MB/s][A
+fixing encoding: 1.61GB [02:54, 9.24MB/s][A
+fixing encoding: 1.62GB [02:54, 9.24MB/s][A
+fixing encoding: 1.62GB [02:54, 9.24MB/s][A
+fixing encoding: 1.62GB [02:55, 9.24MB/s][A
+fixing encoding: 1.62GB [02:55, 9.24MB/s][A
+fixing encoding: 1.62GB [02:55, 9.24MB/s][A
+fixing encoding: 1.62GB [02:55, 9.24MB/s][A
+fixing encoding: 1.62GB [02:55, 9.24MB/s][A
+fixing encoding: 1.62GB [02:55, 9.24MB/s][A
+fixing encoding: 1.63GB [02:55, 9.24MB/s][A
+fixing encoding: 1.63GB [02:56, 9.24MB/s][A
+fixing encoding: 1.63GB [02:56, 9.24MB/s][A
+fixing encoding: 1.63GB [02:56, 9.24MB/s][A
+fixing encoding: 1.63GB [02:56, 9.24MB/s][A
+fixing encoding: 1.63GB [02:56, 9.24MB/s][A
+fixing encoding: 1.63GB [02:56, 9.24MB/s][A
+fixing encoding: 1.63GB [02:56, 9.24MB/s][A
+fixing encoding: 1.64GB [02:56, 9.24MB/s][A
+fixing encoding: 1.64GB [02:57, 9.24MB/s][A
+fixing encoding: 1.64GB [02:57, 9.24MB/s][A
+fixing encoding: 1.64GB [02:57, 9.24MB/s][A
+fixing encoding: 1.64GB [02:57, 9.24MB/s][A
+fixing encoding: 1.64GB [02:57, 9.24MB/s][A
+fixing encoding: 1.64GB [02:57, 9.24MB/s][A
+fixing encoding: 1.64GB [02:57, 9.24MB/s][A
+fixing encoding: 1.65GB [02:58, 9.24MB/s][A
+fixing encoding: 1.65GB [02:58, 9.24MB/s][A
+fixing encoding: 1.65GB [02:58, 9.24MB/s][A
+fixing encoding: 1.65GB [02:58, 9.24MB/s][A
+fixing encoding: 1.65GB [02:58, 9.24MB/s][A
+fixing encoding: 1.65GB [02:58, 9.24MB/s][A
+fixing encoding: 1.65GB [02:58, 9.24MB/s][A
+fixing encoding: 1.65GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [02:59, 9.24MB/s][A
+fixing encoding: 1.66GB [03:00, 9.24MB/s][A
+fixing encoding: 1.67GB [03:00, 9.24MB/s][A
+fixing encoding: 1.67GB [03:00, 9.24MB/s][A
+fixing encoding: 1.67GB [03:00, 9.24MB/s][A
+fixing encoding: 1.67GB [03:00, 9.24MB/s][A
+fixing encoding: 1.67GB [03:00, 9.23MB/s][A
+fixing encoding: 1.67GB [03:01, 9.23MB/s][A
+fixing encoding: 1.67GB [03:01, 9.23MB/s][A
+fixing encoding: 1.67GB [03:01, 9.23MB/s][A
+fixing encoding: 1.68GB [03:01, 9.23MB/s][A
+fixing encoding: 1.68GB [03:01, 9.23MB/s][A
+fixing encoding: 1.68GB [03:01, 9.23MB/s][A
+fixing encoding: 1.68GB [03:01, 9.23MB/s][A
+fixing encoding: 1.68GB [03:01, 9.23MB/s][A
+fixing encoding: 1.68GB [03:02, 9.23MB/s][A
+fixing encoding: 1.68GB [03:02, 9.23MB/s][A
+fixing encoding: 1.68GB [03:02, 9.23MB/s][A
+fixing encoding: 1.69GB [03:02, 9.23MB/s][A
+fixing encoding: 1.69GB [03:02, 9.23MB/s][A
+fixing encoding: 1.69GB [03:02, 9.23MB/s][A
+fixing encoding: 1.69GB [03:02, 9.23MB/s][A
+fixing encoding: 1.69GB [03:03, 9.23MB/s][A
+fixing encoding: 1.69GB [03:03, 9.23MB/s][A
+fixing encoding: 1.69GB [03:03, 9.23MB/s][A
+fixing encoding: 1.69GB [03:03, 9.23MB/s][A
+fixing encoding: 1.70GB [03:03, 9.23MB/s][A
+fixing encoding: 1.70GB [03:03, 9.23MB/s][A
+fixing encoding: 1.70GB [03:03, 9.23MB/s][A
+fixing encoding: 1.70GB [03:04, 9.23MB/s][A
+fixing encoding: 1.70GB [03:04, 9.23MB/s][A
+fixing encoding: 1.70GB [03:04, 9.23MB/s][A
+fixing encoding: 1.70GB [03:04, 9.23MB/s][A
+fixing encoding: 1.70GB [03:04, 9.23MB/s][A
+fixing encoding: 1.71GB [03:04, 9.23MB/s][A
+fixing encoding: 1.71GB [03:04, 9.23MB/s][A
+fixing encoding: 1.71GB [03:05, 9.23MB/s][A
+fixing encoding: 1.71GB [03:05, 9.23MB/s][A
+fixing encoding: 1.71GB [03:05, 9.23MB/s][A
+fixing encoding: 1.71GB [03:05, 9.23MB/s][A
+fixing encoding: 1.71GB [03:05, 9.23MB/s][A
+fixing encoding: 1.71GB [03:05, 9.23MB/s][A
+fixing encoding: 1.72GB [03:05, 9.23MB/s][A
+fixing encoding: 1.72GB [03:05, 9.23MB/s][A
+fixing encoding: 1.72GB [03:06, 9.23MB/s][A
+fixing encoding: 1.72GB [03:06, 9.23MB/s][A
+fixing encoding: 1.72GB [03:06, 9.23MB/s][A
+fixing encoding: 1.72GB [03:06, 9.23MB/s][A
+fixing encoding: 1.72GB [03:06, 9.23MB/s][A
+fixing encoding: 1.72GB [03:06, 9.23MB/s][A
+fixing encoding: 1.73GB [03:06, 9.23MB/s][A
+fixing encoding: 1.73GB [03:07, 9.23MB/s][A
+fixing encoding: 1.73GB [03:07, 9.23MB/s][A
+fixing encoding: 1.73GB [03:07, 9.23MB/s][A
+fixing encoding: 1.73GB [03:07, 9.23MB/s][A
+fixing encoding: 1.73GB [03:07, 9.23MB/s][A
+fixing encoding: 1.73GB [03:07, 9.23MB/s][A
+fixing encoding: 1.73GB [03:07, 9.23MB/s][A
+fixing encoding: 1.74GB [03:07, 9.23MB/s][A
+fixing encoding: 1.74GB [03:08, 9.23MB/s][A
+fixing encoding: 1.74GB [03:08, 9.23MB/s][A
+fixing encoding: 1.74GB [03:08, 9.23MB/s][A
+fixing encoding: 1.74GB [03:08, 9.23MB/s][A
+fixing encoding: 1.74GB [03:08, 9.23MB/s][A
+fixing encoding: 1.74GB [03:08, 9.23MB/s][A
+fixing encoding: 1.74GB [03:08, 9.23MB/s][A
+fixing encoding: 1.75GB [03:09, 9.23MB/s][A
+fixing encoding: 1.75GB [03:09, 9.23MB/s][A
+fixing encoding: 1.75GB [03:09, 9.23MB/s][A
+fixing encoding: 1.75GB [03:09, 9.23MB/s][A
+fixing encoding: 1.75GB [03:09, 9.23MB/s][A
+fixing encoding: 1.75GB [03:09, 9.23MB/s][A
+fixing encoding: 1.75GB [03:09, 9.23MB/s][A
+fixing encoding: 1.75GB [03:10, 9.23MB/s][A
+fixing encoding: 1.76GB [03:10, 9.23MB/s][A
+fixing encoding: 1.76GB [03:10, 9.23MB/s][A
+fixing encoding: 1.76GB [03:10, 9.23MB/s][A
+fixing encoding: 1.76GB [03:10, 9.23MB/s][A
+fixing encoding: 1.76GB [03:10, 9.23MB/s][A
+fixing encoding: 1.76GB [03:10, 9.23MB/s][A
+fixing encoding: 1.76GB [03:11, 9.23MB/s][A
+fixing encoding: 1.76GB [03:11, 9.23MB/s][A
+fixing encoding: 1.77GB [03:11, 9.23MB/s][A
+fixing encoding: 1.77GB [03:11, 9.23MB/s][A
+fixing encoding: 1.77GB [03:11, 9.23MB/s][A
+fixing encoding: 1.77GB [03:11, 9.23MB/s][A
+fixing encoding: 1.77GB [03:11, 9.23MB/s][A
+fixing encoding: 1.77GB [03:11, 9.23MB/s][A
+fixing encoding: 1.77GB [03:12, 9.23MB/s][A
+fixing encoding: 1.77GB [03:12, 9.23MB/s][A
+fixing encoding: 1.78GB [03:12, 9.23MB/s][A
+fixing encoding: 1.78GB [03:12, 9.23MB/s][A
+fixing encoding: 1.78GB [03:12, 9.23MB/s][A
+fixing encoding: 1.78GB [03:12, 9.23MB/s][A
+fixing encoding: 1.78GB [03:12, 9.23MB/s][A
+fixing encoding: 1.78GB [03:13, 9.23MB/s][A
+fixing encoding: 1.78GB [03:13, 9.23MB/s][A
+fixing encoding: 1.78GB [03:13, 9.23MB/s][A
+fixing encoding: 1.79GB [03:13, 9.23MB/s][A
+fixing encoding: 1.79GB [03:13, 9.23MB/s][A
+fixing encoding: 1.79GB [03:13, 9.23MB/s][A
+fixing encoding: 1.79GB [03:13, 9.23MB/s][A
+fixing encoding: 1.79GB [03:14, 9.23MB/s][A
+fixing encoding: 1.79GB [03:14, 9.23MB/s][A
+fixing encoding: 1.79GB [03:14, 9.23MB/s][A
+fixing encoding: 1.79GB [03:14, 9.23MB/s][A
+fixing encoding: 1.80GB [03:14, 9.23MB/s][A
+fixing encoding: 1.80GB [03:14, 9.23MB/s][A
+fixing encoding: 1.80GB [03:14, 9.23MB/s][A
+fixing encoding: 1.80GB [03:15, 9.23MB/s][A
+fixing encoding: 1.80GB [03:15, 9.23MB/s][A
+fixing encoding: 1.80GB [03:15, 9.23MB/s][A
+fixing encoding: 1.80GB [03:15, 9.23MB/s][A
+fixing encoding: 1.81GB [03:15, 9.23MB/s][A
+fixing encoding: 1.81GB [03:15, 9.23MB/s][A
+fixing encoding: 1.81GB [03:15, 9.23MB/s][A
+fixing encoding: 1.81GB [03:15, 9.23MB/s][A
+fixing encoding: 1.81GB [03:16, 9.23MB/s][A
+fixing encoding: 1.81GB [03:16, 9.23MB/s][A
+fixing encoding: 1.81GB [03:16, 9.23MB/s][A
+fixing encoding: 1.81GB [03:16, 9.23MB/s][A
+fixing encoding: 1.82GB [03:16, 9.23MB/s][A
+fixing encoding: 1.82GB [03:16, 9.23MB/s][A
+fixing encoding: 1.82GB [03:16, 9.23MB/s][A
+fixing encoding: 1.82GB [03:17, 9.23MB/s][A
+fixing encoding: 1.82GB [03:17, 9.23MB/s][A
+fixing encoding: 1.82GB [03:17, 9.23MB/s][A
+fixing encoding: 1.82GB [03:17, 9.23MB/s][A
+fixing encoding: 1.82GB [03:17, 9.23MB/s][A
+fixing encoding: 1.83GB [03:17, 9.23MB/s][A
+fixing encoding: 1.83GB [03:17, 9.23MB/s][A
+fixing encoding: 1.83GB [03:18, 9.23MB/s][A
+fixing encoding: 1.83GB [03:18, 9.23MB/s][A
+fixing encoding: 1.83GB [03:18, 9.23MB/s][A
+fixing encoding: 1.83GB [03:18, 9.23MB/s][A
+fixing encoding: 1.83GB [03:18, 9.23MB/s][A
+fixing encoding: 1.83GB [03:18, 9.23MB/s][A
+fixing encoding: 1.84GB [03:18, 9.23MB/s][A
+fixing encoding: 1.84GB [03:19, 9.23MB/s][A
+fixing encoding: 1.84GB [03:19, 9.23MB/s][A
+fixing encoding: 1.84GB [03:19, 9.23MB/s][A
+fixing encoding: 1.84GB [03:19, 9.23MB/s][A
+fixing encoding: 1.84GB [03:19, 9.23MB/s][A
+fixing encoding: 1.84GB [03:19, 9.23MB/s][A
+fixing encoding: 1.84GB [03:19, 9.23MB/s][A
+fixing encoding: 1.85GB [03:20, 9.23MB/s][A
+fixing encoding: 1.85GB [03:20, 9.23MB/s][A
+fixing encoding: 1.85GB [03:20, 9.23MB/s][A
+fixing encoding: 1.85GB [03:20, 9.23MB/s][A
+fixing encoding: 1.85GB [03:20, 9.23MB/s][A
+fixing encoding: 1.85GB [03:20, 9.23MB/s][A
+fixing encoding: 1.85GB [03:20, 9.23MB/s][A
+fixing encoding: 1.85GB [03:21, 9.23MB/s][A
+fixing encoding: 1.86GB [03:21, 9.23MB/s][A
+fixing encoding: 1.86GB [03:21, 9.23MB/s][A
+fixing encoding: 1.86GB [03:21, 9.23MB/s][A
+fixing encoding: 1.86GB [03:21, 9.23MB/s][A
+fixing encoding: 1.86GB [03:21, 9.23MB/s][A
+fixing encoding: 1.86GB [03:21, 9.23MB/s][A
+fixing encoding: 1.86GB [03:22, 9.23MB/s][A
+fixing encoding: 1.87GB [03:22, 9.22MB/s][A
+fixing encoding: 1.87GB [03:22, 9.22MB/s][A
+fixing encoding: 1.87GB [03:22, 9.22MB/s][A
+fixing encoding: 1.87GB [03:22, 9.22MB/s][A
+fixing encoding: 1.87GB [03:22, 9.22MB/s][A
+fixing encoding: 1.87GB [03:22, 9.22MB/s][A
+fixing encoding: 1.87GB [03:23, 9.22MB/s][A
+fixing encoding: 1.87GB [03:23, 9.22MB/s][A
+fixing encoding: 1.88GB [03:23, 9.22MB/s][A
+fixing encoding: 1.88GB [03:23, 9.22MB/s][A
+fixing encoding: 1.88GB [03:23, 9.22MB/s][A
+fixing encoding: 1.88GB [03:23, 9.22MB/s][A
+fixing encoding: 1.88GB [03:23, 9.22MB/s][A
+fixing encoding: 1.88GB [03:24, 9.22MB/s][A
+fixing encoding: 1.88GB [03:24, 9.22MB/s][A
+fixing encoding: 1.88GB [03:24, 9.22MB/s][A
+fixing encoding: 1.89GB [03:24, 9.22MB/s][A
+fixing encoding: 1.89GB [03:24, 9.22MB/s][A
+fixing encoding: 1.89GB [03:24, 9.22MB/s][A
+fixing encoding: 1.89GB [03:24, 9.22MB/s][A
+fixing encoding: 1.89GB [03:24, 9.22MB/s][A
+fixing encoding: 1.89GB [03:25, 9.22MB/s][A
+fixing encoding: 1.89GB [03:25, 9.22MB/s][A
+fixing encoding: 1.89GB [03:25, 9.22MB/s][A
+fixing encoding: 1.90GB [03:25, 9.22MB/s][A
+fixing encoding: 1.90GB [03:25, 9.22MB/s][A
+fixing encoding: 1.90GB [03:25, 9.22MB/s][A
+fixing encoding: 1.90GB [03:25, 9.22MB/s][A
+fixing encoding: 1.90GB [03:26, 9.22MB/s][A
+fixing encoding: 1.90GB [03:26, 9.22MB/s][A
+fixing encoding: 1.90GB [03:26, 9.22MB/s][A
+fixing encoding: 1.90GB [03:26, 9.22MB/s][A
+fixing encoding: 1.91GB [03:26, 9.22MB/s][A
+fixing encoding: 1.91GB [03:26, 9.22MB/s][A
+fixing encoding: 1.91GB [03:26, 9.22MB/s][A
+fixing encoding: 1.91GB [03:27, 9.22MB/s][A
+fixing encoding: 1.91GB [03:27, 9.22MB/s][A
+fixing encoding: 1.91GB [03:27, 9.22MB/s][A
+fixing encoding: 1.91GB [03:27, 9.22MB/s][A
+fixing encoding: 1.92GB [03:27, 9.22MB/s][A
+fixing encoding: 1.92GB [03:27, 9.22MB/s][A
+fixing encoding: 1.92GB [03:27, 9.22MB/s][A
+fixing encoding: 1.92GB [03:28, 9.22MB/s][A
+fixing encoding: 1.92GB [03:28, 9.22MB/s][A
+fixing encoding: 1.92GB [03:28, 9.22MB/s][A
+fixing encoding: 1.92GB [03:28, 9.22MB/s][A
+fixing encoding: 1.92GB [03:28, 9.22MB/s][A
+fixing encoding: 1.93GB [03:28, 9.22MB/s][A
+fixing encoding: 1.93GB [03:28, 9.22MB/s][A
+fixing encoding: 1.93GB [03:29, 9.22MB/s][A
+fixing encoding: 1.93GB [03:29, 9.22MB/s][A
+fixing encoding: 1.93GB [03:29, 9.22MB/s][A
+fixing encoding: 1.93GB [03:29, 9.22MB/s][A
+fixing encoding: 1.93GB [03:29, 9.22MB/s][A
+fixing encoding: 1.93GB [03:29, 9.22MB/s][A
+fixing encoding: 1.94GB [03:29, 9.22MB/s][A
+fixing encoding: 1.94GB [03:30, 9.22MB/s][A
+fixing encoding: 1.94GB [03:30, 9.22MB/s][A
+fixing encoding: 1.94GB [03:30, 9.22MB/s][A
+fixing encoding: 1.94GB [03:30, 9.22MB/s][A
+fixing encoding: 1.94GB [03:30, 9.22MB/s][A
+fixing encoding: 1.94GB [03:30, 9.22MB/s][A
+fixing encoding: 1.94GB [03:30, 9.22MB/s][A
+fixing encoding: 1.95GB [03:30, 9.22MB/s][A
+fixing encoding: 1.95GB [03:31, 9.22MB/s][A
+fixing encoding: 1.95GB [03:31, 9.22MB/s][A
+fixing encoding: 1.95GB [03:31, 9.22MB/s][A
+fixing encoding: 1.95GB [03:31, 9.22MB/s][A
+fixing encoding: 1.95GB [03:31, 9.22MB/s][A
+fixing encoding: 1.95GB [03:31, 9.22MB/s][A
+fixing encoding: 1.96GB [03:31, 9.22MB/s][A
+fixing encoding: 1.96GB [03:32, 9.22MB/s][A
+fixing encoding: 1.96GB [03:32, 9.22MB/s][A
+fixing encoding: 1.96GB [03:32, 9.22MB/s][A
+fixing encoding: 1.96GB [03:32, 9.22MB/s][A
+fixing encoding: 1.96GB [03:32, 9.22MB/s][A
+fixing encoding: 1.96GB [03:32, 9.22MB/s][A
+fixing encoding: 1.96GB [03:32, 9.22MB/s][A
+fixing encoding: 1.97GB [03:33, 9.22MB/s][A
+fixing encoding: 1.97GB [03:33, 9.22MB/s][A
+fixing encoding: 1.97GB [03:33, 9.22MB/s][A
+fixing encoding: 1.97GB [03:33, 9.22MB/s][A
+fixing encoding: 1.97GB [03:33, 9.22MB/s][A
+fixing encoding: 1.97GB [03:33, 9.22MB/s][A
+fixing encoding: 1.97GB [03:33, 9.22MB/s][A
+fixing encoding: 1.97GB [03:34, 9.22MB/s][A
+fixing encoding: 1.98GB [03:34, 9.22MB/s][A
+fixing encoding: 1.98GB [03:34, 9.22MB/s][A
+fixing encoding: 1.98GB [03:34, 9.22MB/s][A
+fixing encoding: 1.98GB [03:34, 9.22MB/s][A
+fixing encoding: 1.98GB [03:34, 9.22MB/s][A
+fixing encoding: 1.98GB [03:34, 9.22MB/s][A
+fixing encoding: 1.98GB [03:35, 9.22MB/s][A
+fixing encoding: 1.99GB [03:35, 9.22MB/s][A
+fixing encoding: 1.99GB [03:35, 9.22MB/s][A
+fixing encoding: 1.99GB [03:35, 9.22MB/s][A
+fixing encoding: 1.99GB [03:35, 9.22MB/s][A
+fixing encoding: 1.99GB [03:35, 9.22MB/s][A
+fixing encoding: 1.99GB [03:35, 9.22MB/s][A
+fixing encoding: 1.99GB [03:36, 9.22MB/s][A
+fixing encoding: 1.99GB [03:36, 9.22MB/s][A
+fixing encoding: 2.00GB [03:36, 9.22MB/s][A
+fixing encoding: 2.00GB [03:36, 9.22MB/s][A
+fixing encoding: 2.00GB [03:36, 9.22MB/s][A
+fixing encoding: 2.00GB [03:36, 9.22MB/s][A
+fixing encoding: 2.00GB [03:36, 9.22MB/s][A
+fixing encoding: 2.00GB [03:37, 9.22MB/s][A
+fixing encoding: 2.00GB [03:37, 9.22MB/s][A
+fixing encoding: 2.00GB [03:37, 9.22MB/s][A
+fixing encoding: 2.01GB [03:37, 9.22MB/s][A
+fixing encoding: 2.01GB [03:37, 9.22MB/s][A
+fixing encoding: 2.01GB [03:37, 9.22MB/s][A
+fixing encoding: 2.01GB [03:37, 9.22MB/s][A
+fixing encoding: 2.01GB [03:38, 9.22MB/s][A
+fixing encoding: 2.01GB [03:38, 9.22MB/s][A
+fixing encoding: 2.01GB [03:38, 9.22MB/s][A
+fixing encoding: 2.02GB [03:38, 9.22MB/s][A
+fixing encoding: 2.02GB [03:38, 9.22MB/s][A
+fixing encoding: 2.02GB [03:38, 9.22MB/s][A
+fixing encoding: 2.02GB [03:38, 9.22MB/s][A
+fixing encoding: 2.02GB [03:39, 9.22MB/s][A
+fixing encoding: 2.02GB [03:39, 9.22MB/s][A
+fixing encoding: 2.02GB [03:39, 9.22MB/s][A
+fixing encoding: 2.02GB [03:39, 9.22MB/s][A
+fixing encoding: 2.03GB [03:39, 9.22MB/s][A
+fixing encoding: 2.03GB [03:39, 9.22MB/s][A
+fixing encoding: 2.03GB [03:39, 9.22MB/s][A
+fixing encoding: 2.03GB [03:40, 9.22MB/s][A
+fixing encoding: 2.03GB [03:40, 9.22MB/s][A
+fixing encoding: 2.03GB [03:40, 9.22MB/s][A
+fixing encoding: 2.03GB [03:40, 9.22MB/s][A
+fixing encoding: 2.03GB [03:40, 9.22MB/s][A
+fixing encoding: 2.04GB [03:40, 9.22MB/s][A
+fixing encoding: 2.04GB [03:40, 9.22MB/s][A
+fixing encoding: 2.04GB [03:41, 9.22MB/s][A
+fixing encoding: 2.04GB [03:41, 9.22MB/s][A
+fixing encoding: 2.04GB [03:41, 9.22MB/s][A
+fixing encoding: 2.04GB [03:41, 9.22MB/s][A
+fixing encoding: 2.04GB [03:41, 9.22MB/s][A
+fixing encoding: 2.05GB [03:41, 9.22MB/s][A
+fixing encoding: 2.05GB [03:41, 9.22MB/s][A
+fixing encoding: 2.05GB [03:41, 9.22MB/s][A
+fixing encoding: 2.05GB [03:42, 9.22MB/s][A
+fixing encoding: 2.05GB [03:42, 9.22MB/s][A
+fixing encoding: 2.05GB [03:42, 9.22MB/s][A
+fixing encoding: 2.05GB [03:42, 9.22MB/s][A
+fixing encoding: 2.05GB [03:42, 9.22MB/s][A
+fixing encoding: 2.06GB [03:42, 9.22MB/s][A
+fixing encoding: 2.06GB [03:42, 9.22MB/s][A
+fixing encoding: 2.06GB [03:43, 9.22MB/s][A
+fixing encoding: 2.06GB [03:43, 9.22MB/s][A
+fixing encoding: 2.06GB [03:43, 9.22MB/s][A
+fixing encoding: 2.06GB [03:43, 9.22MB/s][A
+fixing encoding: 2.06GB [03:43, 9.22MB/s][A
+fixing encoding: 2.06GB [03:43, 9.22MB/s][A
+fixing encoding: 2.07GB [03:43, 9.22MB/s][A
+fixing encoding: 2.07GB [03:44, 9.22MB/s][A
+fixing encoding: 2.07GB [03:44, 9.22MB/s][A
+fixing encoding: 2.07GB [03:44, 9.22MB/s][A
+fixing encoding: 2.07GB [03:44, 9.22MB/s][A
+fixing encoding: 2.07GB [03:44, 9.22MB/s][A
+fixing encoding: 2.07GB [03:44, 9.22MB/s][A
+fixing encoding: 2.08GB [03:44, 9.22MB/s][A
+fixing encoding: 2.08GB [03:45, 9.22MB/s][A
+fixing encoding: 2.08GB [03:45, 9.22MB/s][A
+fixing encoding: 2.08GB [03:45, 9.22MB/s][A
+fixing encoding: 2.08GB [03:45, 9.22MB/s][A
+fixing encoding: 2.08GB [03:45, 9.22MB/s][A
+fixing encoding: 2.08GB [03:45, 9.22MB/s][A
+fixing encoding: 2.08GB [03:45, 9.22MB/s][A
+fixing encoding: 2.09GB [03:46, 9.22MB/s][A
+fixing encoding: 2.09GB [03:46, 9.22MB/s][A
+fixing encoding: 2.09GB [03:46, 9.22MB/s][A
+fixing encoding: 2.09GB [03:46, 9.22MB/s][A
+fixing encoding: 2.09GB [03:46, 9.22MB/s][A
+fixing encoding: 2.09GB [03:46, 9.22MB/s][A
+fixing encoding: 2.09GB [03:46, 9.22MB/s][A
+fixing encoding: 2.10GB [03:47, 9.22MB/s][A
+fixing encoding: 2.10GB [03:47, 9.22MB/s][A
+fixing encoding: 2.10GB [03:47, 9.22MB/s][A
+fixing encoding: 2.10GB [03:47, 9.22MB/s][A
+fixing encoding: 2.10GB [03:47, 9.22MB/s][A
+fixing encoding: 2.10GB [03:47, 9.22MB/s][A
+fixing encoding: 2.10GB [03:47, 9.22MB/s][A
+fixing encoding: 2.10GB [03:48, 9.22MB/s][A
+fixing encoding: 2.11GB [03:48, 9.22MB/s][A
+fixing encoding: 2.11GB [03:48, 9.22MB/s][A
+fixing encoding: 2.11GB [03:48, 9.22MB/s][A
+fixing encoding: 2.11GB [03:48, 9.22MB/s][A
+fixing encoding: 2.11GB [03:48, 9.22MB/s][A
+fixing encoding: 2.11GB [03:48, 9.22MB/s][A
+fixing encoding: 2.11GB [03:49, 9.22MB/s][A
+fixing encoding: 2.11GB [03:49, 9.22MB/s][A
+fixing encoding: 2.12GB [03:49, 9.22MB/s][A
+fixing encoding: 2.12GB [03:49, 9.22MB/s][A
+fixing encoding: 2.12GB [03:49, 9.22MB/s][A
+fixing encoding: 2.12GB [03:49, 9.22MB/s][A
+fixing encoding: 2.12GB [03:49, 9.22MB/s][A
+fixing encoding: 2.12GB [03:50, 9.22MB/s][A
+fixing encoding: 2.12GB [03:50, 9.22MB/s][A
+fixing encoding: 2.13GB [03:50, 9.22MB/s][A
+fixing encoding: 2.13GB [03:50, 9.22MB/s][A
+fixing encoding: 2.13GB [03:50, 9.22MB/s][A
+fixing encoding: 2.13GB [03:50, 9.22MB/s][A
+fixing encoding: 2.13GB [03:51, 9.22MB/s][A
+fixing encoding: 2.13GB [03:51, 9.22MB/s][A
+fixing encoding: 2.13GB [03:51, 9.22MB/s][A
+fixing encoding: 2.13GB [03:51, 9.22MB/s][A
+fixing encoding: 2.14GB [03:51, 9.22MB/s][A
+fixing encoding: 2.14GB [03:51, 9.22MB/s][A
+fixing encoding: 2.14GB [03:51, 9.22MB/s][A
+fixing encoding: 2.14GB [03:52, 9.22MB/s][A
+fixing encoding: 2.14GB [03:52, 9.22MB/s][A
+fixing encoding: 2.14GB [03:52, 9.22MB/s][A
+fixing encoding: 2.14GB [03:52, 9.22MB/s][A
+fixing encoding: 2.15GB [03:52, 9.22MB/s][A
+fixing encoding: 2.15GB [03:52, 9.22MB/s][A
+fixing encoding: 2.15GB [03:52, 9.22MB/s][A
+fixing encoding: 2.15GB [03:52, 9.22MB/s][A
+fixing encoding: 2.15GB [03:53, 9.22MB/s][A
+fixing encoding: 2.15GB [03:53, 9.23MB/s][A
+fixing encoding: 2.15GB [03:53, 9.23MB/s][A
+fixing encoding: 2.15GB [03:53, 9.23MB/s][A
+fixing encoding: 2.16GB [03:53, 9.23MB/s][A
+fixing encoding: 2.16GB [03:53, 9.23MB/s][A
+fixing encoding: 2.16GB [03:53, 9.23MB/s][A
+fixing encoding: 2.16GB [03:54, 9.23MB/s][A
+fixing encoding: 2.16GB [03:54, 9.23MB/s][A
+fixing encoding: 2.16GB [03:54, 9.23MB/s][A
+fixing encoding: 2.16GB [03:54, 9.23MB/s][A
+fixing encoding: 2.17GB [03:54, 9.23MB/s][A
+fixing encoding: 2.17GB [03:54, 9.23MB/s][A
+fixing encoding: 2.17GB [03:54, 9.23MB/s][A
+fixing encoding: 2.17GB [03:55, 9.23MB/s][A
+fixing encoding: 2.17GB [03:55, 9.23MB/s][A
+fixing encoding: 2.17GB [03:55, 9.23MB/s][A
+fixing encoding: 2.17GB [03:55, 9.23MB/s][A
+fixing encoding: 2.17GB [03:55, 9.23MB/s][A
+fixing encoding: 2.18GB [03:55, 9.23MB/s][A
+fixing encoding: 2.18GB [03:55, 9.23MB/s][A
+fixing encoding: 2.18GB [03:56, 9.23MB/s][A
+fixing encoding: 2.18GB [03:56, 9.23MB/s][A
+fixing encoding: 2.18GB [03:56, 9.23MB/s][A
+fixing encoding: 2.18GB [03:56, 9.23MB/s][A
+fixing encoding: 2.18GB [03:56, 9.23MB/s][A
+fixing encoding: 2.19GB [03:56, 9.23MB/s][A
+fixing encoding: 2.19GB [03:56, 9.23MB/s][A
+fixing encoding: 2.19GB [03:57, 9.23MB/s][A
+fixing encoding: 2.19GB [03:57, 9.23MB/s][A
+fixing encoding: 2.19GB [03:57, 9.23MB/s][A
+fixing encoding: 2.19GB [03:57, 9.22MB/s][A
+fixing encoding: 2.19GB [03:57, 9.22MB/s][A
+fixing encoding: 2.19GB [03:57, 9.22MB/s][A
+fixing encoding: 2.20GB [03:58, 9.23MB/s][A
+fixing encoding: 2.20GB [03:58, 9.23MB/s][A
+fixing encoding: 2.20GB [03:58, 9.23MB/s][A
+fixing encoding: 2.20GB [03:58, 9.23MB/s][A
+fixing encoding: 2.20GB [03:58, 9.23MB/s][A
+fixing encoding: 2.20GB [03:58, 9.23MB/s][A
+fixing encoding: 2.20GB [03:58, 9.23MB/s][A
+fixing encoding: 2.21GB [03:59, 9.23MB/s][A
+fixing encoding: 2.21GB [03:59, 9.23MB/s][A
+fixing encoding: 2.21GB [03:59, 9.23MB/s][A
+fixing encoding: 2.21GB [03:59, 9.23MB/s][A
+fixing encoding: 2.21GB [03:59, 9.23MB/s][A
+fixing encoding: 2.21GB [03:59, 9.23MB/s][A
+fixing encoding: 2.21GB [03:59, 9.23MB/s][A
+fixing encoding: 2.21GB [04:00, 9.23MB/s][A
+fixing encoding: 2.22GB [04:00, 9.23MB/s][A
+fixing encoding: 2.22GB [04:00, 9.23MB/s][A
+fixing encoding: 2.22GB [04:00, 9.23MB/s][A
+fixing encoding: 2.22GB [04:00, 9.23MB/s][A
+fixing encoding: 2.22GB [04:00, 9.23MB/s][A
+fixing encoding: 2.22GB [04:00, 9.23MB/s][A
+fixing encoding: 2.22GB [04:01, 9.23MB/s][A
+fixing encoding: 2.23GB [04:01, 9.23MB/s][A
+fixing encoding: 2.23GB [04:01, 9.23MB/s][A
+fixing encoding: 2.23GB [04:01, 9.23MB/s][A
+fixing encoding: 2.23GB [04:01, 9.23MB/s][A
+fixing encoding: 2.23GB [04:01, 9.23MB/s][A
+fixing encoding: 2.23GB [04:01, 9.23MB/s][A
+fixing encoding: 2.23GB [04:02, 9.23MB/s][A
+fixing encoding: 2.23GB [04:02, 9.23MB/s][A
+fixing encoding: 2.24GB [04:02, 9.23MB/s][A
+fixing encoding: 2.24GB [04:02, 9.23MB/s][A
+fixing encoding: 2.24GB [04:02, 9.23MB/s][A
+fixing encoding: 2.24GB [04:02, 9.23MB/s][A
+fixing encoding: 2.24GB [04:02, 9.23MB/s][A
+fixing encoding: 2.24GB [04:03, 9.23MB/s][A
+fixing encoding: 2.24GB [04:03, 9.23MB/s][A
+fixing encoding: 2.25GB [04:03, 9.23MB/s][A
+fixing encoding: 2.25GB [04:03, 9.23MB/s][A
+fixing encoding: 2.25GB [04:03, 9.23MB/s][A
+fixing encoding: 2.25GB [04:03, 9.23MB/s][A
+fixing encoding: 2.25GB [04:03, 9.23MB/s][A
+fixing encoding: 2.25GB [04:04, 9.23MB/s][A
+fixing encoding: 2.25GB [04:04, 9.23MB/s][A
+fixing encoding: 2.25GB [04:04, 9.23MB/s][A
+fixing encoding: 2.26GB [04:04, 9.23MB/s][A
+fixing encoding: 2.26GB [04:04, 9.23MB/s][A
+fixing encoding: 2.26GB [04:04, 9.23MB/s][A
+fixing encoding: 2.26GB [04:04, 9.23MB/s][A
+fixing encoding: 2.26GB [04:05, 9.23MB/s][A
+fixing encoding: 2.26GB [04:05, 9.23MB/s][A
+fixing encoding: 2.26GB [04:05, 9.23MB/s][A
+fixing encoding: 2.27GB [04:05, 9.23MB/s][A
+fixing encoding: 2.27GB [04:05, 9.23MB/s][A
+fixing encoding: 2.27GB [04:05, 9.23MB/s][A
+fixing encoding: 2.27GB [04:06, 9.23MB/s][A
+fixing encoding: 2.27GB [04:06, 9.23MB/s][A
+fixing encoding: 2.27GB [04:06, 9.23MB/s][A
+fixing encoding: 2.27GB [04:06, 9.23MB/s][A
+fixing encoding: 2.28GB [04:06, 9.23MB/s][A
+fixing encoding: 2.28GB [04:06, 9.23MB/s][A
+fixing encoding: 2.28GB [04:06, 9.23MB/s][A
+fixing encoding: 2.28GB [04:07, 9.23MB/s][A
+fixing encoding: 2.28GB [04:07, 9.23MB/s][A
+fixing encoding: 2.28GB [04:07, 9.23MB/s][A
+fixing encoding: 2.28GB [04:07, 9.23MB/s][A
+fixing encoding: 2.28GB [04:07, 9.23MB/s][A
+fixing encoding: 2.29GB [04:07, 9.23MB/s][A
+fixing encoding: 2.29GB [04:07, 9.23MB/s][A
+fixing encoding: 2.29GB [04:08, 9.23MB/s][A
+fixing encoding: 2.29GB [04:08, 9.23MB/s][A
+fixing encoding: 2.29GB [04:08, 9.23MB/s][A
+fixing encoding: 2.29GB [04:08, 9.23MB/s][A
+fixing encoding: 2.29GB [04:08, 9.23MB/s][A
+fixing encoding: 2.30GB [04:08, 9.23MB/s][A
+fixing encoding: 2.30GB [04:08, 9.23MB/s][A
+fixing encoding: 2.30GB [04:09, 9.23MB/s][A
+fixing encoding: 2.30GB [04:09, 9.23MB/s][A
+fixing encoding: 2.30GB [04:09, 9.23MB/s][A
+fixing encoding: 2.30GB [04:09, 9.23MB/s][A
+fixing encoding: 2.30GB [04:09, 9.23MB/s][A
+fixing encoding: 2.30GB [04:09, 9.23MB/s][A
+fixing encoding: 2.31GB [04:09, 9.23MB/s][A
+fixing encoding: 2.31GB [04:10, 9.23MB/s][A
+fixing encoding: 2.31GB [04:10, 9.23MB/s][A
+fixing encoding: 2.31GB [04:10, 9.23MB/s][A
+fixing encoding: 2.31GB [04:10, 9.23MB/s][A
+fixing encoding: 2.31GB [04:10, 9.23MB/s][A
+fixing encoding: 2.31GB [04:10, 9.23MB/s][A
+fixing encoding: 2.32GB [04:10, 9.23MB/s][A
+fixing encoding: 2.32GB [04:11, 9.23MB/s][A
+fixing encoding: 2.32GB [04:11, 9.23MB/s][A
+fixing encoding: 2.32GB [04:11, 9.23MB/s][A
+fixing encoding: 2.32GB [04:11, 9.23MB/s][A
+fixing encoding: 2.32GB [04:11, 9.23MB/s][A
+fixing encoding: 2.32GB [04:11, 9.23MB/s][A
+fixing encoding: 2.33GB [04:12, 9.23MB/s][A
+fixing encoding: 2.33GB [04:12, 9.23MB/s][A
+fixing encoding: 2.33GB [04:12, 9.23MB/s][A
+fixing encoding: 2.33GB [04:12, 9.23MB/s][A
+fixing encoding: 2.33GB [04:12, 9.23MB/s][A
+fixing encoding: 2.33GB [04:12, 9.23MB/s][A
+fixing encoding: 2.33GB [04:12, 9.23MB/s][A
+fixing encoding: 2.33GB [04:13, 9.23MB/s][A
+fixing encoding: 2.34GB [04:13, 9.23MB/s][A
+fixing encoding: 2.34GB [04:13, 9.23MB/s][A
+fixing encoding: 2.34GB [04:13, 9.23MB/s][A
+fixing encoding: 2.34GB [04:13, 9.23MB/s][A
+fixing encoding: 2.34GB [04:13, 9.23MB/s][A
+fixing encoding: 2.34GB [04:13, 9.23MB/s][A
+fixing encoding: 2.34GB [04:14, 9.23MB/s][A
+fixing encoding: 2.35GB [04:14, 9.23MB/s][A
+fixing encoding: 2.35GB [04:14, 9.23MB/s][A
+fixing encoding: 2.35GB [04:14, 9.23MB/s][A
+fixing encoding: 2.35GB [04:14, 9.23MB/s][A
+fixing encoding: 2.35GB [04:14, 9.23MB/s][A
+fixing encoding: 2.35GB [04:15, 9.23MB/s][A
+fixing encoding: 2.35GB [04:15, 9.23MB/s][A
+fixing encoding: 2.36GB [04:15, 9.22MB/s][A
+fixing encoding: 2.36GB [04:15, 9.22MB/s][A
+fixing encoding: 2.36GB [04:15, 9.22MB/s][A
+fixing encoding: 2.36GB [04:15, 9.22MB/s][A
+fixing encoding: 2.36GB [04:15, 9.22MB/s][A
+fixing encoding: 2.36GB [04:16, 9.22MB/s][A
+fixing encoding: 2.36GB [04:16, 9.22MB/s][A
+fixing encoding: 2.36GB [04:16, 9.22MB/s][A
+fixing encoding: 2.37GB [04:16, 9.22MB/s][A
+fixing encoding: 2.37GB [04:16, 9.22MB/s][A
+fixing encoding: 2.37GB [04:16, 9.22MB/s][A
+fixing encoding: 2.37GB [04:16, 9.22MB/s][A
+fixing encoding: 2.37GB [04:17, 9.22MB/s][A
+fixing encoding: 2.37GB [04:17, 9.22MB/s][A
+fixing encoding: 2.37GB [04:17, 9.22MB/s][A
+fixing encoding: 2.38GB [04:17, 9.22MB/s][A
+fixing encoding: 2.38GB [04:17, 9.22MB/s][A
+fixing encoding: 2.38GB [04:17, 9.22MB/s][A
+fixing encoding: 2.38GB [04:17, 9.22MB/s][A
+fixing encoding: 2.38GB [04:18, 9.22MB/s][A
+fixing encoding: 2.38GB [04:18, 9.22MB/s][A
+fixing encoding: 2.38GB [04:18, 9.22MB/s][A
+fixing encoding: 2.39GB [04:18, 9.23MB/s][A
+fixing encoding: 2.39GB [04:18, 9.23MB/s][A
+fixing encoding: 2.39GB [04:18, 9.23MB/s][A
+fixing encoding: 2.39GB [04:18, 9.23MB/s][A
+fixing encoding: 2.39GB [04:19, 9.23MB/s][A
+fixing encoding: 2.39GB [04:19, 9.23MB/s][A
+fixing encoding: 2.39GB [04:19, 9.23MB/s][A
+fixing encoding: 2.39GB [04:19, 9.23MB/s][A
+fixing encoding: 2.40GB [04:19, 9.23MB/s][A
+fixing encoding: 2.40GB [04:19, 9.23MB/s][A
+fixing encoding: 2.40GB [04:19, 9.23MB/s][A
+fixing encoding: 2.40GB [04:20, 9.23MB/s][A
+fixing encoding: 2.40GB [04:20, 9.23MB/s][A
+fixing encoding: 2.40GB [04:20, 9.23MB/s][A
+fixing encoding: 2.40GB [04:20, 9.23MB/s][A
+fixing encoding: 2.41GB [04:20, 9.23MB/s][A
+fixing encoding: 2.41GB [04:20, 9.23MB/s][A
+fixing encoding: 2.41GB [04:20, 9.23MB/s][A
+fixing encoding: 2.41GB [04:21, 9.23MB/s][A
+fixing encoding: 2.41GB [04:21, 9.23MB/s][A
+fixing encoding: 2.41GB [04:21, 9.23MB/s][A
+fixing encoding: 2.41GB [04:21, 9.23MB/s][A
+fixing encoding: 2.42GB [04:21, 9.23MB/s][A
+fixing encoding: 2.42GB [04:21, 9.23MB/s][A
+fixing encoding: 2.42GB [04:21, 9.23MB/s][A
+fixing encoding: 2.42GB [04:22, 9.23MB/s][A
+fixing encoding: 2.42GB [04:22, 9.23MB/s][A
+fixing encoding: 2.42GB [04:22, 9.23MB/s][A
+fixing encoding: 2.42GB [04:22, 9.23MB/s][A
+fixing encoding: 2.42GB [04:22, 9.23MB/s][A
+fixing encoding: 2.43GB [04:22, 9.23MB/s][A
+fixing encoding: 2.43GB [04:22, 9.23MB/s][A
+fixing encoding: 2.43GB [04:23, 9.23MB/s][A
+fixing encoding: 2.43GB [04:23, 9.23MB/s][A
+fixing encoding: 2.43GB [04:23, 9.23MB/s][A
+fixing encoding: 2.43GB [04:23, 9.23MB/s][A
+fixing encoding: 2.43GB [04:23, 9.23MB/s][A
+fixing encoding: 2.44GB [04:23, 9.23MB/s][A
+fixing encoding: 2.44GB [04:23, 9.23MB/s][A
+fixing encoding: 2.44GB [04:24, 9.23MB/s][A
+fixing encoding: 2.44GB [04:24, 9.23MB/s][A
+fixing encoding: 2.44GB [04:24, 9.23MB/s][A
+fixing encoding: 2.44GB [04:24, 9.23MB/s][A
+fixing encoding: 2.44GB [04:24, 9.23MB/s][A
+fixing encoding: 2.45GB [04:24, 9.23MB/s][A
+fixing encoding: 2.45GB [04:25, 9.23MB/s][A
+fixing encoding: 2.45GB [04:25, 9.23MB/s][A
+fixing encoding: 2.45GB [04:25, 9.23MB/s][A
+fixing encoding: 2.45GB [04:25, 9.23MB/s][A
+fixing encoding: 2.45GB [04:25, 9.23MB/s][A
+fixing encoding: 2.45GB [04:25, 9.23MB/s][A
+fixing encoding: 2.45GB [04:25, 9.23MB/s][A
+fixing encoding: 2.46GB [04:26, 9.23MB/s][A
+fixing encoding: 2.46GB [04:26, 9.23MB/s][A
+fixing encoding: 2.46GB [04:26, 9.23MB/s][A
+fixing encoding: 2.46GB [04:26, 9.23MB/s][A
+fixing encoding: 2.46GB [04:26, 9.23MB/s][A
+fixing encoding: 2.46GB [04:26, 9.23MB/s][A
+fixing encoding: 2.46GB [04:26, 9.23MB/s][A
+fixing encoding: 2.47GB [04:27, 9.23MB/s][A
+fixing encoding: 2.47GB [04:27, 9.23MB/s][A
+fixing encoding: 2.47GB [04:27, 9.23MB/s][A
+fixing encoding: 2.47GB [04:27, 9.23MB/s][A
+fixing encoding: 2.47GB [04:27, 9.23MB/s][A
+fixing encoding: 2.47GB [04:27, 9.23MB/s][A
+fixing encoding: 2.47GB [04:28, 9.23MB/s][A
+fixing encoding: 2.48GB [04:28, 9.23MB/s][A
+fixing encoding: 2.48GB [04:28, 9.23MB/s][A
+fixing encoding: 2.48GB [04:28, 9.23MB/s][A
+fixing encoding: 2.48GB [04:28, 9.23MB/s][A
+fixing encoding: 2.48GB [04:28, 9.23MB/s][A
+fixing encoding: 2.48GB [04:28, 9.23MB/s][A
+fixing encoding: 2.48GB [04:29, 9.23MB/s][A
+fixing encoding: 2.49GB [04:29, 9.23MB/s][A
+fixing encoding: 2.49GB [04:29, 9.23MB/s][A
+fixing encoding: 2.49GB [04:29, 9.23MB/s][A
+fixing encoding: 2.49GB [04:29, 9.23MB/s][A
+fixing encoding: 2.49GB [04:29, 9.23MB/s][A
+fixing encoding: 2.49GB [04:30, 9.23MB/s][A
+fixing encoding: 2.49GB [04:30, 9.23MB/s][A
+fixing encoding: 2.49GB [04:30, 9.23MB/s][A
+fixing encoding: 2.50GB [04:30, 9.23MB/s][A
+fixing encoding: 2.50GB [04:30, 9.23MB/s][A
+fixing encoding: 2.50GB [04:30, 9.23MB/s][A
+fixing encoding: 2.50GB [04:30, 9.23MB/s][A
+fixing encoding: 2.50GB [04:31, 9.23MB/s][A
+fixing encoding: 2.50GB [04:31, 9.23MB/s][A
+fixing encoding: 2.50GB [04:31, 9.23MB/s][A
+fixing encoding: 2.51GB [04:31, 9.23MB/s][A
+fixing encoding: 2.51GB [04:31, 9.23MB/s][A
+fixing encoding: 2.51GB [04:31, 9.23MB/s][A
+fixing encoding: 2.51GB [04:32, 9.23MB/s][A
+fixing encoding: 2.51GB [04:32, 9.23MB/s][A
+fixing encoding: 2.51GB [04:32, 9.23MB/s][A
+fixing encoding: 2.51GB [04:32, 9.23MB/s][A
+fixing encoding: 2.52GB [04:32, 9.23MB/s][A
+fixing encoding: 2.52GB [04:32, 9.23MB/s][A
+fixing encoding: 2.52GB [04:32, 9.23MB/s][A
+fixing encoding: 2.52GB [04:33, 9.23MB/s][A
+fixing encoding: 2.52GB [04:33, 9.23MB/s][A
+fixing encoding: 2.52GB [04:33, 9.23MB/s][A
+fixing encoding: 2.52GB [04:33, 9.23MB/s][A
+fixing encoding: 2.53GB [04:33, 9.23MB/s][A
+fixing encoding: 2.53GB [04:33, 9.23MB/s][A
+fixing encoding: 2.53GB [04:33, 9.23MB/s][A
+fixing encoding: 2.53GB [04:34, 9.23MB/s][A
+fixing encoding: 2.53GB [04:34, 9.23MB/s][A
+fixing encoding: 2.53GB [04:34, 9.23MB/s][A
+fixing encoding: 2.53GB [04:34, 9.23MB/s][A
+fixing encoding: 2.53GB [04:34, 9.23MB/s][A
+fixing encoding: 2.54GB [04:34, 9.23MB/s][A
+fixing encoding: 2.54GB [04:35, 9.23MB/s][A
+fixing encoding: 2.54GB [04:35, 9.23MB/s][A
+fixing encoding: 2.54GB [04:35, 9.23MB/s][A
+fixing encoding: 2.54GB [04:35, 9.23MB/s][A
+fixing encoding: 2.54GB [04:35, 9.23MB/s][A
+fixing encoding: 2.54GB [04:35, 9.23MB/s][A
+fixing encoding: 2.55GB [04:35, 9.23MB/s][A
+fixing encoding: 2.55GB [04:36, 9.23MB/s][A
+fixing encoding: 2.55GB [04:36, 9.23MB/s][A
+fixing encoding: 2.55GB [04:36, 9.23MB/s][A
+fixing encoding: 2.55GB [04:36, 9.23MB/s][A
+fixing encoding: 2.55GB [04:36, 9.23MB/s][A
+fixing encoding: 2.55GB [04:36, 9.23MB/s][A
+fixing encoding: 2.56GB [04:37, 9.23MB/s][A
+fixing encoding: 2.56GB [04:37, 9.23MB/s][A
+fixing encoding: 2.56GB [04:37, 9.23MB/s][A
+fixing encoding: 2.56GB [04:37, 9.23MB/s][A
+fixing encoding: 2.56GB [04:37, 9.23MB/s][A
+fixing encoding: 2.56GB [04:37, 9.23MB/s][A
+fixing encoding: 2.56GB [04:37, 9.23MB/s][A
+fixing encoding: 2.57GB [04:38, 9.23MB/s][A
+fixing encoding: 2.57GB [04:38, 9.23MB/s][A
+fixing encoding: 2.57GB [04:38, 9.23MB/s][A
+fixing encoding: 2.57GB [04:38, 9.23MB/s][A
+fixing encoding: 2.57GB [04:38, 9.23MB/s][A
+fixing encoding: 2.57GB [04:38, 9.23MB/s][A
+fixing encoding: 2.57GB [04:38, 9.23MB/s][A
+fixing encoding: 2.58GB [04:39, 9.23MB/s][A
+fixing encoding: 2.58GB [04:39, 9.23MB/s][A
+fixing encoding: 2.58GB [04:39, 9.23MB/s][A
+fixing encoding: 2.58GB [04:39, 9.23MB/s][A
+fixing encoding: 2.58GB [04:39, 9.23MB/s][A
+fixing encoding: 2.58GB [04:39, 9.23MB/s][A
+fixing encoding: 2.58GB [04:40, 9.23MB/s][A
+fixing encoding: 2.58GB [04:40, 9.23MB/s][A
+fixing encoding: 2.59GB [04:40, 9.23MB/s][A
+fixing encoding: 2.59GB [04:40, 9.23MB/s][A
+fixing encoding: 2.59GB [04:40, 9.23MB/s][A
+fixing encoding: 2.59GB [04:40, 9.23MB/s][A
+fixing encoding: 2.59GB [04:40, 9.23MB/s][A
+fixing encoding: 2.59GB [04:41, 9.23MB/s][A
+fixing encoding: 2.59GB [04:41, 9.23MB/s][A
+fixing encoding: 2.60GB [04:41, 9.23MB/s][A
+fixing encoding: 2.60GB [04:41, 9.23MB/s][A
+fixing encoding: 2.60GB [04:41, 9.23MB/s][A
+fixing encoding: 2.60GB [04:41, 9.23MB/s][A
+fixing encoding: 2.60GB [04:41, 9.23MB/s][A
+fixing encoding: 2.60GB [04:42, 9.23MB/s][A
+fixing encoding: 2.60GB [04:42, 9.23MB/s][A
+fixing encoding: 2.61GB [04:42, 9.23MB/s][A
+fixing encoding: 2.61GB [04:42, 9.23MB/s][A
+fixing encoding: 2.61GB [04:42, 9.23MB/s][A
+fixing encoding: 2.61GB [04:42, 9.23MB/s][A
+fixing encoding: 2.61GB [04:43, 9.23MB/s][A
+fixing encoding: 2.61GB [04:43, 9.23MB/s][A
+fixing encoding: 2.61GB [04:43, 9.23MB/s][A
+fixing encoding: 2.62GB [04:43, 9.23MB/s][A
+fixing encoding: 2.62GB [04:43, 9.23MB/s][A
+fixing encoding: 2.62GB [04:43, 9.23MB/s][A
+fixing encoding: 2.62GB [04:43, 9.23MB/s][A
+fixing encoding: 2.62GB [04:44, 9.23MB/s][A
+fixing encoding: 2.62GB [04:44, 9.23MB/s][A
+fixing encoding: 2.62GB [04:44, 9.23MB/s][A
+fixing encoding: 2.63GB [04:44, 9.23MB/s][A
+fixing encoding: 2.63GB [04:44, 9.23MB/s][A
+fixing encoding: 2.63GB [04:44, 9.23MB/s][A
+fixing encoding: 2.63GB [04:45, 9.23MB/s][A
+fixing encoding: 2.63GB [04:45, 9.23MB/s][A
+fixing encoding: 2.63GB [04:45, 9.23MB/s][A
+fixing encoding: 2.63GB [04:45, 9.23MB/s][A
+fixing encoding: 2.64GB [04:45, 9.23MB/s][A
+fixing encoding: 2.64GB [04:45, 9.23MB/s][A
+fixing encoding: 2.64GB [04:45, 9.23MB/s][A
+fixing encoding: 2.64GB [04:46, 9.23MB/s][A
+fixing encoding: 2.64GB [04:46, 9.23MB/s][A
+fixing encoding: 2.64GB [04:46, 9.22MB/s][A
+fixing encoding: 2.64GB [04:46, 9.22MB/s][A
+fixing encoding: 2.64GB [04:46, 9.22MB/s][A
+fixing encoding: 2.65GB [04:46, 9.22MB/s][A
+fixing encoding: 2.65GB [04:47, 9.22MB/s][A
+fixing encoding: 2.65GB [04:47, 9.22MB/s][A
+fixing encoding: 2.65GB [04:47, 9.22MB/s][A
+fixing encoding: 2.65GB [04:47, 9.22MB/s][A
+fixing encoding: 2.65GB [04:47, 9.22MB/s][A
+fixing encoding: 2.65GB [04:47, 9.22MB/s][A
+fixing encoding: 2.66GB [04:47, 9.22MB/s][A
+fixing encoding: 2.66GB [04:48, 9.22MB/s][A
+fixing encoding: 2.66GB [04:48, 9.22MB/s][A
+fixing encoding: 2.66GB [04:48, 9.22MB/s][A
+fixing encoding: 2.66GB [04:48, 9.22MB/s][A
+fixing encoding: 2.66GB [04:48, 9.22MB/s][A
+fixing encoding: 2.66GB [04:48, 9.22MB/s][A
+fixing encoding: 2.67GB [04:49, 9.22MB/s][A
+fixing encoding: 2.67GB [04:49, 9.22MB/s][A
+fixing encoding: 2.67GB [04:49, 9.22MB/s][A
+fixing encoding: 2.67GB [04:49, 9.22MB/s][A
+fixing encoding: 2.67GB [04:49, 9.22MB/s][A
+fixing encoding: 2.67GB [04:49, 9.22MB/s][A
+fixing encoding: 2.67GB [04:49, 9.22MB/s][A
+fixing encoding: 2.68GB [04:50, 9.22MB/s][A
+fixing encoding: 2.68GB [04:50, 9.22MB/s][A
+fixing encoding: 2.68GB [04:50, 9.22MB/s][A
+fixing encoding: 2.68GB [04:50, 9.22MB/s][A
+fixing encoding: 2.68GB [04:50, 9.22MB/s][A
+fixing encoding: 2.68GB [04:50, 9.22MB/s][A
+fixing encoding: 2.68GB [04:51, 9.22MB/s][A
+fixing encoding: 2.69GB [04:51, 9.22MB/s][A
+fixing encoding: 2.69GB [04:51, 9.22MB/s][A
+fixing encoding: 2.69GB [04:51, 9.22MB/s][A
+fixing encoding: 2.69GB [04:51, 9.22MB/s][A
+fixing encoding: 2.69GB [04:51, 9.22MB/s][A
+fixing encoding: 2.69GB [04:51, 9.22MB/s][A
+fixing encoding: 2.69GB [04:52, 9.22MB/s][A
+fixing encoding: 2.70GB [04:52, 9.22MB/s][A
+fixing encoding: 2.70GB [04:52, 9.22MB/s][A
+fixing encoding: 2.70GB [04:52, 9.22MB/s][A
+fixing encoding: 2.70GB [04:52, 9.22MB/s][A
+fixing encoding: 2.70GB [04:52, 9.22MB/s][A
+fixing encoding: 2.70GB [04:53, 9.22MB/s][A
+fixing encoding: 2.70GB [04:53, 9.22MB/s][A
+fixing encoding: 2.71GB [04:53, 9.22MB/s][A
+fixing encoding: 2.71GB [04:53, 9.22MB/s][A
+fixing encoding: 2.71GB [04:53, 9.22MB/s][A
+fixing encoding: 2.71GB [04:53, 9.22MB/s][A
+fixing encoding: 2.71GB [04:53, 9.22MB/s][A
+fixing encoding: 2.71GB [04:54, 9.22MB/s][A
+fixing encoding: 2.71GB [04:54, 9.22MB/s][A
+fixing encoding: 2.72GB [04:54, 9.22MB/s][A
+fixing encoding: 2.72GB [04:54, 9.22MB/s][A
+fixing encoding: 2.72GB [04:54, 9.22MB/s][A
+fixing encoding: 2.72GB [04:54, 9.22MB/s][A
+fixing encoding: 2.72GB [04:55, 9.22MB/s][A
+fixing encoding: 2.72GB [04:55, 9.22MB/s][A
+fixing encoding: 2.72GB [04:55, 9.22MB/s][A
+fixing encoding: 2.72GB [04:55, 9.22MB/s][A
+fixing encoding: 2.73GB [04:55, 9.22MB/s][A
+fixing encoding: 2.73GB [04:55, 9.22MB/s][A
+fixing encoding: 2.73GB [04:55, 9.22MB/s][A
+fixing encoding: 2.73GB [04:56, 9.22MB/s][A
+fixing encoding: 2.73GB [04:56, 9.22MB/s][A
+fixing encoding: 2.73GB [04:56, 9.22MB/s][A
+fixing encoding: 2.73GB [04:56, 9.22MB/s][A
+fixing encoding: 2.74GB [04:56, 9.22MB/s][A
+fixing encoding: 2.74GB [04:56, 9.22MB/s][A
+fixing encoding: 2.74GB [04:56, 9.22MB/s][A
+fixing encoding: 2.74GB [04:57, 9.22MB/s][A
+fixing encoding: 2.74GB [04:57, 9.22MB/s][A
+fixing encoding: 2.74GB [04:57, 9.22MB/s][A
+fixing encoding: 2.74GB [04:57, 9.22MB/s][A
+fixing encoding: 2.75GB [04:57, 9.22MB/s][A
+fixing encoding: 2.75GB [04:57, 9.22MB/s][A
+fixing encoding: 2.75GB [04:58, 9.22MB/s][A
+fixing encoding: 2.75GB [04:58, 9.22MB/s][A
+fixing encoding: 2.75GB [04:58, 9.22MB/s][A
+fixing encoding: 2.75GB [04:58, 9.22MB/s][A
+fixing encoding: 2.75GB [04:58, 9.22MB/s][A
+fixing encoding: 2.76GB [04:58, 9.22MB/s][A
+fixing encoding: 2.76GB [04:59, 9.22MB/s][A
+fixing encoding: 2.76GB [04:59, 9.22MB/s][A
+fixing encoding: 2.76GB [04:59, 9.22MB/s][A
+fixing encoding: 2.76GB [04:59, 9.22MB/s][A
+fixing encoding: 2.76GB [04:59, 9.22MB/s][A
+fixing encoding: 2.76GB [04:59, 9.22MB/s][A
+fixing encoding: 2.77GB [04:59, 9.22MB/s][A
+fixing encoding: 2.77GB [05:00, 9.22MB/s][A
+fixing encoding: 2.77GB [05:00, 9.22MB/s][A
+fixing encoding: 2.77GB [05:00, 9.22MB/s][A
+fixing encoding: 2.77GB [05:00, 9.22MB/s][A
+fixing encoding: 2.77GB [05:00, 9.22MB/s][A
+fixing encoding: 2.77GB [05:00, 9.22MB/s][A
+fixing encoding: 2.78GB [05:01, 9.22MB/s][A
+fixing encoding: 2.78GB [05:01, 9.22MB/s][A
+fixing encoding: 2.78GB [05:01, 9.22MB/s][A
+fixing encoding: 2.78GB [05:01, 9.22MB/s][A
+fixing encoding: 2.78GB [05:01, 9.22MB/s][A
+fixing encoding: 2.78GB [05:01, 9.22MB/s][A
+fixing encoding: 2.78GB [05:01, 9.22MB/s][A
+fixing encoding: 2.79GB [05:02, 9.22MB/s][A
+fixing encoding: 2.79GB [05:02, 9.22MB/s][A
+fixing encoding: 2.79GB [05:02, 9.22MB/s][A
+fixing encoding: 2.79GB [05:02, 9.22MB/s][A
+fixing encoding: 2.79GB [05:02, 9.22MB/s][A
+fixing encoding: 2.79GB [05:02, 9.22MB/s][A
+fixing encoding: 2.79GB [05:03, 9.22MB/s][A
+fixing encoding: 2.80GB [05:03, 9.22MB/s][A
+fixing encoding: 2.80GB [05:03, 9.22MB/s][A
+fixing encoding: 2.80GB [05:03, 9.22MB/s][A
+fixing encoding: 2.80GB [05:03, 9.22MB/s][A
+fixing encoding: 2.80GB [05:03, 9.22MB/s][A
+fixing encoding: 2.80GB [05:03, 9.22MB/s][A
+fixing encoding: 2.80GB [05:04, 9.22MB/s][A
+fixing encoding: 2.81GB [05:04, 9.22MB/s][A
+fixing encoding: 2.81GB [05:04, 9.22MB/s][A
+fixing encoding: 2.81GB [05:04, 9.22MB/s][A
+fixing encoding: 2.81GB [05:04, 9.22MB/s][A
+fixing encoding: 2.81GB [05:04, 9.22MB/s][A
+fixing encoding: 2.81GB [05:04, 9.22MB/s][A
+fixing encoding: 2.81GB [05:05, 9.22MB/s][A
+fixing encoding: 2.82GB [05:05, 9.22MB/s][A
+fixing encoding: 2.82GB [05:05, 9.22MB/s][A
+fixing encoding: 2.82GB [05:05, 9.22MB/s][A
+fixing encoding: 2.82GB [05:05, 9.22MB/s][A
+fixing encoding: 2.82GB [05:05, 9.22MB/s][A
+fixing encoding: 2.82GB [05:06, 9.22MB/s][A
+fixing encoding: 2.82GB [05:06, 9.22MB/s][A
+fixing encoding: 2.83GB [05:06, 9.22MB/s][A
+fixing encoding: 2.83GB [05:06, 9.22MB/s][A
+fixing encoding: 2.83GB [05:06, 9.22MB/s][A
+fixing encoding: 2.83GB [05:06, 9.22MB/s][A
+fixing encoding: 2.83GB [05:06, 9.22MB/s][A
+fixing encoding: 2.83GB [05:07, 9.22MB/s][A
+fixing encoding: 2.83GB [05:07, 9.22MB/s][A
+fixing encoding: 2.84GB [05:07, 9.22MB/s][A
+fixing encoding: 2.84GB [05:07, 9.22MB/s][A
+fixing encoding: 2.84GB [05:07, 9.22MB/s][A
+fixing encoding: 2.84GB [05:07, 9.22MB/s][A
+fixing encoding: 2.84GB [05:08, 9.22MB/s][A
+fixing encoding: 2.84GB [05:08, 9.22MB/s][A
+fixing encoding: 2.84GB [05:08, 9.22MB/s][A
+fixing encoding: 2.85GB [05:08, 9.22MB/s][A
+fixing encoding: 2.85GB [05:08, 9.22MB/s][A
+fixing encoding: 2.85GB [05:08, 9.22MB/s][A
+fixing encoding: 2.85GB [05:09, 9.22MB/s][A
+fixing encoding: 2.85GB [05:09, 9.22MB/s][A
+fixing encoding: 2.85GB [05:09, 9.22MB/s][A
+fixing encoding: 2.85GB [05:09, 9.22MB/s][A
+fixing encoding: 2.86GB [05:09, 9.22MB/s][A
+fixing encoding: 2.86GB [05:09, 9.22MB/s][A
+fixing encoding: 2.86GB [05:09, 9.22MB/s][A
+fixing encoding: 2.86GB [05:10, 9.22MB/s][A
+fixing encoding: 2.86GB [05:10, 9.22MB/s][A
+fixing encoding: 2.86GB [05:10, 9.22MB/s][A
+fixing encoding: 2.86GB [05:10, 9.22MB/s][A
+fixing encoding: 2.87GB [05:10, 9.22MB/s][A
+fixing encoding: 2.87GB [05:10, 9.22MB/s][A
+fixing encoding: 2.87GB [05:11, 9.22MB/s][A
+fixing encoding: 2.87GB [05:11, 9.22MB/s][A
+fixing encoding: 2.87GB [05:11, 9.22MB/s][A
+fixing encoding: 2.87GB [05:11, 9.22MB/s][A
+fixing encoding: 2.87GB [05:11, 9.22MB/s][A
+fixing encoding: 2.88GB [05:11, 9.22MB/s][A
+fixing encoding: 2.88GB [05:11, 9.22MB/s][A
+fixing encoding: 2.88GB [05:12, 9.22MB/s][A
+fixing encoding: 2.88GB [05:12, 9.22MB/s][A
+fixing encoding: 2.88GB [05:12, 9.22MB/s][A
+fixing encoding: 2.88GB [05:12, 9.22MB/s][A
+fixing encoding: 2.88GB [05:12, 9.22MB/s][A
+fixing encoding: 2.89GB [05:12, 9.22MB/s][A
+fixing encoding: 2.89GB [05:12, 9.22MB/s][A
+fixing encoding: 2.89GB [05:13, 9.22MB/s][A
+fixing encoding: 2.89GB [05:13, 9.22MB/s][A
+fixing encoding: 2.89GB [05:13, 9.22MB/s][A
+fixing encoding: 2.89GB [05:13, 9.22MB/s][A
+fixing encoding: 2.89GB [05:13, 9.22MB/s][A
+fixing encoding: 2.90GB [05:13, 9.23MB/s][A
+fixing encoding: 2.90GB [05:14, 9.23MB/s][A
+fixing encoding: 2.90GB [05:14, 9.23MB/s][A
+fixing encoding: 2.90GB [05:14, 9.23MB/s][A
+fixing encoding: 2.90GB [05:14, 9.23MB/s][A
+fixing encoding: 2.90GB [05:14, 9.23MB/s][A
+fixing encoding: 2.90GB [05:14, 9.23MB/s][A
+fixing encoding: 2.91GB [05:14, 9.23MB/s][A
+fixing encoding: 2.91GB [05:15, 9.23MB/s][A
+fixing encoding: 2.91GB [05:15, 9.23MB/s][A
+fixing encoding: 2.91GB [05:15, 9.23MB/s][A
+fixing encoding: 2.91GB [05:15, 9.23MB/s][A
+fixing encoding: 2.91GB [05:15, 9.23MB/s][A
+fixing encoding: 2.91GB [05:15, 9.23MB/s][A
+fixing encoding: 2.92GB [05:15, 9.23MB/s][A
+fixing encoding: 2.92GB [05:16, 9.23MB/s][A
+fixing encoding: 2.92GB [05:16, 9.23MB/s][A
+fixing encoding: 2.92GB [05:16, 9.23MB/s][A
+fixing encoding: 2.92GB [05:16, 9.23MB/s][A
+fixing encoding: 2.92GB [05:16, 9.23MB/s][A
+fixing encoding: 2.92GB [05:16, 9.23MB/s][A
+fixing encoding: 2.93GB [05:17, 9.23MB/s][A
+fixing encoding: 2.93GB [05:17, 9.23MB/s][A
+fixing encoding: 2.93GB [05:17, 9.23MB/s][A
+fixing encoding: 2.93GB [05:17, 9.23MB/s][A
+fixing encoding: 2.93GB [05:17, 9.23MB/s][A
+fixing encoding: 2.93GB [05:17, 9.23MB/s][A
+fixing encoding: 2.93GB [05:17, 9.23MB/s][A
+fixing encoding: 2.94GB [05:18, 9.23MB/s][A
+fixing encoding: 2.94GB [05:18, 9.23MB/s][A
+fixing encoding: 2.94GB [05:18, 9.23MB/s][A
+fixing encoding: 2.94GB [05:18, 9.23MB/s][A
+fixing encoding: 2.94GB [05:18, 9.23MB/s][A
+fixing encoding: 2.94GB [05:18, 9.23MB/s][A
+fixing encoding: 2.94GB [05:19, 9.23MB/s][A
+fixing encoding: 2.95GB [05:19, 9.23MB/s][A
+fixing encoding: 2.95GB [05:19, 9.23MB/s][A
+fixing encoding: 2.95GB [05:19, 9.23MB/s][A
+fixing encoding: 2.95GB [05:19, 9.23MB/s][A
+fixing encoding: 2.95GB [05:19, 9.23MB/s][A
+fixing encoding: 2.95GB [05:19, 9.23MB/s][A
+fixing encoding: 2.95GB [05:20, 9.23MB/s][A
+fixing encoding: 2.96GB [05:20, 9.23MB/s][A
+fixing encoding: 2.96GB [05:20, 9.23MB/s][A
+fixing encoding: 2.96GB [05:20, 9.23MB/s][A
+fixing encoding: 2.96GB [05:20, 9.23MB/s][A
+fixing encoding: 2.96GB [05:20, 9.23MB/s][A
+fixing encoding: 2.96GB [05:21, 9.23MB/s][A
+fixing encoding: 2.96GB [05:21, 9.23MB/s][A
+fixing encoding: 2.97GB [05:21, 9.23MB/s][A
+fixing encoding: 2.97GB [05:21, 9.23MB/s][A
+fixing encoding: 2.97GB [05:21, 9.23MB/s][A
+fixing encoding: 2.97GB [05:21, 9.23MB/s][A
+fixing encoding: 2.97GB [05:21, 9.23MB/s][A
+fixing encoding: 2.97GB [05:22, 9.23MB/s][A
+fixing encoding: 2.97GB [05:22, 9.23MB/s][A
+fixing encoding: 2.98GB [05:22, 9.23MB/s][A
+fixing encoding: 2.98GB [05:22, 9.23MB/s][A
+fixing encoding: 2.98GB [05:22, 9.23MB/s][A
+fixing encoding: 2.98GB [05:22, 9.23MB/s][A
+fixing encoding: 2.98GB [05:23, 9.23MB/s][A
+fixing encoding: 2.98GB [05:23, 9.23MB/s][A
+fixing encoding: 2.98GB [05:23, 9.23MB/s][A
+fixing encoding: 2.99GB [05:23, 9.23MB/s][A
+fixing encoding: 2.99GB [05:23, 9.23MB/s][A
+fixing encoding: 2.99GB [05:23, 9.23MB/s][A
+fixing encoding: 2.99GB [05:23, 9.23MB/s][A
+fixing encoding: 2.99GB [05:24, 9.23MB/s][A
+fixing encoding: 2.99GB [05:24, 9.23MB/s][A
+fixing encoding: 2.99GB [05:24, 9.23MB/s][A
+fixing encoding: 3.00GB [05:24, 9.23MB/s][A
+fixing encoding: 3.00GB [05:24, 9.23MB/s][A
+fixing encoding: 3.00GB [05:24, 9.23MB/s][A
+fixing encoding: 3.00GB [05:25, 9.23MB/s][A
+fixing encoding: 3.00GB [05:25, 9.23MB/s][A
+fixing encoding: 3.00GB [05:25, 9.23MB/s][A
+fixing encoding: 3.00GB [05:25, 9.23MB/s][A
+fixing encoding: 3.01GB [05:25, 9.23MB/s][A
+fixing encoding: 3.01GB [05:25, 9.23MB/s][A
+fixing encoding: 3.01GB [05:25, 9.23MB/s][A
+fixing encoding: 3.01GB [05:26, 9.23MB/s][A
+fixing encoding: 3.01GB [05:26, 9.23MB/s][A
+fixing encoding: 3.01GB [05:26, 9.23MB/s][A
+fixing encoding: 3.01GB [05:26, 9.23MB/s][A
+fixing encoding: 3.02GB [05:26, 9.23MB/s][A
+fixing encoding: 3.02GB [05:26, 9.23MB/s][A
+fixing encoding: 3.02GB [05:27, 9.23MB/s][A
+fixing encoding: 3.02GB [05:27, 9.23MB/s][A
+fixing encoding: 3.02GB [05:27, 9.23MB/s][A
+fixing encoding: 3.02GB [05:27, 9.23MB/s][A
+fixing encoding: 3.03GB [05:27, 9.23MB/s][A
+fixing encoding: 3.03GB [05:27, 9.23MB/s][A
+fixing encoding: 3.03GB [05:28, 9.23MB/s][A
+fixing encoding: 3.03GB [05:28, 9.23MB/s][A
+fixing encoding: 3.03GB [05:28, 9.23MB/s][A
+fixing encoding: 3.03GB [05:28, 9.23MB/s][A
+fixing encoding: 3.03GB [05:28, 9.23MB/s][A
+fixing encoding: 3.04GB [05:28, 9.23MB/s][A
+fixing encoding: 3.04GB [05:28, 9.23MB/s][A
+fixing encoding: 3.04GB [05:29, 9.23MB/s][A
+fixing encoding: 3.04GB [05:29, 9.23MB/s][A
+fixing encoding: 3.04GB [05:29, 9.23MB/s][A
+fixing encoding: 3.04GB [05:29, 9.23MB/s][A
+fixing encoding: 3.04GB [05:29, 9.23MB/s][A
+fixing encoding: 3.05GB [05:29, 9.23MB/s][A
+fixing encoding: 3.05GB [05:30, 9.23MB/s][A
+fixing encoding: 3.05GB [05:30, 9.23MB/s][A
+fixing encoding: 3.05GB [05:30, 9.23MB/s][A
+fixing encoding: 3.05GB [05:30, 9.23MB/s][A
+fixing encoding: 3.05GB [05:30, 9.23MB/s][A
+fixing encoding: 3.05GB [05:30, 9.23MB/s][A
+fixing encoding: 3.06GB [05:30, 9.23MB/s][A
+fixing encoding: 3.06GB [05:31, 9.23MB/s][A
+fixing encoding: 3.06GB [05:31, 9.23MB/s][A
+fixing encoding: 3.06GB [05:31, 9.23MB/s][A
+fixing encoding: 3.06GB [05:31, 9.23MB/s][A                              
+                                         [A[INFO] [finished] fixing encoding: [05:31] [3.06GB] [9.23MB/s]
+collection: 0it [05:31, ?it/s]
+fixing encoding: [05:31] [3.06GB] [9.23MB/s][A
+                                            [Acollection: 1it [05:31, 331.63s/it]collection: 8841823it [05:49, 25288.65it/s]
+2026-10-31 19:43:34,753 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:43:34,977 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-31 19:43:35,213 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:43:35,436 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 19:43:35,663 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:43:35,896 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-31 19:43:36,122 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/added_tokens.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:43:36,343 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/added_tokens.json "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-31 19:43:36,344 huggingface_hub.utils._http WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-31 19:43:36,566 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:43:36,786 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-10-31 19:43:37,050 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:43:37,275 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 10138.40it/s]
+2026-10-31 19:43:38,571 cache_semantic INFO cross-encoder cross-encoder/ms-marco-MiniLM-L-6-v2 on cpu
+cross-encoder:   0%|          | 0/313 [00:00<?, ?it/s]cross-encoder:  31%|███       | 96/313 [01:00<02:16,  1.59it/s]cross-encoder:  31%|███       | 96/313 [01:16<02:16,  1.59it/s]cross-encoder:  83%|████████▎ | 261/313 [02:00<00:22,  2.27it/s]cross-encoder: 100%|██████████| 313/313 [02:11<00:00,  2.37it/s]
+2026-10-31 19:45:51,581 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:51,804 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-31 19:45:52,030 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:52,254 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/modules.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:45:52,255 sentence_transformers.base.model INFO No modules.json found for cross-encoder/ms-marco-MiniLM-L-6-v2, initializing a new CrossEncoder model.
+2026-10-31 19:45:52,478 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:52,700 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/adapter_config.json "HTTP/1.1 404 Not Found"
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 8690.20it/s]
+2026-10-31 19:45:52,975 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/processor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:53,196 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:45:53,420 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:53,641 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:45:53,867 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/video_preprocessor_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:54,087 httpx2 INFO HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-31 19:45:54,317 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:54,539 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-31 19:45:54,764 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-31 19:45:54,992 httpx2 INFO HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+Batches:   0%|          | 0/2 [00:00<?, ?it/s]Batches:  50%|█████     | 1/2 [00:00<00:00,  2.89it/s]Batches: 100%|██████████| 2/2 [00:00<00:00,  4.43it/s]Batches: 100%|██████████| 2/2 [00:00<00:00,  4.10it/s]
+2026-10-31 19:45:55,519 cache_semantic INFO VERIFY cross-encoder logits vs sentence-transformers: max |diff| = 2.325e-06
+2026-10-31 19:45:55,521 cache_semantic INFO sem_gat_train: 20000 pairs, gap stats {'mean_top1_minus_top2': 0.7853594422340393, 'mean_logit': -1.4396188259124756, 'mean_max_logit': 8.615819931030273}
+cross-encoder:   0%|          | 0/188 [00:00<?, ?it/s]cross-encoder:  68%|██████▊   | 128/188 [01:00<00:28,  2.13it/s]cross-encoder: 100%|██████████| 188/188 [01:13<00:00,  2.55it/s]
+2026-10-31 19:47:09,217 cache_semantic INFO sem_fusion_train: 12000 pairs, gap stats {'mean_top1_minus_top2': 0.7328046560287476, 'mean_logit': -1.6610740423202515, 'mean_max_logit': 8.85037612915039}
+cross-encoder:   0%|          | 0/94 [00:00<?, ?it/s]cross-encoder: 100%|██████████| 94/94 [00:36<00:00,  2.58it/s]
+2026-10-31 19:47:45,688 cache_semantic INFO sem_val: 6000 pairs, gap stats {'mean_top1_minus_top2': 0.5938997864723206, 'mean_logit': -0.46024325489997864, 'mean_max_logit': 8.987051010131836}
+cross-encoder:   0%|          | 0/313 [00:00<?, ?it/s]cross-encoder:  31%|███       | 97/313 [01:00<02:13,  1.61it/s]cross-encoder:  31%|███       | 97/313 [01:19<02:13,  1.61it/s]cross-encoder:  89%|████████▉ | 278/313 [02:00<00:14,  2.43it/s]cross-encoder: 100%|██████████| 313/313 [02:07<00:00,  2.45it/s]
+2026-10-31 19:49:53,571 cache_semantic INFO sem_test: 20000 pairs, gap stats {'mean_top1_minus_top2': 0.8470082879066467, 'mean_logit': -0.978522539138794, 'mean_max_logit': 8.864911079406738}
+cross-encoder:   0%|          | 0/32 [00:00<?, ?it/s]cross-encoder: 100%|██████████| 32/32 [00:12<00:00,  2.54it/s]
+2026-10-31 19:50:06,158 cache_semantic INFO sem_trec19: 2000 pairs, gap stats {'mean_top1_minus_top2': 0.49244046211242676, 'mean_logit': -2.0595221519470215, 'mean_max_logit': 8.514033317565918}
+cross-encoder:   0%|          | 0/32 [00:00<?, ?it/s]cross-encoder: 100%|██████████| 32/32 [00:10<00:00,  2.93it/s]
+2026-10-31 19:50:17,098 cache_semantic INFO sem_trec20: 2000 pairs, gap stats {'mean_top1_minus_top2': 0.6494042277336121, 'mean_logit': -2.0623011589050293, 'mean_max_logit': 8.817718505859375}
+
+real	12m35.627s
+user	53m36.981s
+sys	4m21.552s

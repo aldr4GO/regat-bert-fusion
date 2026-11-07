@@ -1,0 +1,10 @@
+{
+ "primary_norm": "minmax",
+ "val_ndcg@10_by_norm": {
+  "none": 0.40664290011225024,
+  "minmax": 0.4077218113114623,
+  "zscore": 0.4072983117742576,
+  "rank": 0.40540970643573404
+ },
+ "rule": "normaliser whose best config (by val NDCG@10) wins on MS MARCO protocol A val"
+}

@@ -1,0 +1,3 @@
+norm,set,oracle_ndcg@10,best_fixed,best_fixed_ndcg@10,oracle_minus_fixed,Q_ndcg@10,Q_share_of_headroom,QS_ndcg@10,QS_share_of_headroom,S_ndcg@10,S_share_of_headroom,small_headroom_flag
+minmax,val,0.9308,minmax_fixed_listwise_lam0.01,0.8954,0.0355,0.8953,-0.0003,0.8960,0.0195,0.8954,0.0013,False
+minmax,test,0.9333,minmax_fixed_listwise_lam0.01,0.8998,0.0336,0.8996,-0.0052,0.9016,0.0544,0.9003,0.0163,False

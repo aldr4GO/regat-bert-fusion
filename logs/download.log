@@ -1,0 +1,11 @@
+2026-10-31 19:15:03,169 download INFO downloading https://msmarco.z22.web.core.windows.net/msmarcoranking/collectionandqueries.tar.gz (1057.7 MB) with 32 connections
+2026-10-31 19:26:58,035 download INFO done /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/collectionandqueries.tar.gz in 715s
+2026-10-31 19:26:59,080 download INFO downloading https://msmarco.z22.web.core.windows.net/msmarcoranking/queries.tar.gz (18.9 MB) with 32 connections
+2026-10-31 19:27:16,093 download INFO done /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/queries.tar.gz in 17s
+2026-10-31 19:27:17,195 download INFO downloading https://msmarco.z22.web.core.windows.net/msmarcoranking/qrels.train.tsv (10.6 MB) with 32 connections
+2026-10-31 19:27:27,815 download INFO done /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/train/qrels in 11s
+WARNING: Using incubator modules: jdk.incubator.vector
+Oct 31, 2026 7:27:31 PM org.apache.lucene.store.MemorySegmentIndexInputProvider <init>
+INFO: Using MemorySegmentIndexInput with Java 21; to disable start with -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false
+2026-10-31 19:27:32,061 download INFO pyserini index ready: 8841823 docs
+2026-10-31 19:27:32,061 download INFO data under /home2/home/tanish_v/Graph_Project/data

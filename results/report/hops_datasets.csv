@@ -1,0 +1,7 @@
+key,gold_per_q,alpha0_minmax
+A,1.0615,0.7000
+B,1.0688,0.8500
+musique,2.3526,0.4000
+hotpotqa,2.0000,0.8500
+beir_hotpotqa,2.0000,0.9500
+twowiki,2.4320,0.4500

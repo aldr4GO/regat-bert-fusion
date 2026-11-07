@@ -1,0 +1,17 @@
+norm,set,oracle_ndcg@10,best_fixed,best_fixed_ndcg@10,oracle_minus_fixed,Q_ndcg@10,Q_share_of_headroom,QS_ndcg@10,QS_share_of_headroom,S_ndcg@10,S_share_of_headroom,small_headroom_flag
+none,val,0.4412,none_fixed_listwise_lam0.01,0.4012,0.0400,0.4009,-0.0066,0.4011,-0.0025,0.4008,-0.0085,False
+none,test,0.4568,none_fixed_listwise_lam0.01,0.4170,0.0398,0.4170,0.0017,0.4170,0.0003,0.4170,0.0003,False
+none,trec19,0.7436,none_fixed_listwise_lam0.01,0.7225,0.0211,0.7225,0.0029,0.7225,0.0021,0.7227,0.0092,False
+none,trec20,0.6983,none_fixed_listwise_lam0.01,0.6740,0.0244,0.6739,-0.0029,0.6741,0.0064,0.6746,0.0235,False
+minmax,val,0.4432,minmax_fixedgrid,0.4002,0.0431,0.4000,-0.0030,0.4001,-0.0018,0.3995,-0.0158,False
+minmax,test,0.4601,minmax_fixedgrid,0.4169,0.0432,0.4170,0.0008,0.4170,0.0028,0.4171,0.0044,False
+minmax,trec19,0.7482,minmax_fixedgrid,0.7233,0.0249,0.7249,0.0630,0.7251,0.0717,0.7239,0.0235,False
+minmax,trec20,0.7016,minmax_fixedgrid,0.6720,0.0296,0.6715,-0.0168,0.6717,-0.0101,0.6715,-0.0158,False
+zscore,val,0.4432,zscore_fixedgrid,0.4011,0.0421,0.4011,0.0000,0.4015,0.0106,0.4009,-0.0025,False
+zscore,test,0.4599,zscore_fixedgrid,0.4158,0.0442,0.4162,0.0102,0.4157,-0.0015,0.4159,0.0031,False
+zscore,trec19,0.7485,zscore_fixedgrid,0.7256,0.0229,0.7251,-0.0186,0.7254,-0.0080,0.7251,-0.0215,False
+zscore,trec20,0.7017,zscore_fixedgrid,0.6739,0.0278,0.6738,-0.0031,0.6742,0.0132,0.6735,-0.0147,False
+rank,val,0.4456,rank_fixedgrid,0.3974,0.0482,0.3971,-0.0058,0.3974,0.0007,0.3973,-0.0003,False
+rank,test,0.4616,rank_fixedgrid,0.4154,0.0463,0.4156,0.0045,0.4150,-0.0083,0.4152,-0.0036,False
+rank,trec19,0.7482,rank_fixedgrid,0.7269,0.0213,0.7273,0.0165,0.7261,-0.0362,0.7267,-0.0107,False
+rank,trec20,0.7000,rank_fixedgrid,0.6764,0.0236,0.6763,-0.0040,0.6767,0.0123,0.6762,-0.0078,False

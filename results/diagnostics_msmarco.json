@@ -1,0 +1,102 @@
+{
+ "primary_norm": "minmax",
+ "ce_minus_gat_val_ndcg@10": 0.015622259629950286,
+ "ce_much_stronger": false,
+ "alpha0_by_norm": {
+  "none": 0.05000000074505806,
+  "minmax": 0.699999988079071,
+  "zscore": 0.699999988079071,
+  "rank": 0.550000011920929
+ },
+ "alpha0_range": 0.649999987334013,
+ "alpha_std_primary": {
+  "Q": 0.00029878577333875,
+  "QS": 0.0012278666254132986,
+  "S": 0.006332981400191784
+ },
+ "alpha_adapts": false,
+ "alpha_vs_properties": {
+  "Q:n_words": {
+   "rho": 0.05739411923742361,
+   "ci": [
+    0.0337763190486714,
+    0.08109403090260545
+   ],
+   "predicted_negative": false
+  },
+  "Q:n_entities": {
+   "rho": 0.02441904993922512,
+   "ci": [
+    0.0010448041821291623,
+    0.0476868656219205
+   ],
+   "predicted_negative": false
+  },
+  "QS:n_words": {
+   "rho": 0.08358585037489541,
+   "ci": [
+    0.060468099368693455,
+    0.10680911454948011
+   ],
+   "predicted_negative": false
+  },
+  "QS:n_entities": {
+   "rho": 0.02830111697253794,
+   "ci": [
+    0.004827712841073833,
+    0.05132208022397685
+   ],
+   "predicted_negative": false
+  },
+  "S:n_words": {
+   "rho": 0.050612719715684984,
+   "ci": [
+    0.027181249872444812,
+    0.07387979829106163
+   ],
+   "predicted_negative": false
+  },
+  "S:n_entities": {
+   "rho": 0.037791802791476266,
+   "ci": [
+    0.014459662189436843,
+    0.06101430499028964
+   ],
+   "predicted_negative": false
+  },
+  "oracle:n_words": {
+   "rho": 0.01991245314904553,
+   "ci": [
+    -0.0033388612015167775,
+    0.043247699089976825
+   ],
+   "predicted_negative": false
+  },
+  "oracle:n_entities": {
+   "rho": 0.0296335289570836,
+   "ci": [
+    0.005346423938761912,
+    0.05429456922977065
+   ],
+   "predicted_negative": false
+  }
+ },
+ "properties_support": false,
+ "graph_controls_val_ndcg@10": {
+  "no_graph": 0.3788,
+  "random_graph": 0.3794,
+  "knn_k4_s0.0": 0.3773,
+  "knn_k4_s0.3": 0.3776,
+  "knn_k4_s0.5": 0.3765,
+  "knn_k8_s0.0": 0.38,
+  "knn_k8_s0.3": 0.3798,
+  "knn_k8_s0.5": 0.379,
+  "knn_k16_s0.0": 0.3804,
+  "knn_k16_s0.3": 0.3792,
+  "knn_k16_s0.5": 0.3776
+ },
+ "knn_minus_random": 0.00040000000000001146,
+ "knn_minus_no_graph": 0.0010000000000000009,
+ "simple_queries_explanation": "not supported on MS MARCO",
+ "rule": "supported only if alpha or oracle alpha decreases with query complexity (Spearman CI < 0 for n_words or n_entities), the learned alpha adapts (test std >= min_alpha_std for some variant) and CE-only is not much stronger than GAT-only (val NDCG@10 gap <= ce_dominance_gap)"
+}

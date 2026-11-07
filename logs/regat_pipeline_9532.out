@@ -1,0 +1,36 @@
+[Sun Nov  1 05:46:31 AM UTC 2026] job=9532 host=ub gpus=0 profile=full
+name, memory.used [MiB], memory.total [MiB]
+NVIDIA RTX 6000 Ada Generation, 2 MiB, 49140 MiB
+2026-11-01 05:46:32,123 pipeline INFO == download: starting
+2026-11-01 05:46:32,123 pipeline INFO $ -m src.download
+2026-11-01 05:46:34,650 download INFO /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/collectionandqueries.tar.gz already present
+2026-11-01 05:46:34,683 download INFO /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/queries.tar.gz already present
+2026-11-01 05:46:34,700 download INFO /home2/home/tanish_v/Graph_Project/data/ir_datasets/msmarco-passage/train/qrels already present
+WARNING: Using incubator modules: jdk.incubator.vector
+Nov 01, 2026 5:46:38 AM org.apache.lucene.store.MemorySegmentIndexInputProvider <init>
+INFO: Using MemorySegmentIndexInput with Java 21; to disable start with -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false
+2026-11-01 05:46:38,561 download INFO pyserini index ready: 8841823 docs
+2026-11-01 05:46:38,562 download INFO data under /home2/home/tanish_v/Graph_Project/data
+2026-11-01 05:46:39,533 pipeline INFO == download: done in 7s
+2026-11-01 05:46:39,533 pipeline INFO == data: already done, skipping
+2026-11-01 05:46:39,533 pipeline INFO == cross_encoder: already done, skipping
+2026-11-01 05:46:39,533 pipeline INFO == bi_encoder: already done, skipping
+2026-11-01 05:46:39,533 pipeline INFO == gat_A: already done, skipping
+2026-11-01 05:46:39,533 pipeline INFO == ctx_A: already done, skipping
+2026-11-01 05:46:39,533 pipeline INFO == gat_B: already done, skipping
+2026-11-01 05:46:39,533 pipeline INFO == ctx_B: already done, skipping
+2026-11-01 05:46:39,533 pipeline INFO == tests: starting
+2026-11-01 05:46:39,533 pipeline INFO $ -m pytest -q tests
+.................................................                        [100%]
+=============================== warnings summary ===============================
+../.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491
+  /home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+49 passed, 1 warning in 2.83s
+2026-11-01 05:46:44,516 pipeline INFO == tests: done in 5s
+2026-11-01 05:46:44,516 pipeline INFO == fusion_A: already done, skipping
+2026-11-01 05:46:44,516 pipeline INFO == fusion_B: already done, skipping
+2026-11-01 05:46:44,516 pipeline INFO == gat_controls: already done, skipping
+2026-11-01 05:46:44,516 pipeline INFO pipeline finished; timings: {'download': 7.4, 'data': 133.6, 'cross_encoder': 736.1, 'bi_encoder': 844.5, 'gat_A': 94.3, 'ctx_A': 15.9, 'gat_B': 18.5, 'ctx_B': 8.2, 'tests': 5.0, 'fusion_A': 100.0, 'fusion_B': 36.8, 'gat_controls': 928.3}

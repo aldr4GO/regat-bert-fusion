@@ -1,0 +1,4 @@
+control,mode,k_nn,edge_min_sim,val_ndcg@10,val_mrr@10,val_ndcg@10_s_bi,best_epoch,mean_degree
+knn_k2,knn_emb,2,0.3000,0.7562,0.9111,0.7008,19,2.0043
+knn_k3,knn_emb,3,0.3000,0.7519,0.9088,0.7008,20,2.6025
+knn_k5,knn_emb,5,0.3000,0.7527,0.9109,0.7008,20,3.4108

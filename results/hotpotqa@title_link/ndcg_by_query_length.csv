@@ -1,0 +1,13 @@
+method,bucket,ndcg@10,n
+fixed,short (<= 4),,0
+fixed,medium (5-7),0.8949,115
+fixed,long (>= 8),0.9053,7290
+Q,short (<= 4),,0
+Q,medium (5-7),0.8949,115
+Q,long (>= 8),0.9053,7290
+QS,short (<= 4),,0
+QS,medium (5-7),0.8988,115
+QS,long (>= 8),0.9057,7290
+S,short (<= 4),,0
+S,medium (5-7),0.8981,115
+S,long (>= 8),0.9058,7290

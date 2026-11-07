@@ -1,0 +1,46 @@
+{
+ "split_sizes": {
+  "gat_train": 20000,
+  "fusion_train": 10000,
+  "val": 2000,
+  "test": 7405
+ },
+ "gat_train": {
+  "n": 20000,
+  "mean_K": 100.0,
+  "min_K": 100,
+  "max_K": 100,
+  "mean_gold_in_pool": 1.64995,
+  "frac_with_gold": 1.0
+ },
+ "fusion_train": {
+  "n": 10000,
+  "mean_K": 100.0,
+  "min_K": 100,
+  "max_K": 100,
+  "mean_gold_in_pool": 1.6536,
+  "frac_with_gold": 1.0
+ },
+ "val": {
+  "n": 2000,
+  "mean_K": 100.0,
+  "min_K": 100,
+  "max_K": 100,
+  "mean_gold_in_pool": 1.6155,
+  "frac_with_gold": 0.978
+ },
+ "test": {
+  "n": 7405,
+  "mean_K": 100.0,
+  "min_K": 100,
+  "max_K": 100,
+  "mean_gold_in_pool": 1.5913571910871034,
+  "frac_with_gold": 0.9758271438217421
+ },
+ "first_stage": {
+  "R@100": 0.7956785955435517,
+  "AllR@100": 0.6155300472653612,
+  "n_short_runs": 0,
+  "n_joined_labels": 39405
+ }
+}

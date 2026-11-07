@@ -1,0 +1,30 @@
+{
+ "none": {
+  "alpha0": 0.15000000596046448,
+  "val_fixed_ndcg@10": 0.40113118290901184,
+  "val_oracle_ndcg@10": 0.44117061013483716,
+  "val_oracle_minus_fixed": 0.04003942722582532,
+  "small_headroom_flag": false
+ },
+ "minmax": {
+  "alpha0": 0.8500000238418579,
+  "val_fixed_ndcg@10": 0.40015020966529846,
+  "val_oracle_ndcg@10": 0.44320828247454397,
+  "val_oracle_minus_fixed": 0.04305807280924551,
+  "small_headroom_flag": false
+ },
+ "zscore": {
+  "alpha0": 0.8500000238418579,
+  "val_fixed_ndcg@10": 0.4010540246963501,
+  "val_oracle_ndcg@10": 0.4431705927478956,
+  "val_oracle_minus_fixed": 0.04211656805154551,
+  "small_headroom_flag": false
+ },
+ "rank": {
+  "alpha0": 1.0,
+  "val_fixed_ndcg@10": 0.3973589241504669,
+  "val_oracle_ndcg@10": 0.44560708234403146,
+  "val_oracle_minus_fixed": 0.04824815819356454,
+  "small_headroom_flag": false
+ }
+}

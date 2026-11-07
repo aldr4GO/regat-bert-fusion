@@ -1,0 +1,4 @@
+dataset,label,bucket,n,alpha_Q,alpha_QS,alpha_S,best_adaptive,alpha_best_minus_alpha0,oracle_alpha,ce_ndcg@10,gat_ndcg@10,best_fixed_ndcg@10,adaptive_ndcg@10,oracle_ndcg@10,gain,gain_ci95_lo,gain_ci95_hi,gain_p
+hotpotqa,n_entities,0,251,0.84998,0.92400,0.93855,QS,0.07400,0.71833,0.88162,0.83545,0.87859,0.88147,0.91404,0.00288,-0.00225,0.00853,0.27760
+hotpotqa,n_entities,1,1739,0.84999,0.89619,0.92581,QS,0.04619,0.70299,0.87675,0.83988,0.87816,0.87875,0.91219,0.00059,-0.00130,0.00250,0.54820
+hotpotqa,n_entities,2+,5415,0.84999,0.87632,0.91623,QS,0.02632,0.76227,0.90613,0.84213,0.90653,0.90642,0.93456,-0.00011,-0.00138,0.00116,0.86120

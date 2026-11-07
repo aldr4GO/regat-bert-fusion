@@ -1,0 +1,2119 @@
+Channels:
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): - \ | / - \ | / - \ | / - \ | / done
+Solving environment: \ | done
+
+## Package Plan ##
+
+  environment location: /home2/home/tanish_v/.conda/envs/regat
+
+  added / updated specs:
+    - openjdk=21
+    - python=3.11
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    alsa-lib-1.2.16.1          |       h7cc23a3_1         581 KB  conda-forge
+    cairo-1.18.6               |       h9f5ca07_2         982 KB  conda-forge
+    font-ttf-dejavu-sans-mono-2.37|       hab24e00_0         388 KB  conda-forge
+    font-ttf-inconsolata-3.000 |       h77eed37_0          94 KB  conda-forge
+    font-ttf-source-code-pro-2.038|       h77eed37_0         684 KB  conda-forge
+    font-ttf-ubuntu-0.83       |       h77eed37_3         1.5 MB  conda-forge
+    fontconfig-2.18.3          |       h4db4eae_1         289 KB  conda-forge
+    fonts-conda-ecosystem-1    |                0           4 KB  conda-forge
+    fonts-conda-forge-1        |       hc364b38_1           4 KB  conda-forge
+    giflib-6.1.3               |       hebe6cf0_2          84 KB  conda-forge
+    graphite2-1.3.15           |       h54a6638_1         100 KB  conda-forge
+    icu-79.1                   |  py314hb486520_0        13.9 MB  conda-forge
+    keyutils-1.6.3             |       h7cc23a3_1         132 KB  conda-forge
+    krb5-1.22.2                |       hbc21106_2         1.3 MB  conda-forge
+    lcms2-2.19.1               |       h9073bf1_3         248 KB  conda-forge
+    lerc-4.3.0                 |       he78707d_0         264 KB  conda-forge
+    libcups-2.3.3              |       h7a8fb5f_6         4.3 MB  conda-forge
+    libdeflate-1.25            |       hd45a770_1          72 KB  conda-forge
+    libedit-3.1.20260512       | pl5321h373387f_0         133 KB  conda-forge
+    libfreetype-2.14.3         |       ha770c72_2           8 KB  conda-forge
+    libfreetype6-2.14.3        |       h5e6c136_2         379 KB  conda-forge
+    libglib-2.90.0             |       h569388d_0         4.6 MB  conda-forge
+    libharfbuzz-15.0.0         |       h3ca84f1_1         1.6 MB  conda-forge
+    libiconv-1.18              |       h0cb94f2_3         771 KB  conda-forge
+    libjpeg-turbo-3.2.1        |       h7cc23a3_0         639 KB  conda-forge
+    libpng-1.6.59              |       h922cc85_0         309 KB  conda-forge
+    libpython-3.11.18          |ha57cdbe_0_cpython         7.5 MB  conda-forge
+    libsqlite-3.54.1           |       hf739112_1         962 KB  conda-forge
+    libtiff-4.7.2              |       hcc2c06a_1         449 KB  conda-forge
+    libwebp-base-1.6.0         |       hd42ef1d_1         418 KB  conda-forge
+    libxcb-1.17.0              |       hb83e432_2         386 KB  conda-forge
+    openjdk-21.0.10            |      h1602c4f_22       177.8 MB  conda-forge
+    pcre2-10.47                |       h8b3dc9c_1         1.2 MB  conda-forge
+    pip-26.2.2                 |     pyh8b19718_0         1.1 MB  conda-forge
+    pixman-0.46.4              |       h54a6638_3         368 KB  conda-forge
+    pthread-stubs-0.4          |    h7cc23a3_1004           9 KB  conda-forge
+    python-3.11.18             |h5f976f7_0_cpython        22.3 MB  conda-forge
+    setuptools-84.2.1          |     pyhe730653_0         554 KB  conda-forge
+    xorg-libice-1.1.2          |       h280c20c_0          61 KB  conda-forge
+    xorg-libsm-1.2.6           |       h0d788c3_1          30 KB  conda-forge
+    xorg-libx11-1.8.14         |       hb83e432_0         827 KB  conda-forge
+    xorg-libxau-1.0.12         |       h7cc23a3_2          18 KB  conda-forge
+    xorg-libxdmcp-1.1.5        |       h7cc23a3_2          22 KB  conda-forge
+    xorg-libxext-1.3.7         |       h7cc23a3_1          52 KB  conda-forge
+    xorg-libxfixes-6.0.2       |       h7cc23a3_1          21 KB  conda-forge
+    xorg-libxi-1.8.4           |       h7cc23a3_0          48 KB  conda-forge
+    xorg-libxrandr-1.5.5       |       h7cc23a3_1          30 KB  conda-forge
+    xorg-libxrender-0.9.13     |       h7cc23a3_0          34 KB  conda-forge
+    xorg-libxt-1.3.1           |       h7cc23a3_1         375 KB  conda-forge
+    xorg-libxtst-1.2.6         |       h7cc23a3_0          34 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:       247.6 MB
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
+  alsa-lib           conda-forge/linux-64::alsa-lib-1.2.16.1-h7cc23a3_1 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_10 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.10.23-hbd8a1cb_0 
+  cairo              conda-forge/linux-64::cairo-1.18.6-h9f5ca07_2 
+  font-ttf-dejavu-s~ conda-forge/noarch::font-ttf-dejavu-sans-mono-2.37-hab24e00_0 
+  font-ttf-inconsol~ conda-forge/noarch::font-ttf-inconsolata-3.000-h77eed37_0 
+  font-ttf-source-c~ conda-forge/noarch::font-ttf-source-code-pro-2.038-h77eed37_0 
+  font-ttf-ubuntu    conda-forge/noarch::font-ttf-ubuntu-0.83-h77eed37_3 
+  fontconfig         conda-forge/linux-64::fontconfig-2.18.3-h4db4eae_1 
+  fonts-conda-ecosy~ conda-forge/noarch::fonts-conda-ecosystem-1-0 
+  fonts-conda-forge  conda-forge/noarch::fonts-conda-forge-1-hc364b38_1 
+  giflib             conda-forge/linux-64::giflib-6.1.3-hebe6cf0_2 
+  graphite2          conda-forge/linux-64::graphite2-1.3.15-h54a6638_1 
+  icu                conda-forge/linux-64::icu-79.1-py314hb486520_0 
+  keyutils           conda-forge/linux-64::keyutils-1.6.3-h7cc23a3_1 
+  krb5               conda-forge/linux-64::krb5-1.22.2-hbc21106_2 
+  lcms2              conda-forge/linux-64::lcms2-2.19.1-h9073bf1_3 
+  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.46.1-default_hbd61a6d_103 
+  lerc               conda-forge/linux-64::lerc-4.3.0-he78707d_0 
+  libcups            conda-forge/linux-64::libcups-2.3.3-h7a8fb5f_6 
+  libdeflate         conda-forge/linux-64::libdeflate-1.25-hd45a770_1 
+  libedit            conda-forge/linux-64::libedit-3.1.20260512-pl5321h373387f_0 
+  libexpat           conda-forge/linux-64::libexpat-2.9.0-hd2095e1_0 
+  libffi             conda-forge/linux-64::libffi-3.7.0-h81df57d_1 
+  libfreetype        conda-forge/linux-64::libfreetype-2.14.3-ha770c72_2 
+  libfreetype6       conda-forge/linux-64::libfreetype6-2.14.3-h5e6c136_2 
+  libgcc             conda-forge/linux-64::libgcc-16.2.0-ha9f2e26_7 
+  libglib            conda-forge/linux-64::libglib-2.90.0-h569388d_0 
+  libgomp            conda-forge/linux-64::libgomp-16.2.0-he0feb66_7 
+  libharfbuzz        conda-forge/linux-64::libharfbuzz-15.0.0-h3ca84f1_1 
+  libiconv           conda-forge/linux-64::libiconv-1.18-h0cb94f2_3 
+  libjpeg-turbo      conda-forge/linux-64::libjpeg-turbo-3.2.1-h7cc23a3_0 
+  liblzma            conda-forge/linux-64::liblzma-5.8.3-hb03c661_1 
+  libnsl             conda-forge/linux-64::libnsl-2.0.1-hb9d3cd8_1 
+  libpng             conda-forge/linux-64::libpng-1.6.59-h922cc85_0 
+  libpython          conda-forge/linux-64::libpython-3.11.18-ha57cdbe_0_cpython 
+  libsqlite          conda-forge/linux-64::libsqlite-3.54.1-hf739112_1 
+  libstdcxx          conda-forge/linux-64::libstdcxx-16.2.0-h934c35e_7 
+  libtiff            conda-forge/linux-64::libtiff-4.7.2-hcc2c06a_1 
+  libuuid            conda-forge/linux-64::libuuid-2.42.4-hcfc3c73_0 
+  libwebp-base       conda-forge/linux-64::libwebp-base-1.6.0-hd42ef1d_1 
+  libxcb             conda-forge/linux-64::libxcb-1.17.0-hb83e432_2 
+  libxcrypt          conda-forge/linux-64::libxcrypt-4.4.38-h280c20c_0 
+  libzlib            conda-forge/linux-64::libzlib-1.3.2-h25fd6f3_3 
+  ncurses            conda-forge/linux-64::ncurses-6.6-hdb14827_1 
+  openjdk            conda-forge/linux-64::openjdk-21.0.10-h1602c4f_22 
+  openssl            conda-forge/linux-64::openssl-3.6.5-h781a0a9_0 
+  packaging          conda-forge/noarch::packaging-26.3-pyhc364b38_0 
+  pcre2              conda-forge/linux-64::pcre2-10.47-h8b3dc9c_1 
+  pip                conda-forge/noarch::pip-26.2.2-pyh8b19718_0 
+  pixman             conda-forge/linux-64::pixman-0.46.4-h54a6638_3 
+  pthread-stubs      conda-forge/linux-64::pthread-stubs-0.4-h7cc23a3_1004 
+  python             conda-forge/linux-64::python-3.11.18-h5f976f7_0_cpython 
+  readline           conda-forge/linux-64::readline-8.3-hd6e31c0_1 
+  setuptools         conda-forge/noarch::setuptools-84.2.1-pyhe730653_0 
+  tk                 conda-forge/linux-64::tk-8.6.13-noxft_h1df4ec4_4 
+  tzdata             conda-forge/noarch::tzdata-2026e-h5d301ff_0 
+  wheel              conda-forge/noarch::wheel-0.48.0-pyhd8ed1ab_0 
+  xorg-libice        conda-forge/linux-64::xorg-libice-1.1.2-h280c20c_0 
+  xorg-libsm         conda-forge/linux-64::xorg-libsm-1.2.6-h0d788c3_1 
+  xorg-libx11        conda-forge/linux-64::xorg-libx11-1.8.14-hb83e432_0 
+  xorg-libxau        conda-forge/linux-64::xorg-libxau-1.0.12-h7cc23a3_2 
+  xorg-libxdmcp      conda-forge/linux-64::xorg-libxdmcp-1.1.5-h7cc23a3_2 
+  xorg-libxext       conda-forge/linux-64::xorg-libxext-1.3.7-h7cc23a3_1 
+  xorg-libxfixes     conda-forge/linux-64::xorg-libxfixes-6.0.2-h7cc23a3_1 
+  xorg-libxi         conda-forge/linux-64::xorg-libxi-1.8.4-h7cc23a3_0 
+  xorg-libxrandr     conda-forge/linux-64::xorg-libxrandr-1.5.5-h7cc23a3_1 
+  xorg-libxrender    conda-forge/linux-64::xorg-libxrender-0.9.13-h7cc23a3_0 
+  xorg-libxt         conda-forge/linux-64::xorg-libxt-1.3.1-h7cc23a3_1 
+  xorg-libxtst       conda-forge/linux-64::xorg-libxtst-1.2.6-h7cc23a3_0 
+  zstd               conda-forge/linux-64::zstd-1.5.7-hb78ec9c_7 
+
+
+
+Downloading and Extracting Packages: ...working...openjdk-21.0.10      | 177.8 MB  |            |   0% 
+python-3.11.18       | 22.3 MB   |            |   0% [A
+
+icu-79.1             | 13.9 MB   |            |   0% [A[A
+
+
+libpython-3.11.18    | 7.5 MB    |            |   0% [A[A[A
+
+
+
+libglib-2.90.0       | 4.6 MB    |            |   0% [A[A[A[A
+
+
+
+
+libcups-2.3.3        | 4.3 MB    |            |   0% [A[A[A[A[A
+
+
+
+
+
+libharfbuzz-15.0.0   | 1.6 MB    |            |   0% [A[A[A[A[A[A
+
+
+
+
+
+
+font-ttf-ubuntu-0.83 | 1.5 MB    |            |   0% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+krb5-1.22.2          | 1.3 MB    |            |   0% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    |            |   0% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+pip-26.2.2           | 1.1 MB    |            |   0% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+cairo-1.18.6         | 982 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.54.1     | 962 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.14   | 827 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+font-ttf-source-code | 684 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.2.1  | 639 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alsa-lib-1.2.16.1    | 581 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+setuptools-84.2.1    | 554 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  |            |   0% 
+python-3.11.18       | 22.3 MB   | 1          |   1% [A
+
+
+libpython-3.11.18    | 7.5 MB    | 5          |   5% [A[A[A
+
+icu-79.1             | 13.9 MB   | 1          |   1% [A[A
+
+
+
+libglib-2.90.0       | 4.6 MB    | #          |  10% [A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | 2          |   2% 
+python-3.11.18       | 22.3 MB   | 8          |   8% [A
+
+
+libpython-3.11.18    | 7.5 MB    | ##4        |  24% [A[A[A
+
+icu-79.1             | 13.9 MB   | #          |  11% [A[A
+
+
+
+libglib-2.90.0       | 4.6 MB    | ######5    |  65% [A[A[A[A
+
+
+
+libglib-2.90.0       | 4.6 MB    | ########## | 100% [A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | 4          |   5% 
+python-3.11.18       | 22.3 MB   | #4         |  15% [A
+
+
+libpython-3.11.18    | 7.5 MB    | ####5      |  46% [A[A[A
+
+
+
+
+libcups-2.3.3        | 4.3 MB    |            |   0% [A[A[A[A[A
+
+icu-79.1             | 13.9 MB   | ##         |  21% [A[Aopenjdk-21.0.10      | 177.8 MB  | 6          |   7% 
+python-3.11.18       | 22.3 MB   | ##1        |  21% [A
+
+
+libpython-3.11.18    | 7.5 MB    | ######3    |  64% [A[A[A
+
+
+
+
+libcups-2.3.3        | 4.3 MB    | ######8    |  69% [A[A[A[A[A
+
+icu-79.1             | 13.9 MB   | ##9        |  29% [A[A
+
+
+
+
+libcups-2.3.3        | 4.3 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+libglib-2.90.0       | 4.6 MB    | ########## | 100% [A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | 8          |   9% 
+
+
+
+
+
+libharfbuzz-15.0.0   | 1.6 MB    | 1          |   1% [A[A[A[A[A[A
+python-3.11.18       | 22.3 MB   | ##8        |  28% [A
+
+
+
+
+libcups-2.3.3        | 4.3 MB    | ########## | 100% [A[A[A[A[A
+
+
+libpython-3.11.18    | 7.5 MB    | ########   |  81% [A[A[A
+
+icu-79.1             | 13.9 MB   | ###8       |  38% [A[Aopenjdk-21.0.10      | 177.8 MB  | #          |  11% 
+python-3.11.18       | 22.3 MB   | ###4       |  34% [A
+
+
+libpython-3.11.18    | 7.5 MB    | ########## | 100% [A[A[A
+
+icu-79.1             | 13.9 MB   | ####7      |  47% [A[A
+
+
+
+
+
+
+font-ttf-ubuntu-0.83 | 1.5 MB    | 1          |   1% [A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | #3         |  13% 
+python-3.11.18       | 22.3 MB   | ####3      |  43% [A
+
+icu-79.1             | 13.9 MB   | #####6     |  57% [A[A
+
+
+
+
+
+
+font-ttf-ubuntu-0.83 | 1.5 MB    | #########7 |  97% [A[A[A[A[A[A[A
+
+
+
+
+
+
+font-ttf-ubuntu-0.83 | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+libharfbuzz-15.0.0   | 1.6 MB    | #########6 |  96% [A[A[A[A[A[A
+
+
+
+
+
+libharfbuzz-15.0.0   | 1.6 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+libpython-3.11.18    | 7.5 MB    | ########## | 100% [A[A[A
+
+
+libpython-3.11.18    | 7.5 MB    | ########## | 100% [A[A[Aopenjdk-21.0.10      | 177.8 MB  | #5         |  15% 
+
+
+
+
+
+
+
+krb5-1.22.2          | 1.3 MB    | 1          |   1% [A[A[A[A[A[A[A[A
+python-3.11.18       | 22.3 MB   | #####2     |  52% [A
+
+
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | 1          |   1% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+font-ttf-ubuntu-0.83 | 1.5 MB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+libharfbuzz-15.0.0   | 1.6 MB    | ########## | 100% [A[A[A[A[A[A
+
+icu-79.1             | 13.9 MB   | ######8    |  69% [A[A
+
+
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | #7         |  17% 
+
+
+
+
+
+
+
+krb5-1.22.2          | 1.3 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+pip-26.2.2           | 1.1 MB    | 1          |   1% [A[A[A[A[A[A[A[A[A[A
+python-3.11.18       | 22.3 MB   | ######4    |  65% [A
+
+
+
+
+
+
+
+
+
+
+cairo-1.18.6         | 982 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A
+
+icu-79.1             | 13.9 MB   | ########1  |  81% [A[A
+
+
+
+
+
+
+
+
+
+pip-26.2.2           | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | #9         |  19% 
+
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.54.1     | 962 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+cairo-1.18.6         | 982 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+python-3.11.18       | 22.3 MB   | #######4   |  74% [A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.14   | 827 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+icu-79.1             | 13.9 MB   | #########1 |  92% [A[A
+
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.54.1     | 962 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ##1        |  21% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+python-3.11.18       | 22.3 MB   | ########4  |  84% [A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+font-ttf-source-code | 684 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ##3        |  23% 
+python-3.11.18       | 22.3 MB   | #########3 |  93% [A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+font-ttf-source-code | 684 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+krb5-1.22.2          | 1.3 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+krb5-1.22.2          | 1.3 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.2.1  | 639 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.14   | 827 KB    | #########6 |  97% [A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ##5        |  25% 
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.14   | 827 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.2.1  | 639 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alsa-lib-1.2.16.1    | 581 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+setuptools-84.2.1    | 554 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+setuptools-84.2.1    | 554 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alsa-lib-1.2.16.1    | 581 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ##7        |  27% 
+
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.54.1     | 962 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.54.1     | 962 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+cairo-1.18.6         | 982 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+icu-79.1             | 13.9 MB   | ########## | 100% [A[A
+
+
+
+
+
+
+
+
+
+
+cairo-1.18.6         | 982 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ##9        |  29% openjdk-21.0.10      | 177.8 MB  | ###1       |  32% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+font-ttf-source-code | 684 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+font-ttf-source-code | 684 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ###3       |  34% 
+python-3.11.18       | 22.3 MB   | ########## | 100% [Aopenjdk-21.0.10      | 177.8 MB  | ###5       |  36% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.2.1  | 639 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libjpeg-turbo-3.2.1  | 639 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+pip-26.2.2           | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+pip-26.2.2           | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ###8       |  38% openjdk-21.0.10      | 177.8 MB  | ####       |  40% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alsa-lib-1.2.16.1    | 581 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alsa-lib-1.2.16.1    | 581 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.14   | 827 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ####3      |  43% openjdk-21.0.10      | 177.8 MB  | ####5      |  46% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | ####8      |  48% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+setuptools-84.2.1    | 554 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+setuptools-84.2.1    | 554 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Aopenjdk-21.0.10      | 177.8 MB  | #####1     |  51% openjdk-21.0.10      | 177.8 MB  | #####5     |  55% openjdk-21.0.10      | 177.8 MB  | #####9     |  59% openjdk-21.0.10      | 177.8 MB  | ######3    |  63% openjdk-21.0.10      | 177.8 MB  | ######6    |  67% openjdk-21.0.10      | 177.8 MB  | #######    |  71% openjdk-21.0.10      | 177.8 MB  | #######4   |  75% 
+
+icu-79.1             | 13.9 MB   | ########## | 100% [A[Aopenjdk-21.0.10      | 177.8 MB  | #######8   |  78% openjdk-21.0.10      | 177.8 MB  | ########2  |  83% openjdk-21.0.10      | 177.8 MB  | ########8  |  88% openjdk-21.0.10      | 177.8 MB  | #########2 |  93% openjdk-21.0.10      | 177.8 MB  | #########6 |  97% 
+python-3.11.18       | 22.3 MB   | ########## | 100% [Aopenjdk-21.0.10      | 177.8 MB  | ########## | 100% openjdk-21.0.10      | 177.8 MB  | ########## | 100% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A                                                     
+                                                     [A
+
+                                                     [A[A
+
+
+                                                     [A[A[A
+
+
+
+                                                     [A[A[A[A
+
+
+
+
+                                                     [A[A[A[A[A
+
+
+
+
+
+                                                     [A[A[A[A[A[A
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A
+
+
+
+
+
+
+[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A
+
+
+
+
+
+
+[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A done
+Preparing transaction: - \ done
+Verifying transaction: / - \ | / - \ | / - \ | / - \ | / done
+Executing transaction: \ | / - \ | / - \ | / - \ | / - done
+#
+# To activate this environment, use
+#
+#     $ conda activate /home2/home/tanish_v/.conda/envs/regat
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Requirement already satisfied: pip in /home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages (26.2.2)
+Collecting torch (from -r requirements.in (line 2))
+  Downloading torch-2.15.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (36 kB)
+Collecting torch_geometric (from -r requirements.in (line 3))
+  Using cached torch_geometric-2.8.1-py3-none-any.whl.metadata (64 kB)
+Collecting sentence-transformers (from -r requirements.in (line 4))
+  Downloading sentence_transformers-6.2.0-py3-none-any.whl.metadata (20 kB)
+Collecting transformers (from -r requirements.in (line 5))
+  Downloading transformers-5.22.1-py3-none-any.whl.metadata (31 kB)
+Collecting ir_datasets (from -r requirements.in (line 6))
+  Downloading ir_datasets-0.6.3-py3-none-any.whl.metadata (13 kB)
+Collecting ir_measures (from -r requirements.in (line 7))
+  Downloading ir_measures-0.4.3-py3-none-any.whl.metadata (7.0 kB)
+Collecting pytrec-eval-terrier (from -r requirements.in (line 8))
+  Downloading pytrec_eval_terrier-0.5.11-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (1.1 kB)
+Collecting pyserini (from -r requirements.in (line 9))
+  Downloading pyserini-1.6.0.tar.gz (164.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 164.8/164.8 MB 523.3 kB/s  0:03:48
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting bm25s (from -r requirements.in (line 10))
+  Downloading bm25s-0.3.16-py3-none-any.whl.metadata (29 kB)
+Collecting numpy (from -r requirements.in (line 11))
+  Using cached numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas (from -r requirements.in (line 12))
+  Downloading pandas-3.1.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+Collecting scipy (from -r requirements.in (line 13))
+  Using cached scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting scikit-learn (from -r requirements.in (line 14))
+  Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+Collecting matplotlib (from -r requirements.in (line 15))
+  Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting pyyaml (from -r requirements.in (line 16))
+  Using cached pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting tqdm (from -r requirements.in (line 17))
+  Using cached tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+Collecting pytest (from -r requirements.in (line 18))
+  Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+Collecting filelock (from torch->-r requirements.in (line 2))
+  Downloading filelock-4.2.6-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.13.0 (from torch->-r requirements.in (line 2))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: setuptools>=77.0.3 in /home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages (from torch->-r requirements.in (line 2)) (84.2.1)
+Collecting sympy>=1.13.3 (from torch->-r requirements.in (line 2))
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch->-r requirements.in (line 2))
+  Using cached networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch->-r requirements.in (line 2))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch->-r requirements.in (line 2))
+  Using cached fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+Collecting cuda-toolkit==13.2.2 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading cuda_toolkit-13.2.2-py2.py3-none-any.whl.metadata (20 kB)
+Collecting cuda-bindings<14,>=13.0.3 (from torch->-r requirements.in (line 2))
+  Downloading cuda_bindings-13.4.4-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting nvidia-cudnn-cu13==9.26.0.51 (from torch->-r requirements.in (line 2))
+  Downloading nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+Collecting nvidia-cusparselt-cu13==0.8.1 (from torch->-r requirements.in (line 2))
+  Using cached nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting nvidia-nccl-cu13==2.30.7 (from torch->-r requirements.in (line 2))
+  Using cached nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl.metadata (2.1 kB)
+Collecting nvidia-nvshmem-cu13==3.7.2 (from torch->-r requirements.in (line 2))
+  Downloading nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.2 kB)
+Collecting triton~=3.9.0 (from torch->-r requirements.in (line 2))
+  Downloading triton-3.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (978 bytes)
+Collecting nvidia-cublas==13.4.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cuda-nvrtc==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cuda-runtime==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cufft==12.2.0.57.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink<14,>=13.2.86 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Using cached nvidia_nvjitlink-13.4.92-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cufile==1.17.1.22.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cuda-cupti==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusolver==12.2.0.11.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+Collecting nvidia-cusparse==12.7.10.12.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvtx==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch->-r requirements.in (line 2))
+  Downloading nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.9 kB)
+Collecting nvidia-cuda-cccl (from nvidia-nvshmem-cu13==3.7.2->torch->-r requirements.in (line 2))
+  Downloading nvidia_cuda_cccl-13.3.4.3.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch->-r requirements.in (line 2))
+  Downloading cuda_pathfinder-1.8.5-py3-none-any.whl.metadata (1.9 kB)
+Collecting aiohttp (from torch_geometric->-r requirements.in (line 3))
+  Downloading aiohttp-3.14.5-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting psutil>=5.8.0 (from torch_geometric->-r requirements.in (line 3))
+  Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting pyparsing (from torch_geometric->-r requirements.in (line 3))
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting requests (from torch_geometric->-r requirements.in (line 3))
+  Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting xxhash (from torch_geometric->-r requirements.in (line 3))
+  Downloading xxhash-4.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+Collecting tokenizers>=0.19 (from sentence-transformers->-r requirements.in (line 4))
+  Using cached tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+Collecting huggingface-hub<3.0.0,>=1.3.0 (from sentence-transformers->-r requirements.in (line 4))
+  Using cached huggingface_hub-2.4.0-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: packaging>=20.0 in /home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages (from transformers->-r requirements.in (line 5)) (26.3)
+Collecting regex>=2025.10.22 (from transformers->-r requirements.in (line 5))
+  Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting typer (from transformers->-r requirements.in (line 5))
+  Using cached typer-0.27.3-py3-none-any.whl.metadata (16 kB)
+Collecting safetensors>=0.8.0 (from transformers->-r requirements.in (line 5))
+  Using cached safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Collecting click<9.0.0,>=8.4.2 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Using cached click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Using cached hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Collecting httpx2<3,>=2.0.0 (from huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+Collecting anyio>=4.10 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Using cached anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting httpcore2==2.16.0 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+Collecting idna>=3.18 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Using cached truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+Collecting h11>=0.16 (from httpcore2==2.16.0->httpx2<3,>=2.0.0->huggingface-hub<3.0.0,>=1.3.0->sentence-transformers->-r requirements.in (line 4))
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting lxml>=4.5.2 (from ir_datasets->-r requirements.in (line 6))
+  Downloading lxml-6.1.3-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting lz4>=3.1.10 (from ir_datasets->-r requirements.in (line 6))
+  Downloading lz4-4.4.5-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting Cython (from pyserini->-r requirements.in (line 9))
+  Downloading cython-3.3.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (28 kB)
+Collecting pyjnius>=1.7.0 (from pyserini->-r requirements.in (line 9))
+  Downloading pyjnius-1.9.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (13 kB)
+Collecting onnxruntime>=1.23 (from pyserini->-r requirements.in (line 9))
+  Downloading onnxruntime-1.31.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+Collecting openai>=2.12.0 (from pyserini->-r requirements.in (line 9))
+  Downloading openai-3.42.0-py3-none-any.whl.metadata (44 kB)
+Collecting sentencepiece>=0.2 (from pyserini->-r requirements.in (line 9))
+  Downloading sentencepiece-0.2.2-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (33 kB)
+Collecting tiktoken>=0.12 (from pyserini->-r requirements.in (line 9))
+  Downloading tiktoken-0.14.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+Collecting flask (from pyserini->-r requirements.in (line 9))
+  Using cached flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Collecting pillow>=12 (from pyserini->-r requirements.in (line 9))
+  Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting fastapi>=0.124 (from pyserini->-r requirements.in (line 9))
+  Downloading fastapi-0.162.0-py3-none-any.whl.metadata (26 kB)
+Collecting uvicorn>=0.38 (from pyserini->-r requirements.in (line 9))
+  Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting fastmcp>=2.14 (from pyserini->-r requirements.in (line 9))
+  Downloading fastmcp-4.1.4-py3-none-any.whl.metadata (9.5 kB)
+Collecting datasets (from pyserini->-r requirements.in (line 9))
+  Downloading datasets-5.1.0-py3-none-any.whl.metadata (24 kB)
+Collecting python-dateutil>=2.9.0 (from pandas->-r requirements.in (line 12))
+  Using cached python_dateutil-3.0.0-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting joblib>=1.4.0 (from scikit-learn->-r requirements.in (line 14))
+  Using cached joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn->-r requirements.in (line 14))
+  Using cached narwhals-2.28.0-py3-none-any.whl.metadata (15 kB)
+Collecting threadpoolctl>=3.5.0 (from scikit-learn->-r requirements.in (line 14))
+  Using cached threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->-r requirements.in (line 15))
+  Using cached contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib->-r requirements.in (line 15))
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib->-r requirements.in (line 15))
+  Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements.in (line 15))
+  Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting iniconfig>=2 (from pytest->-r requirements.in (line 18))
+  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting pluggy<2,>=1.6 (from pytest->-r requirements.in (line 18))
+  Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting pygments>=2.15 (from pytest->-r requirements.in (line 18))
+  Using cached pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting starlette>=0.46.0 (from fastapi>=0.124->pyserini->-r requirements.in (line 9))
+  Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting pydantic>=2.9.0 (from fastapi>=0.124->pyserini->-r requirements.in (line 9))
+  Using cached pydantic-2.14.2-py3-none-any.whl.metadata (137 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi>=0.124->pyserini->-r requirements.in (line 9))
+  Using cached typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi>=0.124->pyserini->-r requirements.in (line 9))
+  Using cached annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting opentelemetry-api>=1.44.0 (from fastapi>=0.124->pyserini->-r requirements.in (line 9))
+  Using cached opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+Collecting fastmcp-slim==4.1.4 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading fastmcp_slim-4.1.4-py3-none-any.whl.metadata (11 kB)
+Collecting mcp-types<3.0.0,>=2.0.0 (from fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading mcp_types-2.3.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting platformdirs>=4.0.0 (from fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading platformdirs-4.14.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting pydantic-settings>=2.0.0 (from fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading pydantic_settings-2.16.2-py3-none-any.whl.metadata (4.0 kB)
+Collecting python-dotenv>=1.1.0 (from fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+Collecting rich>=13.9.4 (from fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting authlib>=1.6.11 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading authlib-1.9.1-py2.py3-none-any.whl.metadata (10 kB)
+Collecting exceptiongroup>=1.2.2 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached exceptiongroup-1.3.1-py3-none-any.whl.metadata (6.7 kB)
+Collecting mcp<3.0.0,>=2.3.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading mcp-2.3.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting py-key-value-aio<0.5.0,>=0.4.4 (from py-key-value-aio[filetree,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading py_key_value_aio-0.4.6-py3-none-any.whl.metadata (16 kB)
+Collecting certifi>=2026.10.19 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Collecting cyclopts>=4.0.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading cyclopts-5.3.2-py3-none-any.whl.metadata (12 kB)
+Collecting griffelib>=2.0.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading griffelib-2.4.1-py3-none-any.whl.metadata (1.9 kB)
+Collecting joserfc>=1.5.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading joserfc-1.7.7-py3-none-any.whl.metadata (3.2 kB)
+Collecting jsonref>=1.1.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading jsonref-1.1.0-py3-none-any.whl.metadata (2.7 kB)
+Collecting jsonschema-path>=0.3.4 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading jsonschema_path-0.5.0-py3-none-any.whl.metadata (8.1 kB)
+Collecting openapi-pydantic>=0.6.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading openapi_pydantic-0.6.0-py3-none-any.whl.metadata (12 kB)
+Collecting pyperclip>=1.9.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading pyperclip-1.11.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting python-multipart>=0.0.26 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading python_multipart-0.0.33-py3-none-any.whl.metadata (6.3 kB)
+Collecting uncalled-for>=0.4.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading uncalled_for-0.4.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting watchfiles>=1.0.0 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting websockets>=15.0.1 (from fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+Collecting jsonschema>=4.20.0 (from mcp<3.0.0,>=2.3.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp<3.0.0,>=2.3.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting sse-starlette>=3.0.0 (from mcp<3.0.0,>=2.3.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading sse_starlette-3.6.0-py3-none-any.whl.metadata (15 kB)
+Collecting beartype>=0.20.0 (from py-key-value-aio<0.5.0,>=0.4.4->py-key-value-aio[filetree,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading beartype-0.23.1-py3-none-any.whl.metadata (35 kB)
+Collecting aiofile>=3.12.3 (from py-key-value-aio[filetree,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading aiofile-3.12.3-py3-none-any.whl.metadata (17 kB)
+Collecting cachetools>=5.0.0 (from py-key-value-aio[filetree,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading cachetools-7.2.7-py3-none-any.whl.metadata (5.5 kB)
+Collecting caio~=0.12.0 (from aiofile>=3.12.3->py-key-value-aio[filetree,memory]<0.5.0,>=0.4.4; extra == "client"->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading caio-0.12.10-cp311-cp311-manylinux_2_34_x86_64.whl.metadata (4.6 kB)
+Collecting cryptography>=45.0.1 (from authlib>=1.6.11->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+Collecting cffi>=2.0.0 (from cryptography>=45.0.1->authlib>=1.6.11->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=45.0.1->authlib>=1.6.11->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+Collecting attrs>=23.1.0 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting docstring-parser<4.0,>=0.15 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+Collecting rich-rst<3,>=2.0.1 (from cyclopts>=4.0.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading rich_rst-2.2.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn->-r requirements.in (line 14))
+  Using cached cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp<3.0.0,>=2.3.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp<3.0.0,>=2.3.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp<3.0.0,>=2.3.0->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting pathable<0.7.0,>=0.6.0 (from jsonschema-path>=0.3.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading pathable-0.6.0-py3-none-any.whl.metadata (7.2 kB)
+Collecting flatbuffers (from onnxruntime>=1.23->pyserini->-r requirements.in (line 9))
+  Using cached flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+Collecting protobuf>=4.25.8 (from onnxruntime>=1.23->pyserini->-r requirements.in (line 9))
+  Using cached protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+Collecting jiter<1,>=0.16.0 (from openai>=2.12.0->pyserini->-r requirements.in (line 9))
+  Downloading jiter-0.18.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB)
+Collecting sniffio (from openai>=2.12.0->pyserini->-r requirements.in (line 9))
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi>=0.124->pyserini->-r requirements.in (line 9))
+  Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.2 (from pydantic>=2.9.0->fastapi>=0.124->pyserini->-r requirements.in (line 9))
+  Downloading pydantic_core-2.50.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.5 kB)
+Collecting email-validator>=2.0.0 (from pydantic[email]>=2.12.0->fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+Collecting dnspython>=2.0.0 (from email-validator>=2.0.0->pydantic[email]>=2.12.0->fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Downloading dnspython-2.9.1-py3-none-any.whl.metadata (5.8 kB)
+Collecting six>=1.6 (from python-dateutil>=2.9.0->pandas->-r requirements.in (line 12))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting tzdata (from python-dateutil>=2.9.0->pandas->-r requirements.in (line 12))
+  Using cached tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting charset_normalizer<4,>=2 (from requests->torch_geometric->-r requirements.in (line 3))
+  Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting urllib3<3,>=1.26 (from requests->torch_geometric->-r requirements.in (line 3))
+  Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.9.4->fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.9.4->fastmcp-slim==4.1.4->fastmcp-slim[client,server]==4.1.4->fastmcp>=2.14->pyserini->-r requirements.in (line 9))
+  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch->-r requirements.in (line 2))
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp->torch_geometric->-r requirements.in (line 3))
+  Using cached aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp->torch_geometric->-r requirements.in (line 3))
+  Using cached aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp->torch_geometric->-r requirements.in (line 3))
+  Using cached frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+Collecting multidict<8.0,>=4.5 (from aiohttp->torch_geometric->-r requirements.in (line 3))
+  Downloading multidict-7.2.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Collecting propcache>=0.2.0 (from aiohttp->torch_geometric->-r requirements.in (line 3))
+  Downloading propcache-0.5.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+Collecting yarl<2.0,>=1.25.1 (from aiohttp->torch_geometric->-r requirements.in (line 3))
+  Downloading yarl-1.25.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+Collecting pyarrow>=24.0.0 (from datasets->pyserini->-r requirements.in (line 9))
+  Downloading pyarrow-26.0.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting dill<0.4.2,>=0.3.0 (from datasets->pyserini->-r requirements.in (line 9))
+  Using cached dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Collecting multiprocess<0.70.20 (from datasets->pyserini->-r requirements.in (line 9))
+  Using cached multiprocess-0.70.19-py311-none-any.whl.metadata (7.5 kB)
+Collecting fsspec>=0.8.5 (from torch->-r requirements.in (line 2))
+  Using cached fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+Collecting blinker>=1.9.0 (from flask->pyserini->-r requirements.in (line 9))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting itsdangerous>=2.2.0 (from flask->pyserini->-r requirements.in (line 9))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting markupsafe>=2.1.1 (from flask->pyserini->-r requirements.in (line 9))
+  Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting werkzeug>=3.1.0 (from flask->pyserini->-r requirements.in (line 9))
+  Using cached werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+Collecting shellingham>=1.3.0 (from typer->transformers->-r requirements.in (line 5))
+  Using cached shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Downloading torch-2.15.0-cp311-cp311-manylinux_2_28_x86_64.whl (539.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 539.1/539.1 MB 1.1 MB/s  0:09:17
+Downloading cuda_toolkit-13.2.2-py2.py3-none-any.whl (2.6 kB)
+Downloading nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl (519.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 519.2/519.2 MB 1.5 MB/s  0:04:59
+Using cached nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+Using cached nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl (216.0 MB)
+Downloading nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (135.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.4/135.4 MB 2.9 MB/s  0:01:04
+Downloading cuda_bindings-13.4.4-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (7.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 3.2 MB/s  0:00:02
+Downloading nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl (404.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 404.9/404.9 MB 1.1 MB/s  0:05:32
+Downloading nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 623.4 kB/s  0:00:19
+Downloading nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (47.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.0/47.0 MB 943.5 kB/s  0:00:53
+Downloading nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 730.9 kB/s  0:00:02
+Downloading nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (218.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.3/218.3 MB 1.9 MB/s  0:02:29
+Downloading nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 4.1 MB/s  0:00:00
+Downloading nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl (227.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 227.9/227.9 MB 1.4 MB/s  0:02:13
+Downloading nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (151.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.0/151.0 MB 1.3 MB/s  0:01:37
+Using cached nvidia_nvjitlink-13.4.92-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (42.5 MB)
+Downloading nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (153 kB)
+Downloading triton-3.9.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (285.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 285.8/285.8 MB 1.9 MB/s  0:02:07
+Using cached torch_geometric-2.8.1-py3-none-any.whl (1.3 MB)
+Downloading sentence_transformers-6.2.0-py3-none-any.whl (760 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 760.7/760.7 kB 1.1 MB/s  0:00:00
+Downloading transformers-5.22.1-py3-none-any.whl (13.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 1.4 MB/s  0:00:09
+Using cached huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+Using cached click-8.5.0-py3-none-any.whl (125 kB)
+Using cached hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+Using cached tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+Downloading ir_datasets-0.6.3-py3-none-any.whl (947 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 947.8/947.8 kB 1.7 MB/s  0:00:00
+Downloading ir_measures-0.4.3-py3-none-any.whl (61 kB)
+Downloading pytrec_eval_terrier-0.5.11-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (304 kB)
+Downloading bm25s-0.3.16-py3-none-any.whl (76 kB)
+Using cached numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+Downloading pandas-3.1.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 1.0 MB/s  0:00:12
+Using cached scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 684.0 kB/s  0:00:13
+Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 2.2 MB/s  0:00:04
+Using cached pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+Using cached tqdm-4.70.1-py3-none-any.whl (80 kB)
+Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+Using cached anyio-4.15.1-py3-none-any.whl (132 kB)
+Using cached contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+Downloading cuda_pathfinder-1.8.5-py3-none-any.whl (62 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fastapi-0.162.0-py3-none-any.whl (148 kB)
+Using cached annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading fastmcp-4.1.4-py3-none-any.whl (8.2 kB)
+Downloading fastmcp_slim-4.1.4-py3-none-any.whl (935 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 935.7/935.7 kB 2.5 MB/s  0:00:01
+Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
+Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
+Downloading py_key_value_aio-0.4.6-py3-none-any.whl (171 kB)
+Downloading aiofile-3.12.3-py3-none-any.whl (22 kB)
+Downloading caio-0.12.10-cp311-cp311-manylinux_2_34_x86_64.whl (159 kB)
+Downloading authlib-1.9.1-py2.py3-none-any.whl (266 kB)
+Downloading beartype-0.23.1-py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 1.6 MB/s  0:00:01
+Downloading cachetools-7.2.7-py3-none-any.whl (19 kB)
+Using cached certifi-2026.10.23-py3-none-any.whl (135 kB)
+Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 2.7 MB/s  0:00:01
+Downloading cffi-2.1.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (217 kB)
+Downloading cyclopts-5.3.2-py3-none-any.whl (297 kB)
+Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+Downloading rich_rst-2.2.0-py3-none-any.whl (279 kB)
+Using cached attrs-26.1.0-py3-none-any.whl (67 kB)
+Using cached exceptiongroup-1.3.1-py3-none-any.whl (16 kB)
+Downloading filelock-4.2.6-py3-none-any.whl (164 kB)
+Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 1.3 MB/s  0:00:04
+Downloading griffelib-2.4.1-py3-none-any.whl (172 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached idna-3.20-py3-none-any.whl (69 kB)
+Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Using cached joblib-1.6.0-py3-none-any.whl (306 kB)
+Using cached cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading joserfc-1.7.7-py3-none-any.whl (71 kB)
+Downloading jsonref-1.1.0-py3-none-any.whl (9.4 kB)
+Using cached jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Downloading jsonschema_path-0.5.0-py3-none-any.whl (24 kB)
+Downloading pathable-0.6.0-py3-none-any.whl (18 kB)
+Using cached referencing-0.37.0-py3-none-any.whl (26 kB)
+Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 4.0 MB/s  0:00:00
+Downloading lxml-6.1.3-cp311-cp311-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 3.4 MB/s  0:00:01
+Downloading lz4-4.4.5-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 2.3 MB/s  0:00:00
+Using cached narwhals-2.28.0-py3-none-any.whl (490 kB)
+Using cached networkx-3.6.1-py3-none-any.whl (2.1 MB)
+Downloading onnxruntime-1.31.1-cp311-cp311-manylinux_2_28_x86_64.whl (23.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 4.1 MB/s  0:00:05
+Downloading openai-3.42.0-py3-none-any.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 2.1 MB/s  0:00:01
+Downloading jiter-0.18.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (337 kB)
+Using cached pydantic-2.14.2-py3-none-any.whl (490 kB)
+Downloading pydantic_core-2.50.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 1.4 MB/s  0:00:01
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading openapi_pydantic-0.6.0-py3-none-any.whl (96 kB)
+Using cached opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 2.2 MB/s  0:00:03
+Downloading platformdirs-4.14.2-py3-none-any.whl (35 kB)
+Using cached protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+Using cached psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading pydantic_settings-2.16.2-py3-none-any.whl (81 kB)
+Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+Downloading dnspython-2.9.1-py3-none-any.whl (360 kB)
+Using cached pygments-2.21.0-py3-none-any.whl (1.3 MB)
+Downloading pyjnius-1.9.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 3.4 MB/s  0:00:00
+Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading pyperclip-1.11.0-py3-none-any.whl (11 kB)
+Using cached python_dateutil-3.0.0-py2.py3-none-any.whl (94 kB)
+Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+Downloading python_multipart-0.0.33-py3-none-any.whl (32 kB)
+Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 2.1 MB/s  0:00:00
+Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (269 kB)
+Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+Using cached rich-15.0.0-py3-none-any.whl (310 kB)
+Using cached markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading rpds_py-2026.9.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (375 kB)
+Using cached safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Downloading sentencepiece-0.2.2-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 1.7 MB/s  0:00:00
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading sse_starlette-3.6.0-py3-none-any.whl (17 kB)
+Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Using cached threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Downloading tiktoken-0.14.0-cp311-cp311-manylinux_2_28_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 2.2 MB/s  0:00:00
+Using cached truststore-0.10.5-py3-none-any.whl (19 kB)
+Using cached typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading uncalled_for-0.4.1-py3-none-any.whl (14 kB)
+Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+Downloading websockets-17.4-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+Downloading aiohttp-3.14.5-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 2.0 MB/s  0:00:00
+Downloading multidict-7.2.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (510 kB)
+Downloading yarl-1.25.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+Using cached aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Using cached aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Using cached frozenlist-1.8.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (231 kB)
+Downloading propcache-0.5.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (235 kB)
+Downloading cython-3.3.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 3.6 MB/s  0:00:01
+Downloading datasets-5.1.0-py3-none-any.whl (604 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 604.4/604.4 kB 4.0 MB/s  0:00:00
+Using cached dill-0.4.1-py3-none-any.whl (120 kB)
+Using cached fsspec-2026.7.0-py3-none-any.whl (206 kB)
+Using cached multiprocess-0.70.19-py311-none-any.whl (144 kB)
+Downloading pyarrow-26.0.0-cp311-cp311-manylinux_2_28_x86_64.whl (53.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.9/53.9 MB 2.2 MB/s  0:00:23
+Using cached flask-3.1.3-py3-none-any.whl (103 kB)
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.4-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Using cached werkzeug-3.1.9-py3-none-any.whl (228 kB)
+Using cached flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Downloading nvidia_cuda_cccl-13.3.4.3.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 919.4 kB/s  0:00:04
+Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Using cached typer-0.27.3-py3-none-any.whl (123 kB)
+Using cached shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Using cached tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Downloading xxhash-4.0.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (260 kB)
+Building wheels for collected packages: pyserini
+  Building wheel for pyserini (pyproject.toml): started
+  Building wheel for pyserini (pyproject.toml): finished with status 'done'
+  Created wheel for pyserini: filename=pyserini-1.6.0-py3-none-any.whl size=164859888 sha256=5d494584398845fc65be737aa8a11f18c76f8328c7977cc21b839cf382fa9a10
+  Stored in directory: /home2/home/tanish_v/.cache/pip/wheels/88/4b/33/581e6d33290a21e33a99eab762ebdcb7ca67d8187ee3391804
+Successfully built pyserini
+Installing collected packages: pyperclip, nvidia-cusparselt-cu13, mpmath, flatbuffers, cuda-toolkit, xxhash, websockets, urllib3, uncalled-for, tzdata, typing-extensions, truststore, triton, tqdm, threadpoolctl, sympy, sniffio, six, shellingham, sentencepiece, safetensors, rpds-py, regex, pyyaml, python-multipart, python-dotenv, pyparsing, pyjwt, pyjnius, pygments, pycparser, pyarrow, psutil, protobuf, propcache, pluggy, platformdirs, pillow, pathable, nvidia-nvtx, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, nvidia-cuda-cccl, numpy, networkx, narwhals, multidict, mdurl, markupsafe, lz4, lxml, kiwisolver, jsonref, jiter, itsdangerous, iniconfig, idna, hf-xet, h11, griffelib, fsspec, frozenlist, fonttools, filelock, docstring-parser, dnspython, dill, Cython, cycler, cuda-pathfinder, cloudpickle, click, charset_normalizer, certifi, caio, cachetools, blinker, beartype, attrs, annotated-types, annotated-doc, aiohappyeyeballs, yarl, werkzeug, uvicorn, typing-inspection, scipy, requests, referencing, python-dateutil, pytest, pydantic-core, py-key-value-aio, opentelemetry-api, onnxruntime, nvidia-nvshmem-cu13, nvidia-cusparse, nvidia-cufft, nvidia-cublas, multiprocess, markdown-it-py, joblib, jinja2, httpcore2, exceptiongroup, email-validator, cuda-bindings, contourpy, cffi, bm25s, anyio, aiosignal, aiofile, watchfiles, tiktoken, starlette, scikit-learn, rich, pytrec-eval-terrier, pydantic, pandas, nvidia-cusolver, nvidia-cudnn-cu13, matplotlib, jsonschema-specifications, jsonschema-path, ir_datasets, httpx2, flask, cryptography, aiohttp, typer, torch_geometric, sse-starlette, rich-rst, pydantic-settings, openapi-pydantic, openai, mcp-types, jsonschema, joserfc, ir_measures, huggingface-hub, fastapi, torch, tokenizers, mcp, fastmcp-slim, datasets, cyclopts, authlib, transformers, sentence-transformers, fastmcp, pyserini
+
+Successfully installed Cython-3.3.0 aiofile-3.12.3 aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 authlib-1.9.1 beartype-0.23.1 blinker-1.9.0 bm25s-0.3.16 cachetools-7.2.7 caio-0.12.10 certifi-2026.10.23 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.0 cloudpickle-3.1.2 contourpy-1.3.3 cryptography-50.0.2 cuda-bindings-13.4.4 cuda-pathfinder-1.8.5 cuda-toolkit-13.2.2 cycler-0.12.1 cyclopts-5.3.2 datasets-5.1.0 dill-0.4.1 dnspython-2.9.1 docstring-parser-0.18.0 email-validator-2.3.0 exceptiongroup-1.3.1 fastapi-0.162.0 fastmcp-4.1.4 fastmcp-slim-4.1.4 filelock-4.2.6 flask-3.1.3 flatbuffers-25.12.19 fonttools-4.68.0 frozenlist-1.8.0 fsspec-2026.7.0 griffelib-2.4.1 h11-0.16.0 hf-xet-1.8.0 httpcore2-2.16.0 httpx2-2.16.0 huggingface-hub-2.4.0 idna-3.20 iniconfig-2.3.1 ir_datasets-0.6.3 ir_measures-0.4.3 itsdangerous-2.2.0 jinja2-3.1.6 jiter-0.18.0 joblib-1.6.0 joserfc-1.7.7 jsonref-1.1.0 jsonschema-4.26.0 jsonschema-path-0.5.0 jsonschema-specifications-2025.9.1 kiwisolver-1.5.1 lxml-6.1.3 lz4-4.4.5 markdown-it-py-4.2.0 markupsafe-3.0.4 matplotlib-3.11.2 mcp-2.3.0 mcp-types-2.3.0 mdurl-0.1.2 mpmath-1.3.0 multidict-7.2.1 multiprocess-0.70.19 narwhals-2.28.0 networkx-3.6.1 numpy-2.4.6 nvidia-cublas-13.4.1.3 nvidia-cuda-cccl-13.3.4.3.1 nvidia-cuda-cupti-13.2.86 nvidia-cuda-nvrtc-13.2.86 nvidia-cuda-runtime-13.2.86 nvidia-cudnn-cu13-9.26.0.51 nvidia-cufft-12.2.0.57 nvidia-cufile-1.17.1.22 nvidia-cusolver-12.2.0.11 nvidia-cusparse-12.7.10.12 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.30.7 nvidia-nvjitlink-13.4.92 nvidia-nvshmem-cu13-3.7.2 nvidia-nvtx-13.2.86 onnxruntime-1.31.1 openai-3.42.0 openapi-pydantic-0.6.0 opentelemetry-api-1.45.2 pandas-3.1.0 pathable-0.6.0 pillow-13.0.0 platformdirs-4.14.2 pluggy-1.7.0 propcache-0.5.4 protobuf-7.36.2 psutil-7.2.2 py-key-value-aio-0.4.6 pyarrow-26.0.0 pycparser-3.12 pydantic-2.14.2 pydantic-core-2.50.2 pydantic-settings-2.16.2 pygments-2.21.0 pyjnius-1.9.0 pyjwt-2.15.1 pyparsing-3.3.3 pyperclip-1.11.0 pyserini-1.6.0 pytest-9.2.0 python-dateutil-3.0.0 python-dotenv-1.2.4 python-multipart-0.0.33 pytrec-eval-terrier-0.5.11 pyyaml-6.0.3 referencing-0.37.0 regex-2026.9.29 requests-2.34.2 rich-15.0.0 rich-rst-2.2.0 rpds-py-2026.9.1 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.17.1 sentence-transformers-6.2.0 sentencepiece-0.2.2 shellingham-1.5.4 six-1.17.0 sniffio-1.3.1 sse-starlette-3.6.0 starlette-1.10.0 sympy-1.14.0 threadpoolctl-3.7.0 tiktoken-0.14.0 tokenizers-0.23.3 torch-2.15.0 torch_geometric-2.8.1 tqdm-4.70.1 transformers-5.22.1 triton-3.9.0 truststore-0.10.5 typer-0.27.3 typing-extensions-4.16.0 typing-inspection-0.4.4 tzdata-2026.6 uncalled-for-0.4.1 urllib3-2.8.0 uvicorn-0.54.0 watchfiles-1.3.0 websockets-17.4 werkzeug-3.1.9 xxhash-4.0.2 yarl-1.25.1
+/home2/home/tanish_v/.conda/envs/regat/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+torch 2.15.0+cu132 cuda True
+openjdk version "21.0.10-internal" 2026-01-20
+OpenJDK Runtime Environment (build 21.0.10-internal-adhoc.rattler.src)
+OpenJDK 64-Bit Server VM (build 21.0.10-internal-adhoc.rattler.src, mixed mode, sharing)

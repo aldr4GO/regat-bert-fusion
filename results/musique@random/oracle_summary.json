@@ -1,0 +1,9 @@
+{
+ "minmax": {
+  "alpha0": 0.5,
+  "val_fixed_ndcg@10": 0.7646059989929199,
+  "val_oracle_ndcg@10": 0.8285709052871026,
+  "val_oracle_minus_fixed": 0.06396490629418272,
+  "small_headroom_flag": false
+ }
+}

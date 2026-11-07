@@ -1,0 +1,4 @@
+dataset,label,bucket,n,alpha_Q,alpha_QS,alpha_S,best_adaptive,alpha_best_minus_alpha0,oracle_alpha,ce_ndcg@10,gat_ndcg@10,best_fixed_ndcg@10,adaptive_ndcg@10,oracle_ndcg@10,gain,gain_ci95_lo,gain_ci95_hi,gain_p
+twowiki,n_words,long (>=8),11546,0.48167,0.50607,0.44893,Q,0.03167,0.44338,0.90854,0.90998,0.91813,0.91832,0.94045,0.00019,-0.00040,0.00077,0.53160
+twowiki,n_words,short (<=4),12,0.28883,0.53258,0.44867,Q,-0.16117,0.26250,0.83708,0.90450,0.86272,0.87913,0.90450,0.01641,0.00120,0.03461,0.03060
+twowiki,n_words,medium (5-7),1018,0.39475,0.56330,0.44945,Q,-0.05525,0.42191,0.89945,0.91044,0.91047,0.91138,0.93514,0.00091,-0.00101,0.00284,0.35920
